@@ -8,7 +8,7 @@ namespace Kokoha
 {
 	/*
 	Buttonクラス
-	主にInputManagerで使用する.
+	主にButtonManagerで使用する.
 	*/
 	class Button
 	{
@@ -63,11 +63,17 @@ namespace Kokoha
 		/// <summary>
 		/// ボタンの名前を取得
 		/// </summary>
+		/// <returns>
+		/// ボタンの名前
+		/// </returns>
 		const String& getName() const;
 
 		/// <summary>
 		/// ボタンの範囲を取得
 		/// </summary>
+		/// <returns>
+		/// ボタンの範囲
+		/// </returns>
 		const Rect& getRegion() const;
 
 	};
