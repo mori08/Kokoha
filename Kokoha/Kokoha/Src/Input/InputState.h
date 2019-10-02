@@ -6,6 +6,8 @@
 
 namespace Kokoha
 {
+	using ButtonPtrMap = std::unordered_map<String, ButtonPtr>;
+
 	/*
 	InputStateクラス
 	ButtonManagerで使用する入力の状態の基底
@@ -32,8 +34,8 @@ namespace Kokoha
 		/// <summary>
 		/// ボタンを選択します。
 		/// </summary>
-		/// <param name="selectedButton"> 選択中のボタン </param>
-		/// <param name="buttonList">     ボタンのリスト </param>
+		/// <param name="selectedButtonPtr"> 選択中のボタン </param>
+		/// <param name="buttonPtrMap">      ボタンのリスト </param>
 		/// <returns> 
 		/// 決定が入力されたときにそのボタンのキーを返します。
 		/// 何も選択されていないとき無効値を返します。
@@ -43,7 +45,7 @@ namespace Kokoha
 		/// 1フレームに2度以上使用しないでください。
 		/// ボタンが登録されていない状態で使用しないでください。
 		/// </remarks>
-		virtual Optional<String> selectButton(std::shared_ptr<Button> selectedButton, const std::unordered_map<String, std::shared_ptr<Button>>& buttonList) const = 0;
+		virtual Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const = 0;
 
 	};
 }

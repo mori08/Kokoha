@@ -6,6 +6,9 @@
 
 namespace Kokoha
 {
+	class Button;
+	using ButtonPtr = std::shared_ptr<Button>;
+
 	/*
 	Buttonクラス
 	主にButtonManagerで使用する.
@@ -49,7 +52,7 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="direction">         方向                     </param>
 		/// <param name="adjacentButtonPtr"> 隣接するボタンのポインタ </param>
-		void setAdjacentButton(const Direction& direction, std::shared_ptr<Button> adjacentButtonPtr);
+		void setAdjacentButton(const Direction& direction, ButtonPtr adjacentButtonPtr);
 
 		/// <summary>
 		/// 指定された方向に隣接するボタンのポインタの取得

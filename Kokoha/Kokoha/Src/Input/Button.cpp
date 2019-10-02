@@ -12,7 +12,7 @@ Kokoha::Button::Button(const String& name, const Rect& region)
 }
 
 
-inline void Kokoha::Button::setAdjacentButton(const Direction& direction, std::shared_ptr<Button> adjacentButtonPtr)
+inline void Kokoha::Button::setAdjacentButton(const Direction& direction, ButtonPtr adjacentButtonPtr)
 {
 	mAdjacentButtonMap[direction] = adjacentButtonPtr;
 }
