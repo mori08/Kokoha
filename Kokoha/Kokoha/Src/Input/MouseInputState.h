@@ -18,7 +18,7 @@ namespace Kokoha
 
 		bool cancel() const override;
 
-		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const;
+		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const override;
 
 	};
 }
