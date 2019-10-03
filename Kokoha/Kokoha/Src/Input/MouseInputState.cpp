@@ -3,13 +3,13 @@
 
 bool Kokoha::MouseInputState::decesion() const
 {
-	return MouseL.up;
+	return MouseL.up();
 }
 
 
 bool Kokoha::MouseInputState::cancel() const
 {
-	return MouseR.up;
+	return MouseR.up();
 }
 
 
@@ -17,7 +17,7 @@ Optional<String> Kokoha::MouseInputState::selectButton(ButtonPtr selectedButtonP
 {
 	for (auto itr = buttonPtrMap.begin(); itr != buttonPtrMap.end(); ++itr)
 	{
-		if (!itr->second->getRegion().mouseOver) { continue; }
+		if (!itr->second->getRegion().mouseOver()) { continue; }
 
 		selectedButtonPtr = itr->second;
 

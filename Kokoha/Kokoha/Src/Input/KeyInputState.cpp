@@ -17,13 +17,13 @@ namespace
 
 bool Kokoha::KeyInputState::decesion() const
 {
-	return KeyEnter.up;
+	return KeyEnter.up();
 }
 
 
 bool Kokoha::KeyInputState::cancel() const
 {
-	return KeyBackspace.up;
+	return KeyBackspace.up();
 }
 
 
@@ -40,7 +40,7 @@ Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr selectedButtonPtr
 	{
 		ButtonPtr adjacentButtonPtr = selectedButtonPtr->getAdjacentButton(key.second);
 		
-		if (key.first.up || adjacentButtonPtr != nullptr)
+		if (key.first.up() || adjacentButtonPtr != nullptr)
 		{
 			selectedButtonPtr = adjacentButtonPtr;
 		}

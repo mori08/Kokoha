@@ -12,25 +12,25 @@ Kokoha::Button::Button(const String& name, const Rect& region)
 }
 
 
-inline void Kokoha::Button::setAdjacentButton(const Direction& direction, ButtonPtr adjacentButtonPtr)
+void Kokoha::Button::setAdjacentButton(const Direction& direction, ButtonPtr adjacentButtonPtr)
 {
 	mAdjacentButtonMap[direction] = adjacentButtonPtr;
 }
 
 
-inline std::shared_ptr<Kokoha::Button> Kokoha::Button::getAdjacentButton(const Direction& direction)
+Kokoha::ButtonPtr Kokoha::Button::getAdjacentButton(const Direction& direction) const
 {
-	return mAdjacentButtonMap[direction];
+	return mAdjacentButtonMap.find(direction)->second;
 }
 
 
-inline const String& Kokoha::Button::getName() const
+const String& Kokoha::Button::getName() const
 {
 	return mName;
 }
 
 
-inline const Rect& Kokoha::Button::getRegion() const
+const Rect& Kokoha::Button::getRegion() const
 {
 	return mRegion;
 }
