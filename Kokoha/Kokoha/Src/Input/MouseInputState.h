@@ -14,9 +14,15 @@ namespace Kokoha
 	{
 	private:
 
-		bool decesion() const override;
+		bool decesion() const override
+		{
+			return MouseL.up();
+		}
 
-		bool cancel() const override;
+		bool cancel() const override
+		{
+			return MouseR.up();
+		}
 
 		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const override;
 

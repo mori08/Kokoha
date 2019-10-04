@@ -15,9 +15,15 @@ namespace Kokoha
 	{
 	public:
 
-		bool decesion() const override;
+		bool decesion() const override
+		{
+			return KeyEnter.up();
+		}
 
-		bool cancel() const override;
+		bool cancel() const override
+		{
+			return KeyBackspace.up();
+		}
 
 		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap&) const override;
 	};

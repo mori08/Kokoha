@@ -70,7 +70,10 @@ namespace Kokoha
 		/// <returns>
 		/// ボタンの名前
 		/// </returns>
-		const String& getName() const;
+		const String& getName() const
+		{
+			return mName;
+		}
 
 		/// <summary>
 		/// ボタンの範囲を取得
@@ -78,7 +81,10 @@ namespace Kokoha
 		/// <returns>
 		/// ボタンの範囲
 		/// </returns>
-		const Rect& getRegion() const;
+		const Rect& getRegion() const
+		{
+			return mRegion;
+		}
 
 	};
 

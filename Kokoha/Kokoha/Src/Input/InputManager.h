@@ -35,7 +35,11 @@ namespace Kokoha
 		/// <returns>
 		/// インスタンス
 		/// </returns>
-		static InputManager& instatnce();
+		static InputManager& instatnce()
+		{
+			static InputManager inputManager;
+			return inputManager;
+		}
 
 		/// <summary>
 		/// 決定の入力
@@ -43,7 +47,10 @@ namespace Kokoha
 		/// <returns>
 		/// 入力された時 true , そうでないとき false
 		/// </returns>
-		bool decision() const;
+		bool decision() const
+		{
+			return mInputState->decesion();
+		}
 
 		/// <summary>
 		/// キャンセルの入力
@@ -51,7 +58,29 @@ namespace Kokoha
 		/// <returns>
 		/// 入力された時 true , そうでないとき false
 		/// </returns>
-		bool cancel() const;
+		bool cancel() const
+		{
+			return mInputState->cancel();
+		}
+
+		/// <summary>
+		/// ボタンを選択
+		/// </summary>
+		/// <param name="selectedButtonPtr"> 選択中のボタン </param>
+		/// <param name="buttonPtrMap">      ボタンのリスト </param>
+		/// <returns> 
+		/// 決定が入力されたときにそのボタンのキーを返します。
+		/// 何も選択されていないとき無効値を返します。
+		/// </returns>
+		/// <remarks>
+		/// 入力に応じたボタン選択の変更を行います。
+		/// 1フレームに2度以上使用しないでください。
+		/// ボタンが登録されていない状態で使用しないでください。
+		/// </remarks>
+		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
+		{
+			return mInputState->selectButton(selectedButtonPtr, buttonPtrMap);
+		}
 
 		/// <summary>
 		/// 入力の状態を変更します

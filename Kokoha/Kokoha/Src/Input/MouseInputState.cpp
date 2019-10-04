@@ -1,18 +1,6 @@
 #include "MouseInputState.h"
 
 
-bool Kokoha::MouseInputState::decesion() const
-{
-	return MouseL.up();
-}
-
-
-bool Kokoha::MouseInputState::cancel() const
-{
-	return MouseR.up();
-}
-
-
 Optional<String> Kokoha::MouseInputState::selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
 {
 	for (auto itr = buttonPtrMap.begin(); itr != buttonPtrMap.end(); ++itr)

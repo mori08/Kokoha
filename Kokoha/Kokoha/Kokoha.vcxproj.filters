@@ -310,6 +310,9 @@
     <ClCompile Include="Src\Input\InputManager.cpp">
       <Filter>Src\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Input\ButtonManager.cpp">
+      <Filter>Src\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Input\Button.h">
@@ -329,6 +332,9 @@
     </ClInclude>
     <ClInclude Include="Src\MyLibrary.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\ButtonManager.h">
+      <Filter>Src\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

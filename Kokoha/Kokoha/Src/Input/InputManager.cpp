@@ -10,25 +10,6 @@ Kokoha::InputManager::InputManager()
 }
 
 
-Kokoha::InputManager& Kokoha::InputManager::instatnce()
-{
-	static InputManager inputManager;
-	return inputManager;
-}
-
-
-bool Kokoha::InputManager::decision() const
-{
-	return mInputState->decesion();
-}
-
-
-bool Kokoha::InputManager::cancel() const
-{
-	return mInputState->cancel();
-}
-
-
 void Kokoha::InputManager::changeInputState()
 {
 	if ((MouseL | MouseR).up())

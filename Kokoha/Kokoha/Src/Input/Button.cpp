@@ -22,15 +22,3 @@ Kokoha::ButtonPtr Kokoha::Button::getAdjacentButton(const Direction& direction) 
 {
 	return mAdjacentButtonMap.find(direction)->second;
 }
-
-
-const String& Kokoha::Button::getName() const
-{
-	return mName;
-}
-
-
-const Rect& Kokoha::Button::getRegion() const
-{
-	return mRegion;
-}

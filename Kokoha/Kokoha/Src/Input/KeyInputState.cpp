@@ -15,23 +15,11 @@ namespace
 }
 
 
-bool Kokoha::KeyInputState::decesion() const
-{
-	return KeyEnter.up();
-}
-
-
-bool Kokoha::KeyInputState::cancel() const
-{
-	return KeyBackspace.up();
-}
-
-
 Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap&) const
 {
 	if (selectedButtonPtr == nullptr)
 	{
-		printDebug(U"[KeyInputState.cpp] KeyInputState::selectButton");
+		printDebug(U"[KeyInputState::selectButton]");
 		printDebug(U"selectedButtonPtrÇ™nullptrÇ…Ç»Ç¡ÇƒÇ‹Ç∑ÅB");
 		return none;
 	}
