@@ -195,6 +195,7 @@
     <ClCompile Include="Src\Input\MouseInputState.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\MyLibrary.cpp" />
+    <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Input\Button.h" />
@@ -203,7 +204,10 @@
     <ClInclude Include="Src\Input\InputState.h" />
     <ClInclude Include="Src\Input\KeyInputState.h" />
     <ClInclude Include="Src\Input\MouseInputState.h" />
+    <ClInclude Include="Src\MyColor.h" />
     <ClInclude Include="Src\MyLibrary.h" />
+    <ClInclude Include="Src\Scene.h" />
+    <ClInclude Include="Src\Title\TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

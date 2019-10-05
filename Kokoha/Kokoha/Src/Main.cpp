@@ -1,17 +1,41 @@
-﻿#include "Input/InputManager.h"
+﻿#include "MyLibrary.h"
+#include "Scene.h"
+#include "MyColor.h"
+#include "Input/InputManager.h"
+#include "Title/TitleScene.h"
 
 
-using namespace Kokoha;
+namespace
+{
+	// 画面サイズ
+	constexpr Size WINDOW_SIZE(640, 480);
+}
 
 
 void Main()
 {
+	// ウィンドウサイズの設定
+	Window::Resize(WINDOW_SIZE);
+	Window::SetTitle(U"558");
+
+	// 描画設定
+	Scene::SetBackground(Kokoha::MyBlack);
+	Scene::Resize(WINDOW_SIZE);
+
+	// アセット管理
+	Kokoha::registerAsset(U"Assets/");
+
+	// シーンの設定
+	MyApp sceneManager;
+	sceneManager.add<Kokoha::TitleScene>(SceneName::TITLE);
+
+	int x = 0;
+	double y = 0;
+
 	while (System::Update())
 	{
-		InputManager::instatnce().changeInputState();
+		Kokoha::InputManager::instatnce().changeInputState();
 
-		ClearPrint();
-		Print << InputManager::instatnce().decision();
-		Print << InputManager::instatnce().cancel();
+		sceneManager.update();
 	}
 }
