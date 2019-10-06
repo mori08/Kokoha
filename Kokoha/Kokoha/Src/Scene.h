@@ -7,7 +7,7 @@
 // ƒV[ƒ“‚Ì–¼‘O
 enum class SceneName
 {
-	TITLE
+	TITLE,
 };
 
 

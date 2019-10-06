@@ -3,6 +3,7 @@
 #include "MyColor.h"
 #include "Input/InputManager.h"
 #include "Title/TitleScene.h"
+#include "Load/LoadScene.h"
 
 
 namespace

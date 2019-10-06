@@ -83,6 +83,9 @@
     <Filter Include="Src\Title">
       <UniqueIdentifier>{37260bff-ab60-4a2a-b72b-6512548f44da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Load">
+      <UniqueIdentifier>{f68ee795-a9a9-4815-b575-448f3f5566c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -321,6 +324,9 @@
     <ClCompile Include="Src\Title\TitleScene.cpp">
       <Filter>Src\Title</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Load\LoadScene.cpp">
+      <Filter>Src\Load</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Input\Button.h">
@@ -352,6 +358,9 @@
     </ClInclude>
     <ClInclude Include="Src\MyColor.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Load\LoadScene.h">
+      <Filter>Src\Load</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
