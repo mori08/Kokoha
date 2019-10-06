@@ -15,9 +15,9 @@ void Kokoha::ButtonManager::registerButton(const String& name, const Rect& regio
 }
 
 
-void Kokoha::ButtonManager::registerButton(ButtonPtr button)
+void Kokoha::ButtonManager::registerButton(const Button& button)
 {
-	mButtonMap[button->getName()] = button;
+	mButtonMap[button.getName()] = std::make_shared<Button>(button);
 }
 
 

@@ -77,7 +77,7 @@ namespace Kokoha
 		/// 1フレームに2度以上使用しないでください。
 		/// ボタンが登録されていない状態で使用しないでください。
 		/// </remarks>
-		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
+		Optional<String> selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
 		{
 			return mInputState->selectButton(selectedButtonPtr, buttonPtrMap);
 		}

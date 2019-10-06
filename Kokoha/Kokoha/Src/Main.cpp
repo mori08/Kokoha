@@ -24,7 +24,7 @@ void Main()
 
 	// アセット管理
 	Kokoha::registerAsset(U"Assets/");
-	FontAsset::Register(U"15", 15, U"メイリオ");
+	FontAsset::Register(U"20", 20, Typeface::Medium);
 
 	// シーンの設定
 	MyApp sceneManager;

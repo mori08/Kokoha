@@ -2,7 +2,6 @@
 
 
 #include <Siv3D.hpp>
-#include <HamFramework.hpp>
 
 
 namespace Kokoha
@@ -31,4 +30,20 @@ namespace Kokoha
 	/// </remarks>
 	int32 randomFrequency(double frequency);
 
+	/// <summary>
+	/// 内分点を使った値の変更
+	/// </summary>
+	/// <param name="x"> 変更したい値     </param>
+	/// <param name="a"> 目的値           </param>
+	/// <param name="r"> 内分比(0,1) (/s) </param>
+	/// <remarks>
+	/// r には (0,1)の範囲の小数値
+	/// 数値は0に近づけるほど速く移動
+	/// </remarks>
+	template<typename TYPE_X, typename TYPE_A>
+	void internalDividingPoint(TYPE_X& x, const TYPE_A& a, double r)
+	{
+		r = Pow(r, Scene::DeltaTime());
+		x = r * x + (1 - r) * a;
+	}
 }

@@ -24,7 +24,7 @@ namespace Kokoha
 			return MouseR.up();
 		}
 
-		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const override;
+		Optional<String> selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const override;
 
 	};
 }

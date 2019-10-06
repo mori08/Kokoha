@@ -45,7 +45,7 @@ namespace Kokoha
 		/// 1フレームに2度以上使用しないでください。
 		/// ボタンが登録されていない状態で使用しないでください。
 		/// </remarks>
-		virtual Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const = 0;
+		virtual Optional<String> selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const = 0;
 
 	};
 }

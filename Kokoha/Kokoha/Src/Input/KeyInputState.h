@@ -25,6 +25,6 @@ namespace Kokoha
 			return KeyBackspace.up();
 		}
 
-		Optional<String> selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap&) const override;
+		Optional<String> selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap&) const override;
 	};
 }

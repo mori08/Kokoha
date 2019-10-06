@@ -1,7 +1,7 @@
 #include "MouseInputState.h"
 
 
-Optional<String> Kokoha::MouseInputState::selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
+Optional<String> Kokoha::MouseInputState::selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap& buttonPtrMap) const
 {
 	for (auto itr = buttonPtrMap.begin(); itr != buttonPtrMap.end(); ++itr)
 	{

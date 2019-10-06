@@ -55,3 +55,4 @@ int Kokoha::randomFrequency(double frequency)
 	// [0,FPS] < frequency ‚Å 1 ‚ðo—Í
 	return (Random(1.0 / Scene::DeltaTime()) < frequency) ? 1 : 0;
 }
+

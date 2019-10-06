@@ -15,7 +15,7 @@ namespace
 }
 
 
-Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr selectedButtonPtr, const ButtonPtrMap&) const
+Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr& selectedButtonPtr, const ButtonPtrMap&) const
 {
 	if (selectedButtonPtr == nullptr)
 	{
@@ -28,7 +28,7 @@ Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr selectedButtonPtr
 	{
 		ButtonPtr adjacentButtonPtr = selectedButtonPtr->getAdjacentButton(key.second);
 		
-		if (key.first.up() || adjacentButtonPtr != nullptr)
+		if (key.first.up() && adjacentButtonPtr != nullptr)
 		{
 			selectedButtonPtr = adjacentButtonPtr;
 		}

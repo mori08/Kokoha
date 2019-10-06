@@ -54,7 +54,7 @@ namespace Kokoha
 		/// ボタンの登録
 		/// </summary>
 		/// <param name="button"> ボタン </param>
-		void registerButton(ButtonPtr button);
+		void registerButton(const Button& button);
 
 		/// <summary>
 		/// ボタンの垂直方向の隣接関係の設定
