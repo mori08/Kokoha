@@ -7,8 +7,8 @@
 namespace Kokoha
 {
 	class Button;
-	using ButtonPtr = std::shared_ptr<Button>;
-
+	using ButtonPtr     = std::shared_ptr<Button>;
+	using ButtonOnClick = std::function<void()>;
 
 	/*
 	ButtonƒNƒ‰ƒX
@@ -32,10 +32,13 @@ namespace Kokoha
 		std::unordered_map<Direction, ButtonPtr> mAdjacentButtonMap;
 
 		// –¼‘O
-		const String mName;
+		const String  mName;
 
 		// ”ÍˆÍ
-		const Rect   mRegion;
+		const Rect    mRegion;
+
+		// ‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—
+		ButtonOnClick mOnClickFunc;
 
 	public:
 
@@ -84,6 +87,23 @@ namespace Kokoha
 		const Rect& getRegion() const
 		{
 			return mRegion;
+		}
+
+		/// <summary>
+		/// ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—‚Ìİ’è
+		/// </summary>
+		/// <param name="onClickFunc"> ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ— </param>
+		void setOnClickFunc(const ButtonOnClick& onClickFunc)
+		{
+			mOnClickFunc = onClickFunc;
+		}
+
+		/// <summary>
+		/// ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—
+		/// </summary>
+		void OnClick() const
+		{
+			mOnClickFunc();
 		}
 
 	};

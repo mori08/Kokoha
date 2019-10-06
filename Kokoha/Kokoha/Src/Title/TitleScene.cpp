@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "../MyColor.h"
 #include "../MyLibrary.h"
+#include "../Input/ButtonManager.h"
 
 
 namespace
@@ -27,7 +28,9 @@ namespace
 Kokoha::TitleScene::TitleScene(const InitData& init)
 	: IScene(init)
 {
+	ButtonManager::instance().clearButtonList();
 
+	
 }
 
 

@@ -93,20 +93,14 @@ namespace Kokoha
 		void clearButtonList();
 
 		/// <summary>
-		/// ボタンの選択
+		/// ボタンの選択及びボタンを押されたときの処理の呼び出し
 		/// </summary>
-		/// <returns>
-		/// 決定が入力されたときそのボタンの名前を返します.
-		/// 何も選択されていないとき無効値を返します.
-		/// </returns>
 		/// <remarks>
-		/// 入力に応じたボタン選択の変更を行います。
+		/// 入力に応じたボタン選択の変更と
+		/// 決定キーが押されたときそのボタンのOnClick関数を呼びます
 		/// 1フレームに2度以上使わないでください。
 		/// </remarks>
-		Optional<String> selectButton()
-		{
-			return InputManager::instatnce().selectButton(mSelectedButtonPtr, mButtonMap);
-		}
+		void update();
 
 	};
 }

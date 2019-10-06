@@ -4,6 +4,7 @@
 Kokoha::Button::Button(const String& name, const Rect& region)
 	: mName(name)
 	, mRegion(region)
+	, mOnClickFunc([](){})
 {
 	mAdjacentButtonMap[Direction::UP]    = nullptr;
 	mAdjacentButtonMap[Direction::DOWN]  = nullptr;

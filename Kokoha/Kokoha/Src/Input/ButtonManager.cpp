@@ -2,6 +2,13 @@
 #include "../MyLibrary.h"
 
 
+Kokoha::ButtonManager::ButtonManager()
+	: mSelectedButtonPtr(nullptr)
+{
+	
+}
+
+
 void Kokoha::ButtonManager::registerButton(const String& name, const Rect& region)
 {
 	mButtonMap[name] = std::make_shared<Button>(name, region);
@@ -70,4 +77,15 @@ void Kokoha::ButtonManager::clearButtonList()
 {
 	mSelectedButtonPtr = nullptr;
 	mButtonMap.clear();
+}
+
+
+void Kokoha::ButtonManager::update()
+{
+	Optional<String> clickedButtonName = InputManager::instatnce().selectButton(mSelectedButtonPtr, mButtonMap);
+
+	if (clickedButtonName && mButtonMap.count(*clickedButtonName))
+	{
+		mButtonMap[*clickedButtonName]->OnClick();
+	}
 }

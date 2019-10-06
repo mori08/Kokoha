@@ -24,13 +24,11 @@ void Main()
 
 	// アセット管理
 	Kokoha::registerAsset(U"Assets/");
+	FontAsset::Register(U"15", 15, U"メイリオ");
 
 	// シーンの設定
 	MyApp sceneManager;
 	sceneManager.add<Kokoha::TitleScene>(SceneName::TITLE);
-
-	int x = 0;
-	double y = 0;
 
 	while (System::Update())
 	{
