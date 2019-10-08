@@ -73,6 +73,20 @@ void Kokoha::ButtonManager::setSelectedButton(const String& name)
 }
 
 
+void Kokoha::ButtonManager::setOnClickFunc(const String& name, ButtonOnClick onClickFunc)
+{
+	if (!mButtonMap.count(name))
+	{
+		printDebug(U"[ButtonManager::setSelectedButton]");
+		printDebug(U"‘¶Ý‚µ‚È‚¢ƒ{ƒ^ƒ“‚ªŽw’è‚³‚ê‚Ü‚µ‚½");
+		printDebug(U"name > " + name);
+		return;
+	}
+
+	mButtonMap[name]->setOnClickFunc(onClickFunc);
+}
+
+
 void Kokoha::ButtonManager::clearButtonList()
 {
 	mSelectedButtonPtr = nullptr;

@@ -7,7 +7,8 @@
 // シーンの名前
 enum class SceneName
 {
-	TITLE,
+	TITLE,      // タイトル
+	SAVE_RECORD // レコードのセーブ
 };
 
 

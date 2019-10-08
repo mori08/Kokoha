@@ -1,9 +1,10 @@
 ﻿#include "MyLibrary.h"
-#include "Scene.h"
 #include "MyColor.h"
 #include "Input/InputManager.h"
+
+// シーン
 #include "Title/TitleScene.h"
-#include "Load/LoadScene.h"
+#include "Record/SaveRecordScene.h"
 
 
 namespace
@@ -29,7 +30,8 @@ void Main()
 
 	// シーンの設定
 	MyApp sceneManager;
-	sceneManager.add<Kokoha::TitleScene>(SceneName::TITLE);
+	sceneManager.add<Kokoha::TitleScene>     (SceneName::TITLE);
+	sceneManager.add<Kokoha::SaveRecordScene>(SceneName::SAVE_RECORD);
 
 	while (System::Update())
 	{

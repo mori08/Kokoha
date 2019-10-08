@@ -20,6 +20,9 @@ namespace Kokoha
 		// ロード中のとき true , 終了したとき false
 		bool mIsLoading;
 
+		// ロード中に表示する文字列
+		String mText;
+
 	protected:
 
 		// ロードするスレッド
@@ -27,7 +30,13 @@ namespace Kokoha
 
 	public:
 
-		LoadScene(const InitData& init);
+		/// <summary>
+		/// ロードを行うシーンの基底
+		/// </summary>
+		/// <param name="text">
+		/// ロード中に表示するテキスト
+		/// </param>
+		LoadScene(const InitData& init,const String& text = U"Loading");
 
 		virtual ~LoadScene();
 
@@ -46,6 +55,10 @@ namespace Kokoha
 		/// <summary>
 		/// mLoadThreadで動かす関数
 		/// </summary>
+		/// <remarks>
+		/// ロード中はゲームを終了させることができなくなるので
+		/// 現実的な時間で終わる処理を書いてください
+		/// </remarks>
 		virtual void load() = 0;
 
 		/// <summary>

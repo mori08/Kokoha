@@ -20,9 +20,10 @@ namespace
 }
 
 
-Kokoha::LoadScene::LoadScene(const InitData& init)
+Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	: IScene(init)
 	, mIsLoading(true)
+	, mText(text)
 {
 	mLoadThread = std::thread
 	(
@@ -74,7 +75,7 @@ void Kokoha::LoadScene::draw() const
 
 	static double t = 0;
 	t += Scene::DeltaTime();
-	FontAsset(U"20")(U"Loading" + String(U"...").substr(0,(int32)t%MAX_DOT_NUM)).draw(TEXT_POS);
+	FontAsset(U"20")(mText + String(U"...").substr(0,(int32)t%MAX_DOT_NUM)).draw(TEXT_POS);
 }
 
 
