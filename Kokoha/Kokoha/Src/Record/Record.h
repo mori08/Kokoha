@@ -24,6 +24,9 @@ namespace Kokoha
 		// 値
 		int32 mValue;
 
+		// 桁数の合計値
+		static int32 sDigitTotal;
+
 	public:
 
 		/// <summary>
@@ -65,7 +68,24 @@ namespace Kokoha
 		/// 暗号化用のリストにこのレコードを追加
 		/// </summary>
 		/// <param name="dataList"> 暗号化用のリスト </param>
-		void addRecordToEncryptionList(std::list<int>& dataList) const;
+		void addRecordToEncryptionList(std::list<int32>& dataList) const;
+
+		/// <summary>
+		/// 復号可用のリストから値を設定
+		/// </summary>
+		/// <param name="dataList"> 復号化用のリスト </param>
+		void setValueFromDecryption(std::list<int32>& dataList);
+
+		/// <summary>
+		/// 桁数の合計値の取得
+		/// </summary>
+		/// <returns>
+		/// 桁数の合計値
+		/// </returns>
+		static int32 getDigitTotal()
+		{
+			return sDigitTotal;
+		}
 
 	};
 }

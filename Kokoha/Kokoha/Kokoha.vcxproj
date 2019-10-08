@@ -196,6 +196,7 @@
     <ClCompile Include="Src\Load\LoadScene.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\MyLibrary.cpp" />
+    <ClCompile Include="Src\Record\LoadRecordScene.cpp" />
     <ClCompile Include="Src\Record\Record.cpp" />
     <ClCompile Include="Src\Record\RecordManager.cpp" />
     <ClCompile Include="Src\Record\SaveRecordScene.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="Src\Load\LoadScene.h" />
     <ClInclude Include="Src\MyColor.h" />
     <ClInclude Include="Src\MyLibrary.h" />
+    <ClInclude Include="Src\Record\LoadRecordScene.h" />
     <ClInclude Include="Src\Record\Record.h" />
     <ClInclude Include="Src\Record\RecordManager.h" />
     <ClInclude Include="Src\Record\SaveRecordScene.h" />

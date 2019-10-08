@@ -19,7 +19,7 @@ namespace
 
 Kokoha::RecordManager::RecordManager()
 {
-	mRecordMap.try_emplace(U"TestFlag" , std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"TestFlag" , std::move(Record(1, 1)));
 	mRecordMap.try_emplace(U"TestValue", std::move(Record(3, 5)));
 }
 
@@ -39,7 +39,7 @@ Kokoha::RecordManager::LoadResult Kokoha::RecordManager::load()
 
 	if (reader.readLine(line))
 	{
-		// 復号
+		decryption(line);
 	}
 
 	return LoadResult::ERROR;
@@ -63,10 +63,20 @@ void Kokoha::RecordManager::save()
 }
 
 
+void Kokoha::RecordManager::printAllRecord()
+{
+	ClearPrint();
+	for (auto& record : mRecordMap)
+	{
+		Print << record.first << U" : " << record.second.get();
+	}
+}
+
+
 String Kokoha::RecordManager::encryption() const
 {
-	// 暗号化用のリスト
-	std::list<int> dataList;
+	// 暗号用のリスト
+	std::list<int32> dataList;
 
 	// 各レコードから 0 1 のリストを追加
 	for (const auto& record : mRecordMap)
@@ -81,14 +91,14 @@ String Kokoha::RecordManager::encryption() const
 		data = 2 * (Random(0x1, HALF)) - data;
 	}
 	
-	// 0xFを全てにかける
+	// 全てを0xFかける
 	for (auto& data : dataList)
 	{
 		data *= MUL;
 	}
 
-	// 鍵を生成する (鍵は0x0にはしない)
-	int32 key = Random(0x1, MAX_KEY);
+	// 鍵を生成する 
+	int32 key = Random(0x0, MAX_KEY);
 
 	// リストの先頭と末尾に鍵を追加
 	dataList.emplace_front(key);
@@ -102,7 +112,7 @@ String Kokoha::RecordManager::encryption() const
 		previousOne = data;
 	}
 	
-	// 文字列へ変換
+	// 整数値の配列 -> 文字列
 	String rtn;
 	for (const auto& data : dataList)
 	{
@@ -110,4 +120,74 @@ String Kokoha::RecordManager::encryption() const
 	}
 
 	return std::move(rtn);
+}
+
+
+bool Kokoha::RecordManager::decryption(const String& str)
+{
+	// 復号用のリスト
+	std::list<int32> dataList;
+
+	// 文字列 -> 整数値の配列
+	for (size_t i = 0; i < str.length(); i += ONE_DATA_LENGTH)
+	{
+		auto data = ParseIntOpt<int32>(str.substr(i, ONE_DATA_LENGTH), Arg::radix = BASE);
+		if (!data)
+		{
+			return false; // 変換できないとき失敗
+		}
+		dataList.emplace_back(*data);
+	}
+
+	// 前の項の値と mod 0x100 で 減算
+	int32 previouseOne = 0;
+	for (auto& data : dataList)
+	{
+		int32 temp = data;
+		data = (data - previouseOne + MOD) % MOD;
+		previouseOne = temp;
+	}
+
+	// 先頭・末尾の鍵を削除
+	if (*dataList.begin() != *dataList.rbegin())
+	{
+		return false; // 鍵が一致しないとき失敗
+	}
+	dataList.pop_front();
+	dataList.pop_back();
+
+	// サイズ と レコードの合計桁数 が一致しているか確認
+	if (dataList.size() != Record::getDigitTotal())
+	{
+		return false; // 一致しないとき失敗
+	}
+
+	// 全てを0xFで割る
+	for (auto& data : dataList)
+	{
+		if (data % MUL != 0)
+		{
+			return false; // 割り切れないとき失敗
+		}
+		data /= MUL;
+		if (data <= 0x0 || data > BASE)
+		{
+			return false; // [0x1,0x10]の範囲にないとき失敗
+		}
+	}
+
+	// 偶数 -> 0
+	// 奇数 -> 1
+	for (auto& data : dataList)
+	{
+		data %= 2;
+	}
+
+	// レコードに格納
+	for (auto& record : mRecordMap)
+	{
+		record.second.setValueFromDecryption(dataList);
+	}
+
+	return true;
 }

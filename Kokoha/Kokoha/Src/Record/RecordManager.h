@@ -65,6 +65,14 @@ namespace Kokoha
 		/// </summary>
 		void save();
 
+		/// <summary>
+		/// 管理しているレコードの内容の表示
+		/// </summary>
+		/// <remarks>
+		/// デバッグ用
+		/// </remarks>
+		void printAllRecord();
+
 	private:
 
 		/// <summary>
@@ -74,6 +82,13 @@ namespace Kokoha
 		/// 暗号化した後の文字列
 		/// </returns>
 		String encryption() const;
+
+		/// <summary>
+		/// 暗号文を復号, フラグのリストに格納
+		/// </summary>
+		/// <param name="str"> 暗号文 </param>
+		/// <returns> 復号に成功したとき true , そうでないとき false </returns>
+		bool decryption(const String& str);
 
 	};
 }

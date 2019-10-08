@@ -49,7 +49,10 @@ void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
 
-	mLoadThread.join();
+	if (mLoadThread.joinable())
+	{
+		mLoadThread.join();
+	}
 
 	complete();
 }
