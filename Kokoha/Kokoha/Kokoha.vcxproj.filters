@@ -89,6 +89,12 @@
     <Filter Include="Src\Record">
       <UniqueIdentifier>{1f803b07-8035-4008-ab5a-1531410abda9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Event">
+      <UniqueIdentifier>{338fb877-cea1-48cb-9185-52df711f36a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Event\Event">
+      <UniqueIdentifier>{c9dc0473-c119-4a2a-a5c7-28974e97f10c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -342,6 +348,7 @@
     <ClCompile Include="Src\Record\LoadRecordScene.cpp">
       <Filter>Src\Record</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\EventManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Input\Button.h">
@@ -390,7 +397,13 @@
       <Filter>Src\Record</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Event\Event.h">
-      <Filter>Src</Filter>
+      <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\EventManager.h">
+      <Filter>Src\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Event\EmptyEvent.h">
+      <Filter>Src\Event\Event</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

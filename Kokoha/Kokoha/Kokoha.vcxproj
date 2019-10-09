@@ -188,6 +188,7 @@
     <Xml Include="App\example\test.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Event\EventManager.cpp" />
     <ClCompile Include="Src\Input\Button.cpp" />
     <ClCompile Include="Src\Input\ButtonManager.cpp" />
     <ClCompile Include="Src\Input\InputManager.cpp" />
@@ -203,6 +204,8 @@
     <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Event\EventManager.h" />
+    <ClInclude Include="Src\Event\Event\EmptyEvent.h" />
     <ClInclude Include="Src\Event\Event\Event.h" />
     <ClInclude Include="Src\Input\Button.h" />
     <ClInclude Include="Src\Input\ButtonManager.h" />

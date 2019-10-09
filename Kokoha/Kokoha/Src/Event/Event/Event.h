@@ -16,7 +16,7 @@ namespace Kokoha
 	イベントの種類ごとにこのクラスの派生クラスを作成する
 
 	このクラスの派生クラスを作るときは
-	EventManagerのsetAllEvent関数に登録する
+	EventManagerのコンストラクタに登録する
 	*/
 	class Event
 	{
