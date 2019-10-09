@@ -203,6 +203,7 @@
     <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Event\Event\Event.h" />
     <ClInclude Include="Src\Input\Button.h" />
     <ClInclude Include="Src\Input\ButtonManager.h" />
     <ClInclude Include="Src\Input\InputManager.h" />
