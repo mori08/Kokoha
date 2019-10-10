@@ -7,8 +7,8 @@
 
 namespace 
 {
-	const int32 EVENT_NAME_COLUMN = 0;         // CSVファイル中のイベントの名前を記述する列数
-	const int32 EVENT_ARG_COLUMN  = 1;         // CSVファイル中のイベントの詳細を最初に記述する列数
+	constexpr int32 EVENT_NAME_COLUMN = 0;     // CSVファイル中のイベントの名前を記述する列数
+	constexpr int32 EVENT_ARG_COLUMN  = 1;     // CSVファイル中のイベントの詳細を最初に記述する列数
 	const String EVENT_ARG_END  = U"#";        // CSVファイル中でイベントの詳細の最後に使う文字列
 	const String RUN_EVENT_KEY  = U"Run";      // CSVファイル中で登録済みのイベントを全て実行する命令
 	const String FUNC_EVENT_KEY = U"Function"; // CSVファイル中で別CSVファイルのイベントを読み込む命令
@@ -18,7 +18,7 @@ namespace
 void Kokoha::EventManager::init()
 {
 	// イベントのキューを空にします
-	while (!mEventQueue.empty) { mEventQueue.pop(); }
+	while (!mEventQueue.empty()) { mEventQueue.pop(); }
 
 	// 空イベントをキューに入れます
 	mEventQueue.push(std::make_unique<EmptyEvent>());

@@ -201,6 +201,7 @@
     <ClCompile Include="Src\Record\Record.cpp" />
     <ClCompile Include="Src\Record\RecordManager.cpp" />
     <ClCompile Include="Src\Record\SaveRecordScene.cpp" />
+    <ClCompile Include="Src\Slice\SliceTexture.cpp" />
     <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +222,8 @@
     <ClInclude Include="Src\Record\RecordManager.h" />
     <ClInclude Include="Src\Record\SaveRecordScene.h" />
     <ClInclude Include="Src\Scene.h" />
+    <ClInclude Include="Src\Slice\Linearly.h" />
+    <ClInclude Include="Src\Slice\SliceTexture.h" />
     <ClInclude Include="Src\Title\TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
