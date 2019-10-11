@@ -16,11 +16,11 @@ namespace Kokoha
 	{
 	private:
 
-		// 何秒で値を変更するか
-		const double mTimeSecond;
+		// 何秒で値を変更するか (DeltaTimeを下回ると1フレームでmRateを1にする)
+		double mTimeSecond;
 
 		// { 始点, 終点-始点 }
-		const std::pair<Type, Type> mValue;
+		std::pair<Type, Type> mValue;
 
 		// 内分比 [0,1]
 		double mRate;
@@ -37,6 +37,26 @@ namespace Kokoha
 			, mValue(value)
 			, mRate(0)
 		{
+		}
+
+		/// <summary>
+		/// 線形補完
+		/// </summary>
+		/// <param name="timeSecond"> 何秒で値を変更するか </param>
+		/// <param name="value">      終点                 </param>
+		Linearly(double timeSecond, Type value)
+			: mTimeSecond(timeSecond)
+			, mValue({ Type(),value })
+			, mRate(0)
+		{
+		}
+
+		/// <summary>
+		/// 始点に戻す
+		/// </summary>
+		void restart()
+		{
+			mRate = 0;
 		}
 
 		/// <summary>
@@ -61,6 +81,13 @@ namespace Kokoha
 	template<typename Type>
 	inline bool Linearly<Type>::update()
 	{
+		double deltaTime = Scene::DeltaTime();
+		if (deltaTime > mTimeSecond)
+		{
+			mRate = 1;
+			return true;
+		}
+
 		mRate += Scene::DeltaTime() / mTimeSecond;
 		
 		if (mRate > 1)
