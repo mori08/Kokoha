@@ -31,10 +31,11 @@ namespace Kokoha
 		/// 線形補完
 		/// </summary>
 		/// <param name="timeSecond"> 何秒で値を変更するか </param>
-		/// <param name="value">      { 始点, 終点-始点 }  </param>
-		Linearly(double timeSecond, const std::pair<Type, Type> value)
+		/// <param name="begin">      始点                 </param>
+		/// <param name="movement">   終点 - 始点          </param>
+		Linearly(double timeSecond, const Type& begin, const Type& movement)
 			: mTimeSecond(timeSecond)
-			, mValue(value)
+			, mValue({ begin,movement })
 			, mRate(0)
 		{
 		}
