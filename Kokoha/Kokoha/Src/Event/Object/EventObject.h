@@ -18,7 +18,7 @@ namespace Kokoha
 	描画・移動・その他アクションを実装
 
 	このクラスの派生クラスを作るときは
-	GenerateObjectのsetObjectMap関数に登録
+	GenerateObjectのsetAllGenerateObjectFunc関数に登録
 	*/
 	class EventObject
 	{
@@ -80,4 +80,8 @@ namespace Kokoha
 		void setLinearMove(double time, const Point& movement, bool wait);
 
 	};
+
+
+	// オブジェクトのポインタ
+	using EventObjectPtr = std::unique_ptr<EventObject>;
 }

@@ -2,6 +2,7 @@
 
 
 #include "Event/Event.h"
+#include "Object/EventObject.h"
 #include <queue>
 
 
@@ -28,6 +29,9 @@ namespace Kokoha
 
 		// イベントを生成する関数の連想配列
 		std::unordered_map<String, MakeEventFunc> mMakeEventMap;
+
+		// オブジェクトと文字列の連想配列
+		std::map<String, EventObjectPtr> mObjectMap;
 
 	private:
 
@@ -102,6 +106,18 @@ namespace Kokoha
 		/// isCompleted関数での判定待ちは行いません.
 		/// </remarks>
 		void runAllEvent();
+
+	public:
+
+		/// <summary>
+		/// オブジェクトの生成
+		/// </summary>
+		/// <param name="name">   名前         </param>
+		/// <param name="object"> オブジェクト </param>
+		void generateObject(const String& name, EventObjectPtr&& object)
+		{
+			mObjectMap.try_emplace(name, std::move(object));
+		}
 
 	};
 

@@ -3,6 +3,7 @@
 
 // 各イベント
 #include "Event/EmptyEvent.h"
+#include "Event/GenerateEvent.h"
 
 
 namespace 
@@ -12,6 +13,12 @@ namespace
 	const String EVENT_ARG_END  = U"#";        // CSVファイル中でイベントの詳細の最後に使う文字列
 	const String RUN_EVENT_KEY  = U"Run";      // CSVファイル中で登録済みのイベントを全て実行する命令
 	const String FUNC_EVENT_KEY = U"Function"; // CSVファイル中で別CSVファイルのイベントを読み込む命令
+}
+
+
+Kokoha::EventManager::EventManager()
+{
+	setEvent<GenerateEvent>(U"Generate");
 }
 
 

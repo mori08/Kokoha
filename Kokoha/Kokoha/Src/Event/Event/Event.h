@@ -40,5 +40,22 @@ namespace Kokoha
 		/// <returns> 終了しているとき true , そうでないとき false </returns>
 		virtual bool isCompleted() const = 0;
 
+
+	protected: // load関数でのエラー確認
+
+		/// <summary>
+		/// 引数のサイズの確認
+		/// </summary>
+		/// <param name="argSize">       引数のサイズ </param>
+		/// <param name="expectedValue"> 期待値       </param>
+		static bool checkArgSize(size_t argSize, size_t expectedValue);
+
+		/// <summary>
+		/// 文字列から整数値への変換
+		/// </summary>
+		/// <param name="integer"> 変換後の整数値の代入先 </param>
+		/// <param name="str">     文字列                 </param>
+		static bool toInteger(int32& integer, const String& str);
+
 	};
 }
