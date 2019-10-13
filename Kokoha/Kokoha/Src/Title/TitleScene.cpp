@@ -58,7 +58,7 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 	ButtonManager::instance().setOnClickFunc
 	(
 		NEWGAME_BUTTON.getName(), 
-		[this]() { changeScene(SceneName::SAVE_RECORD); }
+		[this]() { changeScene(SceneName::LOAD_EVENT); }
 	);
 	ButtonManager::instance().setOnClickFunc
 	(

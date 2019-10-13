@@ -18,7 +18,10 @@ namespace
 
 Kokoha::EventManager::EventManager()
 {
+	// イベントの登録
 	setEvent<GenerateEvent>(U"Generate");
+
+	GenerateEvent::setAllGenerateObjectFunc();
 }
 
 
@@ -65,7 +68,7 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 			}
 			continue;
 		}
-
+		
 		// イベントがあるかを確認
 		if (!mMakeEventMap.count(eventName))
 		{
@@ -92,17 +95,17 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 			// 詳細に追加
 			eventArg.emplace_back(csv[loadingRow][column]);
 		}
-
+		
 		// イベントのポインタの生成
 		EventPtr eventPtr = mMakeEventMap[eventName]();
-
+		
 		// イベントの詳細の読み込み
 		if (!eventPtr->load(eventArg))
 		{
 			printDebug(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 			return false;
 		}
-
+		
 		// キューにイベントを追加
 		mEventQueue.push(std::move(eventPtr));
 	}

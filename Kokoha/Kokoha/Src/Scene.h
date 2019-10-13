@@ -8,15 +8,17 @@
 enum class SceneName
 {
 	TITLE,       // タイトル
+	
 	SAVE_RECORD, // レコードのセーブ
-	LOAD_RECORD  // レコードのロード
+	LOAD_RECORD, // レコードのロード
+
+	LOAD_EVENT   // イベントのロード
 };
 
 
 // ゲームデータ
 struct GameData
 {
-
 };
 
 

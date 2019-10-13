@@ -363,13 +363,18 @@
     <ClCompile Include="Src\Event\Object\EventObject.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Event\Event\GenerateEvent.cpp">
-      <Filter>Src\Event\Object</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Event\Event\Event.cpp">
       <Filter>Src\Event\Event</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Event\Object\TestEventObject.cpp" />
+    <ClCompile Include="Src\Event\Object\TestEventObject.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Event\GenerateEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Input\Button.h">
@@ -438,8 +443,11 @@
     <ClInclude Include="Src\Event\Event\GenerateEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Event\Scene\LoadEventScene.h">
+      <Filter>Src\Event</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Event\Object\TestEventObject.h">
-      <Filter>Src\Event\Event</Filter>
+      <Filter>Src\Event\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
