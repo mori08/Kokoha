@@ -19,11 +19,11 @@ void Kokoha::EventObject::update()
 }
 
 
-void Kokoha::EventObject::draw() const
+void Kokoha::EventObject::draw(const Point& cameraPos) const
 {
 	if (mIsHidden) { return; }
 
-	mSlide.getTexture().draw(mPos);
+	mSlide.getTexture().draw(mPos + cameraPos);
 }
 
 

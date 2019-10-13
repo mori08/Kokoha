@@ -7,6 +7,7 @@
 #include "Record/SaveRecordScene.h"
 #include "Record/LoadRecordScene.h"
 #include "Event/Scene/LoadEventScene.h"
+#include "Event/Scene/EventScene.h"
 
 
 namespace
@@ -36,6 +37,7 @@ void Main()
 	sceneManager.add<Kokoha::SaveRecordScene>(SceneName::SAVE_RECORD);
 	sceneManager.add<Kokoha::LoadRecordScene>(SceneName::LOAD_RECORD);
 	sceneManager.add<Kokoha::LoadEventScene> (SceneName::LOAD_EVENT);
+	sceneManager.add<Kokoha::EventScene>     (SceneName::EVENT);
 
 	while (System::Update())
 	{

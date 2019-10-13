@@ -1,5 +1,6 @@
 #include "EventManager.h"
 #include "../MyLibrary.h"
+#include "../MyColor.h"
 
 // 各イベント
 #include "Event/EmptyEvent.h"
@@ -133,7 +134,12 @@ void Kokoha::EventManager::update()
 
 void Kokoha::EventManager::draw() const
 {
+	Scene::Rect().draw(MyWhite);
 
+	for (const auto& object : mObjectMap)
+	{
+		object.second->draw(Point::Zero());
+	}
 }
 
 

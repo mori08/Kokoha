@@ -7,8 +7,8 @@
 namespace Kokoha
 {
 	// çï
-	constexpr Color MyBlack(15, 15, 15);
+	constexpr Color MyBlack(0x0F, 0x0F, 0x0F);
 
 	// îí
-	constexpr Color MyWhite(240, 240, 240);
+	constexpr Color MyWhite(0xF0, 0xF0, 0xF0);
 }

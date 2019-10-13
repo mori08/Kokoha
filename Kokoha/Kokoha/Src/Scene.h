@@ -12,7 +12,8 @@ enum class SceneName
 	SAVE_RECORD, // レコードのセーブ
 	LOAD_RECORD, // レコードのロード
 
-	LOAD_EVENT   // イベントのロード
+	LOAD_EVENT,  // イベントのロード
+	EVENT        // イベントの実行
 };
 
 

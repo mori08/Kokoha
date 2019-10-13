@@ -24,7 +24,7 @@ SceneName Kokoha::LoadEventScene::complete()
 {
 	if (mIsScuccess)
 	{
-		return SceneName::TITLE;
+		return SceneName::EVENT;
 	}
 
 	return SceneName::TITLE;

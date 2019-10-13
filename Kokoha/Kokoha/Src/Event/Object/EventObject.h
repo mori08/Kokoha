@@ -65,11 +65,12 @@ namespace Kokoha
 		/// <summary>
 		/// 描画
 		/// </summary>
+		/// <param name="cameraPos"> カメラの座標 </param> 
 		/// <remarks>
 		/// 派生クラスでオーバーロードするとき
 		/// mIsHiddenがtrueのとき何も描画しないように注意
 		/// </remarks>
-		virtual void draw() const;
+		virtual void draw(const Point& cameraPos) const;
 
 		/// <summary>
 		/// オブジェクトの移動の設定
