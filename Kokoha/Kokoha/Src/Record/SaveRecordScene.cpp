@@ -8,13 +8,14 @@ Kokoha::SaveRecordScene::SaveRecordScene(const InitData& init)
 }
 
 
-void Kokoha::SaveRecordScene::load()
+Kokoha::ErrorMessage Kokoha::SaveRecordScene::load()
 {
 	RecordManager::instatnce().save();
+	return none;
 }
 
 
-void Kokoha::SaveRecordScene::complete()
+SceneName Kokoha::SaveRecordScene::complete()
 {
-	changeScene(SceneName::TITLE);
+	return SceneName::TITLE;
 }

@@ -1,12 +1,18 @@
 #pragma once
 
 
-#include "../Scene.h"
-#include <thread>
+# include "../Scene.h"
+# include <thread>
+# include <future>
+# include <utility>
 
 
 namespace Kokoha
 {
+	// エラーメッセージ
+	using ErrorMessage = Optional<String>;
+
+
 	/*
 	LoadSceneクラス
 	時間のかかる処理を別スレッドで行うシーン
@@ -23,10 +29,11 @@ namespace Kokoha
 		// ロード中に表示する文字列
 		String mText;
 
-	protected:
-
 		// ロードするスレッド
 		std::thread mLoadThread;
+		
+		// エラーメッセージの取得
+		std::future<ErrorMessage> mErrorMessageFuture;
 
 	public:
 
@@ -57,17 +64,17 @@ namespace Kokoha
 		/// </summary>
 		/// <remarks>
 		/// ロード中はゲームを終了させることができなくなるので
-		/// 現実的な時間で終わる処理を書いてください
+		/// 現実的な時間で終わる処理を書く.
 		/// </remarks>
-		virtual void load() = 0;
+		virtual ErrorMessage load() = 0;
 
 		/// <summary>
 		/// スレッドの処理が終了したときに行う処理
 		/// </summary>
-		/// <remarks>
-		/// 必ずシーン遷移を行う
-		/// </remarks>
-		virtual void complete() = 0;
+		/// <returns>
+		/// 遷移先のシーン
+		/// </returns>
+		virtual SceneName complete() = 0;
 
 	};
 

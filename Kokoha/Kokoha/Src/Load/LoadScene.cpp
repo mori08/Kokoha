@@ -1,5 +1,6 @@
 #include "LoadScene.h"
 #include "../MyColor.h"
+#include "../MyLibrary.h"
 
 
 namespace
@@ -25,13 +26,17 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	, mIsLoading(true)
 	, mText(text)
 {
+	// ï ÉXÉåÉbÉhÇÃçÏê¨
+	std::promise<ErrorMessage> p;
+	mErrorMessageFuture = p.get_future();
 	mLoadThread = std::thread
 	(
-		[this]()
+		[this](std::promise<ErrorMessage> p)
 		{
-			load();
+			p.set_value(load());
 			mIsLoading = false;
-		}
+		},
+		std::move(p)
 	);
 }
 
@@ -49,12 +54,15 @@ void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
 
-	if (mLoadThread.joinable())
+	if (const auto errorMessage = mErrorMessageFuture.get())
 	{
-		mLoadThread.join();
+		printDebug(errorMessage.value());
 	}
 
-	complete();
+	if (!changeScene(complete()))
+	{
+		changeScene(SceneName::TITLE);
+	}
 }
 
 

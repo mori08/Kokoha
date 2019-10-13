@@ -18,9 +18,9 @@ namespace Kokoha
 
 	private:
 
-		void load() override;
+		ErrorMessage load() override;
 
-		void complete() override;
+		SceneName complete() override;
 
 	};
 }

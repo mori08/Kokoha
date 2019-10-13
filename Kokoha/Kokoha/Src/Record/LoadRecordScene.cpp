@@ -8,13 +8,14 @@ Kokoha::LoadRecordScene::LoadRecordScene(const InitData& init)
 }
 
 
-void Kokoha::LoadRecordScene::load()
+Kokoha::ErrorMessage Kokoha::LoadRecordScene::load()
 {
 	RecordManager::instatnce().load();
+	return none;
 }
 
 
-void Kokoha::LoadRecordScene::complete()
+SceneName Kokoha::LoadRecordScene::complete()
 {
-	changeScene(SceneName::TITLE);
+	return SceneName::TITLE;
 }

@@ -32,6 +32,12 @@ void Kokoha::EventManager::init()
 
 	// 空イベントをキューに入れます
 	mEventQueue.push(std::make_unique<EmptyEvent>());
+
+	// オブジェクトを空にします
+	mObjectMap.clear();
+
+	// エラーメッセージをリセットします
+	mErrorMessage = U"";
 }
 
 
@@ -40,8 +46,8 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 	CSVData csv(eventFileName);
 	if (csv.isEmpty())
 	{
-		printDebug(U"[EventManger::load]");
-		printDebug(eventFileName + U" を読み込めませんでした.");
+		addErrorMessage(U"[EventManger::load]");
+		addErrorMessage(eventFileName + U" を読み込めませんでした.");
 		return false;
 	}
 
@@ -63,7 +69,7 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 			String funcName = csv[loadingRow][EVENT_ARG_COLUMN];
 			if (!load(funcName))
 			{
-				printDebug(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
+				addErrorMessage(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 				return false;
 			}
 			continue;
@@ -72,8 +78,8 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 		// イベントがあるかを確認
 		if (!mMakeEventMap.count(eventName))
 		{
-			printDebug(U"イベント<" + eventName + U">は存在しません.");
-			printDebug(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
+			addErrorMessage(U"イベント<" + eventName + U">は存在しません.");
+			addErrorMessage(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 			return false;
 		}
 
@@ -84,8 +90,8 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 			// 終了文字が見つからないときエラー
 			if (column >= csv.columns(loadingRow))
 			{
-				printDebug(U"終了文字 " + EVENT_ARG_END + U" がありません.");
-				printDebug(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
+				addErrorMessage(U"終了文字 " + EVENT_ARG_END + U" がありません.");
+				addErrorMessage(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 				return false;
 			}
 
@@ -102,7 +108,7 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 		// イベントの詳細の読み込み
 		if (!eventPtr->load(eventArg))
 		{
-			printDebug(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
+			addErrorMessage(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 			return false;
 		}
 		

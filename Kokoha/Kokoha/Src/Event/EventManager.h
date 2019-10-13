@@ -33,6 +33,9 @@ namespace Kokoha
 		// オブジェクトと文字列の連想配列
 		std::map<String, EventObjectPtr> mObjectMap;
 
+		// ロードのエラーメッセージ
+		String mErrorMessage;
+
 	private:
 
 		EventManager();
@@ -69,6 +72,26 @@ namespace Kokoha
 		/// 成功したとき true, 失敗したとき false
 		/// </returns>
 		bool load(const String& eventFileName);
+
+		/// <summary>
+		/// エラーメッセージの追加
+		/// </summary>
+		/// <param name="str"> 追加する文字列 </param>
+		void addErrorMessage(const String& str)
+		{
+			mErrorMessage += str + U"\n";
+		}
+
+		/// <summary>
+		/// エラーメッセージの取得
+		/// </summary>
+		/// <returns>
+		/// エラーメッセージ
+		/// </returns>
+		const String& getErrorMessage()
+		{
+			return mErrorMessage;
+		}
 
 		/// <summary>
 		/// 更新

@@ -101,6 +101,9 @@
     <Filter Include="Src\Slice">
       <UniqueIdentifier>{da4b9ba5-8848-4854-acec-b2919dbcf54b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Event\Scene">
+      <UniqueIdentifier>{13676a0b-d32d-4bfc-8715-bf73eedd1a5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -369,11 +372,11 @@
     <ClCompile Include="Src\Event\Object\TestEventObject.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp">
-      <Filter>Src\Event\Object</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Event\Event\GenerateEvent.cpp">
       <Filter>Src\Event\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp">
+      <Filter>Src\Event\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -443,11 +446,11 @@
     <ClInclude Include="Src\Event\Event\GenerateEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Event\Scene\LoadEventScene.h">
-      <Filter>Src\Event</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Event\Object\TestEventObject.h">
       <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Scene\LoadEventScene.h">
+      <Filter>Src\Event\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

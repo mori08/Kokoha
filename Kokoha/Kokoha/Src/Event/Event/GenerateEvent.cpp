@@ -29,9 +29,9 @@ bool Kokoha::GenerateEvent::load(const EventArg& eventArg)
 	mType = eventArg[TYPE];
 	if (!sGenerateObjectMap.count(mType))
 	{
-		printDebug(U"[Generate::Event]");
-		printDebug(U"w’è‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌŒ^‚ª“o˜^‚³‚ê‚Ä‚Ü‚¹‚ñ.");
-		printDebug(U"Œ^–¼ > " + mType);
+		EventManager::instance().addErrorMessage(U"[Generate::Event]");
+		EventManager::instance().addErrorMessage(U"w’è‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ÌŒ^‚ª“o˜^‚³‚ê‚Ä‚Ü‚¹‚ñ.");
+		EventManager::instance().addErrorMessage(U"Œ^–¼ > " + mType);
 		return false;
 	}
 

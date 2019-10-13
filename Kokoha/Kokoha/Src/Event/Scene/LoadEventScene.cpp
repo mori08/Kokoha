@@ -8,21 +8,24 @@ Kokoha::LoadEventScene::LoadEventScene(const InitData& init)
 }
 
 
-void Kokoha::LoadEventScene::load()
+Kokoha::ErrorMessage Kokoha::LoadEventScene::load()
 {
 	EventManager::instance().init();
-	mIsScuccess = EventManager::instance().load(U"Assets/Data/Event/TestEvent.csv");
+	if (mIsScuccess = EventManager::instance().load(U"Assets/Data/Event/TestEvent.csv"))
+	{
+		return none;
+	}
+
+	return EventManager::instance().getErrorMessage();
 }
 
 
-void Kokoha::LoadEventScene::complete()
+SceneName Kokoha::LoadEventScene::complete()
 {
 	if (mIsScuccess)
 	{
-		changeScene(SceneName::TITLE);
+		return SceneName::TITLE;
 	}
-	else
-	{
-		changeScene(SceneName::TITLE);
-	}
+
+	return SceneName::TITLE;
 }

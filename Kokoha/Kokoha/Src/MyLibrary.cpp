@@ -7,9 +7,9 @@ void Kokoha::printDebug(const String& message)
 	Print << message;
 }
 #else
-void Kokoha::printDebug(const String&)
+inline void Kokoha::printDebug(const String&)
 {
-	Print << message;
+	
 }
 #endif // _DEBUG
 
