@@ -30,22 +30,36 @@ bool Kokoha::Event::toBool(bool& flag, const String& str)
 
 bool Kokoha::Event::toInteger(int32& integer, const String& str)
 {
-	auto opt = ParseOpt<int32>(str);
-	if (!opt) 
-	{ 
+	try
+	{
+		integer = Parse<int32>(str);
+	}
+	catch (const ParseError & e)
+	{
 		EventManager::instance().addErrorMessage(U"[Event::toInteger]");
 		EventManager::instance().addErrorMessage(U"整数値に変換できません.");
 		EventManager::instance().addErrorMessage(U"検出値 > " + str);
-		return false; 
+		return false;
 	}
 
-	integer = opt.value();
 	return true;
 }
 
 
 double Kokoha::Event::toDouble(double& value, const String& str)
 {
+	try
+	{
+		value = Parse<double>(str);
+	}
+	catch (const ParseError & e)
+	{
+		EventManager::instance().addErrorMessage(U"[Event::toDouble]");
+		EventManager::instance().addErrorMessage(U"小数値に変換できません.");
+		EventManager::instance().addErrorMessage(U"検出値 > " + str);
+		return false;
+	}
+
 	return true;
 }
 
