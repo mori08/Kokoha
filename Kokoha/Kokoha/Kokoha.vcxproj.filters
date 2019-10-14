@@ -53,9 +53,6 @@
     <Filter Include="Resource Files\nlp\japanese\jumanpp">
       <UniqueIdentifier>{f6fe2a89-c647-48e2-bb2c-27b03b1aeced}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\example\countries">
-      <UniqueIdentifier>{d8993270-4526-4d70-a0b8-2d179abe279b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\example\font">
       <UniqueIdentifier>{e011e289-148f-4f61-b178-75bd63133a24}</UniqueIdentifier>
     </Filter>
@@ -74,35 +71,44 @@
     <Filter Include="Resource Files\example\svm">
       <UniqueIdentifier>{efc7c679-c387-43b2-93ed-b6e6ccbcd1a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\example\shader">
+      <UniqueIdentifier>{2bcb9a5f-7580-4d6a-bd0b-1f8e16a14f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\example\shader\2d">
+      <UniqueIdentifier>{0b9673e5-5c13-4129-84ac-1a71a27b3f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\example\config">
+      <UniqueIdentifier>{89c12675-1e86-4726-8c52-108fd67b62e5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Src">
-      <UniqueIdentifier>{3276b638-d03e-4ae9-8110-fa05e3a2cad2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Input">
-      <UniqueIdentifier>{bbb3805f-b99f-4a3e-8486-a819ad35fe98}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Title">
-      <UniqueIdentifier>{37260bff-ab60-4a2a-b72b-6512548f44da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Load">
-      <UniqueIdentifier>{f68ee795-a9a9-4815-b575-448f3f5566c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Record">
-      <UniqueIdentifier>{1f803b07-8035-4008-ab5a-1531410abda9}</UniqueIdentifier>
+      <UniqueIdentifier>{48ed7788-b333-4c71-90f3-916d541b916d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\Event">
-      <UniqueIdentifier>{338fb877-cea1-48cb-9185-52df711f36a8}</UniqueIdentifier>
+      <UniqueIdentifier>{4aa4b541-a481-4e4b-bcfa-b6d5165ff840}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\Event\Event">
-      <UniqueIdentifier>{c9dc0473-c119-4a2a-a5c7-28974e97f10c}</UniqueIdentifier>
+      <UniqueIdentifier>{b3e4cef7-62bf-4ebe-b16c-a00413566cec}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\Event\Object">
-      <UniqueIdentifier>{3ebbd85c-3059-4331-ac48-6c246eda8ed9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Slice">
-      <UniqueIdentifier>{da4b9ba5-8848-4854-acec-b2919dbcf54b}</UniqueIdentifier>
+      <UniqueIdentifier>{80a34c64-4711-4079-a907-7b02298f2160}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\Event\Scene">
-      <UniqueIdentifier>{13676a0b-d32d-4bfc-8715-bf73eedd1a5a}</UniqueIdentifier>
+      <UniqueIdentifier>{f1db6552-d971-4ac8-a5f2-b725a7e26271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Input">
+      <UniqueIdentifier>{5f177b28-f307-4413-8e27-3c0aa5fe452e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Load">
+      <UniqueIdentifier>{e84fe7d8-ea51-4618-8b56-d84dd697c744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Record">
+      <UniqueIdentifier>{973a28a6-c182-47ce-b6e0-080e164b8c7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Slice">
+      <UniqueIdentifier>{5ce3fca5-b570-4340-a78d-4345bc70b6ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Title">
+      <UniqueIdentifier>{e1271d3e-4ba7-4a77-8089-bc7f98d74bf5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +140,9 @@
       <Filter>Resource Files\example</Filter>
     </Image>
     <Image Include="App\example\windmill.png">
+      <Filter>Resource Files\example</Filter>
+    </Image>
+    <Image Include="App\example\bay.jpg">
       <Filter>Resource Files\example</Filter>
     </Image>
   </ItemGroup>
@@ -203,47 +212,8 @@
     <None Include="App\engine\objdetect\haarcascade\eye.xml.zstdcmp">
       <Filter>Resource Files\engine\objdetect\haarcascade</Filter>
     </None>
-    <None Include="App\engine\shader\shape.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\square_dot.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\texture.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\fullscreen_triangle.vs">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\fullscreen_triangle_draw.vs">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\fullscreen_triangle_resolve.vs">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\sprite.vs">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\fullscreen_triangle_draw.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\fullscreen_triangle_resolve.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\round_dot.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
-    <None Include="App\engine\shader\sdf.ps">
-      <Filter>Resource Files\engine\shader</Filter>
-    </None>
     <None Include="App\engine\soundfont\GMGSx.sf2.zstdcmp">
       <Filter>Resource Files\engine\soundfont</Filter>
-    </None>
-    <None Include="App\example\countries\countries.csv">
-      <Filter>Resource Files\example\countries</Filter>
-    </None>
-    <None Include="App\example\countries\countries.json">
-      <Filter>Resource Files\example\countries</Filter>
     </None>
     <None Include="App\example\font\NotoSansCJKjp\README">
       <Filter>Resource Files\example\font\NotoSansCJKjp</Filter>
@@ -257,11 +227,89 @@
     <None Include="App\example\svm\a1a_training">
       <Filter>Resource Files\example\svm</Filter>
     </None>
-    <None Include="App\example\test.ini">
-      <Filter>Resource Files\example</Filter>
-    </None>
     <None Include="App\example\test.toml">
       <Filter>Resource Files\example</Filter>
+    </None>
+    <None Include="App\engine\shader\gaussian_blur_9.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\round_dot.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\sdf.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\shape.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\sprite.vs">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\square_dot.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\texture.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\copy.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\fullscreen_triangle_draw.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\fullscreen_triangle_draw.vs">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\fullscreen_triangle_resolve.ps">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\engine\shader\fullscreen_triangle_resolve.vs">
+      <Filter>Resource Files\engine\shader</Filter>
+    </None>
+    <None Include="App\example\shader\2d\default_shape.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\default_texture.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\game_of_life.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\grayscale.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\multi_texture_blend.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\multi_texture_mask.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\poisson_disk.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\posterize.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\rgb_shift.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\rgb_to_bgr.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\shader\2d\swirl.hlsl">
+      <Filter>Resource Files\example\shader\2d</Filter>
+    </None>
+    <None Include="App\example\config\config.csv">
+      <Filter>Resource Files\example\config</Filter>
+    </None>
+    <None Include="App\example\config\config.ini">
+      <Filter>Resource Files\example\config</Filter>
+    </None>
+    <None Include="App\example\config\config.json">
+      <Filter>Resource Files\example\config</Filter>
+    </None>
+    <None Include="App\example\config\config.toml">
+      <Filter>Resource Files\example\config</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -270,9 +318,6 @@
     </Text>
     <Text Include="App\engine\font\noto\LICENSE_OFL.txt">
       <Filter>Resource Files\engine\font\noto</Filter>
-    </Text>
-    <Text Include="App\example\countries\LICENSE.txt">
-      <Filter>Resource Files\example\countries</Filter>
     </Text>
     <Text Include="App\example\font\AnnyantRoman\readme.txt">
       <Filter>Resource Files\example\font\AnnyantRoman</Filter>
@@ -316,123 +361,87 @@
     <Xml Include="App\example\test.xml">
       <Filter>Resource Files\example</Filter>
     </Xml>
+    <Xml Include="App\example\config\config.xml">
+      <Filter>Resource Files\example\config</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="Src\MyLibrary.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\EventManager.cpp">
+      <Filter>Src\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Event\Event.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Event\GenerateEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Event\MoveEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\EventObject.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\TestEventObject.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Scene\EventScene.cpp">
+      <Filter>Src\Event\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp">
+      <Filter>Src\Event\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Input\Button.cpp">
-      <Filter>Src\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Input\MouseInputState.cpp">
-      <Filter>Src\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Input\KeyInputState.cpp">
-      <Filter>Src\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Input\InputManager.cpp">
       <Filter>Src\Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\Input\ButtonManager.cpp">
       <Filter>Src\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MyLibrary.cpp">
-      <Filter>Src</Filter>
+    <ClCompile Include="Src\Input\InputManager.cpp">
+      <Filter>Src\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Title\TitleScene.cpp">
-      <Filter>Src\Title</Filter>
+    <ClCompile Include="Src\Input\KeyInputState.cpp">
+      <Filter>Src\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Input\MouseInputState.cpp">
+      <Filter>Src\Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\Load\LoadScene.cpp">
       <Filter>Src\Load</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Record\RecordManager.cpp">
+    <ClCompile Include="Src\Record\LoadRecordScene.cpp">
       <Filter>Src\Record</Filter>
     </ClCompile>
     <ClCompile Include="Src\Record\Record.cpp">
       <Filter>Src\Record</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Record\SaveRecordScene.cpp">
+    <ClCompile Include="Src\Record\RecordManager.cpp">
       <Filter>Src\Record</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Record\LoadRecordScene.cpp">
+    <ClCompile Include="Src\Record\SaveRecordScene.cpp">
       <Filter>Src\Record</Filter>
     </ClCompile>
     <ClCompile Include="Src\Slice\SliceTexture.cpp">
       <Filter>Src\Slice</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Event\EventManager.cpp">
-      <Filter>Src\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Object\EventObject.cpp">
-      <Filter>Src\Event\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Event\Event.cpp">
-      <Filter>Src\Event\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Object\TestEventObject.cpp">
-      <Filter>Src\Event\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Event\GenerateEvent.cpp">
-      <Filter>Src\Event\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp">
-      <Filter>Src\Event\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Scene\EventScene.cpp">
-      <Filter>Src\Event\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Event\Event\MoveEvent.cpp">
-      <Filter>Src\Event\Event</Filter>
+    <ClCompile Include="Src\Title\TitleScene.cpp">
+      <Filter>Src\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\Input\Button.h">
-      <Filter>Src\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Input\InputState.h">
-      <Filter>Src\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Input\MouseInputState.h">
-      <Filter>Src\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Input\KeyInputState.h">
-      <Filter>Src\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Input\InputManager.h">
-      <Filter>Src\Input</Filter>
+    <ClInclude Include="Src\MyColor.h">
+      <Filter>Src</Filter>
     </ClInclude>
     <ClInclude Include="Src\MyLibrary.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Input\ButtonManager.h">
-      <Filter>Src\Input</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Scene.h">
       <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Title\TitleScene.h">
-      <Filter>Src\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\MyColor.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Load\LoadScene.h">
-      <Filter>Src\Load</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Record\RecordManager.h">
-      <Filter>Src\Record</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Record\Record.h">
-      <Filter>Src\Record</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Record\SaveRecordScene.h">
-      <Filter>Src\Record</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Record\LoadRecordScene.h">
-      <Filter>Src\Record</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Event\Event\Event.h">
-      <Filter>Src\Event\Event</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\EventManager.h">
       <Filter>Src\Event</Filter>
@@ -440,29 +449,68 @@
     <ClInclude Include="Src\Event\Event\EmptyEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Slice\SliceTexture.h">
-      <Filter>Src\Slice</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Slice\Linearly.h">
-      <Filter>Src\Slice</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Event\Object\EventObject.h">
-      <Filter>Src\Event\Object</Filter>
+    <ClInclude Include="Src\Event\Event\Event.h">
+      <Filter>Src\Event\Event</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Event\GenerateEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Event\Object\TestEventObject.h">
+    <ClInclude Include="Src\Event\Event\MoveEvent.h">
+      <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EventObject.h">
       <Filter>Src\Event\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Event\Scene\LoadEventScene.h">
-      <Filter>Src\Event\Scene</Filter>
+    <ClInclude Include="Src\Event\Object\TestEventObject.h">
+      <Filter>Src\Event\Object</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Scene\EventScene.h">
       <Filter>Src\Event\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Event\Event\MoveEvent.h">
-      <Filter>Src\Event\Event</Filter>
+    <ClInclude Include="Src\Event\Scene\LoadEventScene.h">
+      <Filter>Src\Event\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\Button.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\ButtonManager.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\InputManager.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\InputState.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\KeyInputState.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Input\MouseInputState.h">
+      <Filter>Src\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Load\LoadScene.h">
+      <Filter>Src\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Record\LoadRecordScene.h">
+      <Filter>Src\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Record\Record.h">
+      <Filter>Src\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Record\RecordManager.h">
+      <Filter>Src\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Record\SaveRecordScene.h">
+      <Filter>Src\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Slice\Linearly.h">
+      <Filter>Src\Slice</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Slice\SliceTexture.h">
+      <Filter>Src\Slice</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Title\TitleScene.h">
+      <Filter>Src\Title</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
