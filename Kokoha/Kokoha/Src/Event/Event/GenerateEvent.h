@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "../Event/Event.h"
+#include "Event.h"
 #include "../Object/EventObject.h"
 
 
@@ -36,7 +36,7 @@ namespace Kokoha
 
 		bool load(const EventArg& eventArg) override;
 
-		void perform() const override;
+		void perform() override;
 
 		bool isCompleted() const override;
 

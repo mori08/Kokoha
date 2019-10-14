@@ -31,7 +31,7 @@ namespace Kokoha
 
 		bool load(const EventArg& eventArg) override;
 
-		void perform() const override;
+		void perform() override;
 
 		bool isCompleted() const override;
 

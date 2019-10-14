@@ -11,6 +11,14 @@ Kokoha::EventScene::EventScene(const InitData& init)
 void Kokoha::EventScene::update()
 {
 	EventManager::instance().update();
+
+#ifdef _DEBUG
+	if (KeyT.up())
+	{
+		changeScene(SceneName::TITLE);
+	}
+#endif // _DEBUG
+
 }
 
 

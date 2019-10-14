@@ -1,3 +1,6 @@
-Generate,Test,Test,"(10, 10)",#,
+Generate,Test,Test,"(0,10)",#,
 Run,#,,,,
-Move,Test,3.5,"(100,0)",TRUE,#
+Wait,3,#,,,
+Move,Test,3.5,"(100,0)",FALSE,#
+Wait,4,#,,,
+Move,Test,3.5,"(-100,0)",TRUE,#

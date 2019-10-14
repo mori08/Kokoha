@@ -32,7 +32,7 @@ namespace Kokoha
 		/// <summary>
 		/// イベントの実行
 		/// </summary>
-		virtual void perform() const = 0;
+		virtual void perform() = 0;
 
 		/// <summary>
 		/// 終了しているか示す.

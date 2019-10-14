@@ -6,6 +6,7 @@
 #include "Event/EmptyEvent.h"
 #include "Event/GenerateEvent.h"
 #include "Event/MoveEvent.h"
+#include "Event/WaitEvent.h"
 
 
 namespace 
@@ -23,6 +24,7 @@ Kokoha::EventManager::EventManager()
 	// ƒCƒxƒ“ƒg‚Ì“o˜^
 	setEvent<GenerateEvent>(U"Generate");
 	setEvent<MoveEvent>    (U"Move");
+	setEvent<WaitEvent>    (U"Wait");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }

@@ -42,7 +42,7 @@ bool Kokoha::GenerateEvent::load(const EventArg& eventArg)
 }
 
 
-void Kokoha::GenerateEvent::perform() const
+void Kokoha::GenerateEvent::perform()
 {
 	EventManager::instance().generateObject(mName, sGenerateObjectMap[mType](mPos));
 }

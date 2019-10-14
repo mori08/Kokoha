@@ -32,7 +32,7 @@ bool Kokoha::MoveEvent::load(const EventArg& eventArg)
 }
 
 
-void Kokoha::MoveEvent::perform() const
+void Kokoha::MoveEvent::perform()
 {
 	EventManager::instance().getObjectPtr(mName)->setLinearMove(mTimeSecond, mMovement, mWait);
 }

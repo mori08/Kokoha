@@ -20,7 +20,7 @@ namespace Kokoha
 			return true;
 		}
 
-		void perform()const override
+		void perform() override
 		{
 		}
 
