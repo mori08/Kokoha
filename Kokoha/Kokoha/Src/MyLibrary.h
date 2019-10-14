@@ -46,4 +46,9 @@ namespace Kokoha
 		r = Pow(r, Scene::DeltaTime());
 		x = r * x + (1 - r) * a;
 	}
+
+	/// <summary>
+	/// FPS‚Ì•\Ž¦
+	/// </summary>
+	void showFps();
 }

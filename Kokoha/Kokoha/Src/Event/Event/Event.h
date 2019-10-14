@@ -78,7 +78,20 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="value"> 変換後の整数値の代入先 </param>
 		/// <param name="str">   文字列                 </param>
-		static double toDouble(double& value, const String& str);
+		/// <returns>
+		/// 変換できたとき true , できなかったとき false
+		/// </returns>
+		static bool toDouble(double& value, const String& str);
+
+		/// <summary>
+		// 文字列から座標への変換
+		/// </summary>
+		/// <param name="pos"> 変換後の座標の代入先  </param>
+		/// <param name="str"> 文字列                </param>
+		/// <returns>
+		/// 変換できたとき true , できなかったとき false
+		/// </returns>
+		static bool toPoint(Point& pos, const String& str);
 
 		/// <summary>
 		/// オブジェクトがあるか確認

@@ -29,9 +29,9 @@ namespace
 	constexpr Point LOGO_POS(320, 150);
 
 	// Œõ‚ÌŒ`
-	constexpr RoundRect LIGHT_SHAPE(-30, -30, 700, 540, 100);
+	constexpr RoundRect LIGHT_SHAPE(-50, -50, 740, 580, 100);
 	// Œõ‚Ì‚Ú‚©‚µ‚Ì‘å‚«‚³
-	constexpr double    LIGHT_BLUR = 140;
+	constexpr double    LIGHT_BLUR = 150;
 	// Œõ‚Ì‚Ú‚©‚µ‚ğ•ÏX‚·‚é•p“x
 	constexpr double    LIGHT_SPREAD_FREQUENCY = 3;
 

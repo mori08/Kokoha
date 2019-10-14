@@ -1,4 +1,5 @@
 #include "MoveEvent.h"
+#include "../EventManager.h"
 
 
 namespace
@@ -7,10 +8,10 @@ namespace
 	constexpr size_t ARG_SIZE = 4;
 
 	// インデックス
-	constexpr size_t NAME = 0;
-	constexpr size_t X    = 1;
-	constexpr size_t Y    = 2;
-	constexpr size_t WAIT = 3;
+	constexpr size_t NAME     = 0; // オブジェクトの名前
+	constexpr size_t TIME     = 1; // 移動時間
+	constexpr size_t MOVEMENT = 2; // 移動量
+	constexpr size_t WAIT     = 3; // 待ち
 }
 
 
@@ -21,7 +22,11 @@ bool Kokoha::MoveEvent::load(const EventArg& eventArg)
 	mName = eventArg[NAME];
 	if (!isExistedObject(mName)) { return false; }
 
+	if (!toDouble(mTimeSecond, eventArg[TIME])) { return false; }
 
+	if (!toPoint(mMovement, eventArg[MOVEMENT])) { return false; }
+
+	if (!toBool(mWait, eventArg[WAIT])) { return false; }
 
 	return true;
 }
@@ -29,10 +34,11 @@ bool Kokoha::MoveEvent::load(const EventArg& eventArg)
 
 void Kokoha::MoveEvent::perform() const
 {
+	EventManager::instance().getObjectPtr(mName)->setLinearMove(mTimeSecond, mMovement, mWait);
 }
 
 
 bool Kokoha::MoveEvent::isCompleted() const
 {
-	return false;
+	return EventManager::instance().getObjectPtr(mName)->isFinished();
 }

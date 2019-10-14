@@ -89,7 +89,7 @@ namespace Kokoha
 			return true;
 		}
 
-		mRate += Scene::DeltaTime() / mTimeSecond;
+		mRate += deltaTime / mTimeSecond;
 		
 		if (mRate > 1)
 		{

@@ -9,13 +9,12 @@
 namespace
 {
 	// 引数のサイズ
-	constexpr size_t ARG_SIZE = 4;
+	constexpr size_t ARG_SIZE = 3;
 
 	// インデックス
 	constexpr size_t TYPE = 0; // オブジェクトの種類
 	constexpr size_t NAME = 1; // オブジェクトの名前
-	constexpr size_t X    = 2; // X座標
-	constexpr size_t Y    = 3; // Y座標
+	constexpr size_t POS  = 2; // 生成座標
 }
 
 
@@ -37,7 +36,7 @@ bool Kokoha::GenerateEvent::load(const EventArg& eventArg)
 
 	mName = eventArg[NAME];
 
-	if (!toInteger(mPos.x, eventArg[X]) || !toInteger(mPos.y, eventArg[Y])) { return false; }
+	if (!toPoint(mPos,eventArg[POS])) { return false; }
 
 	return true;
 }

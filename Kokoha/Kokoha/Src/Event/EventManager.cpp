@@ -5,6 +5,7 @@
 // 各イベント
 #include "Event/EmptyEvent.h"
 #include "Event/GenerateEvent.h"
+#include "Event/MoveEvent.h"
 
 
 namespace 
@@ -21,6 +22,7 @@ Kokoha::EventManager::EventManager()
 {
 	// イベントの登録
 	setEvent<GenerateEvent>(U"Generate");
+	setEvent<MoveEvent>    (U"Move");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }
@@ -129,6 +131,11 @@ void Kokoha::EventManager::update()
 		mEventQueue.pop();
 		mEventQueue.front()->perform();
 	}
+
+	for (auto&& object : mObjectMap)
+	{
+		object.second->update();
+	}
 }
 
 
@@ -145,7 +152,7 @@ void Kokoha::EventManager::draw() const
 
 void Kokoha::EventManager::runAllEvent()
 {
-	while (mEventQueue.empty())
+	while (!mEventQueue.empty())
 	{
 		mEventQueue.front()->perform();
 		mEventQueue.pop();

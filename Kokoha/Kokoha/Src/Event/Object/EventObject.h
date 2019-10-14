@@ -80,6 +80,17 @@ namespace Kokoha
 		/// <param name="wait">      イベント全体を待たせるか </param>
 		void setLinearMove(double time, const Point& movement, bool wait);
 
+		/// <summary>
+		/// 移動・演出が終了しているか
+		/// </summary>
+		/// <returns>
+		/// 終了しているとき true , そうでないとき false
+		/// </returns>
+		bool isFinished() const
+		{
+			return mIsFinished;
+		}
+
 	};
 
 

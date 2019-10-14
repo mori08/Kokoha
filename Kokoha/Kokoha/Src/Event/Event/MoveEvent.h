@@ -18,6 +18,9 @@ namespace Kokoha
 		// オブジェクトの名前
 		String mName;
 
+		// 移動時間(秒)
+		double mTimeSecond;
+
 		// 移動量
 		Point mMovement;
 
