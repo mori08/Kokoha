@@ -29,7 +29,11 @@ void Kokoha::EventObject::draw(const Point& cameraPos) const
 
 void Kokoha::EventObject::setLinearMove(double time, const Point& movement, bool wait)
 {
-	mLinearMove = Linearly<Vec2>(time, mPos, movement);
+	// ˆÚ“®ŠÔ‚âˆÚ“®—Ê‚Ì•â³
+	const Point  m = movement + mLinearMove.getGoal().asPoint() - mPos;
+	const double t = time * m.length() / movement.length();
+
+	mLinearMove = Linearly<Vec2>(t, mPos, movement + mLinearMove.getGoal().asPoint() - mPos);
 	mIsFinished = !wait;
 }
 

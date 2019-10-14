@@ -76,6 +76,14 @@ namespace Kokoha
 			return mValue.first + mRate * mValue.second;
 		}
 
+		/// <summary>
+		/// I“_‚Ìæ“¾
+		/// </summary>
+		Type getGoal() const
+		{
+			return mValue.first + mValue.second;
+		}
+
 	};
 
 

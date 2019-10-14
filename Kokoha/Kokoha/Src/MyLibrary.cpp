@@ -61,20 +61,39 @@ void Kokoha::showFps()
 {
 #ifdef _DEBUG
 
-	static double nowFps; // åªç›ÇÃFPS
-	static double maxFps; // FPSÇÃîÕàÕ
-	static double minFps; // FPSÇÃîÕàÕ
-	
+	static std::list<double> fpsList;
+	static Array<double> showNum(5, 60.0);
+
 	double deltaTime = Scene::DeltaTime();
-	if (deltaTime > 1 / 360.0 && deltaTime < 10e5) { nowFps = 1 / deltaTime; }
+	if (deltaTime > 1.0 / 1e10 && deltaTime < 1e10)
+	{
+		fpsList.emplace_back(1 / deltaTime);
+		if (fpsList.size() > 60) { fpsList.pop_front(); }
+	}
 
-	Kokoha::internalDividingPoint(maxFps, nowFps, 0.7); maxFps = Max(maxFps, nowFps);
-	Kokoha::internalDividingPoint(minFps, nowFps, 0.7); minFps = Min(minFps, nowFps);
+	if (fpsList.size() < 60) { return; }
 
-	Line(0.0, 0.0, 640 * nowFps / 180, 0.0).draw(5, Palette::Green);
-	FontAsset(U"10")((int32)maxFps).drawAt(Min(640 * maxFps / 180, 620.0), 10, Palette::Blue);
-	FontAsset(U"10")((int32)minFps).drawAt(640 * minFps / 180, 10, Palette::Red);
-	FontAsset(U"10")(Profiler::FPS()).drawAt(640 * Profiler::FPS() / 180, 10, Palette::Green);
+	std::vector<double> fpsVector;
+	for (const auto& fps : fpsList) { fpsVector.emplace_back(fps); }
+	std::sort(fpsVector.begin(), fpsVector.end());
+
+	internalDividingPoint(showNum[0], fpsVector[0], 0.3);
+	internalDividingPoint(showNum[1], (fpsVector[14] + fpsVector[15]) / 2, 0.3);
+	internalDividingPoint(showNum[2], (fpsVector[29] + fpsVector[30]) / 2, 0.3);
+	internalDividingPoint(showNum[3], (fpsVector[44] + fpsVector[45]) / 2, 0.3);
+	internalDividingPoint(showNum[4], fpsVector[59], 0.3);
+
+	const double rate = 640.0 / 60.0;
+	const double offset = -320;
+
+	Line(rate * showNum[0] + offset, 0, rate * showNum[4] + offset, 0).draw(8, Palette::Blue);
+	Line(rate * showNum[1] + offset, 0, rate * showNum[3] + offset, 0).draw(10, Palette::Aqua);
+	Circle(rate * showNum[2] + offset, 7, 2).draw(Palette::Aqua);
+	FontAsset(U"20")(Profiler::FPS()).drawAt(rate * Profiler::FPS() + offset, 15, Palette::Aqua);
+
+	FontAsset(U"10")((int32)showNum[0]).drawAt(Max(10.0 , rate * showNum[0] + offset), 8, Palette::Blue);
+	FontAsset(U"10")((int32)showNum[4]).drawAt(Min(630.0, rate * showNum[4] + offset), 8, Palette::Blue);
+
 
 #endif // _DEBUG
 }
