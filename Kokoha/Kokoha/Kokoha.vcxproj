@@ -191,6 +191,7 @@
     <ClCompile Include="Src\Event\EventManager.cpp" />
     <ClCompile Include="Src\Event\Event\Event.cpp" />
     <ClCompile Include="Src\Event\Event\GenerateEvent.cpp" />
+    <ClCompile Include="Src\Event\Event\MoveEvent.cpp" />
     <ClCompile Include="Src\Event\Object\EventObject.cpp" />
     <ClCompile Include="Src\Event\Object\TestEventObject.cpp" />
     <ClCompile Include="Src\Event\Scene\EventScene.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="Src\Event\Event\EmptyEvent.h" />
     <ClInclude Include="Src\Event\Event\Event.h" />
     <ClInclude Include="Src\Event\Event\GenerateEvent.h" />
+    <ClInclude Include="Src\Event\Event\MoveEvent.h" />
     <ClInclude Include="Src\Event\Object\EventObject.h" />
     <ClInclude Include="Src\Event\Object\TestEventObject.h" />
     <ClInclude Include="Src\Event\Scene\EventScene.h" />

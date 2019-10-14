@@ -48,14 +48,46 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="argSize">       引数のサイズ </param>
 		/// <param name="expectedValue"> 期待値       </param>
+		/// <returns>
+		/// 等しいとき true , そうでないとき false
+		/// </returns>
 		static bool checkArgSize(size_t argSize, size_t expectedValue);
+
+		/// <summary>
+		/// 文字列から二値への変換
+		/// </summary>
+		/// <param name="integer"> 変換後の二値の代入先 </param>
+		/// <param name="str">     文字列               </param>
+		/// <returns>
+		/// 変換できたとき true , できなかったとき false
+		/// </returns>
+		static bool toBool(bool& flag, const String& str);
 
 		/// <summary>
 		/// 文字列から整数値への変換
 		/// </summary>
 		/// <param name="integer"> 変換後の整数値の代入先 </param>
 		/// <param name="str">     文字列                 </param>
+		/// <returns>
+		/// 変換できたとき true , できなかったとき false
+		/// </returns>
 		static bool toInteger(int32& integer, const String& str);
+
+		/// <summary>
+		/// 文字列から小数値(double)への変換
+		/// </summary>
+		/// <param name="value"> 変換後の整数値の代入先 </param>
+		/// <param name="str">   文字列                 </param>
+		static double toDouble(double& value, const String& str);
+
+		/// <summary>
+		/// オブジェクトがあるか確認
+		/// </summary>
+		/// <param name="name"> 名前 </param>
+		/// <returns>
+		/// オブジェクトがあったとき true , ないとき false
+		/// </returns>
+		static bool isExistedObject(const String& name);
 
 	};
 }

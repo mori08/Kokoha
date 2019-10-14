@@ -45,7 +45,10 @@ namespace Kokoha
 		EventManager(EventManager&&)                 = default;
 		EventManager& operator=(EventManager&&)      = default;
 
-	public:
+	public: 
+		
+		// Sceneクラスの派生で使用
+		// ↓
 
 		/// <summary>
 		/// シングルトンとして管理しているEventManagerのインスタンスの取得
@@ -103,6 +106,40 @@ namespace Kokoha
 		/// </summary>
 		void draw() const;
 
+		// ↑
+		// Sceneクラスの派生で使用
+
+	public:
+
+		// Eventクラスの派生で使用
+		// ↓
+
+		/// <summary>
+		/// オブジェクトの生成
+		/// </summary>
+		/// <param name="name">   名前         </param>
+		/// <param name="object"> オブジェクト </param>
+		void generateObject(const String& name, EventObjectPtr&& object)
+		{
+			mObjectMap.try_emplace(name, std::move(object));
+		}
+
+		/// <summary>
+		/// オブジェクトのポインタを取得
+		/// </summary>
+		/// <param name="name"> 名前 </param>
+		/// <returns>
+		/// オブジェクトのポインタ
+		/// 名前に対応したオブジェクトがないとき nullptr
+		/// </returns>
+		EventObjectPtr& getObjectPtr(const String& name)
+		{
+			return mObjectMap[name];
+		}
+
+		// ↑
+		// Eventクラスの派生で使用
+
 	private:
 
 		/// <summary>
@@ -129,18 +166,6 @@ namespace Kokoha
 		/// isCompleted関数での判定待ちは行いません.
 		/// </remarks>
 		void runAllEvent();
-
-	public:
-
-		/// <summary>
-		/// オブジェクトの生成
-		/// </summary>
-		/// <param name="name">   名前         </param>
-		/// <param name="object"> オブジェクト </param>
-		void generateObject(const String& name, EventObjectPtr&& object)
-		{
-			mObjectMap.try_emplace(name, std::move(object));
-		}
 
 	};
 
