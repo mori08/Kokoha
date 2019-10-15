@@ -9,7 +9,7 @@ Kokoha::SliceTexture::SliceTexture(const String& textureName, const Size& sliceS
 	, mChangeSpan(0,0)
 	, mAnimationName(U"Default")
 {
-	setAnimation(mAnimationName, 0, Array<Point>{ pos }, false);
+	setAnimation(mAnimationName, Animation(0, Array<Point>{ pos }, false));
 }
 
 
@@ -42,7 +42,7 @@ void Kokoha::SliceTexture::start(const String name)
 		printDebug(U"name > " + name);
 		return;
 	}
-
+	
 	mAnimationName = name;
 	mChangeSpan    = Linearly<double>(mAnimationMap[name].TIME, (double)mAnimationMap[name].POS_LIST.size());
 }
@@ -51,7 +51,7 @@ void Kokoha::SliceTexture::start(const String name)
 TextureRegion Kokoha::SliceTexture::getTexture() const
 {
 	const auto& POS_LIST = mAnimationMap.find(mAnimationName)->second.POS_LIST;
-
+	
 	Point texturePos = POS_LIST[Min(POS_LIST.size() - 1, (size_t)mChangeSpan.getValue())];
 
 	auto texture = TextureAsset(mTextureName)(texturePos * mSliceSize, mSliceSize);

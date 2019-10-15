@@ -94,15 +94,12 @@ namespace Kokoha
 		void setTextureName(const String& textureName, const Size& sliceSize);
 
 		/// <summary>
-		/// Animationの設定
+		/// アニメーションの設定
 		/// </summary>
-		/// <param name="name">    名前             </param>
-		/// <param name="time">    時間             </param>
-		/// <param name="posList"> 画像の切り替え順 </param>
-		/// <param name="isLoop">  ループ　　　　　 </param>
-		void setAnimation(const String& name, double time, const Array<Point>& posList, bool isLoop)
+		/// <param name="anim"> アニメーション </param>
+		void setAnimation(const String& name, const Animation& anim)
 		{
-			mAnimationMap.try_emplace(name, std::move(Animation(time, posList, isLoop)));
+			mAnimationMap.try_emplace(name, std::move(Animation(anim)));
 		}
 
 		/// <summary>
@@ -110,6 +107,7 @@ namespace Kokoha
 		/// </summary>
 		/// <returns>
 		/// 画像の切り替えが終了したとき true , そうでないとき false
+		/// ループしているときは true を返すのに注意
 		/// </returns>
 		bool changeTexture();
 

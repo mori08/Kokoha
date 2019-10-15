@@ -9,9 +9,6 @@ namespace Kokoha
 	// 演出用関数
 	using Act = std::function<void()>;
 
-	// イベント用関数
-	using EventFunc = std::function<void()>;
-
 	/*
 	EventObjectクラス
 	EventManagerで使用するオブジェクト
@@ -31,7 +28,7 @@ namespace Kokoha
 		Linearly<Vec2> mLinearMove;
 
 		// イベント用関数
-		std::unordered_map<String, EventFunc> mActMap;
+		std::unordered_map<String, Act> mActMap;
 
 		// 画像とアニメーション
 		SliceTexture mSlide;
@@ -90,6 +87,36 @@ namespace Kokoha
 		{
 			return mIsFinished;
 		}
+
+		/// <summary>
+		/// 演出が存在するか返します.
+		/// </summary>
+		/// <param name="actName"> 演出名 </param>
+		/// <returns>
+		/// 存在するとき true , そうでないとき false
+		/// </retruns>
+		bool isExistedAct(const String& actName) const
+		{
+			return mActMap.count(actName);
+		}
+
+		/// <summary>
+		/// 演出の実行
+		/// </summary>
+		/// <param name="actName"> 演出名 </param>
+		void act(const String& actName)
+		{
+			mActMap[actName]();
+		}
+
+	protected:
+
+		/// <summary>
+		/// アニメーションをmActMapとmSlideに設定
+		/// </summary>
+		/// <param name="animName"> アニメーション名 </param>
+		/// <param name="anim">     アニメーション   </param>
+		void setAnimation(const String& animName, const Animation& anim);
 
 	};
 

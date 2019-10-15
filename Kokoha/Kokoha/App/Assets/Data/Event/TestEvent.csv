@@ -1,6 +1,5 @@
 Generate,Test,Test,"(0,10)",#,
 Run,#,,,,
-Wait,3,#,,,
-Move,Test,3.5,"(100,0)",FALSE,#
-Wait,5,#,,,
-Move,Test,3.5,"(-100,0)",TRUE,#
+Act,Test,Blink,#,,
+Act,Test,Blink,#,,
+Move,Test,5,"(100, 0)",TRUE,#

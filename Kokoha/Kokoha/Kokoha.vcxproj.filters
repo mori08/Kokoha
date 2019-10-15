@@ -435,6 +435,9 @@
     <ClCompile Include="Src\Event\Event\WaitEvent.cpp">
       <Filter>Src\Event\Event</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Event\ActEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -516,6 +519,9 @@
       <Filter>Src\Title</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Event\WaitEvent.h">
+      <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Event\ActEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
   </ItemGroup>

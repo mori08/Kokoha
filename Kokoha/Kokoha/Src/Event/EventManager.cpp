@@ -2,11 +2,12 @@
 #include "../MyLibrary.h"
 #include "../MyColor.h"
 
-// 各イベント
+// 各イベントhttps://github.com/mori08
 #include "Event/EmptyEvent.h"
 #include "Event/GenerateEvent.h"
 #include "Event/MoveEvent.h"
 #include "Event/WaitEvent.h"
+#include "Event/ActEvent.h"
 
 
 namespace 
@@ -25,6 +26,7 @@ Kokoha::EventManager::EventManager()
 	setEvent<GenerateEvent>(U"Generate");
 	setEvent<MoveEvent>    (U"Move");
 	setEvent<WaitEvent>    (U"Wait");
+	setEvent<ActEvent>     (U"Act");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }

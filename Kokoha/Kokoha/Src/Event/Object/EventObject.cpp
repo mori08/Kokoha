@@ -8,14 +8,18 @@ Kokoha::EventObject::EventObject(const Point& pos, const String& textureName, co
 	, mIsHidden(false)
 	, mIsFinished(true)
 {
-
+	mActMap[U"Mirror"] = [this]() { mSlide.mirror();   };
+	mActMap[U"Hide"]   = [this]() { mIsHidden = true;  };
+	mActMap[U"Appear"] = [this]() { mIsHidden = false; };
 }
 
 
 void Kokoha::EventObject::update()
 {
 	mPos        = mLinearMove.getValue().asPoint();
-	mIsFinished = mIsFinished | mLinearMove.update() | mSlide.changeTexture();
+
+	bool moveFlag = mLinearMove.update(), slideFlag = mSlide.changeTexture();
+	mIsFinished = mIsFinished || (moveFlag && slideFlag);
 }
 
 
@@ -35,5 +39,12 @@ void Kokoha::EventObject::setLinearMove(double time, const Point& movement, bool
 
 	mLinearMove = Linearly<Vec2>(t, mPos, movement + mLinearMove.getGoal().asPoint() - mPos);
 	mIsFinished = !wait;
+}
+
+
+void Kokoha::EventObject::setAnimation(const String& animName, const Animation& anim)
+{
+	mSlide.setAnimation(animName, anim);
+	mActMap[animName] = [this, animName]() { mSlide.start(animName); mIsFinished = false; };
 }
 
