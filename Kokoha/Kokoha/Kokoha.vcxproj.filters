@@ -444,6 +444,9 @@
     <ClCompile Include="Src\Event\TextBox\TextBox.cpp">
       <Filter>Src\Event\TextBox</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Event\TextEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -532,6 +535,9 @@
     </ClInclude>
     <ClInclude Include="Src\Event\TextBox\TextBox.h">
       <Filter>Src\Event\TextBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Event\TextEvent.h">
+      <Filter>Src\Event\Event</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

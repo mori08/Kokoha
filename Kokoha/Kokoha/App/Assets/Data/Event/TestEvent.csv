@@ -1,5 +1,7 @@
 Generate,Test,Test,"(0,10)",#,
 Run,#,,,,
+Text,ハカセ,DoctorIcon,1,"あー\nあー\nマイクテスト,マイクテスト",#
+Wait,0.5,#,,,
 Act,Test,Blink,#,,
-Act,Test,Blink,#,,
-Move,Test,5,"(100, 0)",TRUE,#
+Wait,0.5,#,,,
+Text,ハカセ,DoctorIcon,0.3,"生麦生米生卵,\n赤パジャマ青パジャマ茶パジャマ,\n隣の客はよく柿食う客だ.",#

@@ -7,6 +7,7 @@ namespace
 	constexpr Point TEXTBOX_DRAW_POS(0  , 320); // テキストボックスを表示する座標
 	constexpr Point ICON_DRAW_POS   (16 , 336); // アイコンの描画
 	constexpr Point TEXT_DRAW_POS   (176, 336); // テキストを表示する座標
+	constexpr Point SPEAKER_DRAW_POS(80 , 345); // 話し手の名前を表示する座標
 }
 
 
@@ -58,5 +59,7 @@ void Kokoha::TextBox::draw() const
 		TextureAsset(mIconName).draw(ICON_DRAW_POS);
 	}
 
-	FontAsset(U"10")(mText.substr(0, (size_t)mDrawAbleLength.getValue())).draw(TEXT_DRAW_POS);
+	FontAsset(U"20")(mSpeakerName).drawAt(SPEAKER_DRAW_POS);
+
+	FontAsset(U"20")(mText.substr(0, (size_t)mDrawAbleLength.getValue())).draw(TEXT_DRAW_POS);
 }

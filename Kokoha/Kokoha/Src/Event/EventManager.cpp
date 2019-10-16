@@ -8,6 +8,7 @@
 #include "Event/MoveEvent.h"
 #include "Event/WaitEvent.h"
 #include "Event/ActEvent.h"
+#include "Event/TextEvent.h"
 
 
 namespace 
@@ -27,6 +28,7 @@ Kokoha::EventManager::EventManager()
 	setEvent<MoveEvent>    (U"Move");
 	setEvent<WaitEvent>    (U"Wait");
 	setEvent<ActEvent>     (U"Act");
+	setEvent<TextEvent>    (U"Text");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }

@@ -141,6 +141,21 @@ namespace Kokoha
 			return mObjectMap[name];
 		}
 
+		/// <summary>
+		/// テキストボックスの取得
+		/// </summary>
+		/// <returns>
+		/// テキストボックス
+		/// </returns>
+		/// <remarks>
+		/// const参照じゃありません.
+		/// EventManagerとTextEvent以外では使わないでください.
+		/// </remarks>
+		TextBox& getTextBox()
+		{
+			return mTextBox;
+		}
+
 		// ↑
 		// Eventクラスの派生で使用
 
