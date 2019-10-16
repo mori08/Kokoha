@@ -61,6 +61,14 @@ namespace Kokoha
 		}
 
 		/// <summary>
+		/// 終点にとばす
+		/// </summary>
+		void toEndPoint()
+		{
+			mRate = 1;
+		}
+
+		/// <summary>
 		/// 更新
 		/// </summary>
 		/// <returns>

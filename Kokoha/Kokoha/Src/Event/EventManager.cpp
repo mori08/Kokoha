@@ -43,6 +43,9 @@ void Kokoha::EventManager::init()
 	// オブジェクトを空にします
 	mObjectMap.clear();
 
+	// テキストボックスを初期化
+	mTextBox.reset();
+
 	// エラーメッセージをリセットします
 	mErrorMessage = U"";
 }
@@ -136,6 +139,10 @@ void Kokoha::EventManager::update()
 		mEventQueue.front()->perform();
 	}
 
+	// テキストボックスの更新
+	mTextBox.update();
+
+	// オブジェクトの更新
 	for (auto&& object : mObjectMap)
 	{
 		object.second->update();
@@ -151,6 +158,8 @@ void Kokoha::EventManager::draw() const
 	{
 		object.second->draw(Point::Zero());
 	}
+
+	mTextBox.draw();
 }
 
 

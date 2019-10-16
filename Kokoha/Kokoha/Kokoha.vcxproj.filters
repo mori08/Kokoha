@@ -110,6 +110,9 @@
     <Filter Include="Src\Title">
       <UniqueIdentifier>{e1271d3e-4ba7-4a77-8089-bc7f98d74bf5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Event\TextBox">
+      <UniqueIdentifier>{dfd0dab3-e358-425e-a49a-019c28a04798}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -438,6 +441,9 @@
     <ClCompile Include="Src\Event\Event\ActEvent.cpp">
       <Filter>Src\Event\Event</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\TextBox\TextBox.cpp">
+      <Filter>Src\Event\TextBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -523,6 +529,9 @@
     </ClInclude>
     <ClInclude Include="Src\Event\Event\ActEvent.h">
       <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\TextBox\TextBox.h">
+      <Filter>Src\Event\TextBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

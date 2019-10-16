@@ -3,6 +3,7 @@
 
 #include "Event/Event.h"
 #include "Object/EventObject.h"
+#include "TextBox/TextBox.h"
 #include <queue>
 
 
@@ -32,6 +33,9 @@ namespace Kokoha
 
 		// オブジェクトと文字列の連想配列
 		std::map<String, EventObjectPtr> mObjectMap;
+
+		// テキストボックス
+		TextBox mTextBox;
 
 		// ロードのエラーメッセージ
 		String mErrorMessage;

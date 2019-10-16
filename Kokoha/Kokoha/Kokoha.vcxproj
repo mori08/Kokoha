@@ -236,6 +236,7 @@
     <ClCompile Include="Src\Event\Object\TestEventObject.cpp" />
     <ClCompile Include="Src\Event\Scene\EventScene.cpp" />
     <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp" />
+    <ClCompile Include="Src\Event\TextBox\TextBox.cpp" />
     <ClCompile Include="Src\Input\Button.cpp" />
     <ClCompile Include="Src\Input\ButtonManager.cpp" />
     <ClCompile Include="Src\Input\InputManager.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="Src\Event\Object\TestEventObject.h" />
     <ClInclude Include="Src\Event\Scene\EventScene.h" />
     <ClInclude Include="Src\Event\Scene\LoadEventScene.h" />
+    <ClInclude Include="Src\Event\TextBox\TextBox.h" />
     <ClInclude Include="Src\Input\Button.h" />
     <ClInclude Include="Src\Input\ButtonManager.h" />
     <ClInclude Include="Src\Input\InputManager.h" />

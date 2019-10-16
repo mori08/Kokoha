@@ -31,7 +31,7 @@ namespace
 	// Œõ‚ÌŒ`
 	constexpr RoundRect LIGHT_SHAPE(-50, -50, 740, 580, 100);
 	// Œõ‚Ì‚Ú‚©‚µ‚Ì‘å‚«‚³
-	constexpr double    LIGHT_BLUR = 150;
+	constexpr double    LIGHT_BLUR = 140;
 	// Œõ‚Ì‚Ú‚©‚µ‚ğ•ÏX‚·‚é•p“x
 	constexpr double    LIGHT_SPREAD_FREQUENCY = 3;
 
