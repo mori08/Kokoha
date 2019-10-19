@@ -226,7 +226,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Adventure\AdventureManager.cpp" />
     <ClCompile Include="Src\Adventure\AdventureObject.cpp" />
+    <ClCompile Include="Src\Adventure\AdventurePlayer.cpp" />
     <ClCompile Include="Src\Event\EventManager.cpp" />
     <ClCompile Include="Src\Event\Event\ActEvent.cpp" />
     <ClCompile Include="Src\Event\Event\Event.cpp" />
@@ -255,7 +257,9 @@
     <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Adventure\AdventureManager.h" />
     <ClInclude Include="Src\Adventure\AdventureObject.h" />
+    <ClInclude Include="Src\Adventure\AdventurePlayer.h" />
     <ClInclude Include="Src\Event\EventManager.h" />
     <ClInclude Include="Src\Event\Event\ActEvent.h" />
     <ClInclude Include="Src\Event\Event\EmptyEvent.h" />

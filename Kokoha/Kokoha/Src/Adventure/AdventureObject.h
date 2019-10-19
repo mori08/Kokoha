@@ -44,9 +44,6 @@ namespace Kokoha
 		/// 更新
 		/// </summary>
 		/// <param name="playerRegion"> プレイヤーの範囲 </param>
-		/// <returns>
-		/// 決定が押されたとき true , それ以外で false
-		/// </returns>
 		void update(const Rect& playerRegion);
 
 		/// <summary>
@@ -54,6 +51,14 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="cameraPos"> カメラの座標 </param>
 		void draw(const Point& cameraPoint)const;
+
+		/// <summary>
+		/// 範囲の取得
+		/// </summary>
+		const Rect& getRegion()const
+		{
+			return mRegion;
+		}
 
 		/// <summary>
 		/// 通過可能か true

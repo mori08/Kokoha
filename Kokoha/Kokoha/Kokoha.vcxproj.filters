@@ -453,6 +453,12 @@
     <ClCompile Include="Src\Adventure\AdventureObject.cpp">
       <Filter>Src\Adventure</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\AdventureManager.cpp">
+      <Filter>Src\Adventure</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Adventure\AdventurePlayer.cpp">
+      <Filter>Src\Adventure</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -546,6 +552,12 @@
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
     <ClInclude Include="Src\Adventure\AdventureObject.h">
+      <Filter>Src\Adventure</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\AdventureManager.h">
+      <Filter>Src\Adventure</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\AdventurePlayer.h">
       <Filter>Src\Adventure</Filter>
     </ClInclude>
   </ItemGroup>

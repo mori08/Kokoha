@@ -25,7 +25,7 @@ Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& texture
 
 void Kokoha::AdventureObject::update(const Rect& playerRegion)
 {
-	if (!isPassing) { return; }
+	if (!mIsPassing) { return; }
 
 	double goalAlpha = NON_INTERSECTS_ALPHA;
 
