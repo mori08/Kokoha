@@ -9,6 +9,28 @@ namespace
 	constexpr Size SIZE(60, 60);
 	// 移動スピード
 	constexpr double SPEED = 10;
+
+	// 横向きの画像番号
+	constexpr Point MOVE_TEXTURE_POS(0, 2);
+}
+
+
+Kokoha::AdventurePlayer::AdventurePlayer()
+	: mSlide(U"MainRobot", SIZE, MOVE_TEXTURE_POS)
+	, mDirection(+1)
+{
+
+}
+
+
+void Kokoha::AdventurePlayer::set(int32 posX, int32 direction)
+{
+	mPosX = posX;
+	if (direction * mDirection < 0)
+	{
+		mSlide.mirror();
+		mDirection *= -1;
+	}
 }
 
 
@@ -33,14 +55,17 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 	}
 
 	// 向きの変更
-	if (direction * mDirection < 0) { mSlide.mirror(); }
-	if (direction != 0) { mDirection = direction; }	
+	if (direction * mDirection < 0) 
+	{ 
+		mSlide.mirror(); 
+		mDirection *= -1;
+	}
 
 	mSlide.changeTexture();
 }
 
 
-void Kokoha::AdventurePlayer::draw(const Point& cameraPos)
+void Kokoha::AdventurePlayer::draw(const Point& cameraPos)const
 {
 	mSlide.getTexture().draw(Point((int32)mPosX, POS_Y) + cameraPos);
 }
@@ -48,5 +73,5 @@ void Kokoha::AdventurePlayer::draw(const Point& cameraPos)
 
 Rect Kokoha::AdventurePlayer::getRegion() const
 {
-	return Rect((int32)(mPosX), POS_Y, SIZE);
+	return std::move(Rect((int32)(mPosX), POS_Y, SIZE));
 }

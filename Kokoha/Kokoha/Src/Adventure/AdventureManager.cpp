@@ -5,13 +5,18 @@ namespace
 {
 	// 部屋の幅の行数
 	constexpr size_t ROOM_WIDTH_ROW = 0;
-	// プレイヤーの座標の行数
-	constexpr size_t PLAYER_POS_ROW = 1;
+
+	// プレイヤーについての行数
+	constexpr size_t PLAYER_ROW = 1;
+	// プレイヤーの座標についての列数
+	constexpr size_t PLAYER_POS_COLUMN = 0;
+	// プレイヤーの方向についての列数
+	constexpr size_t PLAYER_DIRECTION_COLUMN = 1;
+
 	// オブジェクトの情報の行数
 	constexpr size_t OBJECT_ROW = 2;
 	// オブジェクトの座標の列数
 	constexpr size_t POS_COLUMN = 0;
-	
 	// オブジェクトの画像名の列数
 	constexpr size_t TEXTURE_NAME_COLUMN = 1;
 	// オブジェクトの通過可能フラグの列数
@@ -55,6 +60,7 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 	catch (const ParseError&)
 	{
 		errorMessage += U"整数値に変換できません.\n";
+		errorMessage += U"部屋の幅 > " + csv[ROOM_WIDTH_ROW][0] + U"\n";
 		errorMessage += fileName + U" : " + ToString(ROOM_WIDTH_ROW + 1) + U"行目";
 		return errorMessage;
 	}
@@ -62,12 +68,18 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 	// プレイヤーの範囲
 	try
 	{
-		mPlayerRegion.setPos(Parse<int32>(csv[PLAYER_POS_ROW][0]), ADVENTURE_SIZE.y - PLAYER_SIZE.y);
+		mPlayer.set
+		(
+			Parse<int32>(csv[PLAYER_ROW][PLAYER_POS_COLUMN]),
+			Parse<int32>(csv[PLAYER_ROW][PLAYER_DIRECTION_COLUMN])
+		);
 	}
 	catch (const ParseError&)
 	{
 		errorMessage += U"整数値に変換できません.\n";
-		errorMessage += fileName + U" : " + ToString(PLAYER_POS_ROW + 1) + U"行目";
+		errorMessage += U"座標 > " + csv[PLAYER_ROW][PLAYER_POS_COLUMN] + U"\n";
+		errorMessage += U"方向 > " + csv[PLAYER_ROW][PLAYER_DIRECTION_COLUMN] + U"\n";
+		errorMessage += fileName + U" : " + ToString(PLAYER_ROW + 1) + U"行目";
 		return errorMessage;
 	}
 
@@ -97,15 +109,19 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 
 void Kokoha::AdventureManager::update()
 {
+	mPlayer.update(mObjectList);
+
 	for (auto& object : mObjectList)
 	{
-		object.update(mPlayerRegion);
+		object.update(mPlayer.getRegion());
 	}
 }
 
 
 void Kokoha::AdventureManager::draw() const
 {
+	mPlayer.draw(mCameraPos);
+
 	for (const auto& object : mObjectList)
 	{
 		object.draw(mCameraPos);

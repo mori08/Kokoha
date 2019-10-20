@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "AdventureObject.h"
+#include "AdventurePlayer.h"
 
 
 namespace Kokoha
@@ -14,6 +14,9 @@ namespace Kokoha
 	class AdventureManager
 	{
 	private:
+
+		// ƒvƒŒƒCƒ„[
+		AdventurePlayer mPlayer;
 
 		// •”‰®‚Ì•
 		int32 mRoomWidth;

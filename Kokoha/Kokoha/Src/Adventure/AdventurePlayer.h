@@ -27,6 +27,13 @@ namespace Kokoha
 
 	public:
 
+		AdventurePlayer();
+
+		/// <summary>
+		/// 設定
+		/// </summary>
+		void set(int32 posX, int32 direction);
+
 		/// <summary>
 		/// 更新
 		/// </summary>
@@ -36,7 +43,7 @@ namespace Kokoha
 		/// <summary>
 		/// 描画
 		/// </summary>
-		void draw(const Point& cameraPos);
+		void draw(const Point& cameraPos)const;
 
 		/// <summary>
 		/// プレイヤーの範囲の取得
