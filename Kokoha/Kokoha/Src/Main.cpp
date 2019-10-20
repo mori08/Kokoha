@@ -8,6 +8,8 @@
 #include "Record/LoadRecordScene.h"
 #include "Event/Scene/LoadEventScene.h"
 #include "Event/Scene/EventScene.h"
+#include "Adventure/Scene/LoadAdventureScene.h"
+#include "Adventure/Scene/AdventureScene.h"
 
 
 namespace
@@ -35,11 +37,13 @@ void Main()
 
 	// シーンの設定
 	MyApp sceneManager;
-	sceneManager.add<Kokoha::TitleScene>     (SceneName::TITLE);
-	sceneManager.add<Kokoha::SaveRecordScene>(SceneName::SAVE_RECORD);
-	sceneManager.add<Kokoha::LoadRecordScene>(SceneName::LOAD_RECORD);
-	sceneManager.add<Kokoha::LoadEventScene> (SceneName::LOAD_EVENT);
-	sceneManager.add<Kokoha::EventScene>     (SceneName::EVENT);
+	sceneManager.add<Kokoha::TitleScene>        (SceneName::TITLE);
+	sceneManager.add<Kokoha::SaveRecordScene>   (SceneName::SAVE_RECORD);
+	sceneManager.add<Kokoha::LoadRecordScene>   (SceneName::LOAD_RECORD);
+	sceneManager.add<Kokoha::LoadEventScene>    (SceneName::LOAD_EVENT);
+	sceneManager.add<Kokoha::EventScene>        (SceneName::EVENT);
+	sceneManager.add<Kokoha::LoadAdventureScene>(SceneName::LOAD_ADVENTURE);
+	sceneManager.add<Kokoha::AdventureScene>    (SceneName::ADVENTURE);
 
 	while (System::Update())
 	{

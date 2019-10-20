@@ -4,11 +4,11 @@
 namespace
 {
 	// y座標
-	constexpr int32 POS_Y = 360;
+	constexpr int32 POS_Y = 362;
 	// 大きさ
 	constexpr Size SIZE(60, 60);
 	// 移動スピード
-	constexpr double SPEED = 10;
+	constexpr double SPEED = 60;
 
 	// 横向きの画像番号
 	constexpr Point MOVE_TEXTURE_POS(0, 2);
@@ -47,7 +47,7 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 	bool moveAble = true;
 	for (const auto& object : objectList)
 	{
-		if (!object.isPassing() && object.getRegion().contains(nextPos)) { moveAble = false; break; }
+		if (!object.isPassing() && object.getRegion().intersects(nextPos)) { moveAble = false; break; }
 	}
 	if (moveAble)
 	{
@@ -67,7 +67,7 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 
 void Kokoha::AdventurePlayer::draw(const Point& cameraPos)const
 {
-	mSlide.getTexture().draw(Point((int32)mPosX, POS_Y) + cameraPos);
+	mSlide.getTexture().draw(Point((int32)mPosX, POS_Y) - cameraPos);
 }
 
 

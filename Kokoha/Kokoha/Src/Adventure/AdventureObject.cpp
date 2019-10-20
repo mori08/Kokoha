@@ -45,5 +45,5 @@ void Kokoha::AdventureObject::update(const Rect& playerRegion)
 
 void Kokoha::AdventureObject::draw(const Point& cameraPoint) const
 {
-	TextureAsset(mTextureName).draw(mRegion.pos, AlphaF(mAlpha));
+	TextureAsset(mTextureName).draw(mRegion.pos - cameraPoint, AlphaF(mAlpha));
 }

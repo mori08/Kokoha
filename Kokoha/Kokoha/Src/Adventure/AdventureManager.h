@@ -60,5 +60,12 @@ namespace Kokoha
 		/// </summary>
 		void draw()const;
 
+	private:
+
+		/// <summary>
+		/// ƒJƒƒ‰À•W‚Ì•ÏX
+		/// </summary>
+		void changeCameraPos();
+
 	};
 }

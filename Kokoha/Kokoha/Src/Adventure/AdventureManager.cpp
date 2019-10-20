@@ -1,4 +1,5 @@
 #include "AdventureManager.h"
+#include "../MyColor.h"
 
 
 namespace
@@ -24,12 +25,13 @@ namespace
 	// 開くウィンドウ名の列数
 	constexpr size_t WINDOW_NAME_COLUMN = 3;
 
-	// 床を除く描画範囲のサイズ
-	constexpr Size ADVENTURE_SIZE(640, 420);
+	// 描画範囲
+	constexpr Rect SIZE(0, 0, 640, 420);
 }
 
 
 Kokoha::AdventureManager::AdventureManager()
+	: mCameraPos(0,0)
 {
 	
 }
@@ -73,6 +75,7 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 			Parse<int32>(csv[PLAYER_ROW][PLAYER_POS_COLUMN]),
 			Parse<int32>(csv[PLAYER_ROW][PLAYER_DIRECTION_COLUMN])
 		);
+		changeCameraPos();
 	}
 	catch (const ParseError&)
 	{
@@ -82,6 +85,20 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 		errorMessage += fileName + U" : " + ToString(PLAYER_ROW + 1) + U"行目";
 		return errorMessage;
 	}
+
+	// 左右に壁となるオブジェクトの設置
+	mObjectList.emplace_back
+	(
+		Point(-10, 0),
+		U"Invisible",
+		false
+	);
+	mObjectList.emplace_back
+	(
+		Point(mRoomWidth, 0),
+		U"Invisible",
+		false
+	);
 
 	// オブジェクトの整理
 	for (size_t row = OBJECT_ROW; row < csv.rows(); ++row)
@@ -95,7 +112,7 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 				Parse<bool>(csv[row][IS_PASSING_COLUMN])
 			);
 		}
-		catch(const ParseError& e)
+		catch(const ParseError&)
 		{
 			errorMessage += U"オブジェクトを生成できません.\n";
 			errorMessage += fileName + U" : " + ToString(row + 1) + U"行目";
@@ -111,6 +128,8 @@ void Kokoha::AdventureManager::update()
 {
 	mPlayer.update(mObjectList);
 
+	changeCameraPos();
+
 	for (auto& object : mObjectList)
 	{
 		object.update(mPlayer.getRegion());
@@ -120,10 +139,26 @@ void Kokoha::AdventureManager::update()
 
 void Kokoha::AdventureManager::draw() const
 {
+	SIZE.draw(MyWhite);
+
 	mPlayer.draw(mCameraPos);
 
 	for (const auto& object : mObjectList)
 	{
 		object.draw(mCameraPos);
 	}
+}
+
+
+void Kokoha::AdventureManager::changeCameraPos()
+{
+	int32 x = mPlayer.getRegion().center().asPoint().x - Scene::Center().x;
+
+	if (mRoomWidth < Scene::Width())
+	{
+		mCameraPos.x = x;
+		return;
+	}
+
+	mCameraPos.x = Max(0, Min(x, mRoomWidth - Scene::Width()));
 }
