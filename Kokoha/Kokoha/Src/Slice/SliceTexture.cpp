@@ -48,6 +48,13 @@ void Kokoha::SliceTexture::start(const String name)
 }
 
 
+void Kokoha::SliceTexture::startAnotherAnimation(const String name)
+{
+	if (name == mAnimationName) { return; }
+	start(name);
+}
+
+
 TextureRegion Kokoha::SliceTexture::getTexture() const
 {
 	const auto& POS_LIST = mAnimationMap.find(mAnimationName)->second.POS_LIST;

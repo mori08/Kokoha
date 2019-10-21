@@ -12,6 +12,22 @@ namespace
 
 	// 横向きの画像番号
 	constexpr Point MOVE_TEXTURE_POS(0, 2);
+
+	// 歩きアニメーション
+	const Kokoha::Animation WALK_ANIM
+	{
+		0.5,
+		Array<Point>{Point(1,2),Point(0,2)},
+		true
+	};
+
+	// 立ちアニメーション
+	const Kokoha::Animation STAND_ANIM
+	{
+		0.0,
+		Array<Point>{Point(0,2)},
+		false
+	};
 }
 
 
@@ -19,7 +35,8 @@ Kokoha::AdventurePlayer::AdventurePlayer()
 	: mSlide(U"MainRobot", SIZE, MOVE_TEXTURE_POS)
 	, mDirection(+1)
 {
-
+	mSlide.setAnimation(U"Walk" , WALK_ANIM);
+	mSlide.setAnimation(U"Stand", STAND_ANIM);
 }
 
 
@@ -61,6 +78,15 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 		mDirection *= -1;
 	}
 
+	// アニメーションの変更
+	if (direction == 0)
+	{
+		mSlide.startAnotherAnimation(U"Stand");
+	}
+	else
+	{
+		mSlide.startAnotherAnimation(U"Walk");
+	}
 	mSlide.changeTexture();
 }
 

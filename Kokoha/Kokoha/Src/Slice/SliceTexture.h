@@ -126,6 +126,12 @@ namespace Kokoha
 		void start(const String name);
 
 		/// <summary>
+		/// 別アニメーションの開始
+		/// </summary>
+		/// <param name="name"> アニメーション名 </param>
+		void startAnotherAnimation(const String name);
+
+		/// <summary>
 		/// 画像の変更
 		/// </summary>
 		TextureRegion getTexture() const;

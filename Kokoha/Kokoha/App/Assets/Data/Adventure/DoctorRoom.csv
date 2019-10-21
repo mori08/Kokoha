@@ -1,3 +1,8 @@
 1280,,
 1090,-1,
 "(0,0)",DoctorDesk,FALSE
+"(240, 60)",BrokenPoster,TRUE
+"(456, 266)",DoctorWorkbench,TRUE
+"(560, -223)",Monitor,TRUE
+"(920, 366)",TrashBox0,TRUE
+"(994, 380)",Cardboard,TRUE
