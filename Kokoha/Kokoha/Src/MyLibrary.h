@@ -51,4 +51,16 @@ namespace Kokoha
 	/// FPSの表示
 	/// </summary>
 	void showFps();
+
+	/// <summary>
+	/// 中心座標を決めた長方形の取得
+	/// </summary>
+	/// <param name="center"> 中心座標 </param>
+	/// <param name="size">   サイズ   </param>
+	/// <returns> 長方形 </returns>
+	constexpr Rect getRectFromCenter(const Point& center, const Size& size)
+	{
+		return std::move(Rect(center - size / 2, size));
+	}
+
 }

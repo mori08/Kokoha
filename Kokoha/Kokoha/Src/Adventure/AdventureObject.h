@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include <Siv3D.hpp>
+#include "Window/AdventureWindow.h"
 
 
 namespace Kokoha
@@ -14,6 +14,9 @@ namespace Kokoha
 	class AdventureObject
 	{
 	private:
+
+		// 画像名と開くウィンドウの対応関係
+		static std::unordered_map<String, std::function<WindowPtr()>> sMakeWindowFuncMap;
 
 		// 当たり判定の範囲
 		Rect mRegion;
@@ -39,6 +42,11 @@ namespace Kokoha
 		/// <param name="textureName"> 画像の名前 </param>
 		/// <param name="pass">        通過可能か </param>
 		AdventureObject(const Point& pos, const String& textureName, bool pass);
+
+		/// <summary>
+		/// ウィンドウを作成する関数をマップに登録
+		/// </summary>
+		static void registerWindow();
 
 		/// <summary>
 		/// 更新

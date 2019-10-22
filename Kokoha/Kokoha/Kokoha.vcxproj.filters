@@ -119,6 +119,9 @@
     <Filter Include="Src\Adventure\Scene">
       <UniqueIdentifier>{f8a7a371-5fbe-41cf-a775-32d40eda6925}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Adventure\Window">
+      <UniqueIdentifier>{56644763-3d18-4171-8b47-87e676ce9e2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -468,6 +471,12 @@
     <ClCompile Include="Src\Adventure\Scene\AdventureScene.cpp">
       <Filter>Src\Adventure\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -574,6 +583,12 @@
     </ClInclude>
     <ClInclude Include="Src\Adventure\Scene\AdventureScene.h">
       <Filter>Src\Adventure\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\AdventureWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\InfoWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,8 @@
 #include "../MyLibrary.h"
 #include "../Input/InputManager.h"
 
+#include "Window/InfoWindow.h"
+
 
 namespace 
 {
@@ -14,12 +16,23 @@ namespace
 }
 
 
+std::unordered_map<String, std::function<Kokoha::WindowPtr()>> Kokoha::AdventureObject::sMakeWindowFuncMap;
+
+
 Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& textureName, bool pass)
 	: mRegion(pos,TextureAsset(textureName).size())
 	, mTextureName(textureName)
 	, mAlpha(NON_INTERSECTS_ALPHA)
 	, mIsPassing(pass)
 {
+}
+
+
+void Kokoha::AdventureObject::registerWindow()
+{
+	sMakeWindowFuncMap[U"DoctorWorkbench"] = []() { return std::make_unique<InfoWindow>(U"作業台,\n散らかってる."); };
+	sMakeWindowFuncMap[U"TrashBox0"]       = []() { return std::make_unique<InfoWindow>(U"何かが捨ててある."); };
+	sMakeWindowFuncMap[U"Cardboard"]       = []() { return std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない."); };
 }
 
 

@@ -2,6 +2,7 @@
 
 
 #include "AdventurePlayer.h"
+#include "Window/AdventureWindow.h"
 
 
 namespace Kokoha
@@ -26,6 +27,9 @@ namespace Kokoha
 
 		// カメラ座標
 		Point mCameraPos;
+
+		// ウィンドウ
+		std::list<WindowPtr> mWindowList;
 
 	private:
 
@@ -59,6 +63,22 @@ namespace Kokoha
 		/// 描画
 		/// </summary>
 		void draw()const;
+
+	public:
+
+		/// <summary>
+		/// ウィンドウを開く
+		/// </summary>
+		/// <param name="window"> 開くウィンドウ </param>
+		void openWindow(WindowPtr& window)
+		{
+			mWindowList.emplace_back(std::move(window));
+		}
+
+		/// <summary>
+		/// 一番上のウィンドウを閉じる
+		/// </summary>
+		void closeWindow();
 
 	private:
 

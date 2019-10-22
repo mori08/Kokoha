@@ -150,6 +150,18 @@ void Kokoha::AdventureManager::draw() const
 }
 
 
+void Kokoha::AdventureManager::closeWindow()
+{
+	if (mWindowList.empty()) { return; }
+	mWindowList.pop_back();
+	
+	if (!mWindowList.empty())
+	{
+		mWindowList.back()->select();
+	}
+}
+
+
 void Kokoha::AdventureManager::changeCameraPos()
 {
 	int32 x = mPlayer.getRegion().center().asPoint().x - Scene::Center().x;
