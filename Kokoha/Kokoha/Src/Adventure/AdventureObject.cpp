@@ -24,6 +24,7 @@ Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& texture
 	, mTextureName(textureName)
 	, mAlpha(NON_INTERSECTS_ALPHA)
 	, mIsPassing(pass)
+	, mOnClick([](){})
 {
 }
 
@@ -45,11 +46,6 @@ void Kokoha::AdventureObject::update(const Rect& playerRegion)
 	if (mRegion.intersects(playerRegion))
 	{
 		goalAlpha = INTERSECTS_ALPHA;
-
-		if (InputManager::instatnce().decision())
-		{
-			mOnClick();
-		}
 	}
 
 	internalDividingPoint(mAlpha, goalAlpha, ALPHA_RATE);

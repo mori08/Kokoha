@@ -25,6 +25,9 @@ namespace Kokoha
 		// 向き x軸について 正 -> +1 , 負 -> -1
 		int32 mDirection;
 
+		// 確認マークの表示位置
+		Optional<Point> mCheckPos;
+
 	public:
 
 		AdventurePlayer();
@@ -52,6 +55,23 @@ namespace Kokoha
 		/// 範囲
 		/// </returns>
 		Rect getRegion()const;
+
+	private:
+
+		/// <summary>
+		/// プレイヤーの移動
+		/// </summary>
+		/// <param name="objectList"> オブジェクトのリスト </param>
+		void walk(const Array<AdventureObject>& objectList);
+
+		/// <summary>
+		/// 隣接オブジェクトを確認
+		/// </summary>
+		/// <param name="objectList"> オブジェクトのリスト </param>
+		/// <returns>
+		/// 隣接オブジェクトの座標
+		/// </returns>
+		Optional<Point> check(const Array<AdventureObject>& objectList);
 
 	};
 }

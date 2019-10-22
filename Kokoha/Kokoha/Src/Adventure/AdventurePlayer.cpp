@@ -28,6 +28,9 @@ namespace
 		Array<Point>{Point(0,2)},
 		false
 	};
+
+	// 確認アイコンを表示する座標のずれ
+	constexpr Point CHECK_OFFSET(0, -60);
 }
 
 
@@ -53,6 +56,31 @@ void Kokoha::AdventurePlayer::set(int32 posX, int32 direction)
 
 void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 {
+	walk(objectList);
+
+	mCheckPos = check(objectList);
+}
+
+
+void Kokoha::AdventurePlayer::draw(const Point& cameraPos)const
+{
+	mSlide.getTexture().draw(Point((int32)mPosX, POS_Y) - cameraPos);
+	
+	if (mCheckPos)
+	{
+		TextureAsset(U"CheckIcon").drawAt(mCheckPos.value() - cameraPos, AlphaF(Abs(Sin(Scene::Time()))));
+	}
+}
+
+
+Rect Kokoha::AdventurePlayer::getRegion() const
+{
+	return std::move(Rect((int32)(mPosX), POS_Y, SIZE));
+}
+
+
+void Kokoha::AdventurePlayer::walk(const Array<AdventureObject>& objectList)
+{
 	// 新しい座標の生成
 	int32 direction = 0;
 	if (KeyD.pressed()) { direction += 1; }
@@ -72,9 +100,9 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 	}
 
 	// 向きの変更
-	if (direction * mDirection < 0) 
-	{ 
-		mSlide.mirror(); 
+	if (direction * mDirection < 0)
+	{
+		mSlide.mirror();
 		mDirection *= -1;
 	}
 
@@ -91,13 +119,15 @@ void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
 }
 
 
-void Kokoha::AdventurePlayer::draw(const Point& cameraPos)const
+Optional<Point> Kokoha::AdventurePlayer::check(const Array<AdventureObject>& objectList)
 {
-	mSlide.getTexture().draw(Point((int32)mPosX, POS_Y) - cameraPos);
-}
+	for (const auto& object : objectList)
+	{
+		if (object.getRegion().intersects(getRegion()))
+		{
+			return object.getRegion().center().asPoint() + CHECK_OFFSET;
+		}
+	}
 
-
-Rect Kokoha::AdventurePlayer::getRegion() const
-{
-	return std::move(Rect((int32)(mPosX), POS_Y, SIZE));
+	return none;
 }
