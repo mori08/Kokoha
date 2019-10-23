@@ -41,7 +41,7 @@ namespace Kokoha
 		/// 更新
 		/// </summary>
 		/// <param name="objectList"> オブジェクトのリスト </param>
-		void update(const Array<AdventureObject>& objectList);
+		void update(Array<AdventureObject>& objectList);
 
 		/// <summary>
 		/// 描画
@@ -71,7 +71,7 @@ namespace Kokoha
 		/// <returns>
 		/// 隣接オブジェクトの座標
 		/// </returns>
-		Optional<Point> check(const Array<AdventureObject>& objectList);
+		Optional<Point> check(Array<AdventureObject>& objectList);
 
 	};
 }

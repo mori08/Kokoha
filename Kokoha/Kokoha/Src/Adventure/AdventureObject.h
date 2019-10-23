@@ -15,8 +15,8 @@ namespace Kokoha
 	{
 	private:
 
-		// 画像名と開くウィンドウの対応関係
-		static std::unordered_map<String, std::function<WindowPtr()>> sMakeWindowFuncMap;
+		// 画像名と開くウィンドウの連想配列
+		static std::unordered_map<String, std::function<void()>> sMakeWindowFuncMap;
 
 		// 当たり判定の範囲
 		Rect mRegion;
@@ -84,6 +84,22 @@ namespace Kokoha
 		{
 			mOnClick = func;
 		}
+
+		/// <summary>
+		/// 決定押されたときの処理
+		/// </summary>
+		void onClick()
+		{
+			mOnClick();
+		}
+
+	public:
+
+		/// <summary>
+		/// ウィンドウを開く
+		/// </summary>
+		/// <param name="windowPtr"> ウィンドウのポインタ </param>
+		static void openWindow(WindowPtr&& windowPtr);
 
 	};
 }

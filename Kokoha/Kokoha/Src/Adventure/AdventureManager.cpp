@@ -33,7 +33,7 @@ namespace
 Kokoha::AdventureManager::AdventureManager()
 	: mCameraPos(0,0)
 {
-	
+	AdventureObject::registerWindow();
 }
 
 
@@ -126,6 +126,13 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 
 void Kokoha::AdventureManager::update()
 {
+	if (!mWindowList.empty())
+	{
+		for (auto&& window : mWindowList) { window->update(); }
+		mWindowList.back()->selectedUpdate();
+		return;
+	}
+
 	mPlayer.update(mObjectList);
 
 	changeCameraPos();
@@ -146,6 +153,11 @@ void Kokoha::AdventureManager::draw() const
 	for (const auto& object : mObjectList)
 	{
 		object.draw(mCameraPos);
+	}
+
+	for (const auto& window : mWindowList)
+	{
+		window->draw();
 	}
 }
 

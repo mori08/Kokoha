@@ -1,4 +1,5 @@
 #include "AdventurePlayer.h"
+#include "../Input/InputManager.h"
 
 
 namespace
@@ -16,7 +17,7 @@ namespace
 	// 歩きアニメーション
 	const Kokoha::Animation WALK_ANIM
 	{
-		0.5,
+		0.3,
 		Array<Point>{Point(1,2),Point(0,2)},
 		true
 	};
@@ -54,7 +55,7 @@ void Kokoha::AdventurePlayer::set(int32 posX, int32 direction)
 }
 
 
-void Kokoha::AdventurePlayer::update(const Array<AdventureObject>& objectList)
+void Kokoha::AdventurePlayer::update(Array<AdventureObject>& objectList)
 {
 	walk(objectList);
 
@@ -119,12 +120,16 @@ void Kokoha::AdventurePlayer::walk(const Array<AdventureObject>& objectList)
 }
 
 
-Optional<Point> Kokoha::AdventurePlayer::check(const Array<AdventureObject>& objectList)
+Optional<Point> Kokoha::AdventurePlayer::check(Array<AdventureObject>& objectList)
 {
-	for (const auto& object : objectList)
+	for (auto& object : objectList)
 	{
-		if (object.getRegion().intersects(getRegion()))
+		if (object.getRegion().contains(getRegion().center()))
 		{
+			if (InputManager::instatnce().decision())
+			{
+				object.onClick();
+			}
 			return object.getRegion().center().asPoint() + CHECK_OFFSET;
 		}
 	}

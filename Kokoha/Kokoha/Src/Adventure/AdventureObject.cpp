@@ -1,4 +1,5 @@
 #include "AdventureObject.h"
+#include "AdventureManager.h"
 #include "../MyLibrary.h"
 #include "../Input/InputManager.h"
 
@@ -16,7 +17,7 @@ namespace
 }
 
 
-std::unordered_map<String, std::function<Kokoha::WindowPtr()>> Kokoha::AdventureObject::sMakeWindowFuncMap;
+std::unordered_map<String, std::function<void()>> Kokoha::AdventureObject::sMakeWindowFuncMap;
 
 
 Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& textureName, bool pass)
@@ -26,14 +27,18 @@ Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& texture
 	, mIsPassing(pass)
 	, mOnClick([](){})
 {
+	if (sMakeWindowFuncMap.count(mTextureName))
+	{
+		mOnClick = sMakeWindowFuncMap[mTextureName];
+	}
 }
 
 
 void Kokoha::AdventureObject::registerWindow()
 {
-	sMakeWindowFuncMap[U"DoctorWorkbench"] = []() { return std::make_unique<InfoWindow>(U"作業台,\n散らかってる."); };
-	sMakeWindowFuncMap[U"TrashBox0"]       = []() { return std::make_unique<InfoWindow>(U"何かが捨ててある."); };
-	sMakeWindowFuncMap[U"Cardboard"]       = []() { return std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない."); };
+	sMakeWindowFuncMap[U"DoctorWorkbench"] = []() { openWindow(std::make_unique<InfoWindow>(U"作業台,\n散らかってる.")); };
+	sMakeWindowFuncMap[U"TrashBox0"]       = []() { openWindow(std::make_unique<InfoWindow>(U"何かが捨ててある.")); };
+	sMakeWindowFuncMap[U"Cardboard"]       = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない.")); };
 }
 
 
@@ -55,4 +60,10 @@ void Kokoha::AdventureObject::update(const Rect& playerRegion)
 void Kokoha::AdventureObject::draw(const Point& cameraPoint) const
 {
 	TextureAsset(mTextureName).draw(mRegion.pos - cameraPoint, AlphaF(mAlpha));
+}
+
+
+void Kokoha::AdventureObject::openWindow(WindowPtr&& windowPtr)
+{
+	AdventureManager::instance().openWindow(windowPtr);
 }
