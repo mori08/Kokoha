@@ -10,6 +10,8 @@
 #include "Event/Scene/EventScene.h"
 #include "Adventure/Scene/LoadAdventureScene.h"
 #include "Adventure/Scene/AdventureScene.h"
+#include "Game/Scene/LoadGameScene.h"
+#include "Game/Scene/GameScene.h"
 
 
 namespace
@@ -44,6 +46,8 @@ void Main()
 	sceneManager.add<Kokoha::EventScene>        (SceneName::EVENT);
 	sceneManager.add<Kokoha::LoadAdventureScene>(SceneName::LOAD_ADVENTURE);
 	sceneManager.add<Kokoha::AdventureScene>    (SceneName::ADVENTURE);
+	sceneManager.add<Kokoha::LoadGameScene>     (SceneName::LOAD_GAME);
+	sceneManager.add<Kokoha::GameScene>         (SceneName::GAME);
 
 	while (System::Update())
 	{

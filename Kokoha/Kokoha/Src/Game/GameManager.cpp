@@ -53,7 +53,8 @@ Optional<String> Kokoha::GameManager::load(const String& fileName)
 
 	// åoòHíTçı
 	mStageData.searchPath();
-
+	
+	return none;
 }
 
 
@@ -66,5 +67,5 @@ void Kokoha::GameManager::update()
 void Kokoha::GameManager::draw() const
 {
 	Scene::Rect().draw(MyWhite);
-	mStageData.darw();
+	mStageData.draw();
 }

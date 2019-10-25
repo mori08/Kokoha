@@ -153,7 +153,7 @@ namespace Kokoha
 		/// <summary>
 		/// ’nŒ`‚Ì•`‰æ
 		/// </summary>
-		void darw()const;
+		void draw()const;
 
 	private:
 

@@ -16,7 +16,10 @@ enum class SceneName
 	EVENT,          // イベントの実行
 
 	LOAD_ADVENTURE, // 探索モードのロード
-	ADVENTURE       // 探索モード
+	ADVENTURE,      // 探索モード
+
+	LOAD_GAME,      // ゲームのロード
+	GAME            // ゲーム
 };
 
 

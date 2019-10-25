@@ -99,7 +99,7 @@ void Kokoha::StageData::searchPath()
 }
 
 
-void Kokoha::StageData::darw() const
+void Kokoha::StageData::draw() const
 {
 	for (int32 i = 0; i < N; ++i)
 	{

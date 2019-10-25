@@ -23,5 +23,5 @@ Kokoha::ErrorMessage Kokoha::LoadGameScene::load()
 
 SceneName Kokoha::LoadGameScene::complete()
 {
-	return SceneName::TITLE;
+	return mIsSuccess ? SceneName::GAME : SceneName::TITLE;
 }
