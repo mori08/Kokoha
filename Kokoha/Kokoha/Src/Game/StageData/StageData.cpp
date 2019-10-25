@@ -1,6 +1,6 @@
 #include <limits>
 #include "StageData.h"
-#include "../MyColor.h"
+#include "../../MyColor.h"
 
 
 namespace 

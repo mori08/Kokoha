@@ -125,6 +125,9 @@
     <Filter Include="Src\Game">
       <UniqueIdentifier>{d472ad21-8012-40d9-b0de-a536913f0e93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\StageData">
+      <UniqueIdentifier>{e0c6193f-43d1-4655-9beb-79f99fee1bb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -480,7 +483,10 @@
     <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp">
       <Filter>Src\Adventure\Window</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\StageData.cpp">
+    <ClCompile Include="Src\Game\StageData\StageData.cpp">
+      <Filter>Src\Game\StageData</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\GameManager.cpp">
       <Filter>Src\Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -596,7 +602,10 @@
     <ClInclude Include="Src\Adventure\Window\InfoWindow.h">
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Game\StageData.h">
+    <ClInclude Include="Src\Game\StageData\StageData.h">
+      <Filter>Src\Game\StageData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\GameManager.h">
       <Filter>Src\Game</Filter>
     </ClInclude>
   </ItemGroup>
