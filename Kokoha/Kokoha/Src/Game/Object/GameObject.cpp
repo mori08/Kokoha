@@ -9,23 +9,33 @@ namespace
 }
 
 
+void Kokoha::GameObject::collisionCheck(GameObjectPtr& another)
+{
+	if (mBody.intersects(another->mBody))
+	{
+		onCollision(another->mType);
+		another->onCollision(mType);
+	}
+}
+
+
 void Kokoha::GameObject::walk(Vec2 movement)
 {
 	movement *= PLAYER_BASE_SPEED * Scene::DeltaTime();
 
-	if (GameManager::instance().getStageData().isWalkAble(mPos.movedBy(movement.x, 0)))
+	if (GameManager::instance().getStageData().isWalkAble(mBody.center.movedBy(movement.x, 0)))
 	{
-		mPos.x += movement.x;
+		mBody.center.x += movement.x;
 	}
 
-	if (GameManager::instance().getStageData().isWalkAble(mPos.movedBy(0, movement.y)))
+	if (GameManager::instance().getStageData().isWalkAble(mBody.center.movedBy(0, movement.y)))
 	{
-		mPos.y += movement.y;
+		mBody.center.y += movement.y;
 	}
 }
 
 
 void Kokoha::GameObject::walkToGoal(double speed, const Vec2& goal)
 {
-	walk(speed * GameManager::instance().getStageData().getPath(mPos, goal));
+	walk(speed * GameManager::instance().getStageData().getPath(mBody.center, goal));
 }

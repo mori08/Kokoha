@@ -29,5 +29,7 @@ namespace Kokoha
 
 		void drawLight()const override;
 
+		void onCollision(const ObjectType& type);
+
 	};
 }

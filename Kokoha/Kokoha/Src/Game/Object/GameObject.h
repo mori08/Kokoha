@@ -16,13 +16,13 @@ namespace Kokoha
 
 		enum class ObjectType
 		{
-			PLAYER,
+			PLAYER, // プレイヤー
 		};
 
 	protected:
 
-		// 座標
-		Vec2 mPos;
+		// 範囲
+		Circle mBody;
 
 		// 種類
 		const ObjectType mType;
@@ -32,13 +32,12 @@ namespace Kokoha
 		/// <summary>
 		/// オブジェクト
 		/// </summary>
-		/// <param name="pos">  座標 </param>
+		/// <param name="body"> 範囲 </param>
 		/// <param name="type"> 種類 </param>
-		GameObject(const Vec2& pos, const ObjectType& type)
-			: mPos (pos)
+		GameObject(const Circle& body, const ObjectType& type)
+			: mBody(body)
 			, mType(type)
 		{
-
 		}
 
 		/// <summary>
@@ -62,8 +61,25 @@ namespace Kokoha
 		/// </remarks>
 		virtual void drawLight()const
 		{
-
 		}
+
+		/// <summary>
+		/// このオブジェクトが削除するか
+		/// </summary>
+		/// <returns>
+		/// 削除するとき true , しないとき false
+		/// </returns>
+		virtual bool isEraseAble()const
+		{
+			return false;
+		}
+
+		/// <summary>
+		/// 他のオブジェクトとの衝突を確認
+		/// 衝突していたときonCollision()を呼ぶ
+		/// </summary>
+		/// <param name="another"> 他のオブジェクト </param>
+		void collisionCheck(GameObjectPtr& another);
 
 	protected:
 
@@ -85,6 +101,13 @@ namespace Kokoha
 		/// プレイヤーの速さの基本値を1.0とする.
 		/// </remarks>
 		void walkToGoal(double speed, const Vec2& goal);
+
+		/// <summary>
+		/// 衝突時の処理
+		/// </summary>
+		virtual void onCollision(const ObjectType&)
+		{
+		}
 
 	};
 

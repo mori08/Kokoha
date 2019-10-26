@@ -4,6 +4,9 @@
 
 namespace
 {
+	// プレイヤーの当たり判定の範囲
+	constexpr double BODY_RADIUS = 12.0;
+
 	// 光をループさせる時間(秒)
 	constexpr double LIGHT_LOOP_TIME = 2.0;
 	// 光の厚さ
@@ -18,7 +21,7 @@ namespace
 
 
 Kokoha::GamePlayer::GamePlayer(const Vec2& pos)
-	: GameObject(pos, ObjectType::PLAYER)
+	: GameObject(Circle(pos, BODY_RADIUS), ObjectType::PLAYER)
 	, mLightRate(LIGHT_LOOP_TIME, 1.0)
 {
 
@@ -42,7 +45,7 @@ void Kokoha::GamePlayer::update()
 
 void Kokoha::GamePlayer::draw() const
 {
-	TextureAsset(U"Player").drawAt(mPos);
+	TextureAsset(U"Player").drawAt(mBody.center);
 }
 
 
@@ -54,5 +57,15 @@ void Kokoha::GamePlayer::drawLight() const
 
 	const double radius = LIGHT_RADIUS * pow(rate, RADIUS_POW);
 
-	Circle(mPos, radius).drawFrame(LIGHT_THICKNESS, color);
+	Circle(mBody.center, radius).drawFrame(LIGHT_THICKNESS, color);
+}
+
+
+void Kokoha::GamePlayer::onCollision(const ObjectType&)
+{
+	/*
+	TODO
+	・敵に触れたらゲームオーバー
+	・ゴールに触れたらクリア
+	*/
 }

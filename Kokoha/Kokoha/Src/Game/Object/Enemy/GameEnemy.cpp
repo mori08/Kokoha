@@ -3,6 +3,9 @@
 
 namespace
 {
+	// “–‚½‚è”»’è‚Ì”¼Œa
+	constexpr double BODY_RADIUS = 15.0;
+
 	// ‰æ‘œ‚ÌƒTƒCƒY
 	constexpr Size TEXTURE_SIZE(40, 40);
 	// ‘Ì‚Ì‰æ‘œ‚Ì”Ô†
@@ -28,7 +31,7 @@ namespace
 
 
 Kokoha::GameEnemy::GameEnemy(const Vec2& pos, const ObjectType& type, const String& textureName)
-	: GameObject(pos, type)
+	: GameObject(Circle(pos,BODY_RADIUS), type)
 	, mBodySlide(textureName, TEXTURE_SIZE, BODY_POS)
 	, mFaceSlide(textureName, TEXTURE_SIZE, FACE_POS)
 {
@@ -46,7 +49,7 @@ void Kokoha::GameEnemy::update()
 
 void Kokoha::GameEnemy::draw() const
 {
-	mBodySlide.getTexture().drawAt(mPos);
-	mFaceSlide.getTexture().drawAt(mPos);
+	mBodySlide.getTexture().drawAt(mBody.center);
+	mFaceSlide.getTexture().drawAt(mBody.center);
 }
 
