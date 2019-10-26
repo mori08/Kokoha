@@ -137,6 +137,9 @@
     <Filter Include="Src\Game\Object\Player">
       <UniqueIdentifier>{d76aef70-9ee3-4dfa-8dbb-f287df569320}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\Object\Enemy">
+      <UniqueIdentifier>{4273538c-9ca3-4c41-825f-9408c9b1cf43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -510,6 +513,9 @@
     <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp">
       <Filter>Src\Game\Object\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -640,6 +646,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Player\GamePlayer.h">
       <Filter>Src\Game\Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

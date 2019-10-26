@@ -16,7 +16,7 @@ namespace Kokoha
 
 		enum class ObjectType
 		{
-			PLAYER
+			PLAYER,
 		};
 
 	protected:
