@@ -246,6 +246,8 @@
     <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp" />
     <ClCompile Include="Src\Event\TextBox\TextBox.cpp" />
     <ClCompile Include="Src\Game\GameManager.cpp" />
+    <ClCompile Include="Src\Game\Object\GameObject.cpp" />
+    <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp" />
     <ClCompile Include="Src\Game\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Game\Scene\LoadGameScene.cpp" />
     <ClCompile Include="Src\Game\StageData\StageData.cpp" />
@@ -286,6 +288,8 @@
     <ClInclude Include="Src\Event\Scene\LoadEventScene.h" />
     <ClInclude Include="Src\Event\TextBox\TextBox.h" />
     <ClInclude Include="Src\Game\GameManager.h" />
+    <ClInclude Include="Src\Game\Object\GameObject.h" />
+    <ClInclude Include="Src\Game\Object\Player\GamePlayer.h" />
     <ClInclude Include="Src\Game\Scene\GameScene.h" />
     <ClInclude Include="Src\Game\Scene\LoadGameScene.h" />
     <ClInclude Include="Src\Game\StageData\StageData.h" />

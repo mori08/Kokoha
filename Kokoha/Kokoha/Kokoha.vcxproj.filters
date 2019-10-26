@@ -131,6 +131,12 @@
     <Filter Include="Src\Game\Scene">
       <UniqueIdentifier>{19c0b254-6085-41e7-9718-0c06bfc9d0ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\Object">
+      <UniqueIdentifier>{f5cd392c-7406-47cd-9bf6-69cec571a1d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Game\Object\Player">
+      <UniqueIdentifier>{d76aef70-9ee3-4dfa-8dbb-f287df569320}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -498,6 +504,12 @@
     <ClCompile Include="Src\Game\Scene\GameScene.cpp">
       <Filter>Src\Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\GameObject.cpp">
+      <Filter>Src\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp">
+      <Filter>Src\Game\Object\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -622,6 +634,12 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Scene\GameScene.h">
       <Filter>Src\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\GameObject.h">
+      <Filter>Src\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Player\GamePlayer.h">
+      <Filter>Src\Game\Object\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
