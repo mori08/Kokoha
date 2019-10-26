@@ -516,6 +516,10 @@
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\BlackEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -648,6 +652,12 @@
       <Filter>Src\Game\Object\Player</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\BlackEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
   </ItemGroup>

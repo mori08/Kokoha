@@ -9,7 +9,7 @@ namespace Kokoha
 {
 	/*
 	GameEnemyクラス
-
+	GameManagerで使用する敵オブジェクト
 	*/
 	class GameEnemy : public GameObject
 	{

@@ -16,7 +16,9 @@ namespace Kokoha
 
 		enum class ObjectType
 		{
-			PLAYER, // プレイヤー
+			PLAYER,      // プレイヤー
+			BLACK_ENEMY, // 黒い敵
+			WHITE_ENEMY  // 白い敵
 		};
 
 	protected:
