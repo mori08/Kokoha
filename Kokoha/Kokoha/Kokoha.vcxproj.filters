@@ -519,7 +519,9 @@
     <ClCompile Include="Src\Game\Object\Enemy\BlackEnemy.cpp">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">

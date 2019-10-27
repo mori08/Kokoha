@@ -77,11 +77,10 @@ namespace Kokoha
 		}
 
 		/// <summary>
-		/// 他のオブジェクトとの衝突を確認
-		/// 衝突していたときonCollision()を呼ぶ
+		/// 他のオブジェクトの種類と位置の確認
 		/// </summary>
 		/// <param name="another"> 他のオブジェクト </param>
-		void collisionCheck(GameObjectPtr& another);
+		virtual void checkAnother(const GameObject& another) = 0;
 
 	protected:
 
@@ -105,11 +104,26 @@ namespace Kokoha
 		void walkToGoal(double speed, const Vec2& goal);
 
 		/// <summary>
-		/// 衝突時の処理
+		/// 指定の種類のオブジェクトと衝突の確認
 		/// </summary>
-		virtual void onCollision(const ObjectType&)
+		/// <param name="another"  > 他のオブジェクト </param>
+		/// <param name="checkType"> 指定する種類     </param>
+		/// <returns>
+		/// anotherが指定の種類のオブジェクトかつ衝突しているとき true , そうでないとき false
+		/// </returns>
+		bool checkTypeAndCollision(const GameObject& another, const ObjectType& checkType) const
 		{
+			return (another.mType == checkType) && mBody.intersects(another.mBody);
 		}
+
+		/// <summary>
+		/// 指定の種類のオブジェクトのとき座標の取得
+		/// </summary>
+		/// <param name="checkType"> 指定する種類 </param>
+		/// <returns>
+		/// 座標
+		/// </returns>
+		Optional<Vec2> checkTypeAndGetPos(const ObjectType& checkType) const;
 
 	};
 

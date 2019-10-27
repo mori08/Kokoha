@@ -16,5 +16,16 @@ namespace Kokoha
 
 		BlackEnemy(const Vec2& pos);
 
+	private:
+
+		bool isEraseAble()const override
+		{
+			return false;
+		}
+
+		void checkAnother(const GameObject&)
+		{
+		}
+
 	};
 }

@@ -20,7 +20,7 @@ namespace Kokoha
 
 		bool isEraseAble()const override;
 
-		void onCollision(const ObjectType& type) override;
+		void checkAnother(const GameObject& type) override;
 
 	};
 }

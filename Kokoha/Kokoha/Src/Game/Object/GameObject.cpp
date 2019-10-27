@@ -9,16 +9,6 @@ namespace
 }
 
 
-void Kokoha::GameObject::collisionCheck(GameObjectPtr& another)
-{
-	if (mBody.intersects(another->mBody))
-	{
-		onCollision(another->mType);
-		another->onCollision(mType);
-	}
-}
-
-
 void Kokoha::GameObject::walk(Vec2 movement)
 {
 	movement *= PLAYER_BASE_SPEED * Scene::DeltaTime();
@@ -38,4 +28,14 @@ void Kokoha::GameObject::walk(Vec2 movement)
 void Kokoha::GameObject::walkToGoal(double speed, const Vec2& goal)
 {
 	walk(speed * GameManager::instance().getStageData().getPath(mBody.center, goal));
+}
+
+
+Optional<Vec2> Kokoha::GameObject::checkTypeAndGetPos(const ObjectType& checkType) const
+{
+	if (mType == checkType)
+	{
+		return mBody.center;
+	}
+	return none;
 }

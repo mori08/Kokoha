@@ -29,7 +29,7 @@ namespace Kokoha
 
 		void drawLight()const override;
 
-		void onCollision(const ObjectType& type);
+		void checkAnother(const GameObject& another) override;
 
 	};
 }

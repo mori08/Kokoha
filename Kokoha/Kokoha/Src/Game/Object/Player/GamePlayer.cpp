@@ -60,12 +60,11 @@ void Kokoha::GamePlayer::drawLight() const
 	Circle(mBody.center, radius).drawFrame(LIGHT_THICKNESS, color);
 }
 
-
-void Kokoha::GamePlayer::onCollision(const ObjectType&)
+void Kokoha::GamePlayer::checkAnother(const GameObject& another)
 {
 	/*
 	TODO
-	・敵に触れたらゲームオーバー
-	・ゴールに触れたらクリア
+	ゴールにあたるとクリア
+	敵にあたるとゲームオーバー
 	*/
 }

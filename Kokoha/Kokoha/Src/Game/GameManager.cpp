@@ -105,7 +105,22 @@ Optional<String> Kokoha::GameManager::load(const String& fileName)
 
 void Kokoha::GameManager::update()
 {
+	// オブジェクトの更新
 	for (auto&& object : mObjectList) { object->update(); }
+
+	// 他オブジェクトの確認
+	for (auto&& objA = mObjectList.begin(); objA != mObjectList.end(); ++objA)
+	{
+		auto objB = objA;
+		while (++objB != mObjectList.end())
+		{
+			(*objA)->checkAnother(**objB);
+			(*objB)->checkAnother(**objA);
+		}
+	}
+
+	// オブジェクトの削除
+	Erase_if(mObjectList, [](const GameObjectPtr& obj) {return obj->isEraseAble(); });
 }
 
 
