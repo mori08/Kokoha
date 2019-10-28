@@ -29,8 +29,10 @@ void Kokoha::GameManager::init()
 }
 
 
-Optional<String> Kokoha::GameManager::load(const String& fileName)
+Optional<String> Kokoha::GameManager::load(const String& stageName)
 {
+	const FilePath filePath = U"Assets/Data/Game/" + stageName + U".csv";
+
 	// 初期化
 	init();
 
@@ -38,15 +40,15 @@ Optional<String> Kokoha::GameManager::load(const String& fileName)
 	String errorMessage = U"[AdventureManager::load]\n";
 
 	// CSVファイルの確認
-	CSVData csv(fileName);
-	if (csv.isEmpty())
+	CSVData csv(filePath);
+	if (!csv)
 	{
 		errorMessage += U"CSVファイルを読み込めません.\n";
-		errorMessage += U"ファイル名 > " + fileName;
+		errorMessage += U"ファイル名 > " + filePath;
 		return errorMessage;
 	}
 	
-	errorMessage += U"ファイル名 > " + fileName;
+	errorMessage += U"ファイル名 > " + filePath;
 	int32 readingRow = 0;
 
 	// ステージの設定

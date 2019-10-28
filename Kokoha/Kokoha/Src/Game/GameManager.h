@@ -56,11 +56,11 @@ namespace Kokoha
 		/// <summary>
 		/// ゲームデータを記述したcsvファイルの読み込み
 		/// </summary>
-		/// <param name="fileName"> csvファイルのファイル名 </param>
+		/// <param name="stageName"> ステージ名 </param>
 		/// <returns>
 		/// エラーメッセージ
 		/// </returns>
-		Optional<String> load(const String& fileName);
+		Optional<String> load(const String& stageName);
 
 		/// <summary>
 		/// 更新

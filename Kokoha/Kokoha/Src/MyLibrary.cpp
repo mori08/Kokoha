@@ -1,19 +1,6 @@
 #include "MyLibrary.h"
 
 
-#ifdef _DEBUG
-void Kokoha::printDebug(const String& message)
-{
-	Print << message;
-}
-#else
-inline void Kokoha::printDebug(const String&)
-{
-	
-}
-#endif // _DEBUG
-
-
 void Kokoha::registerAsset(const String& dirName)
 {
 	// 指定されたディレクトリのファイルパスを配列に

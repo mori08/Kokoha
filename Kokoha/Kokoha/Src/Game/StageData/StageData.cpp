@@ -7,9 +7,17 @@ namespace
 {
 	// 経路探索を行う最短距離
 	constexpr double MIN_LENGTH = 2.0;
-
 	// 無限大
 	constexpr double INF = std::numeric_limits<double>::infinity();
+
+	// 始点についての列数
+	constexpr size_t START_COLUMN = 0;
+	// 終点についての列数
+	constexpr size_t GOAL_COLUMN = 1;
+	// 経路についての列数
+	constexpr size_t PATH_COLUMN = 2;
+	// 距離についての列数
+	constexpr size_t DISTANCE_COLUMN = 3;
 }
 
 
@@ -57,13 +65,6 @@ void Kokoha::StageData::init()
 	for (int32 i = 0; i < N; ++i)
 	{
 		mTerrain[i] = false;
-
-		// 経路距離のリセット
-		for (int32 j = 0; j < N; ++j)
-		{
-			mPath    [i][j] = Vec2::Zero();
-			mDistance[i][j] = INF;
-		}
 	}
 }
 
@@ -96,6 +97,48 @@ void Kokoha::StageData::searchPath()
 			}
 		}
 	}
+}
+
+
+void Kokoha::StageData::savePath(const String& stageName) const
+{
+	const FilePath filePath = U"Assets/Data/Game/Path/" + stageName + U".bin";
+	BinaryWriter writer(filePath);
+
+	for (size_t i = 0; i < N; ++i)
+	{
+		for (size_t j = 0; j < N; ++j)
+		{
+			writer.write(mPath[i][j]);
+			writer.write(mDistance[i][j]);
+		}
+	}
+}
+
+
+Optional<String> Kokoha::StageData::loadPath(const String& stageName)
+{
+	const FilePath filePath = U"Assets/Data/Game/Path/" + stageName + U".bin";
+	String errorMessage = U"[StageData::loadPath]";
+	
+	BinaryReader reader(filePath);
+	if (!reader)
+	{
+		errorMessage += U"CSVファイルを読み込めません.\n";
+		errorMessage += U"ファイル名 > " + filePath;
+		return errorMessage;
+	}
+
+	for (size_t i = 0; i < N; ++i)
+	{
+		for (size_t j = 0; j < N; ++j)
+		{
+			reader.read(mPath[i][j]);
+			reader.read(mDistance[i][j]);
+		}
+	}
+
+	return none;
 }
 
 

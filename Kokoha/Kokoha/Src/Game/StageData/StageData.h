@@ -145,10 +145,33 @@ namespace Kokoha
 		/// ワーシャル・フロイド法を用いた経路探索
 		/// </summary>
 		/// <remarks>
-		/// O(N^3)かかる処理です.
+		/// O(N^3)かかる処理
 		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する.
 		/// </remarks>
 		void searchPath();
+
+		/// <summary>
+		/// 経路情報の保存
+		/// </summary>
+		/// <param name="stageName"> ステージ名 </param>
+		/// <remarks>
+		/// O(N^2)かかる処理
+		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する.
+		/// </remarks>
+		void savePath(const String& stageName)const;
+
+		/// <summary>
+		/// 経路情報の読込
+		/// </summary>
+		/// <param name="stageName"> ステージ名 </param>
+		/// <returns>
+		/// エラーメッセージ
+		/// </returns>
+		/// <remarks>
+		/// O(N^2)かかる処理
+		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する.
+		/// </remarks>
+		Optional<String> loadPath(const String& stageName);
 
 		/// <summary>
 		/// 地形の描画
