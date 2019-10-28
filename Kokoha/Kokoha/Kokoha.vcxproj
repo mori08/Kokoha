@@ -250,6 +250,7 @@
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\GameObject.cpp" />
+    <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
     <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp" />
     <ClCompile Include="Src\Game\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Game\Scene\LoadGameScene.cpp" />
@@ -296,6 +297,7 @@
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\GameObject.h" />
+    <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
     <ClInclude Include="Src\Game\Object\Player\GamePlayer.h" />
     <ClInclude Include="Src\Game\Scene\GameScene.h" />
     <ClInclude Include="Src\Game\Scene\LoadGameScene.h" />

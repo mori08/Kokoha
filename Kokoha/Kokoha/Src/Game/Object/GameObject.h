@@ -11,7 +11,8 @@ namespace Kokoha
 	{
 		PLAYER,      // ƒvƒŒƒCƒ„[
 		BLACK_ENEMY, // •‚¢“G
-		WHITE_ENEMY  // ”’‚¢“G
+		WHITE_ENEMY, // ”’‚¢“G
+		LIGHT        // Œõ
 	};
 
 	/*
