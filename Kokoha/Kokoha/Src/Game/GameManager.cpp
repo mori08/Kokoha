@@ -3,6 +3,7 @@
 
 // オブジェクト
 #include "Object/Player/GamePlayer.h"
+#include "Object/Enemy/ChaseEnemy.h"
 
 
 namespace
@@ -17,6 +18,8 @@ namespace
 Kokoha::GameManager::GameManager()
 {
 	setGenerateObjectFunc<GamePlayer>(U"Player");
+	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"BlackChase");
+	setGenerateObjectFunc<ChaseEnemy<WhiteEnemy>>(U"WhiteChase");
 }
 
 

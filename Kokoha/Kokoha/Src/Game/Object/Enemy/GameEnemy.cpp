@@ -16,14 +16,14 @@ namespace
 	// 体のアニメーション
 	const Kokoha::Animation BODY_ANIMATION
 	(
-		1.0,
+		0.5,
 		Array<Point>{Point(0, 0), Point(1, 0), Point(2, 0), Point(3, 0)},
 		true
 	);
 	// 顔のアニメーション
 	const Kokoha::Animation FACE_ANIMATION
 	(
-		5.0,
+		3.0,
 		Array<Point>{Point(0, 1), Point(1, 1), Point(2, 1), Point(3, 1), Point(2, 1), Point(1, 1), Point(0, 1), Point(0, 1), Point(0, 1), Point(0, 1), Point(0, 1)},
 		true
 	);

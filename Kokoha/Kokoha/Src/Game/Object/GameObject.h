@@ -6,21 +6,20 @@
 
 namespace Kokoha
 {
+	// GameObjectの種類
+	enum class ObjectType
+	{
+		PLAYER,      // プレイヤー
+		BLACK_ENEMY, // 黒い敵
+		WHITE_ENEMY  // 白い敵
+	};
+
 	/*
 	GameObjectクラス
 	GameManagerで扱うオブジェクト
 	*/
 	class GameObject
 	{
-	protected:
-
-		enum class ObjectType
-		{
-			PLAYER,      // プレイヤー
-			BLACK_ENEMY, // 黒い敵
-			WHITE_ENEMY  // 白い敵
-		};
-
 	protected:
 
 		// 範囲
@@ -102,6 +101,8 @@ namespace Kokoha
 		/// プレイヤーの速さの基本値を1.0とする.
 		/// </remarks>
 		void walkToGoal(double speed, const Vec2& goal);
+
+	public:
 
 		/// <summary>
 		/// 指定の種類のオブジェクトと衝突の確認

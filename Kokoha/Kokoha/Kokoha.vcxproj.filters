@@ -662,5 +662,8 @@
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\ChaseEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

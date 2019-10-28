@@ -37,3 +37,7 @@ namespace Kokoha
 
 	};
 }
+
+
+#include "BlackEnemy.h"
+#include "WhiteEnemy.h"
