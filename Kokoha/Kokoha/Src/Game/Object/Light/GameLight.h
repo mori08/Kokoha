@@ -2,7 +2,6 @@
 
 
 #include "../GameObject.h"
-#include <limits>
 
 
 namespace Kokoha
@@ -25,6 +24,12 @@ namespace Kokoha
 		// íœ‚·‚é‚Ü‚Å‚ÌŠÔ(•b)
 		double mEraseSecond;
 
+		// true ‚Ì‚Æ‚«ˆÃ‚­‚·‚é
+		bool mEraseAble;
+
+		// –¾‚é‚³(Œõ‚Ì•s“§–¾“x)
+		double mAlpha;
+
 	public:
 
 		/// <summary>
@@ -33,9 +38,9 @@ namespace Kokoha
 		/// <param name="body"       > Œõ‚Ì”ÍˆÍ     </param>
 		/// <param name="speed"      > ‘¬‚³         </param>
 		/// <param name="eraseSecond"> íœ‚·‚éŠÔ </param>
-		GameLight(const Circle& body, double speed, double eraseSecond = std::numeric_limits<double>::infinity());
+		GameLight(const Circle& body, double speed, double eraseSecond = Inf<double>);
 
-	private:
+	protected:
 
 		virtual void update() override;
 
