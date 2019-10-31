@@ -143,6 +143,9 @@
     <Filter Include="Src\Game\Object\Light">
       <UniqueIdentifier>{698d26ae-0d5e-450c-a5bb-a2c5725686eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\Object\Attack">
+      <UniqueIdentifier>{89e6c875-b05b-426d-b044-3eeedf4104a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -531,6 +534,9 @@
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp">
       <Filter>Src\Game\Object\Light</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Attack\GameAttack.cpp">
+      <Filter>Src\Game\Object\Attack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -679,6 +685,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h">
       <Filter>Src\Game\Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Attack\GameAttack.h">
+      <Filter>Src\Game\Object\Attack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
