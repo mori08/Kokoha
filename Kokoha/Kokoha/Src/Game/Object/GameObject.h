@@ -3,20 +3,11 @@
 
 #include <Siv3D.hpp>
 #include <limits>
+#include "ObjectType.h"
 
 
 namespace Kokoha
 {
-	// GameObjectの種類
-	enum class ObjectType
-	{
-		PLAYER,      // プレイヤー
-		BLACK_ENEMY, // 黒い敵
-		WHITE_ENEMY, // 白い敵
-		LIGHT,       // 光
-		ATTACK       // 攻撃
-	};
-
 	/*
 	GameObjectクラス
 	GameManagerで扱うオブジェクト
@@ -117,7 +108,7 @@ namespace Kokoha
 		/// </returns>
 		bool checkTypeAndCollision(const GameObject& another, const ObjectType& checkType) const
 		{
-			return (another.mType == checkType) && mBody.intersects(another.mBody);
+			return (another.mType & checkType) && mBody.intersects(another.mBody);
 		}
 
 		/// <summary>

@@ -35,18 +35,7 @@ void Kokoha::EnemyLight::checkAnother(const GameObject& another)
 		return;
 	}
 
-	if (auto pos = another.checkTypeAndGetPos(ObjectType::BLACK_ENEMY))
-	{
-		const double distance = GameManager::instance().getStageData().getDistance(mPlayerPos, pos.value());
-		if (distance < mMinDistance)
-		{
-			mMinDistance = distance;
-			mGoal        = pos.value();
-		}
-		return;
-	}
-
-	if (auto pos = another.checkTypeAndGetPos(ObjectType::WHITE_ENEMY))
+	if (auto pos = another.checkTypeAndGetPos(ObjectType::ENEMY))
 	{
 		const double distance = GameManager::instance().getStageData().getDistance(mPlayerPos, pos.value());
 		if (distance < mMinDistance)

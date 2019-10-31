@@ -17,7 +17,7 @@ bool Kokoha::WhiteEnemy::isEraseAble() const
 	return false;
 }
 
-void Kokoha::WhiteEnemy::checkAnother(const GameObject& type)
+void Kokoha::WhiteEnemy::checkAnother(const GameObject& another)
 {
 	/*
 	UŒ‚‚ğ‚¤‚¯‚½‚Æ‚«íœ

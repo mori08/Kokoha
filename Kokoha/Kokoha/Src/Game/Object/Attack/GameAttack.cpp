@@ -34,7 +34,7 @@ void Kokoha::GameAttack::draw() const
 
 bool Kokoha::GameAttack::isEraseAble() const
 {
-	return isEraseAble;
+	return mIsEraseAble;
 }
 
 

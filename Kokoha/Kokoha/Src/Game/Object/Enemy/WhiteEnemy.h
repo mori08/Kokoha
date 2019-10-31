@@ -21,7 +21,7 @@ namespace Kokoha
 
 		bool isEraseAble()const override;
 
-		void checkAnother(const GameObject& type) override;
+		void checkAnother(const GameObject& another) override;
 
 	};
 }

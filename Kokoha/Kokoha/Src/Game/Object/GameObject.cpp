@@ -33,7 +33,7 @@ void Kokoha::GameObject::walkToGoal(double speed, const Vec2& goal)
 
 Optional<Vec2> Kokoha::GameObject::checkTypeAndGetPos(const ObjectType& checkType) const
 {
-	if (mType == checkType)
+	if (mType & checkType)
 	{
 		return mBody.center;
 	}
