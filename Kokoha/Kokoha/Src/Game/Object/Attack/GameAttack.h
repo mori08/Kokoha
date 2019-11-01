@@ -12,7 +12,7 @@ namespace Kokoha
 	*/
 	class GameAttack : public GameObject
 	{
-	private:
+	protected:
 	
 		// ˆÚ“®‚Ì‘¬‚³
 		const double mSpeed;
@@ -22,6 +22,11 @@ namespace Kokoha
 
 		// íœ‚Å‚«‚é‚©
 		bool mIsEraseAble;
+
+	private:
+
+		// ‰æ‘œ‚Ì‰ñ“]Šp
+		Array<double> mAngleList;
 
 	public:
 

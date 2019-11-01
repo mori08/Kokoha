@@ -246,6 +246,7 @@
     <ClCompile Include="Src\Event\Scene\LoadEventScene.cpp" />
     <ClCompile Include="Src\Event\TextBox\TextBox.cpp" />
     <ClCompile Include="Src\Game\GameManager.cpp" />
+    <ClCompile Include="Src\Game\Object\Attack\ChaseEnemyAttack.cpp" />
     <ClCompile Include="Src\Game\Object\Attack\GameAttack.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\BlackEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
@@ -295,6 +296,7 @@
     <ClInclude Include="Src\Event\Scene\LoadEventScene.h" />
     <ClInclude Include="Src\Event\TextBox\TextBox.h" />
     <ClInclude Include="Src\Game\GameManager.h" />
+    <ClInclude Include="Src\Game\Object\Attack\ChaseEnemyAttack.h" />
     <ClInclude Include="Src\Game\Object\Attack\GameAttack.h" />
     <ClInclude Include="Src\Game\Object\Enemy\BlackEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ChaseEnemy.h" />

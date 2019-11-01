@@ -5,6 +5,7 @@
 #include "Object/Player/GamePlayer.h"
 #include "Object/Enemy/ChaseEnemy.h"
 #include "Object/Light/EnemyLight.h"
+#include "Object/Attack/ChaseEnemyAttack.h"
 
 
 namespace
@@ -22,6 +23,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"BlackChase");
 	setGenerateObjectFunc<ChaseEnemy<WhiteEnemy>>(U"WhiteChase");
 	setGenerateObjectFunc<EnemyLight>            (U"EnemyLight");
+	setGenerateObjectFunc<ChaseEnemyAttack>      (U"ChaseEnemyAttack");
 }
 
 
