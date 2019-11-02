@@ -233,6 +233,7 @@
     <ClCompile Include="Src\Adventure\Scene\LoadAdventureScene.cpp" />
     <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp" />
+    <ClCompile Include="Src\Cassette\Cassette.cpp" />
     <ClCompile Include="Src\Event\EventManager.cpp" />
     <ClCompile Include="Src\Event\Event\ActEvent.cpp" />
     <ClCompile Include="Src\Event\Event\Event.cpp" />
@@ -282,6 +283,7 @@
     <ClInclude Include="Src\Adventure\Scene\LoadAdventureScene.h" />
     <ClInclude Include="Src\Adventure\Window\AdventureWindow.h" />
     <ClInclude Include="Src\Adventure\Window\InfoWindow.h" />
+    <ClInclude Include="Src\Cassette\Cassette.h" />
     <ClInclude Include="Src\Event\EventManager.h" />
     <ClInclude Include="Src\Event\Event\ActEvent.h" />
     <ClInclude Include="Src\Event\Event\EmptyEvent.h" />

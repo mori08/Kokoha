@@ -146,6 +146,9 @@
     <Filter Include="Src\Game\Object\Attack">
       <UniqueIdentifier>{89e6c875-b05b-426d-b044-3eeedf4104a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Cassette">
+      <UniqueIdentifier>{8ea92625-0652-4589-b45d-1a6963e6bed8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -543,6 +546,9 @@
     <ClCompile Include="Src\Game\Object\Attack\ChaseEnemyAttack.cpp">
       <Filter>Src\Game\Object\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Cassette\Cassette.cpp">
+      <Filter>Src\Cassette</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -700,6 +706,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Attack\ChaseEnemyAttack.h">
       <Filter>Src\Game\Object\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Cassette\Cassette.h">
+      <Filter>Src\Cassette</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
