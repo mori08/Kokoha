@@ -549,6 +549,9 @@
     <ClCompile Include="Src\Cassette\Cassette.cpp">
       <Filter>Src\Cassette</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Cassette\CassetteManager.cpp">
+      <Filter>Src\Cassette</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -708,6 +711,9 @@
       <Filter>Src\Game\Object\Attack</Filter>
     </ClInclude>
     <ClInclude Include="Src\Cassette\Cassette.h">
+      <Filter>Src\Cassette</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Cassette\CassetteManager.h">
       <Filter>Src\Cassette</Filter>
     </ClInclude>
   </ItemGroup>
