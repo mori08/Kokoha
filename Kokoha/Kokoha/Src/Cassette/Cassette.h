@@ -57,9 +57,19 @@ namespace Kokoha
 		const int32 COST;
 
 		// カセットの効果
-		const CassetteEffect& EFFECT;
+		const CassetteEffect EFFECT;
 
 	public:
+
+		/// <summary>
+		/// 空カセット
+		/// </summary>
+		Cassette()
+			: NAME(U"")
+			, COST(0)
+			, EFFECT(0, [](){})
+		{
+		}
 
 		/// <summary>
 		/// カセット
