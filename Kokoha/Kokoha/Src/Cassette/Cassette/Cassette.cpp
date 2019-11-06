@@ -1,5 +1,6 @@
 #include "Cassette.h"
 #include "../CassetteManager.h"
+#include "../../Game/GameManager.h"
 
 
 Kokoha::Cassette::Cassette(const String& name, int32 cost, const CassetteEffect& effect)
@@ -16,10 +17,9 @@ Kokoha::CassetteEffect&& Kokoha::Cassette::getSpeedEffect(double speed, const st
 	return CassetteEffect
 	(
 		term.first, 
-		[speed]()
+		[speed, term]()
 		{
-			CassetteManager::instance().changeSpeed(speed);
-
+			GameManager::instance().setSpeedChange(speed, term);
 		}
 	);
 }

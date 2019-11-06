@@ -28,6 +28,6 @@ void Kokoha::PlayerSpeed::update()
 
 void Kokoha::PlayerSpeed::change(double speedRate, double beginTime, double endTime)
 {
-	mChangeSpeedQueue.push({ beginTime,speedRate });
-	mChangeSpeedQueue.push({ endTime,1/speedRate });
+	mChangeSpeedQueue.push({ beginTime, speedRate   });
+	mChangeSpeedQueue.push({ endTime  , 1/speedRate });
 }

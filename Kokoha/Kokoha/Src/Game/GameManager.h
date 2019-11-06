@@ -3,6 +3,7 @@
 
 #include "StageData/StageData.h"
 #include "Object/GameObject.h"
+#include "PlayerSpeed/PlayerSpeed.h"
 
 
 namespace Kokoha
@@ -26,6 +27,9 @@ namespace Kokoha
 
 		// オブジェクトを生成する関数の連想配列
 		std::unordered_map<String, GenerateGameObjectFunc> mGenerateObjectMap;
+
+		// プレイヤーの速さ
+		PlayerSpeed mPlayerSpeed;
 
 	private:
 
@@ -81,6 +85,27 @@ namespace Kokoha
 		const StageData& getStageData()const
 		{
 			return mStageData;
+		}
+
+		/// <summary>
+		/// プレイヤーの速さの取得
+		/// </summary>
+		/// <returns>
+		/// プレイヤーの速さ
+		/// </returns>
+		double getPlayerSpeed()const
+		{
+			return mPlayerSpeed.get();
+		}
+
+		/// <summary>
+		/// プレイヤーの速さの変更の設定
+		/// </summary>
+		/// <param name="speedRate"> 速さの倍率 </param>
+		/// <param name="term"     > 期間       </param>
+		void setSpeedChange(double speedRate, const std::pair<double, double>& term)
+		{
+			mPlayerSpeed.change(speedRate, term.first, term.second);
 		}
 
 	private:

@@ -1,5 +1,6 @@
 #include "GamePlayer.h"
 #include "../../../MyColor.h"
+#include "../../GameManager.h"
 
 
 namespace
@@ -36,7 +37,7 @@ void Kokoha::GamePlayer::update()
 	if (KeyS.pressed()) { direction += Point::Down();  }
 	if (KeyA.pressed()) { direction += Point::Left();  }
 	if (KeyD.pressed()) { direction += Point::Right(); }
-	walk(1.0 * direction);
+	walk(GameManager::instance().getPlayerSpeed() * direction);
 
 	// Œõ
 	if (mLightRate.update()) { mLightRate.restart(); }
