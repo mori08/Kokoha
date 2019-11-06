@@ -36,6 +36,9 @@ namespace Kokoha
 
 	};
 
+	class Cassette;
+	using CassettePtr = std::shared_ptr<Cassette>;
+
 	/*
 	Cassetteクラス
 	装備品のような扱いをし,
@@ -109,8 +112,13 @@ namespace Kokoha
 			return EFFECT;
 		}
 
-	};
+		/// <summary>
+		/// スピードカセットの効果の作成
+		/// </summary>
+		/// <param name="speed"> 速さの倍率 </param>
+		/// <param name="term" > 効果時間   </param>
+		static CassetteEffect&& getSpeedEffect(double speed, const std::pair<double, double>& term);
 
-	using CassettePtr = std::shared_ptr<Cassette>;
+	};
 
 }

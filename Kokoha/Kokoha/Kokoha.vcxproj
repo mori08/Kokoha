@@ -233,8 +233,8 @@
     <ClCompile Include="Src\Adventure\Scene\LoadAdventureScene.cpp" />
     <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp" />
-    <ClCompile Include="Src\Cassette\Cassette.cpp" />
     <ClCompile Include="Src\Cassette\CassetteManager.cpp" />
+    <ClCompile Include="Src\Cassette\Cassette\Cassette.cpp" />
     <ClCompile Include="Src\Cassette\Equipment.cpp" />
     <ClCompile Include="Src\Event\EventManager.cpp" />
     <ClCompile Include="Src\Event\Event\ActEvent.cpp" />
@@ -259,6 +259,7 @@
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
     <ClCompile Include="Src\Game\Object\ObjectType.cpp" />
     <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp" />
+    <ClCompile Include="Src\Game\PlayerSpeed\PlayerSpeed.cpp" />
     <ClCompile Include="Src\Game\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Game\Scene\LoadGameScene.cpp" />
     <ClCompile Include="Src\Game\StageData\StageData.cpp" />
@@ -285,8 +286,8 @@
     <ClInclude Include="Src\Adventure\Scene\LoadAdventureScene.h" />
     <ClInclude Include="Src\Adventure\Window\AdventureWindow.h" />
     <ClInclude Include="Src\Adventure\Window\InfoWindow.h" />
-    <ClInclude Include="Src\Cassette\Cassette.h" />
     <ClInclude Include="Src\Cassette\CassetteManager.h" />
+    <ClInclude Include="Src\Cassette\Cassette\Cassette.h" />
     <ClInclude Include="Src\Cassette\Equipment.h" />
     <ClInclude Include="Src\Event\EventManager.h" />
     <ClInclude Include="Src\Event\Event\ActEvent.h" />
@@ -313,6 +314,7 @@
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
     <ClInclude Include="Src\Game\Object\ObjectType.h" />
     <ClInclude Include="Src\Game\Object\Player\GamePlayer.h" />
+    <ClInclude Include="Src\Game\PlayerSpeed\PlayerSpeed.h" />
     <ClInclude Include="Src\Game\Scene\GameScene.h" />
     <ClInclude Include="Src\Game\Scene\LoadGameScene.h" />
     <ClInclude Include="Src\Game\StageData\StageData.h" />

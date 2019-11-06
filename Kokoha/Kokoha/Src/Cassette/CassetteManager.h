@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "Cassette.h"
+#include "Cassette/Cassette.h"
 
 
 namespace Kokoha
@@ -15,7 +15,11 @@ namespace Kokoha
 	{
 	private:
 
+		// カセットのリスト
 		Array<CassettePtr> mCassetteList;
+
+		// 速さ変更についてのキュー { 時間, 速さの倍率 }
+		std::list<std::pair<double, double>> mChangeSpeedQueue;
 
 	private:
 
@@ -25,6 +29,14 @@ namespace Kokoha
 		CassetteManager& operator=(const CassetteManager&) = default;
 		CassetteManager(CassetteManager&&)                 = default;
 		CassetteManager& operator=(CassetteManager&&)      = default;
+
+	public:
+
+		static CassetteManager& instance()
+		{
+			static CassetteManager cassetteManager;
+			return cassetteManager;
+		}
 
 	};
 }
