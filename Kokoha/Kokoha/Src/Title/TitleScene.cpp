@@ -9,11 +9,11 @@ namespace
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(150, 30);
 	// NEWGAMEボタン
-	const Kokoha::Button NEWGAME_BUTTON (U"NEW GAME" , Rect(320 - BUTTON_SIZE.x / 2, 300, BUTTON_SIZE));
+	const Kokoha::Button NEWGAME_BUTTON (U"はじめから", Rect(320 - BUTTON_SIZE.x / 2, 300, BUTTON_SIZE));
 	// LOADGAMEボタン
-	const Kokoha::Button LOADGAME_BUTTON(U"LOAD GAME", Rect(320 - BUTTON_SIZE.x / 2, 350, BUTTON_SIZE));
+	const Kokoha::Button LOADGAME_BUTTON(U"つづきから", Rect(320 - BUTTON_SIZE.x / 2, 350, BUTTON_SIZE));
 	// EXITボタン
-	const Kokoha::Button EXIT_BUTTON    (U"EXIT"     , Rect(320 - BUTTON_SIZE.x / 2, 400, BUTTON_SIZE));
+	const Kokoha::Button EXIT_BUTTON    (U"やめる"    , Rect(320 - BUTTON_SIZE.x / 2, 400, BUTTON_SIZE));
 	// ボタンのリスト
 	const Array<Kokoha::Button> BUTTON_LIST
 	{
@@ -48,17 +48,32 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 	: IScene(init)
 	, mCursor(NEWGAME_BUTTON.getRegion())
 {
+	// ボタンのリセット
 	ButtonManager::instance().clearButtonList();
 
+	// ボタンの設定
 	for (const auto& button : BUTTON_LIST)
 	{
 		ButtonManager::instance().registerButton(button);
 	}
 
+	// ボタンの位置関係の設定
+	ButtonManager::instance().setVerticalAdjacentButton
+	(
+		NEWGAME_BUTTON.getName(),
+		LOADGAME_BUTTON.getName()
+	);
+	ButtonManager::instance().setVerticalAdjacentButton
+	(
+		LOADGAME_BUTTON.getName(),
+		EXIT_BUTTON.getName()
+	);
+
+	// ボタンに押したときの処理の設定
 	ButtonManager::instance().setOnClickFunc
 	(
 		NEWGAME_BUTTON.getName(), 
-		[this]() { changeScene(SceneName::LOAD_GAME); }
+		[this]() { changeScene(SceneName::LOAD_ADVENTURE); }
 	);
 	ButtonManager::instance().setOnClickFunc
 	(
@@ -66,6 +81,7 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 		[this]() { changeScene(SceneName::TITLE); }
 	);
 
+	// 選択中のボタンの設定
 	ButtonManager::instance().setSelectedButton(NEWGAME_BUTTON.getName());
 }
 

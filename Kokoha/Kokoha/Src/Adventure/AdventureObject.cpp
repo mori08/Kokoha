@@ -65,5 +65,5 @@ void Kokoha::AdventureObject::draw(const Point& cameraPoint) const
 
 void Kokoha::AdventureObject::openWindow(WindowPtr&& windowPtr)
 {
-	AdventureManager::instance().openWindow(windowPtr);
+	AdventureManager::instance().openWindow(std::move(windowPtr));
 }

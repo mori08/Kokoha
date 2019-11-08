@@ -1,5 +1,7 @@
 #include "AdventureManager.h"
 #include "../MyColor.h"
+#include "../Input/InputManager.h"
+#include "Window/MenuWindow.h"
 
 
 namespace
@@ -126,6 +128,7 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 
 void Kokoha::AdventureManager::update()
 {
+	// ウィンドウを開いているとき その更新
 	if (!mWindowList.empty())
 	{
 		for (auto&& window : mWindowList) { window->update(); }
@@ -133,10 +136,16 @@ void Kokoha::AdventureManager::update()
 		return;
 	}
 
+	// キャンセルボタンでメニューを開く
+	if (InputManager::instatnce().cancel())
+	{
+		openWindow(std::make_unique<MenuWindow>());
+		return;
+	}
+
+	// オブジェクトの更新
 	mPlayer.update(mObjectList);
-
 	changeCameraPos();
-
 	for (auto& object : mObjectList)
 	{
 		object.update(mPlayer.getRegion());

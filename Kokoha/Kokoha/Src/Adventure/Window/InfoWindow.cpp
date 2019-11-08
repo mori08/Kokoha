@@ -6,6 +6,7 @@
 
 namespace
 {
+	// ウィンドウのサイズの追加分
 	constexpr Size OFFSET(40, 20);
 }
 
@@ -14,7 +15,6 @@ Kokoha::InfoWindow::InfoWindow(const String& text)
 	: AdventureWindow(getRectFromCenter(Scene::Center(), FontAsset(U"20")(text).region().size + OFFSET))
 	, mText(text)
 {
-	select();
 }
 
 

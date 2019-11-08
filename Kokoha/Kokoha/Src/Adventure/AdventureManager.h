@@ -70,9 +70,10 @@ namespace Kokoha
 		/// ウィンドウを開く
 		/// </summary>
 		/// <param name="window"> 開くウィンドウ </param>
-		void openWindow(WindowPtr& window)
+		void openWindow(WindowPtr&& window)
 		{
 			mWindowList.emplace_back(std::move(window));
+			mWindowList.back()->select();
 		}
 
 		/// <summary>
