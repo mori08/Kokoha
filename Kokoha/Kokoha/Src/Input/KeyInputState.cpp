@@ -28,7 +28,7 @@ Optional<String> Kokoha::KeyInputState::selectButton(ButtonPtr& selectedButtonPt
 	{
 		ButtonPtr adjacentButtonPtr = selectedButtonPtr->getAdjacentButton(key.second);
 		
-		if (key.first.up() && adjacentButtonPtr != nullptr)
+		if (key.first.down() && adjacentButtonPtr != nullptr)
 		{
 			selectedButtonPtr = adjacentButtonPtr;
 		}

@@ -26,7 +26,7 @@ namespace
 	};
 
 	// ƒJ[ƒ\ƒ‹‚ÌˆÚ“®‚Ì”ä
-	constexpr double CURSOR_RATE = 0.005;
+	constexpr double CURSOR_RATE = 0.001;
 }
 
 

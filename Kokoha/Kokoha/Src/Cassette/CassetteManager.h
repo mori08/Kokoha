@@ -15,8 +15,11 @@ namespace Kokoha
 	{
 	private:
 
-		// カセットのリスト
+		// カセットの一覧
 		Array<CassettePtr> mCassetteList;
+
+		// 所持しているカセットの一覧
+		CassettePtrSet mPossessCassette;
 
 		// 速さ変更についてのキュー { 時間, 速さの倍率 }
 		std::list<std::pair<double, double>> mChangeSpeedQueue;

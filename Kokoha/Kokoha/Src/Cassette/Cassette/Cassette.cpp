@@ -3,8 +3,12 @@
 #include "../../Game/GameManager.h"
 
 
+int32 Kokoha::Cassette::sNum = 0;
+
+
 Kokoha::Cassette::Cassette(const String& name, int32 cost, const CassetteEffect& effect)
-	: mUsed(false)
+	: ID(sNum++)
+	, mUsed(false)
 	, NAME(name)
 	, COST(cost)
 	, EFFECT(effect)
@@ -12,7 +16,7 @@ Kokoha::Cassette::Cassette(const String& name, int32 cost, const CassetteEffect&
 }
 
 
-Kokoha::CassetteEffect&& Kokoha::Cassette::getSpeedEffect(double speed, const std::pair<double, double>& term)
+Kokoha::CassetteEffect&& Kokoha::Cassette::makeSpeedEffect(double speed, const std::pair<double, double>& term)
 {
 	return CassetteEffect
 	(

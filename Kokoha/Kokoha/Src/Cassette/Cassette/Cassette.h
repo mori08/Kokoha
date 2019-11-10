@@ -36,8 +36,6 @@ namespace Kokoha
 
 	};
 
-	class Cassette;
-	using CassettePtr = std::shared_ptr<Cassette>;
 
 	/*
 	Cassetteクラス
@@ -47,6 +45,12 @@ namespace Kokoha
 	class Cassette
 	{
 	private:
+
+		// カセットの種類数
+		static int32 sNum;
+
+		// カセット番号(ソート用)
+		const int32 ID;
 
 		// 使われているか
 		bool mUsed;
@@ -68,7 +72,8 @@ namespace Kokoha
 		/// 空カセット
 		/// </summary>
 		Cassette()
-			: NAME(U"")
+			: ID(Inf<int32>)
+			, NAME(U"")
 			, COST(0)
 			, EFFECT(0, [](){})
 		{
@@ -82,6 +87,14 @@ namespace Kokoha
 		/// <param name="term"  > 効果の開始時間(秒) </param>
 		/// <param name="effect"> 効果               </param>
 		Cassette(const String& name, int32 cost, const CassetteEffect& cassetteEffect);
+
+		/// <summary>
+		/// 番号の比較
+		/// </summary>
+		bool operator<(const Cassette& another)
+		{
+			return ID < another.ID;
+		}
 
 		/// <summary>
 		/// 使用中かどうかの切り替え
@@ -117,8 +130,27 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="speed"> 速さの倍率 </param>
 		/// <param name="term" > 効果時間   </param>
-		static CassetteEffect&& getSpeedEffect(double speed, const std::pair<double, double>& term);
+		static CassetteEffect&& makeSpeedEffect(double speed, const std::pair<double, double>& term);
 
 	};
+
+
+	using CassettePtr = std::shared_ptr<Cassette>;
+
+
+	/*
+	CompareCassettePtr構造体
+	CassettePtrの大小比較をCassetteのIDで行う
+	*/
+	struct CompareCassettePtr
+	{
+		bool operator()(const CassettePtr& ptrA, const CassettePtr& ptrB)const
+		{
+			return *ptrA < *ptrB;
+		}
+	};
+
+
+	using CassettePtrSet = std::set<CassettePtr, CompareCassettePtr>;
 
 }
