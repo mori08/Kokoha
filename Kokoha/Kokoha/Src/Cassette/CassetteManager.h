@@ -15,10 +15,10 @@ namespace Kokoha
 	{
 	private:
 
-		// カセットの一覧
+		// カセットの集合
 		Array<CassettePtr> mCassetteList;
 
-		// 所持しているカセットの一覧
+		// 所持しているカセットの集合
 		CassettePtrSet mPossessCassette;
 
 		// 速さ変更についてのキュー { 時間, 速さの倍率 }
@@ -35,10 +35,26 @@ namespace Kokoha
 
 	public:
 
+		/// <summary>
+		/// シングルトンのインスタンスの取得
+		/// </summary>
 		static CassetteManager& instance()
 		{
 			static CassetteManager cassetteManager;
 			return cassetteManager;
+		}
+
+	public:
+
+		/// <summary>
+		/// 所持カセットのリストを取得
+		/// </summary>
+		/// <returns>
+		/// 所持カセットのリスト
+		/// </returns>
+		const CassettePtrSet& getPossessCassette()const
+		{
+			return mPossessCassette;
 		}
 
 	};

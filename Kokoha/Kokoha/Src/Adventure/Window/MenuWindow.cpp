@@ -4,6 +4,9 @@
 #include "../../Input/ButtonManager.h"
 #include "../../MyColor.h"
 
+// 他ウィンドウ
+#include "SetupWindow.h"
+
 
 namespace
 {
@@ -59,6 +62,13 @@ void Kokoha::MenuWindow::select()
 	(
 		DIARY_BUTTON.getName(),
 		RECORD_BUTTON.getName()
+	);
+
+	// ボタンを押したときの処理の設定
+	ButtonManager::instance().setOnClickFunc
+	(
+		SETUP_BUTTON.getName(),
+		[](){ AdventureManager::instance().openWindow(std::make_unique<SetupWindow>()); }
 	);
 
 	// 選択中のボタンの設定

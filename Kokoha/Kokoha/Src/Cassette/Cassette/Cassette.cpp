@@ -16,7 +16,7 @@ Kokoha::Cassette::Cassette(const String& name, int32 cost, const CassetteEffect&
 }
 
 
-Kokoha::CassetteEffect&& Kokoha::Cassette::makeSpeedEffect(double speed, const std::pair<double, double>& term)
+Kokoha::CassetteEffect Kokoha::Cassette::makeSpeedEffect(double speed, const std::pair<double, double>& term)
 {
 	return CassetteEffect
 	(

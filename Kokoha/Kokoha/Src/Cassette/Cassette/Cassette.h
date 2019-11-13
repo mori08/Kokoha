@@ -130,7 +130,7 @@ namespace Kokoha
 		/// </summary>
 		/// <param name="speed"> ‘¬‚³‚Ì”{—¦ </param>
 		/// <param name="term" > Œø‰ÊŽžŠÔ   </param>
-		static CassetteEffect&& makeSpeedEffect(double speed, const std::pair<double, double>& term);
+		static CassetteEffect makeSpeedEffect(double speed, const std::pair<double, double>& term);
 
 	};
 

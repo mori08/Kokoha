@@ -235,6 +235,7 @@
     <ClCompile Include="Src\Adventure\Window\CassetteView\CassetteView.cpp" />
     <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\MenuWindow.cpp" />
+    <ClCompile Include="Src\Adventure\Window\SetupWindow.cpp" />
     <ClCompile Include="Src\Cassette\CassetteManager.cpp" />
     <ClCompile Include="Src\Cassette\Cassette\Cassette.cpp" />
     <ClCompile Include="Src\Cassette\Equipment.cpp" />
@@ -290,6 +291,7 @@
     <ClInclude Include="Src\Adventure\Window\CassetteView\CassetteView.h" />
     <ClInclude Include="Src\Adventure\Window\InfoWindow.h" />
     <ClInclude Include="Src\Adventure\Window\MenuWindow.h" />
+    <ClInclude Include="Src\Adventure\Window\SetupWindow.h" />
     <ClInclude Include="Src\Cassette\CassetteManager.h" />
     <ClInclude Include="Src\Cassette\Cassette\Cassette.h" />
     <ClInclude Include="Src\Cassette\Equipment.h" />

@@ -12,12 +12,18 @@ Kokoha::ButtonManager::ButtonManager()
 void Kokoha::ButtonManager::registerButton(const String& name, const Rect& region)
 {
 	mButtonMap[name] = std::make_shared<Button>(name, region);
+
+	// mButtonMap‚ª‚à‚Æ‚à‚Æ‹ó‚¾‚Á‚½‚Æ‚«
+	if (mButtonMap.size() == 1) { mSelectedButtonPtr = mButtonMap[name]; }
 }
 
 
 void Kokoha::ButtonManager::registerButton(const Button& button)
 {
 	mButtonMap[button.getName()] = std::make_shared<Button>(button);
+
+	// mButtonMap‚ª‚à‚Æ‚à‚Æ‹ó‚¾‚Á‚½‚Æ‚«
+	if (mButtonMap.size() == 1) { mSelectedButtonPtr = mButtonMap[button.getName()]; }
 }
 
 

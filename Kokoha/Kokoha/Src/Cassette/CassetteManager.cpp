@@ -3,6 +3,7 @@
 
 Kokoha::CassetteManager::CassetteManager()
 {
+	
 	// スピードI
 	mCassetteList.emplace_back(
 		std::make_shared<Cassette>
@@ -12,7 +13,7 @@ Kokoha::CassetteManager::CassetteManager()
 			Cassette::makeSpeedEffect(1.1, { 0,Inf<double> })
 		)
 	);
-
+	
 	// スピードII
 	mCassetteList.emplace_back(
 		std::make_shared<Cassette>
@@ -32,4 +33,9 @@ Kokoha::CassetteManager::CassetteManager()
 			Cassette::makeSpeedEffect(1.5, { 0,Inf<double> })
 		)
 	);
+
+	for (const auto& cassette : mCassetteList)
+	{
+		mPossessCassette.insert(cassette);
+	}
 }

@@ -573,6 +573,9 @@
     <ClCompile Include="Src\Adventure\Window\CassetteView\CassetteView.cpp">
       <Filter>Src\Adventure\Window\CassetteView</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\SetupWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -748,6 +751,9 @@
     </ClInclude>
     <ClInclude Include="Src\Adventure\Window\CassetteView\CassetteView.h">
       <Filter>Src\Adventure\Window\CassetteView</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\SetupWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
