@@ -2,6 +2,7 @@
 
 
 #include "Cassette/Cassette.h"
+#include "Equipment.h"
 
 
 namespace Kokoha
@@ -13,6 +14,11 @@ namespace Kokoha
 	*/
 	class CassetteManager
 	{
+	public:
+
+		// 装備カセットのセット数
+		static constexpr int32 EQUIPMENT_NUM = 2;
+
 	private:
 
 		// カセットの集合
@@ -20,6 +26,9 @@ namespace Kokoha
 
 		// 所持しているカセットの集合
 		CassettePtrSet mPossessCassette;
+
+		// 装備カセット
+		std::array<Equipment, EQUIPMENT_NUM> mEquipment;
 
 		// 速さ変更についてのキュー { 時間, 速さの倍率 }
 		std::list<std::pair<double, double>> mChangeSpeedQueue;
@@ -55,6 +64,18 @@ namespace Kokoha
 		const CassettePtrSet& getPossessCassette()const
 		{
 			return mPossessCassette;
+		}
+
+		/// <summary>
+		/// 装備カセットの管理クラスの取得
+		/// </summary>
+		/// <param name="id"> 偶数なら装備A , 奇数なら装備B </param>
+		/// <returns>
+		/// 装備カセット
+		/// </param>
+		Equipment& getEquipment(size_t id)
+		{
+			return mEquipment[id % EQUIPMENT_NUM];
 		}
 
 	};

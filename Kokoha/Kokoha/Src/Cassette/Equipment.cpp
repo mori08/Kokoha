@@ -11,20 +11,20 @@ Kokoha::Equipment::Equipment()
 void Kokoha::Equipment::addCassette(const CassettePtr& cassette)
 {
 	// 既に装備されているとき
-	if (mCassetteList.count(cassette->NAME)) { return; }
-	
-	mCassetteList[cassette->NAME] = cassette;
+	if (mCassetteList.count(cassette)) { return; }
+
+	mCassetteList.insert(cassette);
 	mTotalCost += cassette->COST;
 }
 
 
-void Kokoha::Equipment::removeCassette(const String& name)
+void Kokoha::Equipment::removeCassette(const CassettePtr& cassette)
 {
-	// 装備されていないカセットが指定されたとき
-	if (!mCassetteList.count(name)) { return; }
+	// 既に装備されているとき
+	if (!mCassetteList.count(cassette)) { return; }
 
-	mTotalCost -= mCassetteList[name]->COST;
-	mCassetteList.erase(name);
+	mCassetteList.erase(cassette);
+	mTotalCost -= cassette->COST;
 }
 
 
@@ -36,7 +36,7 @@ void Kokoha::Equipment::initEffect()
 
 	for (auto& cassette : mCassetteList)
 	{
-		mEffectQueue.emplace_back(cassette.second->EFFECT);
+		mEffectQueue.emplace_back(cassette->EFFECT);
 	}
 
 	mEffectQueue.sort();

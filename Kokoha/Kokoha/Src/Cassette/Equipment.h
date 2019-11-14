@@ -22,7 +22,7 @@ namespace Kokoha
 		int32 mTotalCost;
 
 		// 装備しているカセットのリスト
-		std::unordered_map<String, CassettePtr> mCassetteList;
+		CassettePtrSet mCassetteList;
 
 		// 発動待ちの効果のキュー(sortのためlistで実装)
 		std::list<CassetteEffect> mEffectQueue;
@@ -45,8 +45,16 @@ namespace Kokoha
 		/// <summary>
 		/// カセットの削除
 		/// </summary>
-		/// <param name="name"> カセット名 </param>
-		void removeCassette(const String& name);
+		/// <param name="cassette"> カセット </param>
+		void removeCassette(const CassettePtr& cassette);
+
+		/// <summary>
+		/// 装備カセットのリストの取得
+		/// </summary>
+		const CassettePtrSet& getCassetteList() const
+		{
+			return mCassetteList;
+		}
 
 		// ↑
 		// AdventureSceneで使用
