@@ -44,6 +44,20 @@ namespace Kokoha
 	*/
 	class Cassette
 	{
+	public:
+
+		// 所持していない
+		static constexpr int32 NO_POSSESS_STATE = 0;
+
+		// 所持
+		static constexpr int32 POSSESS_STATE = 1;
+
+		// 装備 A
+		static constexpr int32 EQUIPMENT_A_STATE = 2;
+
+		// 装備 B
+		static constexpr int32 EQUIPMENT_B_STATE = 3;
+
 	private:
 
 		// カセットの種類数
@@ -52,8 +66,8 @@ namespace Kokoha
 		// カセット番号(ソート用)
 		const int32 ID;
 
-		// 使われているか
-		bool mUsed;
+		// 状態
+		int32 mState;
 
 	public:
 
@@ -73,6 +87,7 @@ namespace Kokoha
 		/// </summary>
 		Cassette()
 			: ID(Inf<int32>)
+			, mState(NO_POSSESS_STATE)
 			, NAME(U"")
 			, COST(0)
 			, EFFECT(0, [](){})
@@ -97,21 +112,21 @@ namespace Kokoha
 		}
 
 		/// <summary>
-		/// 使用中かどうかの切り替え
+		/// 状態の切り替え
 		/// </summary>
-		/// <param name="used"> true なら使用中 , falseなら未使用 </param>
-		void setUsed(bool used)
+		/// <param name="state"> 状態 </param>
+		void setState(bool state)
 		{
-			mUsed = used;
+			mState = state;
 		}
 
 		/// <summary>
-		/// 使用中か
+		/// 状態の取得
 		/// </summary>
-		/// <returns> true なら使用中 , falseなら未使用 </returns>
-		bool getUsed()const
+		/// <returns> 状態 </returns>
+		int32 getState()const
 		{
-			return mUsed;
+			return mState;
 		}
 
 		/// <summary>

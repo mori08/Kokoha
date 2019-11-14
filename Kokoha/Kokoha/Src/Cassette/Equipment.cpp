@@ -1,9 +1,10 @@
 #include "Equipment.h"
 
 
-Kokoha::Equipment::Equipment()
+Kokoha::Equipment::Equipment(int32 state)
 	: mUsedSecond(0)
 	, mTotalCost(0)
+	, mCassetteState(state)
 {
 }
 
@@ -15,6 +16,7 @@ void Kokoha::Equipment::addCassette(const CassettePtr& cassette)
 
 	mCassetteList.insert(cassette);
 	mTotalCost += cassette->COST;
+	cassette->setState(mCassetteState);
 }
 
 
@@ -25,6 +27,7 @@ void Kokoha::Equipment::removeCassette(const CassettePtr& cassette)
 
 	mCassetteList.erase(cassette);
 	mTotalCost -= cassette->COST;
+	cassette->setState(Cassette::POSSESS_STATE);
 }
 
 

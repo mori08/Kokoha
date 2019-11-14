@@ -8,7 +8,7 @@ int32 Kokoha::Cassette::sNum = 0;
 
 Kokoha::Cassette::Cassette(const String& name, int32 cost, const CassetteEffect& effect)
 	: ID(sNum++)
-	, mUsed(false)
+	, mState(NO_POSSESS_STATE)
 	, NAME(name)
 	, COST(cost)
 	, EFFECT(effect)

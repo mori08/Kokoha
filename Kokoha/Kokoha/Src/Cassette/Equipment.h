@@ -21,6 +21,8 @@ namespace Kokoha
 		// 総コスト
 		int32 mTotalCost;
 
+		const int32 mCassetteState;
+
 		// 装備しているカセットのリスト
 		CassettePtrSet mCassetteList;
 
@@ -29,7 +31,11 @@ namespace Kokoha
 
 	public:
 
-		Equipment();
+		/// <summary>
+		/// 装備
+		/// </summary>
+		/// <param name="state"> カセットに設定する状態 </param>
+		Equipment(int32 state);
 
 	public:
 

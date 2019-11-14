@@ -2,6 +2,7 @@
 
 
 Kokoha::CassetteManager::CassetteManager()
+	: mEquipment( { Equipment(Cassette::EQUIPMENT_A_STATE),Equipment(Cassette::EQUIPMENT_B_STATE) })
 {
 	
 	// スピードI
@@ -34,8 +35,9 @@ Kokoha::CassetteManager::CassetteManager()
 		)
 	);
 
-	for (const auto& cassette : mCassetteList)
+	for (auto& cassette : mCassetteList)
 	{
 		mPossessCassette.insert(cassette);
+		cassette->setState(Cassette::POSSESS_STATE);
 	}
 }
