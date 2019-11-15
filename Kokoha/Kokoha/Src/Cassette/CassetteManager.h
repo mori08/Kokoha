@@ -72,7 +72,7 @@ namespace Kokoha
 		/// <param name="id"> 偶数なら装備A , 奇数なら装備B </param>
 		/// <returns>
 		/// 装備カセット
-		/// </param>
+		/// </returns>
 		Equipment& getEquipment(size_t id)
 		{
 			return mEquipment[id % EQUIPMENT_NUM];

@@ -31,13 +31,14 @@ namespace Kokoha
 		/// <summary>
 		/// ボタンをButtonManagerにセット
 		/// </summary>
-		void setButton() const;
+		void setButton()const;
 
 		/// <summary>
 		/// 更新
 		/// </summary>
-		/// <param name="cassetteSet"> カセットの集合 </param>
-		void update(const CassettePtrSet& cassetteSet);
+		/// <param name="cassetteSet"        > カセットの集合         </param>
+		/// <param name="selectedEquipmentId"> 選択している装備の番号 </param>
+		void update(const CassettePtrSet& cassetteSet, int32 selectedEquipmentId);
 
 		/// <summary>
 		/// 描画

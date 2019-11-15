@@ -62,6 +62,14 @@ namespace Kokoha
 			return mCassetteList;
 		}
 
+		/// <summary>
+		/// カセットの状態
+		/// </summary>
+		int32 getCassetteState()const
+		{
+			return mCassetteState;
+		}
+
 		// ↑
 		// AdventureSceneで使用
 

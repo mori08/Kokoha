@@ -115,7 +115,7 @@ namespace Kokoha
 		/// ó‘Ô‚ÌØ‚è‘Ö‚¦
 		/// </summary>
 		/// <param name="state"> ó‘Ô </param>
-		void setState(bool state)
+		void setState(int32 state)
 		{
 			mState = state;
 		}
