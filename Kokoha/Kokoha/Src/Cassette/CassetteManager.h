@@ -24,14 +24,8 @@ namespace Kokoha
 		// カセットの集合
 		Array<CassettePtr> mCassetteList;
 
-		// 所持しているカセットの集合
-		CassettePtrSet mPossessCassette;
-
 		// 装備カセット
 		std::array<Equipment, EQUIPMENT_NUM> mEquipment;
-
-		// 速さ変更についてのキュー { 時間, 速さの倍率 }
-		std::list<std::pair<double, double>> mChangeSpeedQueue;
 
 	private:
 
@@ -56,14 +50,14 @@ namespace Kokoha
 	public:
 
 		/// <summary>
-		/// 所持カセットのリストを取得
+		/// カセットのリストの取得
 		/// </summary>
 		/// <returns>
-		/// 所持カセットのリスト
+		/// カセットのリスト
 		/// </returns>
-		const CassettePtrSet& getPossessCassette()const
+		const Array<CassettePtr>& getCassetteList() const
 		{
-			return mPossessCassette;
+			return mCassetteList;
 		}
 
 		/// <summary>

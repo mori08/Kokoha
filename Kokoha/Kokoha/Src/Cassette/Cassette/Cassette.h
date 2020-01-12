@@ -56,7 +56,7 @@ namespace Kokoha
 		static constexpr int32 EQUIPMENT_A_STATE = 2;
 
 		// 装備 B
-		static constexpr int32 EQUIPMENT_B_STATE = 3;
+		static constexpr int32 EQUIPMENT_B_STATE = 3;		
 
 	private:
 
@@ -138,6 +138,15 @@ namespace Kokoha
 		const CassetteEffect& getEffect()const
 		{
 			return EFFECT;
+		}
+
+		/// <summary>
+		/// アイコン画像の取得
+		/// </summary>
+		TextureRegion getIconTexture()const
+		{
+			static const Size SIZE(60, 60); // ボタンの幅
+			return TextureAsset(U"CassetteIcon")(ID * SIZE.x, 0, SIZE);
 		}
 
 		/// <summary>

@@ -93,13 +93,15 @@ void Kokoha::MenuWindow::selectedUpdate()
 	mSelectedButton.first  = ButtonManager::instance().getSelectedButton().getRegion().pos;
 	mSelectedButton.second = ButtonManager::instance().getSelectedButton().getName();
 
-	// ボタンの更新
-	ButtonManager::instance().update();
-
+	// ウィンドウを閉じる
 	if (InputManager::instatnce().cancel())
 	{
 		AdventureManager::instance().closeWindow();
+		return;
 	}
+
+	// ボタンの更新
+	ButtonManager::instance().update();
 }
 
 
