@@ -61,8 +61,8 @@ void Kokoha::SetupWindow::selectedUpdate()
 	// カセット一覧の更新
 	mPossessCassetteView.update();
 
-	ButtonManager::instance().update();
 	mCursor = ButtonManager::instance().getSelectedButton().getRegion();
+	ButtonManager::instance().update();
 }
 
 

@@ -290,6 +290,7 @@
     <ClInclude Include="Src\Adventure\Scene\LoadAdventureScene.h" />
     <ClInclude Include="Src\Adventure\Window\AdventureWindow.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteMoveWindow.h" />
+    <ClInclude Include="Src\Adventure\Window\CassetteView\EquipmentCassetteView.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteView\PossessCassetteView.h" />
     <ClInclude Include="Src\Adventure\Window\InfoWindow.h" />
     <ClInclude Include="Src\Adventure\Window\MenuWindow.h" />

@@ -23,9 +23,6 @@ namespace Kokoha
 		// ボタンのリスト
 		Array<Button> mButtonList;
 
-		// 選択している装備の番号
-		const int32 mSelectedEquipmentId;
-
 		// カーソル
 		RectF mCursor;
 
@@ -37,10 +34,9 @@ namespace Kokoha
 		/// <summary>
 		/// カセットを移動させるウィンドウ
 		/// </summary>
-		/// <param name="cassette"> カセット               </param>
-		/// <param name="pos"     > 表示座標               </param>
-		/// <param name="selected"> 選択している装備の番号 </param>
-		CassetteMoveWindow(const CassettePtr& cassette, const Point& pos, int32 selected);
+		/// <param name="cassette"> カセット </param>
+		/// <param name="pos"     > 表示座標 </param>
+		CassetteMoveWindow(const CassettePtr& cassette, const Point& pos);
 
 	private:
 

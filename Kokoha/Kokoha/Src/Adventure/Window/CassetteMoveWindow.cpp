@@ -9,7 +9,7 @@
 namespace
 {
 	// このウィンドウのサイズ
-	constexpr Size BOARD_SIZE(200, 200);
+	constexpr Size BOARD_SIZE(120, 120);
 	// 座標の補正
 	constexpr Point OFFSET(30, 30);
 
@@ -21,63 +21,80 @@ namespace
 }
 
 
-Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, const Point& pos, int32 selectedId)
+Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, const Point& pos)
 	: AdventureWindow(Rect(pos + OFFSET, BOARD_SIZE))
 	, mCassettePtr(cassette)
-	, mSelectedEquipmentId(selectedId)
 {
 	Rect region = getRectFromCenter(mWindowBoard.center().asPoint(), BUTTON_SIZE);
 	region.y -= BUTTON_SIZE.y;
 
-	mCursor = region;
-
-	// つけるボタン (カセットが装備されていないとき)
+	// 未装備のカセット
 	if (cassette->getState() == Cassette::POSSESS_STATE)
 	{
-		Button button(U"そうび", region);
-		button.setOnClickFunc
+		// 「Ａにそうび」ボタン
+		Button buttonA(U"Ａにそうび", region);
+		buttonA.setOnClickFunc
 		(
-			[selectedId, cassette]()
+			[cassette]()
 			{
-				CassetteManager::instance().getEquipment(selectedId).addCassette(cassette);
+				CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_A_STATE).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
 		);
-		mButtonList.emplace_back(button);
-	}
-	// はずすボタン (カセットが選択中の装備にあるとき)
-	else if (cassette->getState() == selectedId)
-	{
-		Button button(U"はずす", region);
-		button.setOnClickFunc
+
+		region.y += BUTTON_SIZE.y;
+
+		// 「Ｂにそうび」
+		Button buttonB(U"Ｂにそうび", region);
+		buttonB.setOnClickFunc
 		(
-			[selectedId, cassette]()
+			[cassette]()
 			{
-				CassetteManager::instance().getEquipment(selectedId).removeCassette(cassette);
+				CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_B_STATE).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
 		);
-		mButtonList.emplace_back(button);
+
+		mButtonList.emplace_back(buttonA);
+		mButtonList.emplace_back(buttonB);
 	}
-	// つけかえるボタン (カセットが選択していない装備にあるとき)
+
+	// 装備済のカセット
 	else
 	{
-		Button button(U"つけかえる", region);
-		button.setOnClickFunc
+		// 「はずす」ボタン
+		Button buttonHazusu(U"はずす", region);
+		buttonHazusu.setOnClickFunc
 		(
-			[selectedId, cassette]()
+			[cassette]()
 			{
 				CassetteManager::instance().getEquipment(cassette->getState()).removeCassette(cassette);
-				CassetteManager::instance().getEquipment(selectedId).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
 		);
-		mButtonList.emplace_back(button);
+
+		region.y += BUTTON_SIZE.y;
+
+		// 「つけかえる」ボタン
+		Button buttonTsukekaeru(U"つけかえる", region);
+		buttonTsukekaeru.setOnClickFunc
+		(
+			[cassette]()
+			{
+				CassetteManager::instance().getEquipment(cassette->getState()).removeCassette(cassette);
+				CassetteManager::instance().getEquipment(cassette->getState()+1).addCassette(cassette);
+				AdventureManager::instance().closeWindow();
+			}
+		);
+
+		mButtonList.emplace_back(buttonHazusu);
+		mButtonList.emplace_back(buttonTsukekaeru);
 	}
 
 	region.y += BUTTON_SIZE.y; mButtonList.emplace_back(U"くわしく", region);
 
 	mSelectedButton = { region.pos, U"くわしく" };
+	mCursor = region;
 }
 
 
@@ -101,6 +118,8 @@ void Kokoha::CassetteMoveWindow::select()
 			mButtonList[(i + 1) % mButtonList.size()].getName()
 		);
 	}
+
+	ButtonManager::instance().setSelectedButton(mSelectedButton.second);
 }
 
 

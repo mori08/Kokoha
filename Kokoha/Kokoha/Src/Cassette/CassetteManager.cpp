@@ -84,4 +84,10 @@ Kokoha::CassetteManager::CassetteManager()
 			Cassette::makeSpeedEffect(1.5, { 3.0,Inf<double> })
 		)
 	);
+
+	// デバッグ用にカセットを所持させる
+	for (auto& cassette : mCassetteList)
+	{
+		cassette->setState(Cassette::POSSESS_STATE);
+	}
 }

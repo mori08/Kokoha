@@ -14,6 +14,9 @@ namespace
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(60, 60);
 
+	// ウィンドウを表示する座標の補正
+	constexpr Point WINDOW_OFFSET(-150, -30);
+
 	// ボタンの名前
 	const String BUTTON_NAME(U"Possess");
 
@@ -34,6 +37,20 @@ void Kokoha::PossessCassetteView::setButton()const
 		(
 			BUTTON_NAME + ToString(i),
 			Rect(buttonPoint, BUTTON_SIZE)
+		);
+
+		// ボタンを押したときの処理の設定
+		ButtonManager::instance().setOnClickFunc
+		(
+			BUTTON_NAME + ToString(i),
+			[i, buttonPoint]()
+			{
+				CassettePtr cassettePtr = CassetteManager::instance().getCassetteList()[i];
+				
+				if (cassettePtr->getState() == Cassette::NO_POSSESS_STATE) { return; }
+
+				AdventureManager::instance().openWindow(std::make_unique<CassetteMoveWindow>(cassettePtr, buttonPoint + WINDOW_OFFSET));
+			}
 		);
 
 		// ボタンの縦の位置関係の設定
