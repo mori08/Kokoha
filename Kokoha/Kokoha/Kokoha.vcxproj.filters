@@ -579,6 +579,9 @@
     <ClCompile Include="Src\Adventure\Window\CassetteView\PossessCassetteView.cpp">
       <Filter>Src\Adventure\Window\CassetteView</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\CassetteView\EquipmentCassetteView.cpp">
+      <Filter>Src\Adventure\Window\CassetteView</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">

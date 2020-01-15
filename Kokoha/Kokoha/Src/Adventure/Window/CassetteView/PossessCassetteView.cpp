@@ -9,13 +9,13 @@
 namespace
 {
 	// 描画の基準点
-	constexpr Point DRAW_POINT(400, 60);
+	constexpr Point DRAW_POINT(430, 30);
 
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(60, 60);
 
 	// ウィンドウを表示する座標の補正
-	constexpr Point WINDOW_OFFSET(-150, -30);
+	constexpr Point WINDOW_OFFSET(-130, -20);
 
 	// ボタンの名前
 	const String BUTTON_NAME(U"Possess");
@@ -89,12 +89,18 @@ void Kokoha::PossessCassetteView::draw() const
 		Point drawIconPoint 
 			= DRAW_POINT + BUTTON_SIZE * Point(i % ICON_COLUMN, i / ICON_COLUMN);
 
-		if (CassetteManager::instance().getCassetteList()[i]->getState() == Cassette::NO_POSSESS_STATE)
+		Rect(drawIconPoint, BUTTON_SIZE).drawFrame(1, MyWhite);
+
+		int32 state = CassetteManager::instance().getCassetteList()[i]->getState();
+
+		if (state == Cassette::NO_POSSESS_STATE)
 		{
 			continue;
 		}
 
-		CassetteManager::instance().getCassetteList()[i]->getIconTexture().draw(drawIconPoint);
+		Color alpha = (state == Cassette::POSSESS_STATE) ? (Alpha(0xFF)) : (Alpha(0xA0));
+
+		CassetteManager::instance().getCassetteList()[i]->getIconTexture().draw(drawIconPoint, alpha);
 	}
 }
 

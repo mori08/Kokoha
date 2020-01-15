@@ -233,6 +233,7 @@
     <ClCompile Include="Src\Adventure\Scene\LoadAdventureScene.cpp" />
     <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\CassetteMoveWindow.cpp" />
+    <ClCompile Include="Src\Adventure\Window\CassetteView\EquipmentCassetteView.cpp" />
     <ClCompile Include="Src\Adventure\Window\CassetteView\PossessCassetteView.cpp" />
     <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\MenuWindow.cpp" />

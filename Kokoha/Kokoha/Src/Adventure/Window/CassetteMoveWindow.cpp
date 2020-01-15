@@ -9,20 +9,18 @@
 namespace
 {
 	// このウィンドウのサイズ
-	constexpr Size BOARD_SIZE(120, 120);
-	// 座標の補正
-	constexpr Point OFFSET(30, 30);
+	constexpr Size BOARD_SIZE(120, 100);
 
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(100, 30);
 
 	// カーソルの移動の比
-	constexpr double CURSOR_RATE = 0.001;
+	constexpr double CURSOR_RATE = 0.0001;
 }
 
 
 Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, const Point& pos)
-	: AdventureWindow(Rect(pos + OFFSET, BOARD_SIZE))
+	: AdventureWindow(Rect(pos, BOARD_SIZE))
 	, mCassettePtr(cassette)
 {
 	Rect region = getRectFromCenter(mWindowBoard.center().asPoint(), BUTTON_SIZE);
@@ -81,8 +79,9 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 		(
 			[cassette]()
 			{
-				CassetteManager::instance().getEquipment(cassette->getState()).removeCassette(cassette);
-				CassetteManager::instance().getEquipment(cassette->getState()+1).addCassette(cassette);
+				int32 state = cassette->getState();
+				CassetteManager::instance().getEquipment(state).removeCassette(cassette);
+				CassetteManager::instance().getEquipment(state+1).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
 		);

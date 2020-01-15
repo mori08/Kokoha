@@ -8,7 +8,7 @@ namespace Kokoha
 {
 	/*
 	PossessCassetteViewクラス
-	SetupWindowで所持しているカセットの操作
+	SetupWindowで所持しているカセットの操作・描画
 	*/
 	class PossessCassetteView
 	{

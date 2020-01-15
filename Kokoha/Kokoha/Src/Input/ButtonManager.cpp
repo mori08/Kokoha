@@ -29,11 +29,18 @@ void Kokoha::ButtonManager::registerButton(const Button& button)
 
 void Kokoha::ButtonManager::setVerticalAdjacentButton(const String& upName, const String& downName)
 {
-	if (!mButtonMap.count(upName) || !mButtonMap.count(downName))
+	if (!mButtonMap.count(upName))
 	{
 		printDebug(U"[ButtonManager::setVerticalAdjacentButton]");
 		printDebug(U"存在しないボタンが指定されました");
 		printDebug(U"upName > " + upName);
+		return;
+	}
+
+	if (!mButtonMap.count(downName))
+	{
+		printDebug(U"[ButtonManager::setVerticalAdjacentButton]");
+		printDebug(U"存在しないボタンが指定されました");
 		printDebug(U"downName > " + downName);
 		return;
 	}
@@ -48,11 +55,18 @@ void Kokoha::ButtonManager::setVerticalAdjacentButton(const String& upName, cons
 
 void Kokoha::ButtonManager::setHorizontalAdjacentButton(const String& leftName, const String& rightName)
 {
-	if (!mButtonMap.count(leftName) || !mButtonMap.count(rightName))
+	if (!mButtonMap.count(leftName))
 	{
 		printDebug(U"[ButtonManager::setHorizontalAdjacentButton]");
 		printDebug(U"存在しないボタンが指定されました");
 		printDebug(U"leftName > " + leftName);
+		return;
+	}
+
+	if (!mButtonMap.count(rightName))
+	{
+		printDebug(U"[ButtonManager::setHorizontalAdjacentButton]");
+		printDebug(U"存在しないボタンが指定されました");
 		printDebug(U"rightName > " + rightName);
 		return;
 	}

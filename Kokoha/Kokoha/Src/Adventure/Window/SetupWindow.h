@@ -3,6 +3,7 @@
 
 #include "AdventureWindow.h"
 #include "CassetteView/PossessCassetteView.h"
+#include "CassetteView/EquipmentCassetteView.h"
 
 
 namespace Kokoha
@@ -15,14 +16,17 @@ namespace Kokoha
 	{
 	private:
 
-		// ボタンを指すカーソル
-		RectF mCursor;
+		// ボタンを指すカーソル {カーソル,目的座標}
+		std::pair<RectF, Vec2> mCursor;
 
 		// 選択中のボタン名
 		String mSelectedButtonName;
 
 		// 所持しているカセット一覧
 		PossessCassetteView mPossessCassetteView;
+
+		// 装備しているカセット一覧
+		EquipmentCassetteView mEquipmentCassetteView;
 
 	public:
 

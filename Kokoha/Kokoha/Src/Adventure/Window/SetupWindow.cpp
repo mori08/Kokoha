@@ -12,18 +12,24 @@ namespace
 	constexpr Size BOARD_SIZE(600, 440);
 	
 	// カーソルの初期範囲
-	constexpr RectF INIT_CURSOR(400, 60, 60, 60);
+	constexpr RectF INIT_CURSOR(430, 30, 60, 60);
 
 	// 所持カセットの描画位置
 	constexpr Point POSSESS_POS(400, 100);
 	// 装備カセットの描画位置
 	constexpr Point EQUIPMENT_POS(200, 100);
+
+	// カーソルの移動の比
+	constexpr double CURSOR_RATE = 0.00005;
+
+	// カーソルの角の半径
+	constexpr double CURSOR_RADIUS = 3;
 }
 
 
 Kokoha::SetupWindow::SetupWindow()
 	: AdventureWindow(getRectFromCenter(Scene::Center(), BOARD_SIZE))
-	, mCursor(INIT_CURSOR)
+	, mCursor(INIT_CURSOR, INIT_CURSOR.pos)
 	, mSelectedButtonName(U"Possess0")
 	, mPossessCassetteView()
 {
@@ -37,7 +43,8 @@ void Kokoha::SetupWindow::select()
 
 	// ボタンの設定
 	mPossessCassetteView.setButton();
-
+	mEquipmentCassetteView.setButton();
+	
 	// 選択ボタンの設定
 	ButtonManager::instance().setSelectedButton(mSelectedButtonName);
 }
@@ -45,7 +52,13 @@ void Kokoha::SetupWindow::select()
 
 void Kokoha::SetupWindow::update()
 {
-	
+	// カーソルの移動
+	internalDividingPoint
+	(
+		mCursor.first.pos,
+		mCursor.second,
+		CURSOR_RATE
+	);
 }
 
 
@@ -60,8 +73,10 @@ void Kokoha::SetupWindow::selectedUpdate()
 
 	// カセット一覧の更新
 	mPossessCassetteView.update();
+	mEquipmentCassetteView.update();
 
-	mCursor = ButtonManager::instance().getSelectedButton().getRegion();
+	mCursor.second = ButtonManager::instance().getSelectedButton().getRegion().pos;
+	mSelectedButtonName = ButtonManager::instance().getSelectedButton().getName();
 	ButtonManager::instance().update();
 }
 
@@ -70,8 +85,14 @@ void Kokoha::SetupWindow::draw() const
 {
 	drawBoard();
 
-	mCursor.draw(Color(MyWhite, 0x80));
+	RoundRect(mCursor.first, CURSOR_RADIUS).draw(Color(MyWhite, 0x80));
 	
 	// カセット一覧の更新
 	mPossessCassetteView.draw();
+	mEquipmentCassetteView.draw();
+	
+	// 説明テキスト
+	FontAsset(U"20")(U"もちもの").draw(Point(340, 40)).drawFrame(1, MyWhite);
+	FontAsset(U"20")(U"そうびＡ").draw(Point(30, 110)).drawFrame(1, MyWhite);
+	FontAsset(U"20")(U"そうびＢ").draw(Point(30, 230)).drawFrame(1, MyWhite);
 }
