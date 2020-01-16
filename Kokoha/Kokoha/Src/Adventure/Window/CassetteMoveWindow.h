@@ -23,6 +23,9 @@ namespace Kokoha
 		// ボタンのリスト
 		Array<Button> mButtonList;
 
+		// 文字のアルファ値
+		std::unordered_map<String, int32> mAlphaMap;
+
 		// カーソル
 		RectF mCursor;
 

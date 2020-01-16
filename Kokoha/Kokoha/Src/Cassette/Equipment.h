@@ -70,6 +70,12 @@ namespace Kokoha
 			return mCassetteState;
 		}
 
+		/// <summary>
+		/// カセットを追加できるかを示す
+		/// </summary>
+		/// <param name="cassette"> 追加したいカセット </param>
+		bool isAddAbleCassette(const CassettePtr& cassette) const;
+
 		// ↑
 		// AdventureSceneで使用
 

@@ -31,10 +31,15 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 	{
 		// 「Ａにそうび」ボタン
 		Button buttonA(U"Ａにそうび", region);
+		mAlphaMap[U"Ａにそうび"] = CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_A_STATE).isAddAbleCassette(cassette)
+			? 0xFF
+			: 0x80;
 		buttonA.setOnClickFunc
 		(
-			[cassette]()
+			[cassette,this]()
 			{
+				if (!CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_A_STATE).isAddAbleCassette(cassette)) { return; }
+
 				CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_A_STATE).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
@@ -44,10 +49,15 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 
 		// 「Ｂにそうび」
 		Button buttonB(U"Ｂにそうび", region);
+		mAlphaMap[U"Ｂにそうび"] = CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_B_STATE).isAddAbleCassette(cassette)
+			? 0xFF
+			: 0x80;
 		buttonB.setOnClickFunc
 		(
-			[cassette]()
+			[cassette,this]()
 			{
+				if (!CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_B_STATE).isAddAbleCassette(cassette)) { return; }
+
 				CassetteManager::instance().getEquipment(Cassette::EQUIPMENT_B_STATE).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
 			}
@@ -62,6 +72,7 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 	{
 		// 「はずす」ボタン
 		Button buttonHazusu(U"はずす", region);
+		mAlphaMap[U"はずす"] = 0xFF;
 		buttonHazusu.setOnClickFunc
 		(
 			[cassette]()
@@ -75,11 +86,17 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 
 		// 「つけかえる」ボタン
 		Button buttonTsukekaeru(U"つけかえる", region);
+		mAlphaMap[U"つけかえる"] = CassetteManager::instance().getEquipment(cassette->getState()).isAddAbleCassette(cassette)
+			? 0xFF
+			: 0x80;
 		buttonTsukekaeru.setOnClickFunc
 		(
-			[cassette]()
+			[cassette,this]()
 			{
 				int32 state = cassette->getState();
+
+				if (!CassetteManager::instance().getEquipment(state + 1).isAddAbleCassette(cassette)) { return; }
+
 				CassetteManager::instance().getEquipment(state).removeCassette(cassette);
 				CassetteManager::instance().getEquipment(state+1).addCassette(cassette);
 				AdventureManager::instance().closeWindow();
@@ -91,6 +108,7 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 	}
 
 	region.y += BUTTON_SIZE.y; mButtonList.emplace_back(U"くわしく", region);
+	mAlphaMap[U"くわしく"] = 0xFF;
 
 	mSelectedButton = { region.pos, U"くわしく" };
 	mCursor = region;
@@ -162,7 +180,7 @@ void Kokoha::CassetteMoveWindow::draw() const
 		Color color = (button.getName() == mSelectedButton.second)
 			? MyBlack
 			: MyWhite;
-
-		FontAsset(U"20")(button.getName()).drawAt(button.getRegion().center(), color);
+		
+		FontAsset(U"20")(button.getName()).drawAt(button.getRegion().center(), Color(color, mAlphaMap.find(button.getName())->second));
 	}
 }

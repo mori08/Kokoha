@@ -1,4 +1,5 @@
 #include "RecordManager.h"
+#include "../MyLibrary.h"
 
 
 namespace
@@ -21,6 +22,9 @@ Kokoha::RecordManager::RecordManager()
 {
 	mRecordMap.try_emplace(U"TestFlag" , std::move(Record(1, 1)));
 	mRecordMap.try_emplace(U"TestValue", std::move(Record(3, 5)));
+
+	// レコードのコスト上限
+	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 1)));
 }
 
 
@@ -70,6 +74,34 @@ void Kokoha::RecordManager::printAllRecord()
 	{
 		Print << record.first << U" : " << record.second.get();
 	}
+}
+
+
+void Kokoha::RecordManager::setRecord(const String& name, int32 value)
+{
+	if (!mRecordMap.count(name)) 
+	{ 
+		printDebug(U"[RecordManager::setRecord]");
+		printDebug(U"登録されていないレコードです");
+		printDebug(U"name > " + name);
+		return; 
+	}
+
+	mRecordMap.find(name)->second.set(value);
+}
+
+
+int32 Kokoha::RecordManager::getRecord(const String& name) const
+{
+	if (!mRecordMap.count(name))
+	{
+		printDebug(U"[RecordManager::setRecord]");
+		printDebug(U"登録されていないレコードです");
+		printDebug(U"name > " + name);
+		return 0;
+	}
+
+	return mRecordMap.find(name)->second.get();
 }
 
 

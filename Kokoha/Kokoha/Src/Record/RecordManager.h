@@ -73,6 +73,20 @@ namespace Kokoha
 		/// </remarks>
 		void printAllRecord();
 
+		/// <summary>
+		/// レコードの設定
+		/// </summary>
+		/// <param name="name" > 名前         </param>
+		/// <param name="value"> 変更したい値 </param>
+		void setRecord(const String& name, int32 value);
+
+		/// <summary>
+		/// レコードの取得
+		/// </summary>
+		/// <param name="name"> 名前 </param>
+		/// <returns> レコードの値 </returns>
+		int32 getRecord(const String& name) const;
+
 	private:
 
 		/// <summary>

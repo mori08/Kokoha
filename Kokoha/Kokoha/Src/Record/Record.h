@@ -47,7 +47,7 @@ namespace Kokoha
 		/// <summary>
 		/// 値の設定
 		/// </summary>
-		/// <param name="value"> 変更したい値 </param.
+		/// <param name="value"> 変更したい値 </param>
 		void set(int32 value)
 		{
 			mValue = Max(0, Min(value, (2 >> mDigit) - 1));
