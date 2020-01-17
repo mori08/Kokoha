@@ -10,6 +10,11 @@ Kokoha::AdventureScene::AdventureScene(const InitData& init)
 
 void Kokoha::AdventureScene::update()
 {
+	if (Key0.down())
+	{
+		changeScene(SceneName::LOAD_GAME);
+	}
+
 	AdventureManager::instance().update();
 }
 

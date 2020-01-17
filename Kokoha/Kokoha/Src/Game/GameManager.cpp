@@ -7,6 +7,9 @@
 #include "Object/Light/EnemyLight.h"
 #include "Object/Attack/ChaseEnemyAttack.h"
 
+#include "../Cassette/CassetteManager.h"
+#include "../Input/InputManager.h"
+
 
 namespace
 {
@@ -29,7 +32,18 @@ Kokoha::GameManager::GameManager()
 
 void Kokoha::GameManager::init()
 {
+	// ステージの初期化
 	mStageData.init();
+
+	// オブジェクトの全削除
+	mObjectList.clear();
+
+	// 装備の初期化
+	mEquipmentId = 0;
+	CassetteManager::instance().getEquipment(mEquipmentId).initEffect();
+
+	// プレイヤーの速さの初期化
+	mPlayerSpeed.init();
 }
 
 
@@ -114,6 +128,17 @@ Optional<String> Kokoha::GameManager::load(const String& stageName)
 
 void Kokoha::GameManager::update()
 {
+	// 装備の切り替え
+	if (InputManager::instatnce().decision())
+	{
+		changeEquipment();
+	}
+	// 装備の更新
+	CassetteManager::instance().getEquipment(mEquipmentId).updateEffect();
+
+	// プレイヤーの速度の更新
+	mPlayerSpeed.update();
+
 	// オブジェクトの更新
 	for (auto&& object : mObjectList) { object->update(); }
 
@@ -156,4 +181,14 @@ void Kokoha::GameManager::draw() const
 	for (const auto& object : mObjectList) { object->draw(); }
 
 	mStageData.draw();
+}
+
+
+void Kokoha::GameManager::changeEquipment()
+{
+	++mEquipmentId;
+
+	mPlayerSpeed.init();
+
+	CassetteManager::instance().getEquipment(mEquipmentId).initEffect();
 }

@@ -24,7 +24,7 @@ Kokoha::RecordManager::RecordManager()
 	mRecordMap.try_emplace(U"TestValue", std::move(Record(3, 5)));
 
 	// レコードのコスト上限
-	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 1)));
+	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 6)));
 }
 
 

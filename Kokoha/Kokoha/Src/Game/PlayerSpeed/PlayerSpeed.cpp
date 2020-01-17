@@ -19,15 +19,20 @@ void Kokoha::PlayerSpeed::update()
 {
 	mTime += Scene::DeltaTime();
 
-	while (!mChangeSpeedQueue.empty() && mChangeSpeedQueue.top().first > mTime)
+	while (!mChangeSpeedQueue.empty() && mChangeSpeedQueue.top().first < mTime)
 	{
 		mSpeed *= mChangeSpeedQueue.top().second;
+		mChangeSpeedQueue.pop();
+
+		Print << mTime << U" : " << mSpeed;
 	}
 }
 
 
-void Kokoha::PlayerSpeed::change(double speedRate, double beginTime, double endTime)
+void Kokoha::PlayerSpeed::change(double speedRate, double endTime)
 {
-	mChangeSpeedQueue.push({ beginTime, speedRate   });
+	mSpeed *= speedRate;
 	mChangeSpeedQueue.push({ endTime  , 1/speedRate });
+
+	Print << mTime << U" : " << mSpeed;
 }

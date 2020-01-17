@@ -60,9 +60,8 @@ namespace Kokoha
 		/// 速さの変更の設定
 		/// </summary>
 		/// <param name="speedRate"> 速さの倍率 </param>
-		/// <param name="beginTime"> 開始時刻   </param>
 		/// <param name="endTime"  > 終了時刻   </param>
-		void change(double speedRate, double beginTime, double endTime);
+		void change(double speedRate, double endTime);
 
 	};
 }

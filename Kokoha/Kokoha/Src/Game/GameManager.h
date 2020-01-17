@@ -28,6 +28,9 @@ namespace Kokoha
 		// オブジェクトを生成する関数の連想配列
 		std::unordered_map<String, GenerateGameObjectFunc> mGenerateObjectMap;
 
+		// 選択している装備のID
+		int32 mEquipmentId;
+
 		// プレイヤーの速さ
 		PlayerSpeed mPlayerSpeed;
 
@@ -105,7 +108,7 @@ namespace Kokoha
 		/// <param name="term"     > 期間       </param>
 		void setSpeedChange(double speedRate, const std::pair<double, double>& term)
 		{
-			mPlayerSpeed.change(speedRate, term.first, term.second);
+			mPlayerSpeed.change(speedRate, term.second);
 		}
 
 	private:
@@ -125,6 +128,11 @@ namespace Kokoha
 				}
 			);
 		}
+
+		/// <summary>
+		/// 装備カセットの切り替え
+		/// </summary>
+		void changeEquipment();
 
 	};
 }

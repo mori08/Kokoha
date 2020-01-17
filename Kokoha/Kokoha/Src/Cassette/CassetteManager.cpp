@@ -11,7 +11,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードI",
 			1,
-			Cassette::makeSpeedEffect(1.1, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.2, { 0,Inf<double> })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -19,7 +19,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードII",
 			2,
-			Cassette::makeSpeedEffect(1.3, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.4, { 0,Inf<double> })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -27,7 +27,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードIII",
 			3,
-			Cassette::makeSpeedEffect(1.5, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.8, { 0,Inf<double> })
 		)
 	);
 
@@ -37,7 +37,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"アクセルI",
 			1,
-			Cassette::makeSpeedEffect(2.0, { 3.0,4.0 })
+			Cassette::makeSpeedEffect(2.0, { 3.0,5.0 })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -45,7 +45,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"アクセルII",
 			2,
-			Cassette::makeSpeedEffect(2.0, { 2.0,5.0 })
+			Cassette::makeSpeedEffect(2.0, { 2.0,6.0 })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -53,7 +53,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"アクセルIII",
 			3,
-			Cassette::makeSpeedEffect(2.0, { 1.0,6.0 })
+			Cassette::makeSpeedEffect(2.0, { 1.0,7.0 })
 		)
 	);
 

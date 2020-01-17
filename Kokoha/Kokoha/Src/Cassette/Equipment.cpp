@@ -70,8 +70,9 @@ void Kokoha::Equipment::updateEffect()
 {
 	mUsedSecond += Scene::DeltaTime();
 
-	while (!mEffectQueue.empty() && mEffectQueue.front().BEGIN_SECOND > mUsedSecond)
+	while (!mEffectQueue.empty() && mEffectQueue.front().BEGIN_SECOND < mUsedSecond)
 	{
 		mEffectQueue.front().EFFECT_FUNCTION();
+		mEffectQueue.pop_front();
 	}
 }
