@@ -2,6 +2,7 @@
 #include "../Game/GameManager.h"
 
 #include "../Game/Object/Light/PlayerLight.h"
+#include "../Game/Object/Light/RandomLight.h"
 
 
 Kokoha::CassetteManager::CassetteManager()
@@ -125,7 +126,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒ‰ƒ“ƒ_ƒ€I",
 			1,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(1.5)); }})
 		)
 	);
 	mCassetteList.emplace_back
@@ -134,7 +135,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒ‰ƒ“ƒ_ƒ€II",
 			2,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(2.5)); }})
 		)
 	);
 	mCassetteList.emplace_back
@@ -143,7 +144,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒ‰ƒ“ƒ_ƒ€III",
 			3,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(3.5)); }})
 		)
 	);
 

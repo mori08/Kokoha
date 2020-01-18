@@ -585,6 +585,9 @@
     <ClCompile Include="Src\Game\Object\Light\PlayerLight.cpp">
       <Filter>Src\Game\Object\Light</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Light\RandomLight.cpp">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -771,6 +774,9 @@
       <Filter>Src\Adventure\Window\CassetteView</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Light\PlayerLight.h">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Light\RandomLight.h">
       <Filter>Src\Game\Object\Light</Filter>
     </ClInclude>
   </ItemGroup>
