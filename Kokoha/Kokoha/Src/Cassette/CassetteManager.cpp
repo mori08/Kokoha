@@ -1,4 +1,7 @@
 #include "CassetteManager.h"
+#include "../Game/GameManager.h"
+
+#include "../Game/Object/Light/PlayerLight.h"
 
 
 Kokoha::CassetteManager::CassetteManager()
@@ -64,7 +67,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーI",
 			1,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(2.0)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -73,7 +76,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーII",
 			2,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(4.0)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -82,7 +85,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーIII",
 			3,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(6.0)); })
 		)
 	);
 

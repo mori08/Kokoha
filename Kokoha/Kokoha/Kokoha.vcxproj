@@ -262,6 +262,7 @@
     <ClCompile Include="Src\Game\Object\GameObject.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
+    <ClCompile Include="Src\Game\Object\Light\PlayerLight.cpp" />
     <ClCompile Include="Src\Game\Object\ObjectType.cpp" />
     <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp" />
     <ClCompile Include="Src\Game\PlayerSpeed\PlayerSpeed.cpp" />
@@ -322,6 +323,7 @@
     <ClInclude Include="Src\Game\Object\GameObject.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
+    <ClInclude Include="Src\Game\Object\Light\PlayerLight.h" />
     <ClInclude Include="Src\Game\Object\ObjectType.h" />
     <ClInclude Include="Src\Game\Object\Player\GamePlayer.h" />
     <ClInclude Include="Src\Game\PlayerSpeed\PlayerSpeed.h" />

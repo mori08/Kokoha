@@ -140,6 +140,10 @@ void Kokoha::GameManager::update()
 	mPlayerSpeed.update();
 
 	// オブジェクトの更新
+	for (auto&& object : mAddObjectList) { mObjectList.emplace_back(std::move(object)); }
+	mAddObjectList.clear();
+
+	// オブジェクトの更新
 	for (auto&& object : mObjectList) { object->update(); }
 
 	// 他オブジェクトの確認

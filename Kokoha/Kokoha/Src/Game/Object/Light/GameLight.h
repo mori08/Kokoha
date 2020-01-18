@@ -30,6 +30,9 @@ namespace Kokoha
 		// –¾‚é‚³(Œõ‚Ì•s“§–¾“x)
 		double mAlpha;
 
+		// ‘•”õ‚h‚c
+		int32 mEquipmentId;
+
 	public:
 
 		/// <summary>

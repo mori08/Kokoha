@@ -39,6 +39,9 @@ void Kokoha::GamePlayer::update()
 	if (KeyD.pressed()) { direction += Point::Right(); }
 	walk(GameManager::instance().getPlayerSpeed() * direction);
 
+	// À•W‚Ìİ’è
+	GameManager::instance().setPlayerPos(mBody.center);
+
 	// Œõ
 	if (mLightRate.update()) { mLightRate.restart(); }
 }

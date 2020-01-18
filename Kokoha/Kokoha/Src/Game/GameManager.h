@@ -25,6 +25,9 @@ namespace Kokoha
 		// オブジェクトのリスト
 		std::list<GameObjectPtr> mObjectList;
 
+		// 追加オブジェクトのリスト
+		std::list<GameObjectPtr> mAddObjectList;
+
 		// オブジェクトを生成する関数の連想配列
 		std::unordered_map<String, GenerateGameObjectFunc> mGenerateObjectMap;
 
@@ -33,6 +36,9 @@ namespace Kokoha
 
 		// プレイヤーの速さ
 		PlayerSpeed mPlayerSpeed;
+
+		// プレイヤーの座標
+		Vec2 mPlayerPos;
 
 	private:
 
@@ -102,6 +108,14 @@ namespace Kokoha
 		}
 
 		/// <summary>
+		/// 選択中の装備のＩＤを取得
+		/// </summary>
+		int32 getEquipmentId()const
+		{
+			return mEquipmentId;
+		}
+
+		/// <summary>
 		/// プレイヤーの速さの変更の設定
 		/// </summary>
 		/// <param name="speedRate"> 速さの倍率 </param>
@@ -109,6 +123,35 @@ namespace Kokoha
 		void setSpeedChange(double speedRate, const std::pair<double, double>& term)
 		{
 			mPlayerSpeed.change(speedRate, term.second);
+		}
+
+		/// <summary>
+		/// プレイヤーの座標の設定
+		/// </summary>
+		/// <param name="pos"> プレイヤーの座標 </param>
+		void setPlayerPos(const Vec2& pos)
+		{
+			mPlayerPos = pos;
+		}
+
+		/// <summary>
+		/// プレイヤーの座標の取得
+		/// </summary>
+		/// <returns>
+		/// プレイヤーの座標
+		/// </returns>
+		const Vec2& getPlayerPos()const
+		{
+			return mPlayerPos;
+		}
+
+		/// <summary>
+		/// オブジェクトの追加
+		/// </summary>
+		/// <param name="objectPtr">
+		void addObject(GameObjectPtr&& objectPtr)
+		{
+			mAddObjectList.emplace_back(std::move(objectPtr));
 		}
 
 	private:

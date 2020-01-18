@@ -2,6 +2,7 @@
 
 
 #include <Siv3D.hpp>
+#include "../../Game/Object/GameObject.h"
 
 
 namespace Kokoha

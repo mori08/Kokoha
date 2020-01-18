@@ -1,6 +1,7 @@
 #include "GameLight.h"
 #include "../../../MyColor.h"
 #include "../../../MyLibrary.h"
+#include "../../GameManager.h"
 
 
 namespace
@@ -24,6 +25,7 @@ Kokoha::GameLight::GameLight(const Circle& body, double speed, double eraseSecon
 	, mEraseAble(false)
 	, mAlpha(0)
 {
+	mEquipmentId = GameManager::instance().getEquipmentId();
 }
 
 
@@ -31,7 +33,8 @@ void Kokoha::GameLight::update()
 {
 	// íœğŒ‚ÌXV
 	mEraseSecond -= Scene::DeltaTime();
-	mEraseAble = mEraseAble || (mEraseSecond < 0);
+	bool isChangedEquipment = ((mEquipmentId - GameManager::instance().getEquipmentId()) != 0);
+	mEraseAble = mEraseAble || (mEraseSecond < 0) || isChangedEquipment;
 	
 	// –¾‚é‚³‚Ì•ÏX
 	internalDividingPoint(mAlpha, (mEraseAble ? 0.0 : 1.0), LIGHT_RATE);
