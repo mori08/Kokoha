@@ -13,6 +13,9 @@ namespace Kokoha
 	注) 2種類の座標を以下の表現で使い分ける.
 	Vec2  pixel  -> ピクセル座標 : 当たり判定や描画に使用
 	Point square -> マス座標     : 障害物の管理や経路探索に使用
+
+	注) 角グラフについて
+	各マスを頂点としたとき単調な動作で移動可能な角に有効辺をはったグラフ
 	*/
 	class StageData
 	{
@@ -33,6 +36,9 @@ namespace Kokoha
 
 		// [i][j] : i -> j への最短距離(マス数)
 		std::array<std::array<double, N>, N> mDistance;
+
+		// 角グラフ
+		std::array<Array<int32>, N> mCornerGraph;
 
 	public:
 
@@ -64,7 +70,7 @@ namespace Kokoha
 		/// 整数値をそれに対応するマス座標に変換
 		/// </summary>
 		/// <param name="integer"> 整数値 </param>
-		/// <retruns>
+		/// <returns>
 		/// マス座標
 		/// </returns>
 		static constexpr Point integerToSquare(int32 integer)
@@ -82,6 +88,30 @@ namespace Kokoha
 		static constexpr int32 squareToInteger(const Point& square)
 		{
 			return square.x + WIDTH * square.y;
+		}
+
+		/// <summary>
+		/// ピクセル座標をそれに対応する整数値に変換
+		/// </summary>
+		/// <param name="pixel"> ピクセル座標 </param>
+		/// <returns>
+		/// ピクセル座標に対応する整数値
+		/// </returns>
+		static constexpr int32 pixelToInteger(const Vec2& pixel)
+		{
+			return squareToInteger(pixelToSquare(pixel));
+		}
+
+		/// <summary>
+		/// 整数値をそれに対応するマスの中心ピクセル座標に変換
+		/// </summary>
+		/// <param name="integer"> 整数値 </param>
+		/// <returns>
+		/// 整数値に対応するマスの中心ピクセル座標
+		/// </returns>
+		static constexpr Vec2 integerToPixel(int32 integer)
+		{
+			return squareToPixel(integerToSquare(integer));
 		}
 
 	public:
@@ -145,10 +175,36 @@ namespace Kokoha
 		/// ワーシャル・フロイド法を用いた経路探索
 		/// </summary>
 		/// <remarks>
+		/// ※ 注意 ※
 		/// O(N^3)かかる処理
 		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する.
 		/// </remarks>
 		void searchPath();
+
+		/// <summary>
+		/// マスが角(カド)に接しているか
+		/// </summary>
+		/// <param name="square"> マス座標 </param>
+		/// <returns>
+		/// 接しているとき true , それ以外で false
+		/// </returns>
+		bool isTouchingCorner(const Point& square)const;
+
+		/// <summary>
+		/// 角グラフの作成
+		/// </summary>
+		/// <remarks>
+		/// ※ 注意 ※
+		/// O(N^3)かかる処理
+		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する．
+		/// </remarks>
+		void makeCornerGraph();
+
+		/// <summary>
+		/// 角グラフの辺の取得
+		/// </summary>
+		/// <param name="pixel"> 座標 </param>
+		const Array<int32>& getCornerGraphEdgeList(const Vec2 pixel)const;
 
 		/// <summary>
 		/// 経路情報の保存

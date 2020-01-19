@@ -55,7 +55,7 @@ namespace Kokoha
 
 		virtual bool isEraseAble() const override;
 
-		virtual void checkAnother(const GameObject& another) override {};
+		virtual void checkAnother(const GameObject&) override {};
 
 	};
 }

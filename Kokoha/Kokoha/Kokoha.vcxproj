@@ -267,6 +267,7 @@
     <ClCompile Include="Src\Game\Object\ObjectType.cpp" />
     <ClCompile Include="Src\Game\Object\Player\GamePlayer.cpp" />
     <ClCompile Include="Src\Game\PlayerSpeed\PlayerSpeed.cpp" />
+    <ClCompile Include="Src\Game\Scene\CheckStageScene.cpp" />
     <ClCompile Include="Src\Game\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Game\Scene\LoadGameScene.cpp" />
     <ClCompile Include="Src\Game\StageData\StageData.cpp" />
@@ -324,6 +325,7 @@
     <ClInclude Include="Src\Game\Object\GameObject.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
+    <ClInclude Include="Src\Game\Object\Light\GoalLight.h" />
     <ClInclude Include="Src\Game\Object\Light\PlayerLight.h" />
     <ClInclude Include="Src\Game\Object\Light\RandomLight.h" />
     <ClInclude Include="Src\Game\Object\ObjectType.h" />
@@ -331,6 +333,7 @@
     <ClInclude Include="Src\Game\PlayerSpeed\PlayerSpeed.h" />
     <ClInclude Include="Src\Game\Scene\GameScene.h" />
     <ClInclude Include="Src\Game\Scene\LoadGameScene.h" />
+    <ClInclude Include="Src\Game\Scene\CheckStageScene.h" />
     <ClInclude Include="Src\Game\StageData\StageData.h" />
     <ClInclude Include="Src\Input\Button.h" />
     <ClInclude Include="Src\Input\ButtonManager.h" />

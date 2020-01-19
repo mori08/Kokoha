@@ -96,6 +96,9 @@ Optional<String> Kokoha::GameManager::load(const String& stageName)
 	// 経路探索
 	mStageData.searchPath();
 
+	// 角(カド)グラフの作成
+	mStageData.makeCornerGraph();
+
 	// オブジェクトの生成
 	for (; readingRow < csv.rows(); ++readingRow)
 	{
@@ -176,6 +179,10 @@ void Kokoha::GameManager::draw() const
 		{
 			const Point square = StageData::integerToSquare(i);
 			Rect(StageData::SQUARE_SIZE * square, StageData::SQUARE_SIZE).drawFrame(1, MyBlack);
+		}
+		for (int32 i : mStageData.getCornerGraphEdgeList(Cursor::PosF()))
+		{
+			Circle(StageData::integerToPixel(i), 10).draw(MyBlack);
 		}
 	}
 #endif // _DEBUG

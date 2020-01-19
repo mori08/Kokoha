@@ -64,7 +64,7 @@ void Kokoha::GamePlayer::drawLight() const
 	Circle(mBody.center, radius).drawFrame(LIGHT_THICKNESS, color);
 }
 
-void Kokoha::GamePlayer::checkAnother(const GameObject& another)
+void Kokoha::GamePlayer::checkAnother(const GameObject&)
 {
 	/*
 	TODO

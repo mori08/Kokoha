@@ -19,13 +19,16 @@ enum class SceneName
 	ADVENTURE,      // 探索モード
 
 	LOAD_GAME,      // ゲームのロード
-	GAME            // ゲーム
+	GAME,           // ゲーム
+
+	CHECK_STAGE     // ステージの確認(デバッグ用)
 };
 
 
 // ゲームデータ
 struct GameData
 {
+
 };
 
 

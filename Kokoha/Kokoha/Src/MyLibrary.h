@@ -68,9 +68,27 @@ namespace Kokoha
 	/// <param name="center"> 中心座標 </param>
 	/// <param name="size">   サイズ   </param>
 	/// <returns> 長方形 </returns>
-	constexpr Rect getRectFromCenter(const Point& center, const Size& size)
+	inline constexpr Rect getRectFromCenter(const Point& center, const Size& size)
 	{
 		return std::move(Rect(center - size / 2, size));
 	}
+
+	/// <summary>
+	/// 2頂点から長方形の取得
+	/// </summary>
+	/// <param name="pos1"> 頂点1 </param>
+	/// <param name="pos2"> 頂点2 </param>
+	/// <returns> 長方形 </returns>
+	inline constexpr Rect getRectFromTwoPoint(const Point& pos1, const Point& pos2)
+	{
+		return std::move(Rect(Min(pos1.x, pos2.x), Min(pos1.y, pos2.y), Abs(pos1.x - pos2.x), Abs(pos1.y - pos2.y)));
+	}
+
+	/// <summary>
+	/// 長方形内にある格子点のリストの取得
+	/// </summary>
+	/// <param name="rect"> 長方形 </param>
+	/// <returns> 格子点 </returns>
+	Array<Point> getGridPoint(const Rect& rect);
 
 }

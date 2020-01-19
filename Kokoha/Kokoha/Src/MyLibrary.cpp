@@ -85,3 +85,19 @@ void Kokoha::showFps()
 #endif // _DEBUG
 }
 
+
+Array<Point> Kokoha::getGridPoint(const Rect& rect)
+{
+	Array<Point> rtn;
+
+	for (int32 x : Range(rect.x, rect.x + rect.w))
+	{
+		for (int32 y : Range(rect.y, rect.y + rect.h))
+		{
+			rtn.emplace_back(x, y);
+		}
+	}
+
+	return std::move(rtn);
+}
+
