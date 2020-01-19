@@ -158,6 +158,9 @@
     <Filter Include="Src\Adventure\Window\CassetteView">
       <UniqueIdentifier>{32a70802-9c5d-4036-bb26-a5dd70b1a072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\Object\Goal">
+      <UniqueIdentifier>{0a3897d0-f245-49cd-aab6-00a06273f609}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -591,6 +594,7 @@
     <ClCompile Include="Src\Game\Scene\CheckStageScene.cpp">
       <Filter>Src\Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -787,6 +791,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Scene\CheckStageScene.h">
       <Filter>Src\Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Goal\GameGoal.h">
+      <Filter>Src\Game\Object\Goal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
