@@ -263,6 +263,7 @@
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
+    <ClCompile Include="Src\Game\Object\Light\GoalLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\PlayerLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\RandomLight.cpp" />
     <ClCompile Include="Src\Game\Object\ObjectType.cpp" />

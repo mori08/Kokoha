@@ -3,6 +3,7 @@
 
 #include "../Game/Object/Light/PlayerLight.h"
 #include "../Game/Object/Light/RandomLight.h"
+#include "../Game/Object/Light/GoalLight.h"
 
 
 Kokoha::CassetteManager::CassetteManager()
@@ -155,7 +156,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ゴールI",
 			1,
-			CassetteEffect(0, []() {})
+			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 3.0, false)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -183,7 +184,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ダッシュ",
 			2,
-			Cassette::makeSpeedEffect(1.5, { 3.0,Inf<double> })
+			Cassette::makeSpeedEffect(1.6, { 3.0,Inf<double> })
 		)
 	);
 

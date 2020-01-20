@@ -58,7 +58,7 @@ bool Kokoha::GameAttack::isEraseAble() const
 }
 
 
-void Kokoha::GameAttack::checkAnother(const GameObject& another)
+void Kokoha::GameAttack::checkAnother(const GameObject&)
 {
 	// 敵オブジェクトに当たった時の処理
 }

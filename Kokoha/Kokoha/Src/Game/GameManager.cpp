@@ -144,7 +144,7 @@ void Kokoha::GameManager::update()
 	// プレイヤーの速度の更新
 	mPlayerSpeed.update();
 
-	// オブジェクトの更新
+	// オブジェクトの追加
 	for (auto&& object : mAddObjectList) { mObjectList.emplace_back(std::move(object)); }
 	mAddObjectList.clear();
 

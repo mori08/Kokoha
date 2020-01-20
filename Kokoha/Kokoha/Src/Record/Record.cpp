@@ -13,7 +13,7 @@ int32 Kokoha::Record::sDigitTotal = 0;
 
 Kokoha::Record::Record(int32 digit, int32 defaultValue)
 	: mDigit(Max(1, Min(digit, MAX_DIGIT)))
-	, mDefaultValue(Max(0, Min(defaultValue, (2 << digit) - 1)))
+	, mDefaultValue(Max(0, Min(defaultValue, (1 << digit) - 1)))
 	, mValue(mDefaultValue)
 {
 	sDigitTotal += mDigit;
@@ -35,7 +35,7 @@ void Kokoha::Record::setValueFromDecryption(std::list<int32>& dataList)
 	{
 		if (dataList.empty())
 		{
-			
+			return;
 		}
 		mValue |= dataList.front() << i;
 		dataList.pop_front();

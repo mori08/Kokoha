@@ -594,7 +594,12 @@
     <ClCompile Include="Src\Game\Scene\CheckStageScene.cpp">
       <Filter>Src\Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Light\GoalLight.cpp">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">

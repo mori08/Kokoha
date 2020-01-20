@@ -28,7 +28,7 @@ namespace
 
 
 Kokoha::GameGoal::GameGoal(const Vec2& pos, double speed)
-	: GameObject(Circle(pos, RADIUS), ObjectType::LIGHT)
+	: GameObject(Circle(pos, RADIUS), ObjectType::GOAL)
 	, mGoal(pos)
 	, mSpeed(speed)
 	, mSlide(U"Goal", TEXTURE_SIZE, Point::Zero())

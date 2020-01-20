@@ -32,6 +32,8 @@ namespace Kokoha
 
 		static const ObjectType ATTACK;      // UŒ‚
 
+		static const ObjectType GOAL;        // ƒS[ƒ‹
+
 	private:
 
 		/// <summary>
