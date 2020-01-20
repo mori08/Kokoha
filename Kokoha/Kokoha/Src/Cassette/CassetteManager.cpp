@@ -156,7 +156,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒS[ƒ‹I",
 			1,
-			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 3.0, false)); })
+			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, false)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -165,7 +165,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒS[ƒ‹II",
 			2,
-			CassetteEffect(0, []() {})
+			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, true)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -174,7 +174,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒS[ƒ‹III",
 			3,
-			CassetteEffect(0, []() {})
+			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(3.0, 10.0, true)); })
 		)
 	);
 

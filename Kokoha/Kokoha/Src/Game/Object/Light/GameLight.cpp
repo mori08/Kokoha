@@ -40,14 +40,7 @@ void Kokoha::GameLight::update()
 	internalDividingPoint(mAlpha, (mEraseAble ? 0.0 : 1.0), LIGHT_RATE);
 
 	// À•W‚ÌˆÚ“®
-	if ((mGoal - mBody.center).length() < mSpeed)
-	{
-		mBody.setPos(mGoal);
-	}
-	else
-	{
-		mBody.moveBy(mSpeed * (mGoal - mBody.center).normalized());
-	}
+	walkToGoal(mSpeed, mGoal);
 }
 
 

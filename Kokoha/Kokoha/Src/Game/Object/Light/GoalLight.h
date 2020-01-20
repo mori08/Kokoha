@@ -17,6 +17,9 @@ namespace Kokoha
 		// true のときルート案内用の光を生成する
 		bool mIsRooting;
 
+		// 案内用の光を出すまでの時間
+		double mRootingSecond;
+
 	public:
 
 		/// <summary>

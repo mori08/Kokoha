@@ -148,7 +148,7 @@ namespace Kokoha
 		/// <summary>
 		/// オブジェクトの追加
 		/// </summary>
-		/// <param name="objectPtr">
+		/// <param name="objectPtr"> オブジェクトのポインタ </param>
 		void addObject(GameObjectPtr&& objectPtr)
 		{
 			mAddObjectList.emplace_back(std::move(objectPtr));

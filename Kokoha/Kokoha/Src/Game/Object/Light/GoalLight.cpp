@@ -1,17 +1,22 @@
 #include "GoalLight.h"
+#include "RootingLight.h"
 #include "../../GameManager.h"
 
 
 namespace
 {
 	// ë¨Ç≥
-	const double SPEED = 2.0;
+	constexpr double SPEED = 2.0;
+
+	// àƒì‡ópÇÃåıÇèoÇ∑ä˙ä‘
+	constexpr double ROOTING_SPAN = 0.3;
 }
 
 
 Kokoha::GoalLight::GoalLight(double radius, double eraseSecond, bool isRooting)
 	: GameLight(Circle(GameManager::instance().getPlayerPos(),radius*StageData::SQUARE_SIZE), SPEED, eraseSecond)
 	, mIsRooting(isRooting)
+	, mRootingSecond(ROOTING_SPAN)
 {
 	
 }
@@ -20,6 +25,15 @@ Kokoha::GoalLight::GoalLight(double radius, double eraseSecond, bool isRooting)
 void Kokoha::GoalLight::update()
 {
 	GameLight::update();
+
+	mRootingSecond -= Scene::DeltaTime();
+
+	if (mIsRooting && mRootingSecond < 0)
+	{
+		mRootingSecond = ROOTING_SPAN;
+
+		GameManager::instance().addObject(std::make_unique<RootingLight>(mEraseSecond));
+	}
 }
 
 
