@@ -8,6 +8,7 @@
 #include "Object/Attack/ChaseEnemyAttack.h"
 #include "Object/Goal/GameGoal.h"
 #include "Object/Goal/RandomGoal.h"
+#include "Object/Goal/RunAwayGoal.h"
 
 #include "../Cassette/CassetteManager.h"
 #include "../Input/InputManager.h"
@@ -31,6 +32,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<ChaseEnemyAttack>      (U"ChaseEnemyAttack");
 	setGenerateObjectFunc<GameGoal>              (U"Goal");
 	setGenerateObjectFunc<RandomGoal>            (U"RandomGoal");
+	setGenerateObjectFunc<RunAwayGoal>           (U"RunAwayGoal");
 }
 
 
