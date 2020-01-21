@@ -603,6 +603,9 @@
     <ClCompile Include="Src\Game\Object\Light\RootingLight.cpp">
       <Filter>Src\Game\Object\Light</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -805,6 +808,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Light\RootingLight.h">
       <Filter>Src\Game\Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h">
+      <Filter>Src\Game\Object\Goal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

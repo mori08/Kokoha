@@ -28,7 +28,7 @@ namespace Kokoha
 
 		GameGoal(const Vec2& pos, double speed = 0.0);
 
-	private:
+	protected:
 
 		virtual void update()override;
 

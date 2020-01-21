@@ -261,6 +261,7 @@
     <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\GameObject.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GoalLight.cpp" />
@@ -327,6 +328,7 @@
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\GameObject.h" />
     <ClInclude Include="Src\Game\Object\Goal\GameGoal.h" />
+    <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GoalLight.h" />
