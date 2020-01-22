@@ -153,6 +153,7 @@ void Kokoha::GameManager::update()
 	mAddObjectList.clear();
 
 	// オブジェクトの更新
+	GameEnemy::lightUpdate();
 	for (auto&& object : mObjectList) { object->update(); }
 
 	// 他オブジェクトの確認
@@ -206,6 +207,8 @@ void Kokoha::GameManager::changeEquipment()
 	++mEquipmentId;
 
 	mPlayerSpeed.init();
+
+	GameEnemy::lightOff();
 
 	CassetteManager::instance().getEquipment(mEquipmentId).initEffect();
 }

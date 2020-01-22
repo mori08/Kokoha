@@ -16,6 +16,14 @@ Kokoha::PlayerLight::PlayerLight(double radius)
 }
 
 
+void Kokoha::PlayerLight::update()
+{
+	GameLight::update();
+
+	mBody.center = mGoal;
+}
+
+
 void Kokoha::PlayerLight::checkAnother(const GameObject& another)
 {
 	if (auto pos = another.checkTypeAndGetPos(ObjectType::PLAYER))

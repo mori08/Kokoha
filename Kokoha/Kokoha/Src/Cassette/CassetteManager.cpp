@@ -4,6 +4,7 @@
 #include "../Game/Object/Light/PlayerLight.h"
 #include "../Game/Object/Light/RandomLight.h"
 #include "../Game/Object/Light/GoalLight.h"
+#include "../Game/Object/Enemy/GameEnemy.h"
 
 
 Kokoha::CassetteManager::CassetteManager()
@@ -98,7 +99,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーI",
 			1,
-			CassetteEffect(0, []() {})
+			CassetteEffect(1.5, []() { GameEnemy::lightOn(1.0, 2.0); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -107,7 +108,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーII",
 			2,
-			CassetteEffect(0, []() {})
+			CassetteEffect(1.5, []() { GameEnemy::lightOn(1.0, 6.0); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -116,7 +117,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーIII",
 			3,
-			CassetteEffect(0, []() {})
+			CassetteEffect(0.5, []() { GameEnemy::lightOn(2.0, Inf<double>); })
 		)
 	);
 

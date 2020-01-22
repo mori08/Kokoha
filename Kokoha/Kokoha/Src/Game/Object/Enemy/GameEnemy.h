@@ -15,11 +15,25 @@ namespace Kokoha
 	{
 	private:
 
+		// true のときライトをつける
+		static bool sOnLight;
+
+		// 光の半径
+		static double sLightRadius;
+
+		// 光を表示する時間
+		static double sLightSecond;
+
+	private:
+
 		// 体の画像とアニメーション
 		SliceTexture mBodySlide;
 
 		// 顔の画像とアニメーション
 		SliceTexture mFaceSlide;
+
+		// 光のアルファ値
+		double mLightAlpha;
 
 	public:
 
@@ -34,6 +48,27 @@ namespace Kokoha
 		virtual void update() override;
 
 		virtual void draw()const override;
+
+		void drawLight()const override;
+
+	public:
+
+		/// <summary>
+		/// 敵の場所を示す光をつける
+		/// </summary>
+		/// <param name="radius"> 半径             </param>
+		/// <param name="second"> 光を表示する時間 </param>
+		static void lightOn(double radius, double second);
+
+		/// <summary>
+		/// 敵の場所を示す光を消す
+		/// </summary>
+		static void lightOff();
+
+		/// <summary>
+		/// 敵の場所を示す光の更新
+		/// </summary>
+		static void lightUpdate();
 
 	};
 }

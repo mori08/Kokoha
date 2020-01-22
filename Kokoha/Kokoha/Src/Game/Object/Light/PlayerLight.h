@@ -22,6 +22,8 @@ namespace Kokoha
 
 	private:
 
+		void update() override;
+
 		void checkAnother(const GameObject& another)override;
 
 	};
