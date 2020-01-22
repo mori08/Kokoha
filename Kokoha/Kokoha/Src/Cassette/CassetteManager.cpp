@@ -4,6 +4,8 @@
 #include "../Game/Object/Light/PlayerLight.h"
 #include "../Game/Object/Light/RandomLight.h"
 #include "../Game/Object/Light/GoalLight.h"
+#include "../Game/Object/Light/FlashLight.h"
+#include "../Game/Object/Light/KokoroLight.h"
 #include "../Game/Object/Enemy/GameEnemy.h"
 
 
@@ -17,7 +19,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードI",
 			1,
-			Cassette::makeSpeedEffect(1.2, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.1, { 0,Inf<double> })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -25,7 +27,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードII",
 			2,
-			Cassette::makeSpeedEffect(1.4, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.3, { 0,Inf<double> })
 		)
 	);
 	mCassetteList.emplace_back(
@@ -33,7 +35,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"スピードIII",
 			3,
-			Cassette::makeSpeedEffect(1.8, { 0,Inf<double> })
+			Cassette::makeSpeedEffect(1.5, { 0,Inf<double> })
 		)
 	);
 
@@ -70,7 +72,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーI",
 			1,
-			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(2.0)); })
+			CassetteEffect(0.1, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(2.0)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -79,7 +81,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーII",
 			2,
-			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(4.0)); })
+			CassetteEffect(0.1, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(4.0)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -88,7 +90,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"プレイヤーIII",
 			3,
-			CassetteEffect(0.5, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(6.0)); })
+			CassetteEffect(0.1, []() { GameManager::instance().addObject(std::make_unique<PlayerLight>(6.0)); })
 		)
 	);
 
@@ -99,7 +101,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーI",
 			1,
-			CassetteEffect(1.5, []() { GameEnemy::lightOn(1.0, 2.0); })
+			CassetteEffect(1.1, []() { GameEnemy::lightOn(1.0, 2.0); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -108,7 +110,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーII",
 			2,
-			CassetteEffect(1.5, []() { GameEnemy::lightOn(1.0, 6.0); })
+			CassetteEffect(1.1, []() { GameEnemy::lightOn(1.0, 6.0); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -117,7 +119,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"エネミーIII",
 			3,
-			CassetteEffect(0.5, []() { GameEnemy::lightOn(2.0, Inf<double>); })
+			CassetteEffect(0.1, []() { GameEnemy::lightOn(2.0, Inf<double>); })
 		)
 	);
 
@@ -128,7 +130,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ランダムI",
 			1,
-			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(1.5)); }})
+			CassetteEffect(0.1, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(1.5)); }})
 		)
 	);
 	mCassetteList.emplace_back
@@ -137,7 +139,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ランダムII",
 			2,
-			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(2.5)); }})
+			CassetteEffect(0.1, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(2.5)); }})
 		)
 	);
 	mCassetteList.emplace_back
@@ -146,7 +148,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ランダムIII",
 			3,
-			CassetteEffect(0.5, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(3.5)); }})
+			CassetteEffect(0.1, []() {for (int32 i = 0; i < 3; ++i) { GameManager::instance().addObject(std::make_unique<RandomLight>(3.5)); }})
 		)
 	);
 
@@ -157,7 +159,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ゴールI",
 			1,
-			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, false)); })
+			CassetteEffect(2.1, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, false)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -166,7 +168,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ゴールII",
 			2,
-			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, true)); })
+			CassetteEffect(2.1, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(1.5, 5.0, true)); })
 		)
 	);
 	mCassetteList.emplace_back
@@ -175,7 +177,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ゴールIII",
 			3,
-			CassetteEffect(2.5, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(3.0, 10.0, true)); })
+			CassetteEffect(2.1, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(3.0, 10.0, true)); })
 		)
 	);
 
@@ -196,7 +198,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"フラッシュ",
 			2,
-			CassetteEffect(0, []() {})
+			CassetteEffect(4.1, []() { GameManager::instance().addObject(std::make_unique<FlashLight>()); })
 		)
 	);
 
@@ -207,7 +209,15 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ココロ",
 			3,
-			CassetteEffect(0, []() {})
+			CassetteEffect
+			(
+				0.1, 
+				[]() 
+				{
+					GameManager::instance().addObject(std::make_unique<KokoroLight>());
+					GameManager::instance().setSpeedChange(1.2, { 0.1,Inf<double> });
+				}
+			)
 		)
 	);
 

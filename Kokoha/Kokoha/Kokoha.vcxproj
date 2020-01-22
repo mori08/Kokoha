@@ -264,8 +264,10 @@
     <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RunAwayGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
+    <ClCompile Include="Src\Game\Object\Light\FlashLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GoalLight.cpp" />
+    <ClCompile Include="Src\Game\Object\Light\KokoroLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\PlayerLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\RandomLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\RootingLight.cpp" />
@@ -332,8 +334,10 @@
     <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RunAwayGoal.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
+    <ClInclude Include="Src\Game\Object\Light\FlashLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GoalLight.h" />
+    <ClInclude Include="Src\Game\Object\Light\KokoroLight.h" />
     <ClInclude Include="Src\Game\Object\Light\PlayerLight.h" />
     <ClInclude Include="Src\Game\Object\Light\RandomLight.h" />
     <ClInclude Include="Src\Game\Object\Light\RootingLight.h" />

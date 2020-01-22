@@ -609,6 +609,12 @@
     <ClCompile Include="Src\Game\Object\Goal\RunAwayGoal.cpp">
       <Filter>Src\Game\Object\Goal</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Light\FlashLight.cpp">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Light\KokoroLight.cpp">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -817,6 +823,12 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Goal\RunAwayGoal.h">
       <Filter>Src\Game\Object\Goal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Light\FlashLight.h">
+      <Filter>Src\Game\Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Light\KokoroLight.h">
+      <Filter>Src\Game\Object\Light</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
