@@ -29,10 +29,5 @@ namespace Kokoha
 
 		void update()override;
 
-		/// <summary>
-		/// •]‰¿’l‚Ìæ“¾
-		/// </summary>
-		/// <param name="pos"> •]‰¿‚µ‚½‚¢À•W </param>
-		double getDistancePoint(const Vec2& pos);
 	};
 }

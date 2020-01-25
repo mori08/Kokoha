@@ -183,11 +183,12 @@ namespace Kokoha
 		void searchPath();
 
 		/// <summary>
-		/// 角グラフの辺の取得
+		/// プレイヤーから逃げる場合の目的座標の取得
 		/// </summary>
-		/// <param name="pixel"> 座標 </param>
-		const Array<int32>& getCornerGraphEdgeList(const Vec2 pixel)const;
-
+		/// <param name="pixel"> 逃げるオブジェクトの座標 </param>
+		/// <returns> 逃げる先の座標 </returns>
+		Vec2 getRunAwayPixel(const Vec2& pixel)const;
+		
 		/// <summary>
 		/// 経路情報の保存
 		/// </summary>

@@ -13,6 +13,9 @@ namespace
 		Point(-1,-1),
 		Point(-1,+1)
 	};
+
+	// 座標の評価時の距離の比
+	constexpr double RATE = 1.5;
 }
 
 
@@ -85,20 +88,83 @@ void Kokoha::RunAwayData::makeCornerGraph()
 				break;
 			}
 
+			// 辺の作成
 			if (isEdge)
 			{
 				mEdgeList[itrA->first][itrB->first] = itrA->second.getCornerDirection(itrB->second);
+				itrA->second.mEdgeNum[itrA->second.getCornerDirection(itrB->second)]++;
+
 				mEdgeList[itrB->first][itrA->first] = itrB->second.getCornerDirection(itrA->second);
+				itrB->second.mEdgeNum[itrB->second.getCornerDirection(itrA->second)]++;
+			}
+		}
+	}
+
+	// 辺の削除
+	int32 vertexNum = (int32)mVertexList.size();
+	for (int32 i : Range(0, vertexNum - 1))
+	{
+		removeNoVertex(i);
+	}
+
+	// 逃げる用の候補点
+	mRunAwaySuggest = Array<std::set<int32>>(StageData::N);
+	for (int32 i : Range(0, StageData::N - 1))
+	{
+		// 各マスについて
+		Point square = StageData::integerToSquare(i);
+
+		// 各頂点
+		for (const auto& vertex : mVertexList)
+		{
+			bool isEdge = true;
+			
+			for (const Point& pos : getGridPoint(getRectFromTwoPoint(square, vertex.second.square)))
+			{
+				if (GameManager::instance().getStageData().isWalkAble(pos)) { continue; }
+
+				isEdge = false;
+				break;
+			}
+
+			if (isEdge)
+			{
+				mRunAwaySuggest[i].insert(StageData::squareToInteger(vertex.second.square));
 			}
 		}
 	}
 }
 
 
+Vec2 Kokoha::RunAwayData::suggest(const Vec2& pixel) const
+{
+	double minDistance = Inf<double>;
+	Vec2   rtn         = pixel;
+
+	const Vec2& playerPos = GameManager::instance().getPlayerPos();
+
+	for (const auto& i : mRunAwaySuggest[StageData::pixelToInteger(pixel)])
+	{
+		const Vec2 pos = StageData::integerToPixel(i);
+
+		const double myDistance     = GameManager::instance().getStageData().getDistance(pos, pixel    );
+		const double playerDistance = GameManager::instance().getStageData().getDistance(pos, playerPos);
+
+		double distance = myDistance - RATE * playerDistance;
+
+		if (distance > minDistance) { continue; }
+
+		minDistance = distance;
+		rtn         = pos;
+	}
+
+	return std::move(rtn);
+}
+
+
 void Kokoha::RunAwayData::drawDebug()const
 {
 #ifdef _DEBUG
-
 	ClearPrint();
 
 	for (const auto& vertex : mVertexList)
@@ -111,7 +177,8 @@ void Kokoha::RunAwayData::drawDebug()const
 
 		if (Circle(center, 4).mouseOver())
 		{
-			Print << vertex.second.square;
+			Print << vertex.second.mEdgeNum[0];
+			Print << vertex.second.mEdgeNum[1];
 
 			for (const auto& to : mEdgeList.find(vertex.first)->second)
 			{
@@ -120,10 +187,51 @@ void Kokoha::RunAwayData::drawDebug()const
 					= StageData::squareToPixel(toVertex.square)
 					+ 0.5 * StageData::SQUARE_SIZE * toVertex.corner;
 
-				Circle(center, 5).drawFrame(2, Palette::Blue);
+				Color color = to.second ? Palette::Blue : Palette::Lime;
+
+				Circle(center, 6).drawFrame(3, color);
 			}
 		}
 	}
 
+	if (!GameManager::instance().getStageData().isWalkAble(Cursor::PosF())) { return; }
+
+	for (const auto& i : mRunAwaySuggest[StageData::pixelToInteger(Cursor::PosF())])
+	{
+		Circle(StageData::integerToPixel(i), 5).draw(Palette::Yellow);
+	}
+
 #endif // _DEBUG
+}
+
+
+void Kokoha::RunAwayData::removeNoVertex(int32 vertexId)
+{
+	// 頂点が存在しないとき
+	if (!mVertexList.count(vertexId)) { return; }
+
+	// 不要と判断できないとき
+	if (mVertexList.find(vertexId)->second.mEdgeNum[0] != 0 && mVertexList.find(vertexId)->second.mEdgeNum[1] != 0)
+	{
+		return;
+	}
+
+	// 頂点の削除
+	mVertexList.erase(vertexId);
+
+	// 隣接頂点側からの辺の削除
+	for (auto& to : mEdgeList[vertexId])
+	{
+		mVertexList.find(to.first)->second.mEdgeNum[mEdgeList[to.first][vertexId]]--;
+		mEdgeList[to.first].erase(vertexId);
+	}
+
+	// 隣接頂点で再帰
+	for (auto& to : mEdgeList[vertexId])
+	{
+		removeNoVertex(to.first);
+	}
+
+	// 辺の削除
+	mEdgeList.erase(vertexId);
 }

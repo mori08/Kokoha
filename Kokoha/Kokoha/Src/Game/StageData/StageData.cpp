@@ -104,11 +104,9 @@ void Kokoha::StageData::searchPath()
 }
 
 
-const Array<int32>& Kokoha::StageData::getCornerGraphEdgeList(const Vec2 pixel) const
+Vec2 Kokoha::StageData::getRunAwayPixel(const Vec2& pixel) const
 {
-	static Array<int32> emptyList;
-	if (!isWalkAble(pixel)) { return emptyList; }
-	return emptyList;
+	return std::move(mRunAwayData.suggest(pixel));
 }
 
 

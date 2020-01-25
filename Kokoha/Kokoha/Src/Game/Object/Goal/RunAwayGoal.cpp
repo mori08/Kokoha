@@ -30,31 +30,8 @@ void Kokoha::RunAwayGoal::update()
 	{
 		mChangeGoalSecond = MAX_CHANGE_GOAL_SECOND;
 
-		double minDistance = Inf<double>;
-
-		for (const auto& i : GameManager::instance().getStageData().getCornerGraphEdgeList(mBody.center))
-		{
-			Vec2 pos = StageData::integerToPixel(i);
-
-			double distance = getDistancePoint(pos);
-
-			if (distance > minDistance) { continue; }
-
-			minDistance = distance;
-			mGoal       = pos;
-		}
+		mGoal = GameManager::instance().getStageData().getRunAwayPixel(mBody.center);
 	}
 
 	GameGoal::update();
-}
-
-
-double Kokoha::RunAwayGoal::getDistancePoint(const Vec2& pos)
-{
-	const Vec2& playerPos = GameManager::instance().getPlayerPos();
-
-	const double myDistance     = GameManager::instance().getStageData().getDistance(mBody.center, pos);
-	const double playerDistance = GameManager::instance().getStageData().getDistance(playerPos   , pos);
-
-	return myDistance - RATE * playerDistance;
 }

@@ -17,11 +17,15 @@ namespace Kokoha
 		{
 		public:
 
+			static const int32 DIRECTION_NUM = 2;
+
 			// マス座標
 			const Point square;
 
 			// 角の方向
 			const Point corner;
+
+			std::array<int32, DIRECTION_NUM> mEdgeNum;
 
 		public:
 
@@ -34,6 +38,7 @@ namespace Kokoha
 				: square(s)
 				, corner(c)
 			{
+				mEdgeNum[0] = mEdgeNum[1] = 0;
 			}
 
 		public:
@@ -68,6 +73,9 @@ namespace Kokoha
 		// 角グラフの辺のリスト [端点i][端点j] = 方向
 		std::unordered_map<int32, std::unordered_map<int32, int32>> mEdgeList;
 
+		// 各頂点からの逃げる先の候補点
+		Array<std::set<int32>> mRunAwaySuggest;
+
 	public:
 
 		/// <summary>
@@ -80,12 +88,27 @@ namespace Kokoha
 		void makeCornerGraph();
 
 		/// <summary>
+		/// 逃げる先の取得
+		/// </summary>
+		/// <param name="pixel"> 逃げるオブジェクトの座標 </param>
+		/// <returns> 逃げる先の座標 </returns>
+		Vec2 suggest(const Vec2& pixel)const;
+
+		/// <summary>
 		/// デバッグ用の描画
 		/// </summary>
 		/// <remarks>
 		/// クラス完成後に削除
 		/// </remarks>
 		void drawDebug()const;
+
+	private:
+
+		/// <summary>
+		/// 不要な頂点の削除
+		/// </summary>
+		/// <param name="vertexId"> 頂点番号 </param>
+		void removeNoVertex(int32 vertexId);
 
 	};
 }
