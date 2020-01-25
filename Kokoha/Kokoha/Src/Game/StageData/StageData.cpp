@@ -98,69 +98,9 @@ void Kokoha::StageData::searchPath()
 			}
 		}
 	}
-}
 
-
-bool Kokoha::StageData::isTouchingCorner(const Point& square) const
-{
-	if (!isWalkAble(square)) { return false; }
-
-	// 座標を90度回転
-	std::function<void(Point&)> turn90 = [](Point& pos) { pos = Point(-pos.y, pos.x); };
-
-	Point corner = Point::One();
-	Point edge1  = Point::Right();
-	Point edge2  = Point::Down();
-
-	// 4隅の確認
-	for (int32 i : Range(0, 4))
-	{
-		if (!isWalkAble(square+corner) && isWalkAble(square+edge1) && isWalkAble(square+edge2)) { return true; }
-
-		turn90(corner);
-		turn90(edge1);
-		turn90(edge2);
-	}
-
-	return false;
-}
-
-
-void Kokoha::StageData::makeCornerGraph()
-{
-	std::list<int32> mCornerList;
-
-	for (int32 i : Range(0, N - 1))
-	{
-		if (isTouchingCorner(integerToSquare(i))) { mCornerList.emplace_back(i); }
-	}
-
-	for (int32 i : Range(0, N - 1))
-	{
-		mCornerGraph[i].clear();
-
-		Point squareI = integerToSquare(i);
-
-		for (int32 j : mCornerList)
-		{
-			Point squareJ = integerToSquare(j);
-			bool isEdge = true;
-
-			for (const Point& pos : getGridPoint(getRectFromTwoPoint(squareI, squareJ)))
-			{
-				if (!isWalkAble(pos))
-				{
-					isEdge = false;
-					break;
-				}
-			}
-
-			if (isEdge)
-			{
-				mCornerGraph[i].emplace_back(j);
-			}
-		}
-	}
+	// ついでに角グラフも作成する
+	mRunAwayData.makeCornerGraph();
 }
 
 
@@ -168,8 +108,7 @@ const Array<int32>& Kokoha::StageData::getCornerGraphEdgeList(const Vec2 pixel) 
 {
 	static Array<int32> emptyList;
 	if (!isWalkAble(pixel)) { return emptyList; }
-
-	return mCornerGraph[pixelToInteger(pixel)];
+	return emptyList;
 }
 
 
@@ -223,6 +162,8 @@ void Kokoha::StageData::draw() const
 		if (isWalkAble(square)) { continue; }
 		Rect(SQUARE_SIZE * square, SQUARE_SIZE).draw(MyBlack);
 	}
+
+	mRunAwayData.drawDebug();
 }
 
 

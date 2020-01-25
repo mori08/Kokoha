@@ -54,7 +54,7 @@ void Kokoha::GameGoal::draw() const
 }
 
 
-void Kokoha::GameGoal::checkAnother(const GameObject& another)
+void Kokoha::GameGoal::checkAnother(const GameObject&)
 {
 	// TODO : ƒNƒŠƒA‚Ìˆ—
 }

@@ -591,9 +591,6 @@
     <ClCompile Include="Src\Game\Object\Light\RandomLight.cpp">
       <Filter>Src\Game\Object\Light</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Scene\CheckStageScene.cpp">
-      <Filter>Src\Game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp">
       <Filter>Src\Game\Object\Goal</Filter>
     </ClCompile>
@@ -614,6 +611,9 @@
     </ClCompile>
     <ClCompile Include="Src\Game\Object\Light\KokoroLight.cpp">
       <Filter>Src\Game\Object\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\StageData\RunAwayData.cpp">
+      <Filter>Src\Game\StageData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -809,9 +809,6 @@
     <ClInclude Include="Src\Game\Object\Light\GoalLight.h">
       <Filter>Src\Game\Object\Light</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Game\Scene\CheckStageScene.h">
-      <Filter>Src\Game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Game\Object\Goal\GameGoal.h">
       <Filter>Src\Game\Object\Goal</Filter>
     </ClInclude>
@@ -829,6 +826,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Light\KokoroLight.h">
       <Filter>Src\Game\Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\StageData\RunAwayData.h">
+      <Filter>Src\Game\StageData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

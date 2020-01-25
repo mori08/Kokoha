@@ -12,7 +12,6 @@
 #include "Adventure/Scene/AdventureScene.h"
 #include "Game/Scene/LoadGameScene.h"
 #include "Game/Scene/GameScene.h"
-#include "Game/Scene/CheckStageScene.h"
 
 
 namespace
@@ -40,7 +39,6 @@ void Main()
 
 	// シーンの設定
 	MyApp sceneManager;
-	//sceneManager.add<Kokoha::CheckStageScene>   (SceneName::CHECK_STAGE);
 	sceneManager.add<Kokoha::TitleScene>        (SceneName::TITLE);
 	sceneManager.add<Kokoha::SaveRecordScene>   (SceneName::SAVE_RECORD);
 	sceneManager.add<Kokoha::LoadRecordScene>   (SceneName::LOAD_RECORD);

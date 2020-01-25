@@ -2,6 +2,7 @@
 
 
 #include <Siv3D.hpp>
+#include "RunAwayData.h"
 
 
 namespace Kokoha
@@ -37,8 +38,8 @@ namespace Kokoha
 		// [i][j] : i -> j への最短距離(マス数)
 		std::array<std::array<double, N>, N> mDistance;
 
-		// 角グラフ
-		std::array<Array<int32>, N> mCornerGraph;
+		// 逃げる用のデータ (角グラフなど)
+		RunAwayData mRunAwayData;
 
 	public:
 
@@ -180,25 +181,6 @@ namespace Kokoha
 		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する.
 		/// </remarks>
 		void searchPath();
-
-		/// <summary>
-		/// マスが角(カド)に接しているか
-		/// </summary>
-		/// <param name="square"> マス座標 </param>
-		/// <returns>
-		/// 接しているとき true , それ以外で false
-		/// </returns>
-		bool isTouchingCorner(const Point& square)const;
-
-		/// <summary>
-		/// 角グラフの作成
-		/// </summary>
-		/// <remarks>
-		/// ※ 注意 ※
-		/// O(N^3)かかる処理
-		/// 必ずLoadSceneの派生クラスを使って別スレッドで処理する．
-		/// </remarks>
-		void makeCornerGraph();
 
 		/// <summary>
 		/// 角グラフの辺の取得

@@ -102,9 +102,6 @@ Optional<String> Kokoha::GameManager::load(const String& stageName)
 	// 経路探索
 	mStageData.searchPath();
 
-	// 角(カド)グラフの作成
-	mStageData.makeCornerGraph();
-
 	// オブジェクトの生成
 	for (; readingRow < csv.rows(); ++readingRow)
 	{
