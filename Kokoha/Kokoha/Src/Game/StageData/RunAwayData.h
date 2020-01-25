@@ -36,6 +36,20 @@ namespace Kokoha
 			{
 			}
 
+		public:
+
+			/// <summary>
+			/// 角から見た方向が有効なものか
+			/// </summary>
+			/// <param name="another"> 辺を引きたい頂点 </param>
+			bool isConnectAbleEdge(const Vertex& another)const;
+
+			/// <summary>
+			/// 角から見た方向
+			/// </summary>
+			/// <param name="another"> 辺を引きたい頂点 </param>
+			int32 getCornerDirection(const Vertex& another)const;
+
 		};
 	}
 
@@ -49,7 +63,10 @@ namespace Kokoha
 	private:
 
 		// 角グラフの頂点のリスト
-		std::unordered_map<int32, CornerGraph::Vertex> mCornerVertexList;
+		std::unordered_map<int32, CornerGraph::Vertex> mVertexList;
+
+		// 角グラフの辺のリスト [端点i][端点j] = 方向
+		std::unordered_map<int32, std::unordered_map<int32, int32>> mEdgeList;
 
 	public:
 
