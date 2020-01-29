@@ -10,7 +10,7 @@ Kokoha::LoadGameScene::LoadGameScene(const InitData& init)
 
 Kokoha::ErrorMessage Kokoha::LoadGameScene::load()
 {
-	if (auto errorMessage = GameManager::instance().load(U"Test"))
+	if (auto errorMessage = GameManager::instance().load(U"1-1"))
 	{
 		mIsSuccess = false;
 		return errorMessage.value();

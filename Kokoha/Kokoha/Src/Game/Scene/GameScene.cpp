@@ -10,11 +10,11 @@ Kokoha::GameScene::GameScene(const InitData& init)
 
 void Kokoha::GameScene::update()
 {
-	GameManager::instance().update();
+	GameManager::instance().getState()->update();
 }
 
 
 void Kokoha::GameScene::draw() const
 {
-	GameManager::instance().draw();
+	GameManager::instance().getState()->draw();
 }

@@ -165,21 +165,22 @@ Vec2 Kokoha::RunAwayData::suggest(const Vec2& pixel) const
 void Kokoha::RunAwayData::drawDebug()const
 {
 #ifdef _DEBUG
-	ClearPrint();
 
+	static bool debugMode = false;
+	debugMode ^= Key0.up();
+
+	if (!debugMode) { return; }
+	
 	for (const auto& vertex : mVertexList)
 	{
 		Vec2 center
 			= StageData::squareToPixel(vertex.second.square)
 			+ 0.5 * StageData::SQUARE_SIZE * vertex.second.corner;
-
+		
 		Circle(center, 2).draw(Palette::Red);
 
 		if (Circle(center, 4).mouseOver())
 		{
-			Print << vertex.second.mEdgeNum[0];
-			Print << vertex.second.mEdgeNum[1];
-
 			for (const auto& to : mEdgeList.find(vertex.first)->second)
 			{
 				const auto& toVertex = mVertexList.find(to.first)->second;
@@ -195,7 +196,7 @@ void Kokoha::RunAwayData::drawDebug()const
 	}
 
 	if (!GameManager::instance().getStageData().isWalkAble(Cursor::PosF())) { return; }
-
+	
 	for (const auto& i : mRunAwaySuggest[StageData::pixelToInteger(Cursor::PosF())])
 	{
 		Circle(StageData::integerToPixel(i), 5).draw(Palette::Yellow);

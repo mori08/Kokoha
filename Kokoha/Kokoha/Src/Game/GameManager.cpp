@@ -10,6 +10,9 @@
 #include "Object/Goal/RandomGoal.h"
 #include "Object/Goal/RunAwayGoal.h"
 
+// 状態
+#include "State/PlayingState.h"
+
 #include "../Cassette/CassetteManager.h"
 #include "../Input/InputManager.h"
 
@@ -24,20 +27,28 @@ namespace
 
 
 Kokoha::GameManager::GameManager()
+	: mState(std::make_unique<PlayingState>())
 {
-	setGenerateObjectFunc<GamePlayer>            (U"Player");
+	// プレイヤー
+	setGenerateObjectFunc<GamePlayer>(U"Player");
+
+	// 敵
+	setGenerateObjectFunc<BlackEnemy>            (U"BlackStop");
 	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"BlackChase");
 	setGenerateObjectFunc<ChaseEnemy<WhiteEnemy>>(U"WhiteChase");
-	setGenerateObjectFunc<EnemyLight>            (U"EnemyLight");
-	setGenerateObjectFunc<ChaseEnemyAttack>      (U"ChaseEnemyAttack");
-	setGenerateObjectFunc<GameGoal>              (U"Goal");
-	setGenerateObjectFunc<RandomGoal>            (U"RandomGoal");
-	setGenerateObjectFunc<RunAwayGoal>           (U"RunAwayGoal");
+
+	// ゴール
+	setGenerateObjectFunc<GameGoal>   (U"Goal");
+	setGenerateObjectFunc<RandomGoal> (U"RandomGoal");
+	setGenerateObjectFunc<RunAwayGoal>(U"RunAwayGoal");
 }
 
 
 void Kokoha::GameManager::init()
 {
+	// 状態の初期化
+	setState(std::make_unique<PlayingState>());
+
 	// ステージの初期化
 	mStageData.init();
 

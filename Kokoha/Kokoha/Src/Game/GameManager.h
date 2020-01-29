@@ -4,6 +4,7 @@
 #include "StageData/StageData.h"
 #include "Object/GameObject.h"
 #include "PlayerSpeed/PlayerSpeed.h"
+#include "State/GameState.h"
 
 
 namespace Kokoha
@@ -40,6 +41,9 @@ namespace Kokoha
 		// プレイヤーの座標
 		Vec2 mPlayerPos;
 
+		// 状態(GameSceneでの更新・描画について)
+		GameStatePtr mState;
+
 	private:
 
 		GameManager();
@@ -60,6 +64,26 @@ namespace Kokoha
 			static GameManager gameManager;
 			return gameManager;
 		}
+		
+		/// <summary>
+		/// 状態の取得
+		/// </summary>
+		/// <returns> 状態 </returns>
+		GameStatePtr& getState()
+		{
+			return mState;
+		}
+
+		/// <summary>
+		/// 状態の設定
+		/// </summary>
+		/// <param name="state"> 状態 </param>
+		void setState(GameStatePtr&& state)
+		{
+			mState = std::move(state);
+		}
+		
+	public:
 
 		/// <summary>
 		/// 初期化

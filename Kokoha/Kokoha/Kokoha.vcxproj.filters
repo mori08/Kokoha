@@ -161,6 +161,9 @@
     <Filter Include="Src\Game\Object\Goal">
       <UniqueIdentifier>{0a3897d0-f245-49cd-aab6-00a06273f609}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\State">
+      <UniqueIdentifier>{7c17708b-7f7c-416e-88d6-57e5c04dea8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -615,6 +618,9 @@
     <ClCompile Include="Src\Game\StageData\RunAwayData.cpp">
       <Filter>Src\Game\StageData</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\State\PlayingState.cpp">
+      <Filter>Src\Game\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -829,6 +835,12 @@
     </ClInclude>
     <ClInclude Include="Src\Game\StageData\RunAwayData.h">
       <Filter>Src\Game\StageData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\GameState.h">
+      <Filter>Src\Game\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\PlayingState.h">
+      <Filter>Src\Game\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
