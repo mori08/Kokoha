@@ -34,8 +34,10 @@ void Main()
 	// アセット管理
 	Kokoha::registerAsset(U"Assets/");
 	FontAsset::Register(U"10", 10, Typeface::Medium);
-	FontAsset::Register(U"15", 10, Typeface::Medium);
+	FontAsset::Register(U"15", 15, Typeface::Medium);
 	FontAsset::Register(U"20", 20, Typeface::Medium);
+	FontAsset::Register(U"30", 30, Typeface::Medium);
+	FontAsset::Register(U"40", 40, Typeface::Medium);
 
 	// シーンの設定
 	MyApp sceneManager;

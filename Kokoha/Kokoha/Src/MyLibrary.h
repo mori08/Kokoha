@@ -34,7 +34,7 @@ namespace Kokoha
 	/// <param name="frequency"> 頻度 (times/second) </param>
 	/// <returns> 
 	/// ランダムで 1 または 0 
-	/// </param>
+	/// </returns>
 	/// <remarks>
 	/// 頻度がフレームレートを超えたとき, 毎フレーム 1 を出力
 	/// </remarks>

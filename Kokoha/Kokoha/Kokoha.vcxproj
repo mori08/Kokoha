@@ -278,6 +278,7 @@
     <ClCompile Include="Src\Game\Scene\LoadGameScene.cpp" />
     <ClCompile Include="Src\Game\StageData\RunAwayData.cpp" />
     <ClCompile Include="Src\Game\StageData\StageData.cpp" />
+    <ClCompile Include="Src\Game\State\ClearState.cpp" />
     <ClCompile Include="Src\Game\State\PlayingState.cpp" />
     <ClCompile Include="Src\Input\Button.cpp" />
     <ClCompile Include="Src\Input\ButtonManager.cpp" />
@@ -349,6 +350,7 @@
     <ClInclude Include="Src\Game\Scene\LoadGameScene.h" />
     <ClInclude Include="Src\Game\StageData\RunAwayData.h" />
     <ClInclude Include="Src\Game\StageData\StageData.h" />
+    <ClInclude Include="Src\Game\State\ClearState.h" />
     <ClInclude Include="Src\Game\State\GameState.h" />
     <ClInclude Include="Src\Game\State\PlayingState.h" />
     <ClInclude Include="Src\Input\Button.h" />

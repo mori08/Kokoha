@@ -1,4 +1,6 @@
 #include "GameGoal.h"
+#include "../../GameManager.h"
+#include "../../State/ClearState.h"
 
 
 namespace
@@ -54,7 +56,10 @@ void Kokoha::GameGoal::draw() const
 }
 
 
-void Kokoha::GameGoal::checkAnother(const GameObject&)
+void Kokoha::GameGoal::checkAnother(const GameObject& another)
 {
-	// TODO : ÉNÉäÉAÇÃèàóù
+	if (checkTypeAndCollision(another, ObjectType::PLAYER))
+	{
+		GameManager::instance().setState(std::make_unique<ClearState>());
+	}
 }

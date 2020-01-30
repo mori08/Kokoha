@@ -2,6 +2,7 @@
 
 
 #include <Siv3D.hpp>
+#include "../../Scene.h"
 
 
 namespace Kokoha
@@ -24,6 +25,18 @@ namespace Kokoha
 		/// •`‰æ
 		/// </summary>
 		virtual void draw() const = 0;
+
+		/// <summary>
+		/// ƒV[ƒ“‘JˆÚ‚É‚Â‚¢‚Ä
+		/// </summary>
+		/// <returns>
+		/// ‘JˆÚ‚µ‚È‚¢‚Æ‚« none
+		/// ‘JˆÚ‚·‚é‚Æ‚«   SceneName
+		/// </returns>
+		virtual Optional<SceneName> isChangeAbleScene() const
+		{
+			return none;
+		}
 
 	};
 

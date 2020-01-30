@@ -11,6 +11,11 @@ Kokoha::GameScene::GameScene(const InitData& init)
 void Kokoha::GameScene::update()
 {
 	GameManager::instance().getState()->update();
+
+	if (auto sceneName = GameManager::instance().getState()->isChangeAbleScene())
+	{
+		changeScene(sceneName.value());
+	}
 }
 
 

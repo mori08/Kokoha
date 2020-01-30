@@ -78,7 +78,7 @@ namespace Kokoha
 		/// ó‘Ô‚Ìİ’è
 		/// </summary>
 		/// <param name="state"> ó‘Ô </param>
-		void setState(GameStatePtr&& state)
+		void setState(GameStatePtr state)
 		{
 			mState = std::move(state);
 		}

@@ -621,6 +621,9 @@
     <ClCompile Include="Src\Game\State\PlayingState.cpp">
       <Filter>Src\Game\State</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\State\ClearState.cpp">
+      <Filter>Src\Game\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -840,6 +843,9 @@
       <Filter>Src\Game\State</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\State\PlayingState.h">
+      <Filter>Src\Game\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\ClearState.h">
       <Filter>Src\Game\State</Filter>
     </ClInclude>
   </ItemGroup>

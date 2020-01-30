@@ -43,15 +43,13 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 
 Kokoha::LoadScene::~LoadScene()
 {
-	
+	mLoadThread.join();
 }
 
 
 void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
-
-	mLoadThread.join();
 
 	if (const auto errorMessage = mErrorMessageFuture.get())
 	{
