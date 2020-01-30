@@ -14,16 +14,17 @@ namespace Kokoha
 	{
 	private:
 
-		const Vec2 LIGHT_SIZE;
-
 		// 時間
 		double mTimeSecond;
 
 		// 背景のアルファ値
-		double mAlpha;
+		double mBackAlpha;
 
-		// 光
-		std::array<RectF, 2> mLight;
+		// 光のアルファ値
+		double mLightAlpha;
+
+		// 中心と光との距離
+		double mRadius;
 
 	public:
 
