@@ -61,12 +61,16 @@ void Kokoha::ClearState::draw() const
 	const ColorF black = ColorF(MyBlack).setA(mBackAlpha);
 	const ColorF white = ColorF(MyWhite).setA(mLightAlpha);
 
+	// 背景を少しずつ黒くする
 	Scene::Rect().draw(black);
 
+	// 中心を明るく
 	LIGHT_REGION.drawShadow(Vec2::Zero(), LIGHT_BLUR, 0, white);
 
-	FontAsset(U"30")(U"SUCCESS").drawAt(Scene::CenterF(), black);
+	// テキストの表示
+	FontAsset(U"40")(U"SUCCESS").drawAt(Scene::CenterF(), black);
 
+	// 光の玉を中心からとばす
 	for (int32 i = 0; i < LIGHT_NUM; ++i)
 	{
 		const double angle = Math::TwoPi * i / LIGHT_NUM;

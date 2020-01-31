@@ -1,5 +1,7 @@
 #include "GameEnemy.h"
+#include "../../GameManager.h"
 #include "../../StageData/StageData.h"
+#include "../../State/GameOverState.h"
 #include "../../../MyLibrary.h"
 #include "../../../MyColor.h"
 
@@ -79,6 +81,15 @@ void Kokoha::GameEnemy::drawLight() const
 	color.setA(mLightAlpha);
 	Circle(mBody.center, sLightRadius)
 		.drawShadow(Vec2::Zero(), sLightRadius * BLUR_RATE, 0, color);
+}
+
+
+void Kokoha::GameEnemy::checkAnother(const GameObject& another)
+{
+	if (checkTypeAndCollision(another, ObjectType::PLAYER))
+	{
+		GameManager::instance().setState(std::make_unique<GameOverState>());
+	}
 }
 
 

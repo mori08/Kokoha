@@ -23,8 +23,9 @@ namespace Kokoha
 			return false;
 		}
 
-		void checkAnother(const GameObject&)
+		void checkAnother(const GameObject& another)
 		{
+			GameEnemy::checkAnother(another);
 		}
 
 	};

@@ -64,9 +64,9 @@ void Kokoha::GameManager::init()
 }
 
 
-Optional<String> Kokoha::GameManager::load(const String& stageName)
+Optional<String> Kokoha::GameManager::load()
 {
-	const FilePath filePath = U"Assets/Data/Game/" + stageName + U".csv";
+	const FilePath filePath = U"Assets/Data/Game/" + mName + U".csv";
 
 	// ‰Šú‰»
 	init();

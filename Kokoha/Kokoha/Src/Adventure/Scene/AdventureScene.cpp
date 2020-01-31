@@ -1,5 +1,6 @@
 #include "AdventureScene.h"
 #include "../AdventureManager.h"
+#include "../../Game/GameManager.h"
 
 
 Kokoha::AdventureScene::AdventureScene(const InitData& init)
@@ -12,6 +13,7 @@ void Kokoha::AdventureScene::update()
 {
 	if (Key0.down())
 	{
+		GameManager::instance().setName(U"1-1");
 		changeScene(SceneName::LOAD_GAME);
 	}
 

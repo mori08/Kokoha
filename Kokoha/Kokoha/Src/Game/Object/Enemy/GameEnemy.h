@@ -51,6 +51,8 @@ namespace Kokoha
 
 		void drawLight()const override;
 
+		void checkAnother(const GameObject& another) override;
+
 	public:
 
 		/// <summary>

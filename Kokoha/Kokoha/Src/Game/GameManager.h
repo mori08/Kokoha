@@ -23,6 +23,9 @@ namespace Kokoha
 		// ステージ
 		StageData mStageData;
 
+		// ステージ名
+		String mName;
+
 		// オブジェクトのリスト
 		std::list<GameObjectPtr> mObjectList;
 
@@ -91,13 +94,22 @@ namespace Kokoha
 		void init();
 
 		/// <summary>
+		/// ステージ名の設定
+		/// </summary>
+		/// <param name="name"> ステージ名 </param>
+		void setName(const String& name)
+		{
+			mName = name;
+		}
+
+		/// <summary>
 		/// ゲームデータを記述したcsvファイルの読み込み
 		/// </summary>
 		/// <param name="stageName"> ステージ名 </param>
 		/// <returns>
 		/// エラーメッセージ
 		/// </returns>
-		Optional<String> load(const String& stageName);
+		Optional<String> load();
 
 		/// <summary>
 		/// 更新
