@@ -25,6 +25,29 @@ Kokoha::RecordManager::RecordManager()
 
 	// レコードのコスト上限
 	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 6)));
+
+	// ステージのクリア状況
+	mRecordMap.try_emplace(U"Tutorial", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"1-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"1-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"1-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"2-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"2-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"2-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"3-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"3-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"3-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"4-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"4-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"4-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"5-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"5-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"5-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"6-1", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"6-2", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"6-3", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"Kokoro", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"Last", std::move(Record(1, 0)));
 }
 
 

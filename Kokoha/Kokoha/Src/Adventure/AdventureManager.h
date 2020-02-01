@@ -3,6 +3,7 @@
 
 #include "AdventurePlayer.h"
 #include "Window/AdventureWindow.h"
+#include "../Scene.h"
 
 
 namespace Kokoha
@@ -30,6 +31,9 @@ namespace Kokoha
 
 		// ウィンドウ
 		std::list<WindowPtr> mWindowList;
+
+		// シーン遷移先
+		Optional<SceneName> mSceneName;
 
 	private:
 
@@ -80,6 +84,24 @@ namespace Kokoha
 		/// 一番上のウィンドウを閉じる
 		/// </summary>
 		void closeWindow();
+
+		/// <summary>
+		/// シーン遷移先の設定
+		/// </summary>
+		/// <param name="sceneName"> シーン名 </param>
+		void setSceneName(const SceneName& sceneName)
+		{
+			mSceneName = sceneName;
+		}
+
+		/// <summary>
+		/// シーン遷移先の取得
+		/// </summary>
+		/// <returns> シーン名 </returns>
+		const Optional<SceneName>& getSceneName() const
+		{
+			return mSceneName;
+		}
 
 	private:
 

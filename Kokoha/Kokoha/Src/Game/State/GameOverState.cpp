@@ -75,6 +75,12 @@ Kokoha::GameOverState::GameOverState()
 			mSceneName = SceneName::LOAD_ADVENTURE;
 		}
 	);
+
+	ButtonManager::instance().setVerticalAdjacentButton
+	(
+		CONTINUE_BUTTON.getName(),
+		GIVEUP_BUTTON.getName()
+	);
 }
 
 

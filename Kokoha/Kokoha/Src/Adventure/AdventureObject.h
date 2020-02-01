@@ -101,5 +101,11 @@ namespace Kokoha
 		/// <param name="windowPtr"> ウィンドウのポインタ </param>
 		static void openWindow(WindowPtr&& windowPtr);
 
+		/// <summary>
+		/// ステージに挑戦用のウィンドウを開く
+		/// </summary>
+		/// <param name="stageName"> ステージ名 </param>
+		static void openStageWindow(const String& stageName);
+
 	};
 }

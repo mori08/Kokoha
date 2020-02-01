@@ -2,8 +2,10 @@
 #include "AdventureManager.h"
 #include "../MyLibrary.h"
 #include "../Input/InputManager.h"
+#include "../Record/RecordManager.h"
 
 #include "Window/InfoWindow.h"
+#include "Window/ChallengeStageWindow.h"
 
 
 namespace 
@@ -43,7 +45,7 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"OpenedCardboard"] = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は空だ.")); };
 	
 	// ステージに挑戦
-	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openWindow(std::make_unique<InfoWindow>(U"テスト中")); };
+	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openStageWindow(U"1-1"); };
 
 	// 別エリアに移動
 	sMakeWindowFuncMap[U"Door[StoreRoom]"] = []() { openWindow(std::make_unique<InfoWindow>(U"エリア移動")); };
@@ -74,4 +76,16 @@ void Kokoha::AdventureObject::draw(const Point& cameraPoint) const
 void Kokoha::AdventureObject::openWindow(WindowPtr&& windowPtr)
 {
 	AdventureManager::instance().openWindow(std::move(windowPtr));
+}
+
+
+void Kokoha::AdventureObject::openStageWindow(const String& stageName)
+{
+	if (RecordManager::instatnce().getRecord(stageName))
+	{
+		openWindow(std::make_unique<InfoWindow>(U"このロボットには\nもう用はない"));
+		return;
+	}
+
+	openWindow(std::make_unique<ChallengeStageWindow>(stageName));
 }

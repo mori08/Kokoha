@@ -41,6 +41,9 @@ Kokoha::AdventureManager::AdventureManager()
 
 Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 {
+	// シーン遷移先の初期化
+	mSceneName = none;
+
 	// エラーメッセージ
 	String errorMessage = U"[AdventureManager::load]\n";
 
