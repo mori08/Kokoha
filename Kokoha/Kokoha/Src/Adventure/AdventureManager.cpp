@@ -69,7 +69,7 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 		return errorMessage;
 	}
 
-	// プレイヤーの範囲
+	// プレイヤーの初期位置
 	try
 	{
 		mPlayer.set

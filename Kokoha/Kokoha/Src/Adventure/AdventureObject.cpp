@@ -36,9 +36,17 @@ Kokoha::AdventureObject::AdventureObject(const Point& pos, const String& texture
 
 void Kokoha::AdventureObject::registerWindow()
 {
+	// テキストの表示
 	sMakeWindowFuncMap[U"DoctorWorkbench"] = []() { openWindow(std::make_unique<InfoWindow>(U"作業台,\n散らかってる.")); };
 	sMakeWindowFuncMap[U"TrashBox0"]       = []() { openWindow(std::make_unique<InfoWindow>(U"何かが捨ててある.")); };
 	sMakeWindowFuncMap[U"Cardboard"]       = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない.")); };
+	sMakeWindowFuncMap[U"OpenedCardboard"] = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は空だ.")); };
+	
+	// ステージに挑戦
+	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openWindow(std::make_unique<InfoWindow>(U"テスト中")); };
+
+	// 別エリアに移動
+	sMakeWindowFuncMap[U"Door[StoreRoom]"] = []() { openWindow(std::make_unique<InfoWindow>(U"エリア移動")); };
 }
 
 
