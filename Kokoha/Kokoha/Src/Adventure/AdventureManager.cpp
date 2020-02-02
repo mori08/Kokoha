@@ -125,6 +125,9 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 		}
 	}
 
+	// ウィンドウを全て閉じる
+	mWindowList.clear();
+
 	return none;
 }
 
@@ -183,6 +186,12 @@ void Kokoha::AdventureManager::closeWindow()
 	{
 		mWindowList.back()->select();
 	}
+}
+
+
+void Kokoha::AdventureManager::clearWindow()
+{
+	mWindowList.clear();
 }
 
 

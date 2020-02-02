@@ -6,6 +6,8 @@
 Kokoha::AdventureScene::AdventureScene(const InitData& init)
 	: IScene(init)
 {
+	AdventureManager::instance().clearWindow();
+	AdventureManager::instance().setSceneName(none);
 }
 
 

@@ -23,8 +23,6 @@ void Kokoha::PlayerSpeed::update()
 	{
 		mSpeed *= mChangeSpeedQueue.top().second;
 		mChangeSpeedQueue.pop();
-
-		Print << mTime << U" : " << mSpeed;
 	}
 }
 
@@ -33,6 +31,4 @@ void Kokoha::PlayerSpeed::change(double speedRate, double endTime)
 {
 	mSpeed *= speedRate;
 	mChangeSpeedQueue.push({ endTime  , 1/speedRate });
-
-	Print << mTime << U" : " << mSpeed;
 }

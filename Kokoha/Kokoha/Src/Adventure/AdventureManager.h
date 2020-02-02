@@ -86,12 +86,26 @@ namespace Kokoha
 		void closeWindow();
 
 		/// <summary>
+		/// 全ウィンドウを閉じる
+		/// </summary>
+		void clearWindow();
+
+		/// <summary>
 		/// シーン遷移先の設定
 		/// </summary>
 		/// <param name="sceneName"> シーン名 </param>
 		void setSceneName(const SceneName& sceneName)
 		{
 			mSceneName = sceneName;
+		}
+
+		/// <summary>
+		/// シーン遷移先の設定
+		/// </summary>
+		/// <param name="none_t"> シーン名 </param>
+		void setSceneName(const None_t& none_t)
+		{
+			mSceneName = none_t;
 		}
 
 		/// <summary>

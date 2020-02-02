@@ -2,6 +2,7 @@
 #include "../GameManager.h"
 #include "../../MyLibrary.h"
 #include "../../MyColor.h"
+#include "../../Record/RecordManager.h"
 
 
 namespace
@@ -33,6 +34,7 @@ Kokoha::ClearState::ClearState()
 	, mLightAlpha(0)
 	, mRadius(0)
 {
+
 }
 
 
@@ -64,6 +66,8 @@ void Kokoha::ClearState::draw() const
 	// îwåiÇè≠ÇµÇ∏Ç¬çïÇ≠Ç∑ÇÈ
 	Scene::Rect().draw(black);
 
+	if (mTimeSecond < LIGHT_START_SECOND) { return; }
+
 	// íÜêSÇñæÇÈÇ≠
 	LIGHT_REGION.drawShadow(Vec2::Zero(), LIGHT_BLUR, 0, white);
 
@@ -86,5 +90,5 @@ Optional<SceneName> Kokoha::ClearState::isChangeAbleScene() const
 {
 	if (mTimeSecond < CHANGE_SCENE_SECOND) { return none; }
 
-	return SceneName::LOAD_ADVENTURE;
+	return SceneName::ADVENTURE;
 }

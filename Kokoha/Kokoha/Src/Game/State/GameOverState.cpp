@@ -72,7 +72,7 @@ Kokoha::GameOverState::GameOverState()
 		GIVEUP_BUTTON.getName(),
 		[this]()
 		{
-			mSceneName = SceneName::LOAD_ADVENTURE;
+			mSceneName = SceneName::ADVENTURE;
 		}
 	);
 
