@@ -81,7 +81,7 @@ void Kokoha::AdventureObject::openWindow(WindowPtr&& windowPtr)
 
 void Kokoha::AdventureObject::openStageWindow(const String& stageName)
 {
-	if (RecordManager::instatnce().getRecord(stageName))
+	if (RecordManager::instance().getRecord(stageName))
 	{
 		openWindow(std::make_unique<InfoWindow>(U"このロボットには\nもう用はない"));
 		return;

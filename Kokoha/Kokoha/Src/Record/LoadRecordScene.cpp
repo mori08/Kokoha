@@ -10,7 +10,7 @@ Kokoha::LoadRecordScene::LoadRecordScene(const InitData& init)
 
 Kokoha::ErrorMessage Kokoha::LoadRecordScene::load()
 {
-	RecordManager::instatnce().load();
+	RecordManager::instance().load();
 	return none;
 }
 

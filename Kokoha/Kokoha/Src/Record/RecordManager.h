@@ -44,7 +44,7 @@ namespace Kokoha
 		/// <returns>
 		/// インスタンス
 		/// </summary>
-		static RecordManager& instatnce()
+		static RecordManager& instance()
 		{
 			static RecordManager recordManager;
 			return recordManager;

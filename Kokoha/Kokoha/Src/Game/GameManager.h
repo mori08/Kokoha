@@ -103,6 +103,15 @@ namespace Kokoha
 		}
 
 		/// <summary>
+		/// ステージ名の取得
+		/// </summary>
+		/// <returns> ステージ名 </returns>
+		const String& getName() const
+		{
+			return mName;
+		}
+
+		/// <summary>
 		/// ゲームデータを記述したcsvファイルの読み込み
 		/// </summary>
 		/// <param name="stageName"> ステージ名 </param>

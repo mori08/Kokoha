@@ -45,7 +45,7 @@ bool Kokoha::Equipment::isAddAbleCassette(const CassettePtr& cassette) const
 	if (mCassetteList.size() + 1 > NUM_LIMIT) { return false; }
 
 	// ƒRƒXƒgãŒÀ‚ğ’´‚¦‚½‚ç false
-	if (mTotalCost + cassette->COST > RecordManager::instatnce().getRecord(U"CassetteCapacity")) { return false; }
+	if (mTotalCost + cassette->COST > RecordManager::instance().getRecord(U"CassetteCapacity")) { return false; }
 
 	return true;
 }

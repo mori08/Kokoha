@@ -50,7 +50,7 @@ namespace Kokoha
 		/// <param name="value"> ïœçXÇµÇΩÇ¢íl </param>
 		void set(int32 value)
 		{
-			mValue = Max(0, Min(value, (1 >> mDigit) - 1));
+			mValue = Max(0, Min(value, (1 << mDigit) - 1));
 		}
 
 		/// <summary>

@@ -34,7 +34,7 @@ Kokoha::ClearState::ClearState()
 	, mLightAlpha(0)
 	, mRadius(0)
 {
-
+	RecordManager::instance().setRecord(GameManager::instance().getName(), 1);
 }
 
 

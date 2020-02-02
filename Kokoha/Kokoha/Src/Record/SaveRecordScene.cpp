@@ -10,7 +10,7 @@ Kokoha::SaveRecordScene::SaveRecordScene(const InitData& init)
 
 Kokoha::ErrorMessage Kokoha::SaveRecordScene::load()
 {
-	RecordManager::instatnce().save();
+	RecordManager::instance().save();
 	return none;
 }
 
