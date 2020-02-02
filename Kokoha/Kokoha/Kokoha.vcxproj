@@ -232,6 +232,7 @@
     <ClCompile Include="Src\Adventure\Scene\AdventureScene.cpp" />
     <ClCompile Include="Src\Adventure\Scene\LoadAdventureScene.cpp" />
     <ClCompile Include="Src\Adventure\Window\AdventureWindow.cpp" />
+    <ClCompile Include="Src\Adventure\Window\AreaWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\CassetteMoveWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\CassetteView\EquipmentCassetteView.cpp" />
     <ClCompile Include="Src\Adventure\Window\CassetteView\PossessCassetteView.cpp" />
@@ -304,6 +305,7 @@
     <ClInclude Include="Src\Adventure\Scene\AdventureScene.h" />
     <ClInclude Include="Src\Adventure\Scene\LoadAdventureScene.h" />
     <ClInclude Include="Src\Adventure\Window\AdventureWindow.h" />
+    <ClInclude Include="Src\Adventure\Window\AreaWindow.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteMoveWindow.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteView\EquipmentCassetteView.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteView\PossessCassetteView.h" />

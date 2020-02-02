@@ -630,6 +630,9 @@
     <ClCompile Include="Src\Adventure\Window\ChallengeStageWindow.cpp">
       <Filter>Src\Adventure\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\AreaWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -858,6 +861,9 @@
       <Filter>Src\Game\State</Filter>
     </ClInclude>
     <ClInclude Include="Src\Adventure\Window\ChallengeStageWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\AreaWindow.h">
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>

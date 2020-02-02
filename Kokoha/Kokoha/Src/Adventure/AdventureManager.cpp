@@ -29,6 +29,18 @@ namespace
 
 	// 描画範囲
 	constexpr Rect SIZE(0, 0, 640, 420);
+
+	// ステージファイル名
+	const Array<String> AREA_FILE_NAME
+	{
+		U"StoreRoom",
+		U"StoreRoom",
+		U"StoreRoom",
+		U"DoctorRoom",
+		U"StoreRoom",
+		U"StoreRoom",
+		U"StoreRoom"
+	};
 }
 
 
@@ -39,7 +51,7 @@ Kokoha::AdventureManager::AdventureManager()
 }
 
 
-Optional<String> Kokoha::AdventureManager::load(const String& fileName)
+Optional<String> Kokoha::AdventureManager::load()
 {
 	// シーン遷移先の初期化
 	mSceneName = none;
@@ -49,6 +61,10 @@ Optional<String> Kokoha::AdventureManager::load(const String& fileName)
 
 	// フィールド情報の初期化
 	mObjectList.clear();
+
+	// ステージ番号をファイル名に変換
+	String fileName = AREA_FILE_NAME[Max(0, Min(mAreaId, (int32)AREA_FILE_NAME.size() - 1))];
+	fileName = U"Assets/Data/Adventure/" + fileName + U".csv";
 
 	// CSVファイルの確認
 	CSVData csv(fileName);

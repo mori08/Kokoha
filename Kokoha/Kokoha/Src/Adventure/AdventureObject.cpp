@@ -4,8 +4,10 @@
 #include "../Input/InputManager.h"
 #include "../Record/RecordManager.h"
 
+// ウィンドウ
 #include "Window/InfoWindow.h"
 #include "Window/ChallengeStageWindow.h"
+#include "Window/AreaWindow.h"
 
 
 namespace 
@@ -48,7 +50,7 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openStageWindow(U"1-1"); };
 
 	// 別エリアに移動
-	sMakeWindowFuncMap[U"Door[StoreRoom]"] = []() { openWindow(std::make_unique<InfoWindow>(U"エリア移動")); };
+	sMakeWindowFuncMap[U"Door[StoreRoom]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
 }
 
 
@@ -88,4 +90,19 @@ void Kokoha::AdventureObject::openStageWindow(const String& stageName)
 	}
 
 	openWindow(std::make_unique<ChallengeStageWindow>(stageName));
+}
+
+
+void Kokoha::AdventureObject::openStageWindow(const Array<String>& stageNameList)
+{
+	for (const auto& stageName : stageNameList)
+	{
+		if (RecordManager::instance().getRecord(stageName)) { continue; }
+		
+		// クリアしていないステージがあるとき
+		openWindow(std::make_unique<ChallengeStageWindow>(stageName));
+	}
+
+	// 全てクリアしているとき
+	openWindow(std::make_unique<InfoWindow>(U"このロボットには\nもう用はない"));
 }

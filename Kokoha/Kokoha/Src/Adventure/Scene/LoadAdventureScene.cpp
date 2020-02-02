@@ -10,7 +10,7 @@ Kokoha::LoadAdventureScene::LoadAdventureScene(const InitData& init)
 
 Kokoha::ErrorMessage Kokoha::LoadAdventureScene::load()
 {
-	if (auto errorMessage = AdventureManager::instance().load(U"Assets/Data/Adventure/StoreRoom.csv"))
+	if (auto errorMessage = AdventureManager::instance().load())
 	{
 		mIsSuccess = false;
 		return errorMessage.value();

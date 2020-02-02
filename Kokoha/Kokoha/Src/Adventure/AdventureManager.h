@@ -32,6 +32,9 @@ namespace Kokoha
 		// ウィンドウ
 		std::list<WindowPtr> mWindowList;
 
+		// エリア番号
+		int32 mAreaId;
+
 		// シーン遷移先
 		Optional<SceneName> mSceneName;
 
@@ -56,7 +59,7 @@ namespace Kokoha
 		/// 部屋のロード
 		/// </summary>
 		/// <param name="fileName"> ファイル名 </param> 
-		Optional<String> load(const String& fileName);
+		Optional<String> load();
 
 		/// <summary>
 		/// 更新
@@ -89,6 +92,24 @@ namespace Kokoha
 		/// 全ウィンドウを閉じる
 		/// </summary>
 		void clearWindow();
+
+		/// <summary>
+		/// エリアの設定
+		/// </summary>
+		/// <param name="areaId"> エリアの番号 </param>
+		void setAreaId(int32 areaId)
+		{
+			mAreaId = areaId;
+		}
+
+		/// <summary>
+		/// エリアの取得
+		/// </summary>
+		/// <returns> エリアの番号 </returns>
+		int32 getAreaId() const
+		{
+			return mAreaId;
+		}
 
 		/// <summary>
 		/// シーン遷移先の設定
