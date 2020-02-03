@@ -2,6 +2,7 @@
 #include "../MyColor.h"
 #include "../Input/InputManager.h"
 #include "Window/MenuWindow.h"
+#include "../Record/RecordManager.h"
 
 
 namespace
@@ -65,6 +66,7 @@ Optional<String> Kokoha::AdventureManager::load()
 	// ステージ番号をファイル名に変換
 	String fileName = AREA_FILE_NAME[Max(0, Min(mAreaId, (int32)AREA_FILE_NAME.size() - 1))];
 	fileName = U"Assets/Data/Adventure/" + fileName + U".csv";
+	RecordManager::instance().setRecord(U"AreaId", mAreaId);
 
 	// CSVファイルの確認
 	CSVData csv(fileName);
@@ -148,6 +150,18 @@ Optional<String> Kokoha::AdventureManager::load()
 }
 
 
+void Kokoha::AdventureManager::setPlayerFromRecord()
+{
+	mPlayer.set
+	(
+		RecordManager::instance().getRecord(U"PlayerPos"),
+		RecordManager::instance().getRecord(U"PlayerDirection")
+	);
+
+	changeCameraPos();
+}
+
+
 void Kokoha::AdventureManager::update()
 {
 	// ウィンドウを開いているとき その更新
@@ -159,7 +173,7 @@ void Kokoha::AdventureManager::update()
 	}
 
 	// キャンセルボタンでメニューを開く
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		openWindow(std::make_unique<MenuWindow>());
 		return;

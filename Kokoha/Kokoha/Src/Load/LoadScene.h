@@ -33,7 +33,7 @@ namespace Kokoha
 		std::thread mLoadThread;
 		
 		// エラーメッセージの取得
-		std::future<ErrorMessage> mErrorMessageFuture;
+		ErrorMessage mErrorMessage;
 
 	public:
 

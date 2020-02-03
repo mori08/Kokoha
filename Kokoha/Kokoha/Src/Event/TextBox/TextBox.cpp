@@ -42,7 +42,7 @@ void Kokoha::TextBox::update()
 	// 全テキストを表示しているか
 	bool isEnd = mDrawAbleLength.update();
 
-	if (InputManager::instatnce().decision())
+	if (InputManager::instance().decision())
 	{
 		if (isEnd) { reset(); }
 		else       { mDrawAbleLength.toEndPoint(); }

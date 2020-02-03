@@ -122,7 +122,7 @@ void Kokoha::AreaWindow::update()
 void Kokoha::AreaWindow::selectedUpdate()
 {
 	// ウィンドウを閉じる
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 		return;
@@ -131,7 +131,7 @@ void Kokoha::AreaWindow::selectedUpdate()
 	// 移動できるエリアがないとき
 	if (mButtonList.empty())
 	{
-		if (InputManager::instatnce().decision())
+		if (InputManager::instance().decision())
 		{
 			AdventureManager::instance().closeWindow();
 		}

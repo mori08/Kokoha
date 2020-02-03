@@ -633,6 +633,9 @@
     <ClCompile Include="Src\Adventure\Window\AreaWindow.cpp">
       <Filter>Src\Adventure\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\SaveWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -864,6 +867,9 @@
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
     <ClInclude Include="Src\Adventure\Window\AreaWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\SaveWindow.h">
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>

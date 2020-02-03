@@ -1,5 +1,6 @@
 #include "AdventurePlayer.h"
 #include "../Input/InputManager.h"
+#include "../Record/RecordManager.h"
 
 
 namespace
@@ -60,6 +61,9 @@ void Kokoha::AdventurePlayer::update(Array<AdventureObject>& objectList)
 	walk(objectList);
 
 	mCheckPos = check(objectList);
+
+	RecordManager::instance().setRecord(U"PlayerPos"      , mPosX     );
+	RecordManager::instance().setRecord(U"PlayerDirection", mDirection);
 }
 
 
@@ -126,7 +130,7 @@ Optional<Point> Kokoha::AdventurePlayer::check(Array<AdventureObject>& objectLis
 	{
 		if (object.getRegion().contains(getRegion().center()))
 		{
-			if (InputManager::instatnce().decision())
+			if (InputManager::instance().decision())
 			{
 				object.onClick();
 			}

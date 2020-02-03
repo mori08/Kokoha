@@ -53,7 +53,7 @@ void Main()
 
 	while (System::Update())
 	{
-		Kokoha::InputManager::instatnce().changeInputState();
+		Kokoha::InputManager::instance().changeInputState();
 
 		sceneManager.update();
 

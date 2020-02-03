@@ -62,6 +62,11 @@ namespace Kokoha
 		Optional<String> load();
 
 		/// <summary>
+		/// レコードからプレイヤーの位置の設定
+		/// </summary>
+		void setPlayerFromRecord();
+
+		/// <summary>
 		/// 更新
 		/// </summary>
 		void update();

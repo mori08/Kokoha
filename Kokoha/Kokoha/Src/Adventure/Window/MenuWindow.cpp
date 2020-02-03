@@ -6,6 +6,7 @@
 
 // 他ウィンドウ
 #include "SetupWindow.h"
+#include "SaveWindow.h"
 
 
 namespace
@@ -70,6 +71,11 @@ void Kokoha::MenuWindow::select()
 		SETUP_BUTTON.getName(),
 		[](){ AdventureManager::instance().openWindow(std::make_unique<SetupWindow>()); }
 	);
+	ButtonManager::instance().setOnClickFunc
+	(
+		RECORD_BUTTON.getName(),
+		[](){ AdventureManager::instance().openWindow(std::make_unique<SaveWindow>()); }
+	);
 
 	// 選択中のボタンの設定
 	ButtonManager::instance().setSelectedButton(mSelectedButton.second);
@@ -94,7 +100,7 @@ void Kokoha::MenuWindow::selectedUpdate()
 	mSelectedButton.second = ButtonManager::instance().getSelectedButton().getName();
 
 	// ウィンドウを閉じる
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 		return;

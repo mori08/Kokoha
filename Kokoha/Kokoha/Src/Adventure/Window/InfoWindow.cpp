@@ -32,7 +32,7 @@ void Kokoha::InfoWindow::update()
 
 void Kokoha::InfoWindow::selectedUpdate()
 {
-	if (InputManager::instatnce().decision() || InputManager::instatnce().cancel())
+	if (InputManager::instance().decision() || InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 	}

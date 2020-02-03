@@ -116,7 +116,7 @@ void Kokoha::ButtonManager::clearButtonList()
 
 void Kokoha::ButtonManager::update()
 {
-	Optional<String> clickedButtonName = InputManager::instatnce().selectButton(mSelectedButtonPtr, mButtonMap);
+	Optional<String> clickedButtonName = InputManager::instance().selectButton(mSelectedButtonPtr, mButtonMap);
 
 	if (clickedButtonName && mButtonMap.count(*clickedButtonName))
 	{

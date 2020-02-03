@@ -94,7 +94,7 @@ void Kokoha::ChallengeStageWindow::update()
 
 void Kokoha::ChallengeStageWindow::selectedUpdate()
 {
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 		return;

@@ -27,16 +27,13 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	, mText(text)
 {
 	// •ÊƒXƒŒƒbƒh‚Ìì¬
-	std::promise<ErrorMessage> p;
-	mErrorMessageFuture = p.get_future();
 	mLoadThread = std::thread
 	(
-		[this](std::promise<ErrorMessage> p)
+		[this]()
 		{
-			p.set_value(load());
+			mErrorMessage = load();
 			mIsLoading = false;
-		},
-		std::move(p)
+		}
 	);
 }
 
@@ -51,9 +48,9 @@ void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
 
-	if (const auto errorMessage = mErrorMessageFuture.get())
+	if (mErrorMessage)
 	{
-		printDebug(errorMessage.value());
+		printDebug(mErrorMessage.value());
 	}
 
 	if (!changeScene(complete()))

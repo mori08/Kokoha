@@ -35,7 +35,7 @@ namespace Kokoha
 		/// <returns>
 		/// インスタンス
 		/// </returns>
-		static InputManager& instatnce()
+		static InputManager& instance()
 		{
 			static InputManager inputManager;
 			return inputManager;

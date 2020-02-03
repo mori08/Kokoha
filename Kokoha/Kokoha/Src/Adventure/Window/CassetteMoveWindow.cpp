@@ -158,7 +158,7 @@ void Kokoha::CassetteMoveWindow::selectedUpdate()
 	mSelectedButton.second = ButtonManager::instance().getSelectedButton().getName();
 
 	// ウィンドウを閉じる
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 		return;

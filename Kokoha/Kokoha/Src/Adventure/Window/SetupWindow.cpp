@@ -65,7 +65,7 @@ void Kokoha::SetupWindow::update()
 void Kokoha::SetupWindow::selectedUpdate()
 {
 	// ウィンドウを閉じる
-	if (InputManager::instatnce().cancel())
+	if (InputManager::instance().cancel())
 	{
 		AdventureManager::instance().closeWindow();
 		return;

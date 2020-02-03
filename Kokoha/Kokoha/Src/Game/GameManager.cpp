@@ -146,7 +146,7 @@ Optional<String> Kokoha::GameManager::load()
 void Kokoha::GameManager::update()
 {
 	// ‘•”õ‚ÌØ‚è‘Ö‚¦
-	if (InputManager::instatnce().decision())
+	if (InputManager::instance().decision())
 	{
 		changeEquipment();
 	}
