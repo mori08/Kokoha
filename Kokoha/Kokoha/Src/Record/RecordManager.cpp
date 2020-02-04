@@ -1,5 +1,6 @@
 #include "RecordManager.h"
 #include "../MyLibrary.h"
+#include "../Cassette/CassetteManager.h"
 
 
 namespace
@@ -22,9 +23,6 @@ Kokoha::RecordManager::RecordManager()
 {
 	mRecordMap.try_emplace(U"TestFlag" , std::move(Record(1, 1)));
 	mRecordMap.try_emplace(U"TestValue", std::move(Record(3, 5)));
-
-	// レコードのコスト上限
-	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 6)));
 
 	// Adventureでのプレイヤーの位置
 	mRecordMap.try_emplace(U"AreaId"         , std::move(Record(3, 0)));
@@ -53,6 +51,17 @@ Kokoha::RecordManager::RecordManager()
 	mRecordMap.try_emplace(U"6-3"     , std::move(Record(1, 0)));
 	mRecordMap.try_emplace(U"Kokoro"  , std::move(Record(1, 0)));
 	mRecordMap.try_emplace(U"Last"    , std::move(Record(1, 0)));
+
+	// カセット
+	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 6)));
+	for (const auto& cassette : CassetteManager::instance().getCassetteList())
+	{
+		mRecordMap.try_emplace(cassette->NAME, std::move(Record(2, Cassette::NO_POSSESS_STATE)));
+	}
+	mRecordMap.erase(U"スピードI");
+	mRecordMap.try_emplace(U"スピードI"  , std::move(Record(2, Cassette::EQUIPMENT_A_STATE)));
+	mRecordMap.erase(U"プレイヤーI");
+	mRecordMap.try_emplace(U"プレイヤーI", std::move(Record(2, Cassette::EQUIPMENT_B_STATE)));
 }
 
 

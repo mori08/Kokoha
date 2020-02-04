@@ -1,4 +1,7 @@
 #include "CassetteManager.h"
+
+#include "../Record/RecordManager.h"
+
 #include "../Game/GameManager.h"
 
 #include "../Game/Object/Light/PlayerLight.h"
@@ -220,10 +223,24 @@ Kokoha::CassetteManager::CassetteManager()
 			)
 		)
 	);
+}
 
-	// デバッグ用にカセットを所持させる
+
+void Kokoha::CassetteManager::load()
+{
+	// 装備を全て外す
+	for (auto& equiment : mEquipment)
+	{
+		equiment.clearCassette();
+	}
+
 	for (auto& cassette : mCassetteList)
 	{
-		cassette->setState(Cassette::POSSESS_STATE);
+		cassette->setState(RecordManager::instance().getRecord(cassette->NAME));
+
+		if (cassette->getState() == Cassette::EQUIPMENT_A_STATE || cassette->getState() == Cassette::EQUIPMENT_B_STATE)
+		{
+			getEquipment(cassette->getState()).addCassette(cassette);
+		}
 	}
 }

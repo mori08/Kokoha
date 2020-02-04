@@ -17,6 +17,13 @@ Kokoha::Equipment::Equipment(int32 state)
 }
 
 
+void Kokoha::Equipment::clearCassette()
+{
+	mTotalCost = 0;
+	mCassetteList.clear();
+}
+
+
 void Kokoha::Equipment::addCassette(const CassettePtr& cassette)
 {
 	// Šù‚É‘•”õ‚³‚ê‚Ä‚¢‚é‚Æ‚«

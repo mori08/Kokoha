@@ -155,7 +155,7 @@ void Kokoha::AdventureManager::setPlayerFromRecord()
 	mPlayer.set
 	(
 		RecordManager::instance().getRecord(U"PlayerPos"),
-		RecordManager::instance().getRecord(U"PlayerDirection")
+		(RecordManager::instance().getRecord(U"PlayerDirection") == 1) ? (+1) : (-1)
 	);
 
 	changeCameraPos();

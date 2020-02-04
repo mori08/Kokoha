@@ -50,6 +50,11 @@ namespace Kokoha
 	public:
 
 		/// <summary>
+		/// レコードからロード
+		/// </summary>
+		void load();
+
+		/// <summary>
 		/// カセットのリストの取得
 		/// </summary>
 		/// <returns>

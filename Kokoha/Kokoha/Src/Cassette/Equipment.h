@@ -43,6 +43,14 @@ namespace Kokoha
 		// ↓
 
 		/// <summary>
+		/// 全て削除
+		/// </summary>
+		/// <remarks>
+		/// レコードの読み込み時以外で使わない
+		/// </remarks>
+		void clearCassette();
+
+		/// <summary>
 		/// カセットの追加
 		/// </summary>
 		/// <param name="cassette"> カセット </param>
