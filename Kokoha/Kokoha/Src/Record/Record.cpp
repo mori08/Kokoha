@@ -31,6 +31,8 @@ void Kokoha::Record::addRecordToEncryptionList(std::list<int32>& dataList) const
 
 void Kokoha::Record::setValueFromDecryption(std::list<int32>& dataList)
 {
+	mValue = 0;
+
 	for (int i = 0; i < mDigit; ++i)
 	{
 		if (dataList.empty())

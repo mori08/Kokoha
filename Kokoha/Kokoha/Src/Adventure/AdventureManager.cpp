@@ -47,6 +47,7 @@ namespace
 
 Kokoha::AdventureManager::AdventureManager()
 	: mCameraPos(0,0)
+	, mAreaId(0)
 {
 	AdventureObject::registerWindow();
 }

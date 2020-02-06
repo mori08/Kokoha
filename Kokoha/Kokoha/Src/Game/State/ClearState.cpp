@@ -1,4 +1,5 @@
 #include "ClearState.h"
+#include "InfoState.h"
 #include "../GameManager.h"
 #include "../../MyLibrary.h"
 #include "../../MyColor.h"
@@ -8,7 +9,7 @@
 namespace
 {
 	// アルファ値の変更の比
-	constexpr double CHANGE_ALPHA_RATE = 0.1;
+	constexpr double CHANGE_ALPHA_RATE = 0.01;
 
 	// 光を表示し始める時間
 	constexpr double LIGHT_START_SECOND = 1.0;
@@ -23,8 +24,11 @@ namespace
 	// 光の数
 	constexpr int32 LIGHT_NUM = 12;
 
+	// フェードアウト
+	constexpr double FADEOUT_SECOND = 5.0;
+
 	// シーン遷移
-	constexpr double CHANGE_SCENE_SECOND = 5.0;
+	constexpr double CHANGE_STATE_SECOND = 6.0;
 }
 
 
@@ -33,6 +37,7 @@ Kokoha::ClearState::ClearState()
 	, mBackAlpha(0)
 	, mLightAlpha(0)
 	, mRadius(0)
+	, mFadeOutAlpha(0)
 {
 	RecordManager::instance().setRecord(GameManager::instance().getName(), 1);
 }
@@ -53,6 +58,15 @@ void Kokoha::ClearState::update()
 	
 	// 光の描画位置の変更
 	internalDividingPoint(mRadius, MAX_RADIUS, LIGHT_MOVE_RATE);
+
+	if (mTimeSecond < FADEOUT_SECOND) { return; }
+
+	// フェードアウト
+	internalDividingPoint(mFadeOutAlpha, 1.0, CHANGE_ALPHA_RATE);
+
+	if (mTimeSecond < CHANGE_STATE_SECOND) { return; }
+
+	GameManager::instance().setState(std::move(std::make_unique<InfoState>()));
 }
 
 
@@ -83,12 +97,12 @@ void Kokoha::ClearState::draw() const
 		Circle(Scene::CenterF() + mRadius * direction, 10)
 			.drawShadow(Vec2::Zero(), 10, 0, white);
 	}
+
+	Scene::Rect().draw(ColorF(MyBlack).setA(mFadeOutAlpha));
 }
 
 
 Optional<SceneName> Kokoha::ClearState::isChangeAbleScene() const
 {
-	if (mTimeSecond < CHANGE_SCENE_SECOND) { return none; }
-
-	return SceneName::ADVENTURE;
+	return none;
 }

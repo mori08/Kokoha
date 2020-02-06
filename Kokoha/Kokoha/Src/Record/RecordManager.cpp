@@ -26,8 +26,8 @@ Kokoha::RecordManager::RecordManager()
 
 	// Adventureでのプレイヤーの位置
 	mRecordMap.try_emplace(U"AreaId"         , std::move(Record(3, 0)));
-	mRecordMap.try_emplace(U"PlayerPos"      , std::move(Record(11, 0)));
-	mRecordMap.try_emplace(U"PlayerDirection", std::move(Record(1, 0)));
+	mRecordMap.try_emplace(U"PlayerPos"      , std::move(Record(11, 240)));
+	mRecordMap.try_emplace(U"PlayerDirection", std::move(Record(1, 1)));
 
 	// ステージのクリア状況
 	mRecordMap.try_emplace(U"Tutorial", std::move(Record(1, 0)));
@@ -56,11 +56,18 @@ Kokoha::RecordManager::RecordManager()
 	mRecordMap.try_emplace(U"CassetteCapacity", std::move(Record(3, 6)));
 	for (const auto& cassette : CassetteManager::instance().getCassetteList())
 	{
+		if (cassette->NAME == U"スピードI" || cassette->NAME == U"プレイヤーI")
+		{
+			/*
+				初期装備カセットは初期化値が違うためここではスキップ
+				個別にレコードに登録する
+			*/
+			continue;
+		}
+
 		mRecordMap.try_emplace(cassette->NAME, std::move(Record(2, Cassette::NO_POSSESS_STATE)));
 	}
-	mRecordMap.erase(U"スピードI");
 	mRecordMap.try_emplace(U"スピードI"  , std::move(Record(2, Cassette::EQUIPMENT_A_STATE)));
-	mRecordMap.erase(U"プレイヤーI");
 	mRecordMap.try_emplace(U"プレイヤーI", std::move(Record(2, Cassette::EQUIPMENT_B_STATE)));
 }
 
@@ -78,9 +85,9 @@ Kokoha::RecordManager::LoadResult Kokoha::RecordManager::load()
 
 	String line;
 
-	if (reader.readLine(line))
+	if (reader.readLine(line) && decryption(line))
 	{
-		decryption(line);
+		return LoadResult::CONTINUE;
 	}
 
 	return LoadResult::ERROR;
@@ -107,9 +114,13 @@ void Kokoha::RecordManager::save()
 void Kokoha::RecordManager::printAllRecord()
 {
 	ClearPrint();
+	int32 cnt = 0;
+	String text;
 	for (auto& record : mRecordMap)
 	{
-		Print << record.first << U" : " << record.second.get();
+		text += U"[" + record.first + U" : " + ToString(record.second.get()) + U"]";
+		
+		if (++cnt % 3 == 0) { Print << text; text = U""; }
 	}
 }
 
@@ -207,7 +218,7 @@ bool Kokoha::RecordManager::decryption(const String& str)
 		}
 		dataList.emplace_back(*data);
 	}
-
+	
 	// 前の項の値と mod 0x100 で 減算
 	int32 previouseOne = 0;
 	for (auto& data : dataList)
@@ -224,13 +235,13 @@ bool Kokoha::RecordManager::decryption(const String& str)
 	}
 	dataList.pop_front();
 	dataList.pop_back();
-
+	
 	// サイズ と レコードの合計桁数 が一致しているか確認
 	if (dataList.size() != Record::getDigitTotal())
 	{
 		return false; // 一致しないとき失敗
 	}
-
+	
 	// 全てを0xFで割る
 	for (auto& data : dataList)
 	{
@@ -244,7 +255,7 @@ bool Kokoha::RecordManager::decryption(const String& str)
 			return false; // [0x1,0x10]の範囲にないとき失敗
 		}
 	}
-
+	
 	// 偶数 -> 0
 	// 奇数 -> 1
 	for (auto& data : dataList)

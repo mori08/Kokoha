@@ -1,6 +1,7 @@
 #pragma once
 
 
+#include "RecordManager.h"
 #include "../Load/LoadScene.h"
 
 
@@ -12,6 +13,10 @@ namespace Kokoha
 	*/
 	class LoadRecordScene : public LoadScene
 	{
+	private:
+
+		RecordManager::LoadResult mLoadResult;
+
 	public:
 
 		LoadRecordScene(const InitData& init);

@@ -13,7 +13,7 @@ Kokoha::LoadRecordScene::LoadRecordScene(const InitData& init)
 Kokoha::ErrorMessage Kokoha::LoadRecordScene::load()
 {
 	// ÉåÉRÅ[ÉhÇÃì«Ç›çûÇ›
-	RecordManager::instance().load();
+	mLoadResult = RecordManager::instance().load();
 
 	// Adventure ÇÃê›íË
 	AdventureManager::instance().setAreaId(RecordManager::instance().getRecord(U"AreaId"));
@@ -29,5 +29,16 @@ Kokoha::ErrorMessage Kokoha::LoadRecordScene::load()
 
 SceneName Kokoha::LoadRecordScene::complete()
 {
-	return SceneName::ADVENTURE;
+	switch (mLoadResult)
+	{
+	case RecordManager::LoadResult::NEW_GAME:
+		return SceneName::TITLE;
+
+	case RecordManager::LoadResult::CONTINUE:
+		return SceneName::ADVENTURE;
+
+	case RecordManager::LoadResult::ERROR:
+		return SceneName::TITLE;
+	}
+	return SceneName::TITLE;
 }

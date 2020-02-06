@@ -44,6 +44,7 @@ void Kokoha::SaveWindow::selectedUpdate()
 
 	if (InputManager::instance().decision() || InputManager::instance().cancel())
 	{
+		mSaveThread.join();
 		AdventureManager::instance().closeWindow();
 	}
 }

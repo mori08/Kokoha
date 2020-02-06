@@ -62,7 +62,7 @@ void Kokoha::AdventurePlayer::update(Array<AdventureObject>& objectList)
 
 	mCheckPos = check(objectList);
 
-	RecordManager::instance().setRecord(U"PlayerPos"      , mPosX          );
+	RecordManager::instance().setRecord(U"PlayerPos"      , (int32)mPosX   );
 	RecordManager::instance().setRecord(U"PlayerDirection", mDirection == 1);
 }
 

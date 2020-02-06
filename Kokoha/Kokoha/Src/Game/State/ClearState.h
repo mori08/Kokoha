@@ -23,6 +23,9 @@ namespace Kokoha
 		// 光のアルファ値
 		double mLightAlpha;
 
+		// フェードアウト用のアルファ値
+		double mFadeOutAlpha;
+
 		// 中心と光との距離
 		double mRadius;
 

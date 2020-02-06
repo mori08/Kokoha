@@ -12,6 +12,7 @@
 
 // èÛë‘
 #include "State/PlayingState.h"
+#include "State/InfoState.h"
 
 #include "../Cassette/CassetteManager.h"
 #include "../Input/InputManager.h"
@@ -41,6 +42,8 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<GameGoal>   (U"Goal");
 	setGenerateObjectFunc<RandomGoal> (U"RandomGoal");
 	setGenerateObjectFunc<RunAwayGoal>(U"RunAwayGoal");
+
+	InfoState::setInfoMap();
 }
 
 
