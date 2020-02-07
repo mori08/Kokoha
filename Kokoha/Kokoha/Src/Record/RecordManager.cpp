@@ -26,7 +26,7 @@ Kokoha::RecordManager::RecordManager()
 
 	// Adventureでのプレイヤーの位置
 	mRecordMap.try_emplace(U"AreaId"         , std::move(Record(3, 0)));
-	mRecordMap.try_emplace(U"PlayerPos"      , std::move(Record(11, 240)));
+	mRecordMap.try_emplace(U"PlayerPos"      , std::move(Record(11, 382)));
 	mRecordMap.try_emplace(U"PlayerDirection", std::move(Record(1, 1)));
 
 	// ステージのクリア状況

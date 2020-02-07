@@ -35,7 +35,7 @@ namespace
 	const Array<String> AREA_FILE_NAME
 	{
 		U"StoreRoom",
-		U"StoreRoom",
+		U"Labolatory",
 		U"StoreRoom",
 		U"DoctorRoom",
 		U"StoreRoom",
