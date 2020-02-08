@@ -53,6 +53,7 @@ Kokoha::GameEnemy::GameEnemy(const Vec2& pos, const ObjectType& type, const Stri
 	, mBodySlide(textureName, TEXTURE_SIZE, BODY_POS)
 	, mFaceSlide(textureName, TEXTURE_SIZE, FACE_POS)
 	, mLightAlpha(0)
+	, mLightOn(true)
 {
 	mBodySlide.setAnimation(U"anim", BODY_ANIMATION); mBodySlide.start(U"anim");
 	mFaceSlide.setAnimation(U"anim", FACE_ANIMATION); mFaceSlide.start(U"anim");
@@ -64,7 +65,7 @@ void Kokoha::GameEnemy::update()
 	mBodySlide.changeTexture();
 	mFaceSlide.changeTexture();
 
-	internalDividingPoint(mLightAlpha, (sOnLight ? 1.0 : 0.0), LIGHT_RATE);
+	internalDividingPoint(mLightAlpha, (sOnLight&&mLightOn ? 1.0 : 0.0), LIGHT_RATE);
 }
 
 

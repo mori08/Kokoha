@@ -46,7 +46,8 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"Cardboard"]       = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない.")); };
 	sMakeWindowFuncMap[U"OpenedCardboard"] = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は空だ.")); };
 	sMakeWindowFuncMap[U"Shelf"]           = []() { openWindow(std::make_unique<InfoWindow>(U"大きな棚だ.\n高い所は届かない.")); };
-	
+	sMakeWindowFuncMap[U"LaboWorkbench"]   = []() { openWindow(std::make_unique<InfoWindow>(U"作業台,\n何かを作った跡がある.")); };
+
 	// ステージに挑戦
 	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openStageWindow(U"1-1"); };
 	sMakeWindowFuncMap[U"BrokenDeveloper"] = []() { openStageWindow(Array<String>{U"2-1", U"2-2", U"2-3"}); };

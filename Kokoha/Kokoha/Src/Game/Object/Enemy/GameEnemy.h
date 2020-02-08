@@ -15,7 +15,7 @@ namespace Kokoha
 	{
 	private:
 
-		// true のときライトをつける
+		// true のときライトをつける(共有フラグ)
 		static bool sOnLight;
 
 		// 光の半径
@@ -34,6 +34,11 @@ namespace Kokoha
 
 		// 光のアルファ値
 		double mLightAlpha;
+
+	protected:
+
+		// true のときライトをつける(個別フラグ)
+		bool mLightOn;
 
 	public:
 

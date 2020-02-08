@@ -26,6 +26,7 @@ void Kokoha::WhiteEnemy::update()
 
 	if (mEraseSecond < 0)
 	{
+		mLightOn   = false;
 		mEraseAble = mAlpha.update();
 	}
 
