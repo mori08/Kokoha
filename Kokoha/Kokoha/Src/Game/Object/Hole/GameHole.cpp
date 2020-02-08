@@ -8,7 +8,7 @@ namespace
 	constexpr double RADIUS = 15.0;
 
 	// âÒì]ë¨ìx
-	constexpr std::array<double, Kokoha::GameHole::RING_NUM> ANGLE_SPEED = { 0,0 };
+	constexpr std::array<double, Kokoha::GameHole::RING_NUM> ANGLE_SPEED = { 0.2,0.5 };
 
 	// âÒì]äpÇÃïœçXÇÃäÑçá
 	constexpr double ANGLE_RATE = 0.01;
@@ -21,9 +21,10 @@ namespace
 }
 
 
-Kokoha::GameHole::GameHole(const Vec2& pos)
+Kokoha::GameHole::GameHole(const Vec2& pos, double generateSpan)
 	: GameObject(Circle(pos, RADIUS), ObjectType::HOLE)
 	, mGoal(pos)
+	, mGenerateSpan(generateSpan, 1.0)
 {
 	for (auto& angle : mRingAngleList) { angle = 0; }
 }

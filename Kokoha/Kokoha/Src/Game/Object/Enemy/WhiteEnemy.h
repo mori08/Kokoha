@@ -29,7 +29,7 @@ namespace Kokoha
 
 		WhiteEnemy(const Vec2& pos);
 
-	private:
+	protected:
 
 		virtual void update() override;
 

@@ -642,7 +642,15 @@
     <ClCompile Include="Src\Game\State\InfoState.cpp">
       <Filter>Src\Game\State</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Object\Hole\GameHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\GameHole.cpp">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\StraightWhiteEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Hole\StraightHole.cpp">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -883,6 +891,12 @@
       <Filter>Src\Game\State</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Hole\GameHole.h">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\StraightWhiteEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Hole\StraightHole.h">
       <Filter>Src\Game\Object\Hole</Filter>
     </ClInclude>
   </ItemGroup>

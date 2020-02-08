@@ -2,6 +2,7 @@
 
 
 #include "../GameObject.h"
+#include "../../../Slice/Linearly.h"
 
 
 namespace Kokoha
@@ -22,6 +23,9 @@ namespace Kokoha
 		// 目的座標
 		Vec2 mGoal;
 
+		// 敵の生成間隔(s)
+		Linearly<double> mGenerateSpan;
+
 	private:
 
 		// 輪がなす角度
@@ -29,11 +33,16 @@ namespace Kokoha
 
 	public:
 
-		GameHole(const Vec2& pos);
+		/// <summary>
+		/// 白い敵を生成するオブジェクト
+		/// </summary>
+		/// <param name="pos"> 生成座標 </param>
+		/// <param name="generateSpan"> 敵の生成間隔(s) </param>
+		GameHole(const Vec2& pos, double generateSpan);
 
-	private:
+	protected:
 
-		void update() override;
+		virtual void update() override;
 
 		void draw() const override;
 

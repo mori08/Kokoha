@@ -4,7 +4,7 @@
 namespace
 {
 	// 削除時間の初期化
-	constexpr double INIT_ERASE_SECOND = 3.0;
+	constexpr double INIT_ERASE_SECOND = 5.0;
 
 	// アルファ値を変更する時間
 	constexpr double CHANGE_ALPHA_SECOND = 0.5;
