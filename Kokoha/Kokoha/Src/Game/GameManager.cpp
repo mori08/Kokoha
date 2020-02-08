@@ -11,6 +11,7 @@
 #include "Object/Goal/RunAwayGoal.h"
 #include "Object/Hole/StraightHole.h"
 #include "Object/Hole/RandomHole.h"
+#include "Object/Hole/ChaseHole.h"
 
 // èÛë‘
 #include "State/PlayingState.h"
@@ -51,6 +52,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<DownHole>  (U"DownHole");
 	setGenerateObjectFunc<LeftHole>  (U"LeftHole");
 	setGenerateObjectFunc<RandomHole>(U"RandomHole");
+	setGenerateObjectFunc<ChaseHole> (U"ChaseHole");
 
 	InfoState::setInfoMap();
 }

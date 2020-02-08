@@ -14,7 +14,7 @@ namespace Kokoha
 	constexpr double RATE = 1.2;
 
 	// Œó•â“_‚ÌŒÂ”
-	constexpr int32 POINT_NUM = 3;
+	constexpr int32 POINT_NUM = 10;
 }
 
 
