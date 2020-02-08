@@ -1,10 +1,10 @@
-﻿800,,
+﻿840,,
 600,-1,
 "(8, 360)",Cardboard,TRUE
 "(60, 300)",Cardboard,TRUE
 "(130, 360)",Cardboard,TRUE
 "(260, 318)",OpenedCardboard,TRUE
 "(480, 320)",BrokenSearcher1,TRUE
-"(600, 160)",Door[StoreRoom],TRUE
+"(680, 160)",Door[StoreRoom],TRUE
 "(152, 0)",LightBulb,TRUE
 "(452, -60)",LightBulb,TRUE
