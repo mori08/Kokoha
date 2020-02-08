@@ -5,10 +5,10 @@
 namespace
 {
 	// ‘¬‚³
-	constexpr double SPEED = 1.0;
+	constexpr double SPEED = 1.5;
 
 	// ’â~‹——£
-	constexpr double STOP_DISTANCE = 0.1;
+	constexpr double STOP_DISTANCE = 3.0;
 
 	// ’â~ŠÔ(•b)
 	constexpr double STOP_TIME = 3.0;
@@ -33,7 +33,8 @@ void Kokoha::RandomLight::update()
 	}
 
 	// ’â~’†‚Ìˆ—
-	if ((mGoal - mBody.center).length() < STOP_DISTANCE)
+	if ((mGoal - mBody.center).length() < STOP_DISTANCE
+		|| !GameManager::instance().getStageData().isWalkAble(mGoal))
 	{
 		mWaitTime -= Scene::DeltaTime();
 	}

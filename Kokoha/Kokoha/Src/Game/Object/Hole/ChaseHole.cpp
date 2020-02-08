@@ -6,7 +6,7 @@
 namespace
 {
 	// ê∂ê¨Ç∑ÇÈä‘äu
-	constexpr double GENERATE_SPAN = 4.0;
+	constexpr double GENERATE_SPAN = 6.0;
 }
 
 
