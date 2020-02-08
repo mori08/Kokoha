@@ -2,6 +2,7 @@
 
 
 #include "GameEnemy.h"
+#include "../../../Slice/Linearly.h"
 
 
 namespace Kokoha
@@ -13,15 +14,30 @@ namespace Kokoha
 	*/
 	class WhiteEnemy : public GameEnemy
 	{
+	private:
+
+		// 削除時間
+		double mEraseSecond;
+
+		// アルファ値
+		Linearly<double> mAlpha;
+
+		// 削除条件
+		bool mEraseAble;
+
 	public:
 
 		WhiteEnemy(const Vec2& pos);
 
 	private:
 
+		virtual void update() override;
+
 		bool isEraseAble()const override;
 
-		void checkAnother(const GameObject& another) override;
+		virtual void checkAnother(const GameObject& another) override;
+
+		void draw() const override;
 
 	};
 }

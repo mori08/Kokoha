@@ -34,6 +34,8 @@ namespace Kokoha
 
 		static const ObjectType GOAL;        // ƒS[ƒ‹
 
+		static const ObjectType HOLE;        // “G‚ğoŒ»‚³‚¹‚éŒŠ
+
 	private:
 
 		/// <summary>

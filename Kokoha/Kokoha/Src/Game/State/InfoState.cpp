@@ -34,23 +34,30 @@ Kokoha::InfoState::InfoState()
 
 	if (!sInfoMap.count(stageName)) { return; }
 
+	// エリア
+	if (sInfoMap[stageName].AREA_FLAG_FUNC())
+	{
+		mTextList.emplace_back
+		(
+			U"エリア[ " + sInfoMap[stageName].AREA_FLAG_FUNC().value() + U" ] 追加"
+		);
+	}
+
+	// カセット
 	if (sInfoMap[stageName].CASSETTE_ID)
 	{
 		int32 cassetteId = sInfoMap[stageName].CASSETTE_ID.value();
+
+		if (CassetteManager::instance().getCassetteList()[cassetteId]->getState() != Cassette::NO_POSSESS_STATE)
+		{
+			return;
+		}
 
 		CassetteManager::instance().getCassetteList()[cassetteId]->setState(Cassette::POSSESS_STATE);
 
 		mTextList.emplace_back
 		(
 			U"カセット[ " + CassetteManager::instance().getCassetteList()[cassetteId]->NAME + U" ] 獲得"
-		);
-	}
-
-	if (sInfoMap[stageName].AREA_FLAG_FUNC())
-	{
-		mTextList.emplace_back
-		(
-			U"エリア[ " + sInfoMap[stageName].AREA_FLAG_FUNC().value() + U" ] 追加"
 		);
 	}
 }
@@ -62,12 +69,12 @@ void Kokoha::InfoState::setInfoMap()
 	sInfoMap.try_emplace
 	(
 		U"1-1",
-		std::move(Info(0, [](){ return AreaFlag(U"実験室"); }))
+		std::move(Info(12, [](){ return AreaFlag(U"実験室"); }))
 	);
 	sInfoMap.try_emplace
 	(
 		U"1-2",
-		std::move(Info(1, []()
+		std::move(Info(13, []()
 			{
 				if (!RecordManager::instance().getRecord(U"3-2")) { return AreaFlag(none); }
 				return AreaFlag(U"ゴミ捨て場");
@@ -77,7 +84,7 @@ void Kokoha::InfoState::setInfoMap()
 	sInfoMap.try_emplace
 	(
 		U"1-3",
-		std::move(Info(2, []() { return AreaFlag(none); }))
+		std::move(Info(14, []() { return AreaFlag(none); }))
 	);
 
 	// 2-

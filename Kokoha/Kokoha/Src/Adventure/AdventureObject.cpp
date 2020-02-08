@@ -45,12 +45,16 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"TrashBox0"]       = []() { openWindow(std::make_unique<InfoWindow>(U"何かが捨ててある.")); };
 	sMakeWindowFuncMap[U"Cardboard"]       = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は分からない.")); };
 	sMakeWindowFuncMap[U"OpenedCardboard"] = []() { openWindow(std::make_unique<InfoWindow>(U"段ボール,\n中身は空だ.")); };
+	sMakeWindowFuncMap[U"Shelf"]           = []() { openWindow(std::make_unique<InfoWindow>(U"大きな棚だ.\n高い所は届かない.")); };
 	
 	// ステージに挑戦
 	sMakeWindowFuncMap[U"BrokenSearcher1"] = []() { openStageWindow(U"1-1"); };
+	sMakeWindowFuncMap[U"BrokenDeveloper"] = []() { openStageWindow(Array<String>{U"2-1", U"2-2", U"2-3"}); };
+	sMakeWindowFuncMap[U"BrokenRepair0"]   = []() { openStageWindow(U"3-1"); };
 
 	// 別エリアに移動
-	sMakeWindowFuncMap[U"Door[StoreRoom]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[StoreRoom]"]  = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[Labolatory]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
 }
 
 
@@ -101,6 +105,8 @@ void Kokoha::AdventureObject::openStageWindow(const Array<String>& stageNameList
 		
 		// クリアしていないステージがあるとき
 		openWindow(std::make_unique<ChallengeStageWindow>(stageName));
+
+		return;
 	}
 
 	// 全てクリアしているとき

@@ -10,4 +10,5 @@ namespace Kokoha
 	const ObjectType ObjectType::LIGHT      (1 << 3);
 	const ObjectType ObjectType::ATTACK     (1 << 4);
 	const ObjectType ObjectType::GOAL       (1 << 5);
+	const ObjectType ObjectType::HOLE       (1 << 6);
 }

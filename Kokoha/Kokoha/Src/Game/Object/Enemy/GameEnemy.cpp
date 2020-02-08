@@ -70,8 +70,7 @@ void Kokoha::GameEnemy::update()
 
 void Kokoha::GameEnemy::draw() const
 {
-	mBodySlide.getTexture().drawAt(mBody.center);
-	mFaceSlide.getTexture().drawAt(mBody.center);
+	drawChangeAlpha(1.0);
 }
 
 
@@ -90,6 +89,13 @@ void Kokoha::GameEnemy::checkAnother(const GameObject& another)
 	{
 		GameManager::instance().setState(std::make_unique<GameOverState>());
 	}
+}
+
+
+void Kokoha::GameEnemy::drawChangeAlpha(const double alpha) const
+{
+	mBodySlide.getTexture().drawAt(mBody.center, AlphaF(alpha));
+	mFaceSlide.getTexture().drawAt(mBody.center, AlphaF(alpha));
 }
 
 

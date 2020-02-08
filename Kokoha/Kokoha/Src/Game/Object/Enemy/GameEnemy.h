@@ -56,6 +56,12 @@ namespace Kokoha
 	public:
 
 		/// <summary>
+		/// アルファ値を変更した描画
+		/// </summary>
+		/// <param name="alpha"> アルファ値 </param>
+		void drawChangeAlpha(const double alpha) const;
+
+		/// <summary>
 		/// 敵の場所を示す光をつける
 		/// </summary>
 		/// <param name="radius"> 半径             </param>

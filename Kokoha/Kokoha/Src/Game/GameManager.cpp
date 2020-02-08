@@ -34,9 +34,9 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<GamePlayer>(U"Player");
 
 	// ìG
-	setGenerateObjectFunc<BlackEnemy>            (U"BlackStop");
-	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"BlackChase");
-	setGenerateObjectFunc<ChaseEnemy<WhiteEnemy>>(U"WhiteChase");
+	setGenerateObjectFunc<BlackEnemy>            (U"StopEnemy");
+	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"ChaseEnemy");
+	setGenerateObjectFunc<WhiteEnemy>            (U"WhiteEnemy");
 
 	// ÉSÅ[Éã
 	setGenerateObjectFunc<GameGoal>   (U"Goal");
