@@ -11,7 +11,7 @@ namespace
 	constexpr double STOP_DISTANCE = 3.0;
 
 	// ’âŽ~ŽžŠÔ(•b)
-	constexpr double STOP_TIME = 3.0;
+	constexpr double STOP_TIME = 1.0;
 }
 
 

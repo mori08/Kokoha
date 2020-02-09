@@ -53,6 +53,7 @@ void Kokoha::AdventurePlayer::set(int32 posX, int32 direction)
 		mSlide.mirror();
 		mDirection *= -1;
 	}
+	mCheckPos = none;
 }
 
 

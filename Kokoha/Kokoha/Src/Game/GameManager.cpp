@@ -4,6 +4,7 @@
 // オブジェクト
 #include "Object/Player/GamePlayer.h"
 #include "Object/Enemy/ChaseEnemy.h"
+#include "Object/Enemy/RandomEnemy.h"
 #include "Object/Light/EnemyLight.h"
 #include "Object/Attack/ChaseEnemyAttack.h"
 #include "Object/Goal/GameGoal.h"
@@ -40,7 +41,8 @@ Kokoha::GameManager::GameManager()
 	// 敵
 	setGenerateObjectFunc<BlackEnemy>            (U"StopEnemy");
 	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"ChaseEnemy");
-	setGenerateObjectFunc<WhiteEnemy>            (U"WhiteEnemy");
+	setGenerateObjectFunc<RandomEnemy>           (U"RandomEnemy");
+	
 
 	// ゴール
 	setGenerateObjectFunc<GameGoal>   (U"Goal");
@@ -199,7 +201,7 @@ void Kokoha::GameManager::update()
 void Kokoha::GameManager::draw() const
 {
 #ifdef _DEBUG
-	static bool debugMode = false;
+	static bool debugMode = true;
 	debugMode ^= Key0.up();
 
 	// デバッグ時に薄い明りとマスを示す線を描画

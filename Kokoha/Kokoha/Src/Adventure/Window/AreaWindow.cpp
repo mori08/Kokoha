@@ -90,12 +90,12 @@ void Kokoha::AreaWindow::select()
 	}
 
 	// ˆÊ’uŠÖŒW‚Ìİ’è
-	for (int32 i = 1; i < mButtonList.size(); ++i)
+	for (int32 i = 0; i < mButtonList.size(); ++i)
 	{
 		ButtonManager::instance().setVerticalAdjacentButton
 		(
-			mButtonList[i - 1].getName(),
-			mButtonList[i].getName()
+			mButtonList[i].getName(),
+			mButtonList[(i+1) % (int32)mButtonList.size()].getName()
 		);
 	}
 

@@ -166,7 +166,7 @@ void Kokoha::RunAwayData::drawDebug()const
 {
 #ifdef _DEBUG
 
-	static bool debugMode = false;
+	static bool debugMode = true;
 	debugMode ^= Key0.up();
 
 	if (!debugMode) { return; }
