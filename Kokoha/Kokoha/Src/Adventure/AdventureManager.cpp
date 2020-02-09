@@ -36,7 +36,7 @@ namespace
 	{
 		U"StoreRoom",
 		U"Labolatory",
-		U"StoreRoom",
+		U"Library",
 		U"DoctorRoom",
 		U"StoreRoom",
 		U"StoreRoom",
