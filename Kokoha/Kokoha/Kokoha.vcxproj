@@ -268,6 +268,7 @@
     <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\GameObject.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\ImitateGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RunAwayGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\ChaseHole.cpp" />
@@ -354,6 +355,7 @@
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\GameObject.h" />
     <ClInclude Include="Src\Game\Object\Goal\GameGoal.h" />
+    <ClInclude Include="Src\Game\Object\Goal\ImitateGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RunAwayGoal.h" />
     <ClInclude Include="Src\Game\Object\Hole\RandomBeetleHole.h" />
