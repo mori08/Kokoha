@@ -660,7 +660,9 @@
     <ClCompile Include="Src\Game\Object\Enemy\EggWhiteEnemy.cpp">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Object\Hole\RandomBeetleHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\RandomBeetleHole.cpp">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">

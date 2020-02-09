@@ -23,7 +23,7 @@ namespace
 		[]() { return Kokoha::RecordManager::instance().getRecord(U"4-1"); },
 		[]() { return Kokoha::RecordManager::instance().getRecord(U"3-2") && Kokoha::RecordManager::instance().getRecord(U"1-2"); },
 		[]() { return Kokoha::RecordManager::instance().getRecord(U"3-3"); },
-		[]() { return Kokoha::RecordManager::instance().getRecord(U"1-2"); }
+		[]() { return Kokoha::RecordManager::instance().getRecord(U"2-1"); }
 	};
 
 	// ボタンのサイズ

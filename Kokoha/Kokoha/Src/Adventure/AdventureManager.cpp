@@ -40,7 +40,7 @@ namespace
 		U"DoctorRoom",
 		U"StoreRoom",
 		U"StoreRoom",
-		U"StoreRoom"
+		U"Entrance"
 	};
 }
 
