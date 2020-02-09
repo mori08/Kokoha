@@ -8,7 +8,7 @@ namespace
 	constexpr double RADIUS = 8;
 
 	// ‘¬‚³
-	constexpr double SPEED = 1.0;
+	constexpr double SPEED = 1.2;
 
 	// ‰æ‘œ‚ÌƒTƒCƒY
 	constexpr Size TEXTURE_SIZE(24, 24);

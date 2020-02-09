@@ -28,7 +28,7 @@ void Kokoha::GoalLight::update()
 
 	mRootingSecond -= Scene::DeltaTime();
 
-	if (mIsRooting && mRootingSecond < 0)
+	if (mIsRooting && mRootingSecond < 0 && !mEraseAble)
 	{
 		mRootingSecond = ROOTING_SPAN;
 

@@ -12,7 +12,7 @@ Kokoha::InputManager::InputManager()
 
 void Kokoha::InputManager::changeInputState()
 {
-	if ((MouseL | MouseR).up())
+	if ((MouseL | MouseR).up() && Scene::Rect().mouseOver())
 	{
 		mInputState = std::make_unique<MouseInputState>();
 		return;

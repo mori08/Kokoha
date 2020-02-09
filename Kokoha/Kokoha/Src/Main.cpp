@@ -53,9 +53,9 @@ void Main()
 
 	while (System::Update())
 	{
-		Kokoha::InputManager::instance().changeInputState();
-
 		sceneManager.update();
+
+		Kokoha::InputManager::instance().changeInputState();
 
 		Kokoha::showFps();
 	}
