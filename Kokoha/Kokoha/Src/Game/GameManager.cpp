@@ -12,6 +12,7 @@
 #include "Object/Goal/RandomGoal.h"
 #include "Object/Goal/RunAwayGoal.h"
 #include "Object/Goal/ImitateGoal.h"
+#include "Object/Goal/LockGoal.h"
 #include "Object/Hole/StraightHole.h"
 #include "Object/Hole/RandomHole.h"
 #include "Object/Hole/ChaseHole.h"
@@ -51,6 +52,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<RandomGoal> (U"RandomGoal");
 	setGenerateObjectFunc<RunAwayGoal>(U"RunAwayGoal");
 	setGenerateObjectFunc<ImitateGoal>(U"ImitateGoal");
+	setGenerateObjectFunc<LockGoal>   (U"LockGoal");
 
 	// ”’‚¢“G‚ÌŒŠ
 	setGenerateObjectFunc<UpHole>          (U"UpHole");

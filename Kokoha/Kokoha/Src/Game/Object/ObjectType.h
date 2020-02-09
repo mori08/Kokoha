@@ -36,6 +36,8 @@ namespace Kokoha
 
 		static const ObjectType HOLE;        // “G‚ğoŒ»‚³‚¹‚éŒŠ
 
+		static const ObjectType KEY;         // ƒS[ƒ‹‚ÌŒ®
+
 	private:
 
 		/// <summary>

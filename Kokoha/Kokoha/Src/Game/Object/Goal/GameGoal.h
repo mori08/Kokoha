@@ -34,7 +34,7 @@ namespace Kokoha
 
 		void draw()const override;
 
-		void checkAnother(const GameObject& another)override;
+		virtual void checkAnother(const GameObject& another)override;
 
 	};
 }
