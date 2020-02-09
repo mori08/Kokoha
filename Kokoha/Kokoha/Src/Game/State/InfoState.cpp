@@ -16,8 +16,8 @@ namespace
 	constexpr double POS_MOVE_RATE = 1e-4;
 
 	// ÉVÅ[ÉìëJà⁄Ç∑ÇÈéûä‘
-	constexpr double CHANGE_SCENE_TIME   = 3.0;
-	constexpr double CHANGE_SCENE_TIME_2 = 8.0;
+	constexpr double CHANGE_SCENE_TIME   = 2.0;
+	constexpr double CHANGE_SCENE_TIME_2 = 5.0;
 }
 
 
