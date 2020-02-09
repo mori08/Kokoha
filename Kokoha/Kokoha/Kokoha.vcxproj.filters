@@ -666,6 +666,9 @@
     <ClCompile Include="Src\Game\Object\Enemy\RandomEnemy.cpp">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\ImitateEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -927,6 +930,9 @@
       <Filter>Src\Game\Object\Hole</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Enemy\RandomEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\ImitateEnemy.h">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
