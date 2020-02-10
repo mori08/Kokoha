@@ -1,10 +1,9 @@
 #pragma once
 
 
+# define SIV3D_CONCURRENT
+# include <Siv3D.hpp>
 # include "../Scene.h"
-# include <thread>
-# include <future>
-# include <utility>
 
 
 namespace Kokoha
@@ -26,14 +25,14 @@ namespace Kokoha
 		// ロード中のとき true , 終了したとき false
 		bool mIsLoading;
 
+		// スレッドを合流させたとき true , そうできないとき false
+		bool mIsJoined;
+
 		// ロード中に表示する文字列
 		String mText;
 
 		// ロードするスレッド
-		std::thread mLoadThread;
-		
-		// エラーメッセージの取得
-		ErrorMessage mErrorMessage;
+		ConcurrentTask<ErrorMessage> mLoadThread;
 
 	public:
 

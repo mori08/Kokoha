@@ -25,14 +25,16 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	: IScene(init)
 	, mIsLoading(true)
 	, mText(text)
+	, mIsJoined(false)
 {
 	// ï ÉXÉåÉbÉhÇÃçÏê¨
-	mLoadThread = std::thread
+	mLoadThread = CreateConcurrentTask
 	(
 		[this]()
 		{
-			mErrorMessage = load();
+			ErrorMessage err = load();
 			mIsLoading = false;
+			return err;
 		}
 	);
 }
@@ -40,7 +42,10 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 
 Kokoha::LoadScene::~LoadScene()
 {
-	mLoadThread.join();
+	if (!mIsJoined)
+	{
+		mLoadThread.wait();
+	}
 }
 
 
@@ -48,9 +53,13 @@ void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
 
-	if (mErrorMessage)
+	mLoadThread.wait();
+	mIsJoined = true;
+	auto errorMessage = mLoadThread.get();
+
+	if (errorMessage)
 	{
-		printDebug(mErrorMessage.value());
+		printDebug(errorMessage.value());
 	}
 
 	if (!changeScene(complete()))

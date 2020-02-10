@@ -260,6 +260,7 @@
     <ClCompile Include="Src\Game\Object\Attack\ChaseEnemyAttack.cpp" />
     <ClCompile Include="Src\Game\Object\Attack\GameAttack.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\BlackEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\ClingEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\EggWhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\ImitateEnemy.cpp" />
@@ -349,6 +350,7 @@
     <ClInclude Include="Src\Game\Object\Attack\GameAttack.h" />
     <ClInclude Include="Src\Game\Object\Enemy\BlackEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ChaseEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\ClingEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\EggWhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ImitateEnemy.h" />

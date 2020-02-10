@@ -6,6 +6,7 @@
 #include "Object/Enemy/ChaseEnemy.h"
 #include "Object/Enemy/RandomEnemy.h"
 #include "Object/Enemy/ImitateEnemy.h"
+#include "Object/Enemy/ClingEnemy.h"
 #include "Object/Light/EnemyLight.h"
 #include "Object/Attack/ChaseEnemyAttack.h"
 #include "Object/Goal/GameGoal.h"
@@ -46,6 +47,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<ChaseEnemy<BlackEnemy>>(U"ChaseEnemy");
 	setGenerateObjectFunc<RandomEnemy>           (U"RandomEnemy");
 	setGenerateObjectFunc<ImitateEnemy>          (U"ImitateEnemy");
+	setGenerateObjectFunc<ClingEnemy>            (U"ClingEnemy");
 
 	// ÉSÅ[Éã
 	setGenerateObjectFunc<GameGoal>   (U"Goal");

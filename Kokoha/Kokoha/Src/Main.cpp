@@ -1,4 +1,6 @@
-﻿#include "MyLibrary.h"
+﻿# define SIV3D_CONCURRENT
+
+#include "MyLibrary.h"
 #include "MyColor.h"
 #include "Input/InputManager.h"
 

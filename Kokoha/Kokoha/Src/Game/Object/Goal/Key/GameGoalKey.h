@@ -17,6 +17,9 @@ namespace Kokoha
 		// プレイヤーに接触 true
 		bool mIsChecked;
 
+		// ゴールを変更する時間
+		double mChangeGoalSecond;
+
 		// 目的座標
 		Vec2 mGoal;
 
@@ -37,6 +40,10 @@ namespace Kokoha
 		{
 			return mIsChecked;
 		}
+
+	private:
+
+		void changeGoal();
 
 	};
 }

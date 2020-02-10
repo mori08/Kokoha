@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "RecordManager.h"
 #include "../Load/LoadScene.h"
+#include "RecordManager.h"
 
 
 namespace Kokoha

@@ -86,7 +86,7 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 
 		// 「つけかえる」ボタン
 		Button buttonTsukekaeru(U"つけかえる", region);
-		mAlphaMap[U"つけかえる"] = CassetteManager::instance().getEquipment(cassette->getState()).isAddAbleCassette(cassette)
+		mAlphaMap[U"つけかえる"] = CassetteManager::instance().getEquipment(cassette->getState() + 1).isAddAbleCassette(cassette)
 			? 0xFF
 			: 0x80;
 		buttonTsukekaeru.setOnClickFunc
