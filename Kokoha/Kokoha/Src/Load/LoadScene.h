@@ -25,9 +25,6 @@ namespace Kokoha
 		// ロード中のとき true , 終了したとき false
 		bool mIsLoading;
 
-		// スレッドを合流させたとき true , そうできないとき false
-		bool mIsJoined;
-
 		// ロード中に表示する文字列
 		String mText;
 

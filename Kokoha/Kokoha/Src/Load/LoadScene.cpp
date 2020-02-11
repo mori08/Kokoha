@@ -25,7 +25,6 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	: IScene(init)
 	, mIsLoading(true)
 	, mText(text)
-	, mIsJoined(false)
 {
 	// ï ÉXÉåÉbÉhÇÃçÏê¨
 	mLoadThread = CreateConcurrentTask
@@ -42,10 +41,7 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 
 Kokoha::LoadScene::~LoadScene()
 {
-	if (!mIsJoined)
-	{
-		mLoadThread.wait();
-	}
+	
 }
 
 
@@ -54,7 +50,6 @@ void Kokoha::LoadScene::update()
 	if (mIsLoading) { return; }
 
 	mLoadThread.wait();
-	mIsJoined = true;
 	auto errorMessage = mLoadThread.get();
 
 	if (errorMessage)
