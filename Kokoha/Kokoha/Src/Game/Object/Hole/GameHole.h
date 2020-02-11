@@ -20,9 +20,6 @@ namespace Kokoha
 
 	protected:
 
-		// –Ú“IÀ•W
-		Vec2 mGoal;
-
 		// “G‚Ì¶¬ŠÔŠu(s)
 		Linearly<double> mGenerateSpan;
 

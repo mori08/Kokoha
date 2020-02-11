@@ -91,4 +91,18 @@ namespace Kokoha
 	/// <returns> 格子点 </returns>
 	Array<Point> getGridPoint(const Rect& rect);
 
+	/// <summary>
+	/// 角度からその方向を向いた単位ベクトルを取得
+	/// </summary>
+	/// <param name="angle"> 角度(rad) </param>
+	/// <returns> 単位ベクトル </returns>
+	/// <remarks>
+	/// 0(rad)をベクトル(1,0)に対応させ，
+	/// 反時計回りを正の方向とする
+	/// </remarks>
+	inline constexpr Vec2 angleToVec(double angle)
+	{
+		return std::move(Vec2(Cos(angle), Sin(angle)));
+	}
+
 }

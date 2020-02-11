@@ -23,7 +23,6 @@ namespace
 
 Kokoha::GameHole::GameHole(const Vec2& pos, double generateSpan)
 	: GameObject(Circle(pos, RADIUS), ObjectType::HOLE)
-	, mGoal(pos)
 	, mGenerateSpan(generateSpan, 1.0)
 {
 	for (auto& angle : mRingAngleList) { angle = 0; }

@@ -264,6 +264,7 @@
     <ClCompile Include="Src\Game\Object\Enemy\EggWhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\ImitateEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\MinionEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\RandomEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\StraightWhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
@@ -271,6 +272,7 @@
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\ImitateGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\Key\GameGoalKey.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\LeaderGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\LockGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RunAwayGoal.cpp" />
@@ -278,6 +280,7 @@
     <ClCompile Include="Src\Game\Object\Hole\GameHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\RandomBeetleHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\RandomHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\ShotHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\StraightHole.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\FlashLight.cpp" />
@@ -354,6 +357,7 @@
     <ClInclude Include="Src\Game\Object\Enemy\EggWhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ImitateEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\MinionEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\RandomEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\StraightWhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h" />
@@ -361,6 +365,7 @@
     <ClInclude Include="Src\Game\Object\Goal\GameGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\ImitateGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\Key\GameGoalKey.h" />
+    <ClInclude Include="Src\Game\Object\Goal\LeaderGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\LockGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RunAwayGoal.h" />
@@ -368,6 +373,7 @@
     <ClInclude Include="Src\Game\Object\Hole\ChaseHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\GameHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\RandomHole.h" />
+    <ClInclude Include="Src\Game\Object\Hole\ShotHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\StraightHole.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
     <ClInclude Include="Src\Game\Object\Light\FlashLight.h" />

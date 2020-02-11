@@ -16,7 +16,7 @@ namespace Kokoha
 
 		BlackEnemy(const Vec2& pos);
 
-	private:
+	protected:
 
 		bool isEraseAble()const override
 		{
