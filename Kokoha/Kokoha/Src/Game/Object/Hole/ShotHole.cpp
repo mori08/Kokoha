@@ -57,4 +57,6 @@ void Kokoha::ShotHole::checkAnother(const GameObject& another)
 	{
 		mPlayerPos = pos.value();
 	}
+
+	GameHole::checkAnother(another);
 }

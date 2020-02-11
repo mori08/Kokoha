@@ -18,7 +18,7 @@ namespace
 	constexpr double CHASE_DISTANCE = 128;
 
 	// ƒvƒŒƒCƒ„[‚ğ’Ç‚¢‚©‚¯‚é‘¬‚³
-	constexpr double CHASE_SPEED = 0.8;
+	constexpr double CHASE_SPEED = 0.6;
 }
 
 

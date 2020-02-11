@@ -280,6 +280,7 @@
     <ClCompile Include="Src\Game\Object\Hole\GameHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\RandomBeetleHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\RandomHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\SatelliteHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\ShotHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\StraightHole.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
@@ -373,6 +374,7 @@
     <ClInclude Include="Src\Game\Object\Hole\ChaseHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\GameHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\RandomHole.h" />
+    <ClInclude Include="Src\Game\Object\Hole\SatelliteHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\ShotHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\StraightHole.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />

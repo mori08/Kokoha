@@ -4,6 +4,6 @@
 "(240, 60)",BrokenPoster,TRUE
 "(456, 266)",DoctorWorkbench,TRUE
 "(560, -223)",Monitor,TRUE
-"(800, 320)",TrashBox,TRUE
+"(800, 360)",BrokenRepair1,TRUE
 "(980, 360)",Door[DoctorRoom],TRUE
 "(310, 220)",BrokenHelpRobot,TRUE

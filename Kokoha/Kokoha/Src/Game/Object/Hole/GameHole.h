@@ -2,7 +2,7 @@
 
 
 #include "../GameObject.h"
-#include "../../../Slice/Linearly.h"
+#include "../../../Slice/SliceTexture.h"
 
 
 namespace Kokoha
@@ -25,8 +25,7 @@ namespace Kokoha
 
 	private:
 
-		// —Ö‚ª‚È‚·Šp“x
-		std::array<double, RING_NUM> mRingAngleList;
+		SliceTexture mSlide;
 
 	public:
 

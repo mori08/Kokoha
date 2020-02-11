@@ -6,7 +6,7 @@
 namespace 
 {
 	// ìGÇê∂ê¨Ç∑ÇÈä‘äu
-	const double GENERATE_SPAN = 1.0;
+	const double GENERATE_SPAN = 1.5;
 
 	// ë¨Ç≥
 	const double SPEED = 0.6;

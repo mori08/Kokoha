@@ -37,7 +37,7 @@ namespace
 	constexpr double BLUR_RATE = 0.4;
 
 	// Œõ‚ğ•ÏX‚·‚éŠ„‡
-	constexpr double LIGHT_RATE = 0.2;
+	constexpr double LIGHT_RATE = 0.1;
 }
 
 
