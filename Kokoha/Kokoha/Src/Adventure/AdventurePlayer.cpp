@@ -31,6 +31,22 @@ namespace
 		false
 	};
 
+	// 前向きアニメーション
+	const Kokoha::Animation FRONT_ANIM
+	{
+		0.0,
+		Array<Point>{Point(0,0)},
+		false
+	};
+
+	// 後向きアニメーション
+	const Kokoha::Animation BACK_ANIM
+	{
+		0.0,
+		Array<Point>{Point(2,2)},
+		false
+	};
+
 	// 確認アイコンを表示する座標のずれ
 	constexpr Point CHECK_OFFSET(0, -60);
 }
@@ -42,6 +58,8 @@ Kokoha::AdventurePlayer::AdventurePlayer()
 {
 	mSlide.setAnimation(U"Walk" , WALK_ANIM);
 	mSlide.setAnimation(U"Stand", STAND_ANIM);
+	mSlide.setAnimation(U"Front", FRONT_ANIM);
+	mSlide.setAnimation(U"Back" , BACK_ANIM);
 }
 
 
@@ -115,7 +133,18 @@ void Kokoha::AdventurePlayer::walk(const Array<AdventureObject>& objectList)
 	// アニメーションの変更
 	if (direction == 0)
 	{
-		mSlide.startAnotherAnimation(U"Stand");
+		if (KeyS.pressed())
+		{
+			mSlide.startAnotherAnimation(U"Front");
+		}
+		else if (KeyW.pressed())
+		{
+			mSlide.startAnotherAnimation(U"Back");
+		}
+		else
+		{
+			mSlide.startAnotherAnimation(U"Stand");
+		}
 	}
 	else
 	{
