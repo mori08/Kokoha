@@ -38,7 +38,7 @@ namespace
 		U"Labolatory",
 		U"Library",
 		U"DoctorRoom",
-		U"StoreRoom",
+		U"GarbageDump",
 		U"StoreRoom",
 		U"Entrance"
 	};

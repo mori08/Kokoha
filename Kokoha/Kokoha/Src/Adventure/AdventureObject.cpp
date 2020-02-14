@@ -61,11 +61,12 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"BrokenHelpRobot"]  = []() { openStageWindow(Array<String>{U"6-1", U"6-2", U"6-3"}); };
 
 	// •ÊƒGƒŠƒA‚ÉˆÚ“®
-	sMakeWindowFuncMap[U"Door[StoreRoom]"]  = []() { openWindow(std::make_unique<AreaWindow>()); };
-	sMakeWindowFuncMap[U"Door[Labolatory]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
-	sMakeWindowFuncMap[U"Door[Entrance]"]   = []() { openWindow(std::make_unique<AreaWindow>()); };
-	sMakeWindowFuncMap[U"Door[Library]"]    = []() { openWindow(std::make_unique<AreaWindow>()); };
-	sMakeWindowFuncMap[U"Door[DoctorRoom]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[StoreRoom]"]   = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[Labolatory]"]  = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[Entrance]"]    = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[Library]"]     = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[DoctorRoom]"]  = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[GarbageDump]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
 }
 
 
