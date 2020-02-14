@@ -693,7 +693,12 @@
     <ClCompile Include="Src\Game\Object\Hole\ShotHole.cpp">
       <Filter>Src\Game\Object\Hole</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Game\Object\Hole\SatelliteHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\SatelliteHole.cpp">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Hole\ClingBeetleHole.cpp">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -982,6 +987,9 @@
       <Filter>Src\Game\Object\Hole</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Hole\SatelliteHole.h">
+      <Filter>Src\Game\Object\Hole</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Hole\ClingBeetleHole.h">
       <Filter>Src\Game\Object\Hole</Filter>
     </ClInclude>
   </ItemGroup>
