@@ -265,6 +265,7 @@
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\ImitateEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\MinionEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\PatrolTeamEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\RandomEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\StraightWhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\WhiteEnemy.cpp" />
@@ -360,6 +361,7 @@
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ImitateEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\MinionEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\PatrolTeamEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\RandomEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\StraightWhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\WhiteEnemy.h" />

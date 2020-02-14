@@ -53,6 +53,7 @@ void Kokoha::AdventureObject::registerWindow()
 	// ステージに挑戦
 	sMakeWindowFuncMap[U"BrokenSearcher1"]  = []() { openStageWindow(U"1-1"); };
 	sMakeWindowFuncMap[U"BrokenSearcher2"]  = []() { openStageWindow(U"1-2"); };
+	sMakeWindowFuncMap[U"BrokenSearcher0"]  = []() { openStageWindow(U"1-3"); };
 	sMakeWindowFuncMap[U"BrokenDeveloper"]  = []() { openStageWindow(Array<String>{U"2-1", U"2-2", U"2-3"}); };
 	sMakeWindowFuncMap[U"BrokenRepair0"]    = []() { openStageWindow(U"3-1"); };
 	sMakeWindowFuncMap[U"BrokenRepair1"]    = []() { openStageWindow(U"3-2"); };

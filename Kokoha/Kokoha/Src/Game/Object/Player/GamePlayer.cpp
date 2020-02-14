@@ -66,9 +66,5 @@ void Kokoha::GamePlayer::drawLight() const
 
 void Kokoha::GamePlayer::checkAnother(const GameObject&)
 {
-	/*
-	TODO
-	ゴールにあたるとクリア
-	敵にあたるとゲームオーバー
-	*/
+
 }

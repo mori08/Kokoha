@@ -699,6 +699,9 @@
     <ClCompile Include="Src\Game\Object\Hole\ClingBeetleHole.cpp">
       <Filter>Src\Game\Object\Hole</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\PatrolTeamEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -991,6 +994,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Hole\ClingBeetleHole.h">
       <Filter>Src\Game\Object\Hole</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\PatrolTeamEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
