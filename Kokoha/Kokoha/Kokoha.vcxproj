@@ -261,6 +261,11 @@
     <ClCompile Include="Src\Game\Object\Attack\GameAttack.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\BlackEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\ClingEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceChaseEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceClingEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceGuardEnemy.cpp" />
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceRandomEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\EggWhiteEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\GameEnemy.cpp" />
     <ClCompile Include="Src\Game\Object\Enemy\ImitateEnemy.cpp" />
@@ -273,6 +278,7 @@
     <ClCompile Include="Src\Game\Object\Goal\GameGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\ImitateGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\Key\GameGoalKey.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\LastGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\LeaderGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\LockGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
@@ -357,6 +363,11 @@
     <ClInclude Include="Src\Game\Object\Enemy\BlackEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ChaseEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ClingEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceChaseEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceClingEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceGuardEnemy.h" />
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceRandomEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\EggWhiteEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\GameEnemy.h" />
     <ClInclude Include="Src\Game\Object\Enemy\ImitateEnemy.h" />
@@ -369,6 +380,7 @@
     <ClInclude Include="Src\Game\Object\Goal\GameGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\ImitateGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\Key\GameGoalKey.h" />
+    <ClInclude Include="Src\Game\Object\Goal\LastGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\LeaderGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\LockGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />

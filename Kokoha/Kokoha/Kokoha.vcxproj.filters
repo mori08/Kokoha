@@ -702,6 +702,24 @@
     <ClCompile Include="Src\Game\Object\Enemy\PatrolTeamEnemy.cpp">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Object\Goal\LastGoal.cpp">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceRandomEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceClingEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceChaseEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Enemy\DefenceGuardEnemy.cpp">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -996,6 +1014,24 @@
       <Filter>Src\Game\Object\Hole</Filter>
     </ClInclude>
     <ClInclude Include="Src\Game\Object\Enemy\PatrolTeamEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Goal\LastGoal.h">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceRandomEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceClingEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceChaseEnemy.h">
+      <Filter>Src\Game\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Enemy\DefenceGuardEnemy.h">
       <Filter>Src\Game\Object\Enemy</Filter>
     </ClInclude>
   </ItemGroup>

@@ -61,6 +61,7 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"BrokenResearcher"] = []() { openStageWindow(Array<String>{U"4-1", U"4-2", U"4-3"}); };
 	sMakeWindowFuncMap[U"PC"]               = []() { openStageWindow(Array<String>{U"5-1", U"5-2", U"5-3"}); };
 	sMakeWindowFuncMap[U"BrokenHelpRobot"]  = []() { openStageWindow(Array<String>{U"6-1", U"6-2", U"6-3"}); };
+	sMakeWindowFuncMap[U"EntranceGate"]     = []() { openStageWindow(U"Last"); };
 
 	// 別エリアに移動
 	sMakeWindowFuncMap[U"Door[StoreRoom]"]   = []() { openWindow(std::make_unique<AreaWindow>()); };
@@ -103,6 +104,11 @@ void Kokoha::AdventureObject::openStageWindow(const String& stageName)
 {
 	if (RecordManager::instance().getRecord(stageName))
 	{
+		if (stageName == U"Last")
+		{
+			return;
+		}
+
 		openWindow(std::make_unique<InfoWindow>(U"このロボットには\nもう用はない"));
 		return;
 	}

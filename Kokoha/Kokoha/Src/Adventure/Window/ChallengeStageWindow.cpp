@@ -114,6 +114,10 @@ void Kokoha::ChallengeStageWindow::draw() const
 	{
 		FontAsset(U"20")(U"このパソコンにアクセスしますか？").drawAt(TEXT_POS, MyWhite);
 	}
+	else if (mStageName == U"Last")
+	{
+		FontAsset(U"20")(U"このドアにアクセスしますか？").drawAt(TEXT_POS, MyWhite);
+	}
 	else
 	{
 		FontAsset(U"20")(U"このロボットにアクセスしますか？").drawAt(TEXT_POS, MyWhite);
