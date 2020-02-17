@@ -24,6 +24,7 @@
 #include "Object/Hole/ShotHole.h"
 #include "Object/Hole/SatelliteHole.h"
 #include "Object/Hole/ClingBeetleHole.h"
+#include "Object/Hole/VirusBeetleHole.h"
 
 // èÛë‘
 #include "State/PlayingState.h"
@@ -76,6 +77,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<ShotHole>        (U"ShotHole");
 	setGenerateObjectFunc<SatelliteHole>   (U"SatelliteHole");
 	setGenerateObjectFunc<ClingBeetleHole> (U"ClingBeetleHole");
+	setGenerateObjectFunc<VirusBeetleHole> (U"VirusBeetleHole");
 
 	InfoState::setInfoMap();
 }

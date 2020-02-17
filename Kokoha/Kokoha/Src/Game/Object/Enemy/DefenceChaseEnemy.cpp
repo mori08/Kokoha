@@ -5,7 +5,7 @@
 namespace
 {
 	// ‘¬‚³
-	constexpr double SPEED = 0.6;
+	constexpr double SPEED = 0.8;
 }
 
 

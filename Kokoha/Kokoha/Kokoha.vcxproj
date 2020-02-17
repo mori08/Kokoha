@@ -291,6 +291,7 @@
     <ClCompile Include="Src\Game\Object\Hole\SatelliteHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\ShotHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\StraightHole.cpp" />
+    <ClCompile Include="Src\Game\Object\Hole\VirusBeetleHole.cpp" />
     <ClCompile Include="Src\Game\Object\Light\EnemyLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\FlashLight.cpp" />
     <ClCompile Include="Src\Game\Object\Light\GameLight.cpp" />
@@ -393,6 +394,7 @@
     <ClInclude Include="Src\Game\Object\Hole\SatelliteHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\ShotHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\StraightHole.h" />
+    <ClInclude Include="Src\Game\Object\Hole\VirusBeetleHole.h" />
     <ClInclude Include="Src\Game\Object\Light\EnemyLight.h" />
     <ClInclude Include="Src\Game\Object\Light\FlashLight.h" />
     <ClInclude Include="Src\Game\Object\Light\GameLight.h" />

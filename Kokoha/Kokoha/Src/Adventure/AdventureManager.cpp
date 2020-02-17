@@ -39,7 +39,7 @@ namespace
 		U"Library",
 		U"DoctorRoom",
 		U"GarbageDump",
-		U"StoreRoom",
+		U"LastRoom",
 		U"Entrance"
 	};
 }
@@ -71,7 +71,7 @@ Optional<String> Kokoha::AdventureManager::load()
 
 	// CSVファイルの確認
 	CSVData csv(fileName);
-	if (csv.isEmpty())
+	if (!csv)
 	{
 		errorMessage += U"CSVファイルを読み込めません.\n";
 		errorMessage += U"ファイル名 > " + fileName;
