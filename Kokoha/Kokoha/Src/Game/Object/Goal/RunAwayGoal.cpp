@@ -5,7 +5,7 @@
 namespace
 {
 	// ‘¬‚³
-	constexpr double SPEED = 1.0;
+	constexpr double SPEED = 1.5;
 
 	// –Ú“I’n‚ğ•ÏX‚ÌŠÔ
 	constexpr double MAX_CHANGE_GOAL_SECOND = 0.1;

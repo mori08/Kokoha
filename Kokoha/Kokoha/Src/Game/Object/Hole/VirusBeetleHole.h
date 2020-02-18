@@ -19,7 +19,7 @@ namespace Kokoha
 		Point mNowSquare;
 
 		// –K–â‰ñ”‚ğ‹L˜^
-		Array<int32> mVisitedCount;
+		static Array<int32> mVisitedCount;
 
 	public:
 

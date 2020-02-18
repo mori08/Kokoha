@@ -72,6 +72,7 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"Door[Library]"]     = []() { openWindow(std::make_unique<AreaWindow>()); };
 	sMakeWindowFuncMap[U"Door[DoctorRoom]"]  = []() { openWindow(std::make_unique<AreaWindow>()); };
 	sMakeWindowFuncMap[U"Door[GarbageDump]"] = []() { openWindow(std::make_unique<AreaWindow>()); };
+	sMakeWindowFuncMap[U"Door[LastRoom]"]    = []() { openWindow(std::make_unique<AreaWindow>()); };
 }
 
 
