@@ -182,6 +182,68 @@ Optional<String> Kokoha::GameManager::load()
 }
 
 
+Optional<String> Kokoha::GameManager::reload()
+{
+	const FilePath filePath = U"Assets/Data/Game/" + mName + U".csv";
+
+	// 状態の初期化
+	setState(std::make_unique<PlayingState>());
+
+	// オブジェクトの全削除
+	mObjectList.clear();
+
+	// 装備の初期化
+	mEquipmentId = 0;
+	CassetteManager::instance().getEquipment(mEquipmentId).initEffect();
+
+	// プレイヤーの速さの初期化
+	mPlayerSpeed.init();
+
+	// エラーメッセージ
+	String errorMessage = U"[AdventureManager::load]\n";
+
+	// CSVファイルの確認
+	CSVData csv(filePath);
+	if (!csv)
+	{
+		errorMessage += U"CSVファイルを読み込めません.\n";
+		errorMessage += U"ファイル名 > " + filePath;
+		return errorMessage;
+	}
+
+	errorMessage += U"ファイル名 > " + filePath;
+	int32 readingRow = StageData::HEIGHT;
+
+	// オブジェクトの生成
+	for (; readingRow < csv.rows(); ++readingRow)
+	{
+		const String& OBJ_NAME = csv[readingRow][OBJECT_NAME_COLUMN];
+		if (!mGenerateObjectMap.count(OBJ_NAME))
+		{
+			errorMessage += ToString(readingRow + 1) + U"行目.\n";
+			errorMessage += U"登録されていないオブジェクトです.\n";
+			errorMessage += U"検出値 > " + OBJ_NAME;
+			return errorMessage;
+		}
+
+		try
+		{
+			Vec2 pos = StageData::squareToPixel(Parse<Point>(csv[readingRow][OBJECT_POS_COLUMN]));
+			mObjectList.emplace_back(mGenerateObjectMap[OBJ_NAME](pos));
+		}
+		catch (const ParseError&)
+		{
+			errorMessage += ToString(readingRow + 1) + U"行目.\n";
+			errorMessage += U"座標に変換できません.\n";
+			errorMessage += U"検出値 > " + csv[readingRow][OBJECT_POS_COLUMN];
+			return errorMessage;
+		}
+	}
+
+	return none;
+}
+
+
 void Kokoha::GameManager::update()
 {
 	// 装備の切り替え

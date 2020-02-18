@@ -19,6 +19,7 @@ enum class SceneName
 	ADVENTURE,      // 探索モード
 
 	LOAD_GAME,      // ゲームのロード
+	RELOAD_GAME,    // ゲームのリロード
 	GAME            // ゲーム
 };
 

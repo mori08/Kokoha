@@ -130,6 +130,18 @@ namespace Kokoha
 		Optional<String> load();
 
 		/// <summary>
+		/// ゲームデータの再読み込み
+		/// </summary>
+		/// <returns>
+		/// エラーメッセージ
+		/// </returns>
+		/// <remarks>
+		/// StageDataやRunAwayDataのロードをスキップして
+		/// オブジェクトの再構築を読み込みます
+		/// </remarks>
+		Optional<String> reload();
+
+		/// <summary>
 		/// 更新
 		/// </summary>
 		void update();

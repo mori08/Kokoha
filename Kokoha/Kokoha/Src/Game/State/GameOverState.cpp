@@ -63,7 +63,7 @@ Kokoha::GameOverState::GameOverState()
 		CONTINUE_BUTTON.getName(),
 		[this]()
 		{
-			mSceneName = SceneName::LOAD_GAME;
+			mSceneName = SceneName::RELOAD_GAME;
 		}
 	);
 

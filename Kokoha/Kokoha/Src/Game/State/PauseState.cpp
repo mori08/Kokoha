@@ -80,7 +80,7 @@ Kokoha::PauseState::PauseState(std::unique_ptr<GameState> preState)
 	ButtonManager::instance().setOnClickFunc
 	(
 		RELOAD_BUTTON.getName(),
-		[this]() { mSceneName = SceneName::LOAD_GAME; }
+		[this]() { mSceneName = SceneName::RELOAD_GAME; }
 	);
 	ButtonManager::instance().setOnClickFunc
 	(

@@ -726,6 +726,9 @@
     <ClCompile Include="Src\Game\State\PauseState.cpp">
       <Filter>Src\Game\State</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\Scene\ReloadGameScene.cpp">
+      <Filter>Src\Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1045,6 +1048,9 @@
     </ClInclude>
     <ClInclude Include="Src\Game\State\PauseState.h">
       <Filter>Src\Game\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Scene\ReloadGameScene.h">
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
