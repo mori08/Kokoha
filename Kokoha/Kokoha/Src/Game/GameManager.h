@@ -5,6 +5,7 @@
 #include "Object/GameObject.h"
 #include "PlayerSpeed/PlayerSpeed.h"
 #include "State/GameState.h"
+#include "State/PauseState.h"
 
 
 namespace Kokoha
@@ -84,6 +85,14 @@ namespace Kokoha
 		void setState(GameStatePtr state)
 		{
 			mState = std::move(state);
+		}
+
+		/// <summary>
+		/// ƒ|[ƒYó‘Ô‚É‘JˆÚ
+		/// </summary>
+		void setPauseState()
+		{
+			mState = std::make_unique<PauseState>(std::move(mState));
 		}
 		
 	public:
