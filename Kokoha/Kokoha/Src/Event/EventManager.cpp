@@ -9,6 +9,7 @@
 #include "Event/WaitEvent.h"
 #include "Event/ActEvent.h"
 #include "Event/TextEvent.h"
+#include "Event/BackgroundEvent.h"
 
 
 namespace 
@@ -24,11 +25,12 @@ namespace
 Kokoha::EventManager::EventManager()
 {
 	// イベントの登録
-	setEvent<GenerateEvent>(U"Generate");
-	setEvent<MoveEvent>    (U"Move");
-	setEvent<WaitEvent>    (U"Wait");
-	setEvent<ActEvent>     (U"Act");
-	setEvent<TextEvent>    (U"Text");
+	setEvent<GenerateEvent>  (U"Generate");
+	setEvent<MoveEvent>      (U"Move");
+	setEvent<WaitEvent>      (U"Wait");
+	setEvent<ActEvent>       (U"Act");
+	setEvent<TextEvent>      (U"Text");
+	setEvent<BackgroundEvent>(U"Background");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }
@@ -56,7 +58,7 @@ void Kokoha::EventManager::init()
 bool Kokoha::EventManager::load(const String& eventFileName)
 {	
 	CSVData csv(eventFileName);
-	if (csv.isEmpty())
+	if (!csv)
 	{
 		addErrorMessage(U"[EventManger::load]");
 		addErrorMessage(eventFileName + U" を読み込めませんでした.");
@@ -78,8 +80,9 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 		// 別CSVファイルの読み込み
 		if (eventName == FUNC_EVENT_KEY)
 		{
-			String funcName = csv[loadingRow][EVENT_ARG_COLUMN];
-			if (!load(funcName))
+			String funcName     = csv[loadingRow][EVENT_ARG_COLUMN];
+			String funcFileName = U"Assets/Data/Event/Event[" + funcName + U"].csv";
+			if (!load(funcFileName))
 			{
 				addErrorMessage(eventFileName + U" : " + ToString(loadingRow + 1) + U"行目");
 				return false;
@@ -155,6 +158,8 @@ void Kokoha::EventManager::update()
 void Kokoha::EventManager::draw() const
 {
 	Scene::Rect().draw(MyWhite);
+
+	TextureAsset(mBackgroundName).draw(Point::Zero());
 
 	for (const auto& object : mObjectMap)
 	{

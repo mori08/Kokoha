@@ -4,6 +4,7 @@
 
 // イベントオブジェクト
 #include "../Object/TestEventObject.h"
+#include "../Object/EventSearcher1.h"
 
 
 namespace
@@ -57,4 +58,6 @@ bool Kokoha::GenerateEvent::isCompleted() const
 void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 {
 	setGenerateObjectFunc<TestEventObject>(U"Test");
+
+	setGenerateObjectFunc<EventSearcher1> (U"Searcher1");
 }

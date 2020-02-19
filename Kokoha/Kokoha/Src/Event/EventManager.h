@@ -25,6 +25,9 @@ namespace Kokoha
 	{
 	private:
 
+		// イベント名
+		String mEventFileName;
+
 		// イベントを管理するキュー
 		std::queue<EventPtr> mEventQueue;
 
@@ -36,6 +39,9 @@ namespace Kokoha
 
 		// テキストボックス
 		TextBox mTextBox;
+
+		// 背景の画像名
+		String mBackgroundName;
 
 		// ロードのエラーメッセージ
 		String mErrorMessage;
@@ -67,6 +73,15 @@ namespace Kokoha
 		}
 
 		/// <summary>
+		/// イベント名の設定
+		/// </summary>
+		/// <param name="eventName"> 対応するステージ名 </param>
+		void setEventFileName(const String& stageName)
+		{
+			mEventFileName = U"Assets/Data/Event/Event(" + stageName + U").csv";
+		}
+
+		/// <summary>
 		/// 初期化
 		/// </summary>
 		void init();
@@ -74,7 +89,18 @@ namespace Kokoha
 		/// <summary>
 		/// イベントを記述したcsvファイルの読み込み
 		/// </summary>
-		/// <param name="eventFileName"> csvファイルの名前 </param>
+		/// <returns>
+		/// 成功したとき true, 失敗したとき false
+		/// </returns>
+		bool load()
+		{
+			return load(mEventFileName);
+		}
+
+		/// <summary>
+		/// イベントを記述したcsvファイルの読み込み
+		/// </summary>
+		/// <param name="eventFileName"> イベントのファイル名 </param>
 		/// <returns>
 		/// 成功したとき true, 失敗したとき false
 		/// </returns>
@@ -139,6 +165,15 @@ namespace Kokoha
 		EventObjectPtr& getObjectPtr(const String& name)
 		{
 			return mObjectMap[name];
+		}
+
+		/// <summary>
+		/// 背景の設定
+		/// </summary>
+		/// <param name="backgroundName"> 背景画像の名前 </param>
+		void setBackground(const String& backgroundName)
+		{
+			mBackgroundName = backgroundName;
 		}
 
 		/// <summary>

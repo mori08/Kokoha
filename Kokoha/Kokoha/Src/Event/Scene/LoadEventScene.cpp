@@ -11,7 +11,8 @@ Kokoha::LoadEventScene::LoadEventScene(const InitData& init)
 Kokoha::ErrorMessage Kokoha::LoadEventScene::load()
 {
 	EventManager::instance().init();
-	if (mIsScuccess = EventManager::instance().load(U"Assets/Data/Event/TestEvent.csv"))
+	EventManager::instance().setEventFileName(U"1-1");
+	if (mIsScuccess = EventManager::instance().load())
 	{
 		return none;
 	}

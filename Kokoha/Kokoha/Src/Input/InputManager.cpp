@@ -4,7 +4,7 @@
 
 
 Kokoha::InputManager::InputManager()
-	: mInputState(std::make_unique<MouseInputState>())
+	: mInputState(std::make_unique<KeyInputState>())
 {
 
 }
