@@ -10,6 +10,7 @@
 #include "Event/ActEvent.h"
 #include "Event/TextEvent.h"
 #include "Event/BackgroundEvent.h"
+#include "Event/CameraEvent.h"
 
 
 namespace 
@@ -23,6 +24,7 @@ namespace
 
 
 Kokoha::EventManager::EventManager()
+	: mCameraPos(0, Vec2::Zero())
 {
 	// イベントの登録
 	setEvent<GenerateEvent>  (U"Generate");
@@ -31,6 +33,7 @@ Kokoha::EventManager::EventManager()
 	setEvent<ActEvent>       (U"Act");
 	setEvent<TextEvent>      (U"Text");
 	setEvent<BackgroundEvent>(U"Background");
+	setEvent<CameraEvent>    (U"Camera");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 }
@@ -152,21 +155,35 @@ void Kokoha::EventManager::update()
 	{
 		object.second->update();
 	}
+
+	// カメラの更新
+	mCameraPos.update();
+
+	ClearPrint();
 }
 
 
 void Kokoha::EventManager::draw() const
 {
-	Scene::Rect().draw(MyWhite);
+	Scene::Rect().draw(MyBlack);
 
-	TextureAsset(mBackgroundName).draw(Point::Zero());
+	TextureAsset(mBackgroundName).draw(-mCameraPos.getValue().asPoint());
 
 	for (const auto& object : mObjectMap)
 	{
-		object.second->draw(Point::Zero());
+		object.second->draw(-mCameraPos.getValue().asPoint());
 	}
 
 	mTextBox.draw();
+}
+
+
+void Kokoha::EventManager::setCameraMove(double time, const Point& movement)
+{
+	// 移動時間や移動量の補正
+	const Point  m = movement + (mCameraPos.getGoal() - mCameraPos.getValue()).asPoint();
+	const double t = time * m.length() / movement.length();
+	mCameraPos = Linearly<Vec2>(t, mCameraPos.getValue(), m);
 }
 
 

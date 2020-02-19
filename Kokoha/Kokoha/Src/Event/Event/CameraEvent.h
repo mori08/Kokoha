@@ -1,19 +1,24 @@
 #pragma once
 
 
-#include "Event.h"
+#include "../Event/Event.h"
+
 
 namespace Kokoha
 {
-	class BackgroundEvent : public Event
+	/*
+	CameraEventクラス
+	カメラの移動
+	*/
+	class CameraEvent : public Event
 	{
 	private:
 
-		// 背景画像の名前
-		String mBackgroundName;
+		// 移動時間(秒)
+		double mTimeSecond;
 
-		// 初期カメラ座標
-		Point mInitCameraPos;
+		// 移動量
+		Point mMovement;
 
 	private:
 

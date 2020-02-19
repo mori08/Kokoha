@@ -5,10 +5,11 @@
 namespace
 {
 	// 引数のサイズ
-	constexpr size_t ARG_SIZE = 1;
+	constexpr size_t ARG_SIZE = 2;
 
 	// インデックス
 	constexpr size_t BACKGROUND_NAME = 0; // 背景画像の名前
+	constexpr size_t INIT_CAMERA_POS = 1; // カメラの初期座標
 }
 
 
@@ -18,6 +19,8 @@ bool Kokoha::BackgroundEvent::load(const EventArg& eventArg)
 
 	mBackgroundName = eventArg[BACKGROUND_NAME];
 
+	if (!toPoint(mInitCameraPos, eventArg[INIT_CAMERA_POS])) { return false; }
+
 	return true;
 }
 
@@ -25,6 +28,7 @@ bool Kokoha::BackgroundEvent::load(const EventArg& eventArg)
 void Kokoha::BackgroundEvent::perform()
 {
 	EventManager::instance().setBackground(mBackgroundName);
+	EventManager::instance().setCameraPos(mInitCameraPos);
 }
 
 

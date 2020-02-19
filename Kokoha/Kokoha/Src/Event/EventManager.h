@@ -43,6 +43,9 @@ namespace Kokoha
 		// 背景の画像名
 		String mBackgroundName;
 
+		// カメラ座標
+		Linearly<Vec2> mCameraPos;
+
 		// ロードのエラーメッセージ
 		String mErrorMessage;
 
@@ -174,6 +177,22 @@ namespace Kokoha
 		void setBackground(const String& backgroundName)
 		{
 			mBackgroundName = backgroundName;
+		}
+
+		/// <summary>
+		/// カメラの移動の設定
+		/// </summary>
+		/// <param name="time"    > 移動時間(秒) </param>
+		/// <param name="movement"> 移動量       </param>
+		void setCameraMove(double time,const Point& movement);
+
+		/// <summary>
+		/// カメラの座標の設定
+		/// </summary>
+		/// <param name="pos"> 次の座標 </param>
+		void setCameraPos(const Point& pos)
+		{
+			mCameraPos = Linearly<Vec2>(0, pos, Vec2::Zero());
 		}
 
 		/// <summary>

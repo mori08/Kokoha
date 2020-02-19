@@ -1,5 +1,6 @@
-﻿Background,StoreRoom,#,,
+﻿Background,StoreRoom,"(100, 0)",#,
 Generate,Searcher1,まる,"(200, 220)",#
 Run,#,,,
 Wait,3.5,#,,
 Act,まる,Walk,#,
+Camera,1,"(-100, 0)",#,

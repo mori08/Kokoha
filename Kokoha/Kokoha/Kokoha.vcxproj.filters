@@ -735,6 +735,9 @@
     <ClCompile Include="Src\Event\Event\BackgroundEvent.cpp">
       <Filter>Src\Event\Event</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Event\CameraEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1062,6 +1065,9 @@
       <Filter>Src\Event\Object</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Event\BackgroundEvent.h">
+      <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Event\CameraEvent.h">
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
   </ItemGroup>

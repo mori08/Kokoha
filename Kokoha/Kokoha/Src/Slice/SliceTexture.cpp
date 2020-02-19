@@ -22,13 +22,20 @@ void Kokoha::SliceTexture::setTextureName(const String& textureName, const Size&
 
 bool Kokoha::SliceTexture::changeTexture()
 {
-	if (!mChangeSpan.update()) { return false; }
+	bool spanIsFinished = mChangeSpan.update();
 
-	if (!mAnimationMap[mAnimationName].IS_LOOP) { return true; }
+	// ‰æ‘œ‚ªƒ‹[ƒv‚·‚é‚Æ‚«
+	if (mAnimationMap[mAnimationName].IS_LOOP)
+	{
+		if (spanIsFinished)
+		{
+			mChangeSpan.restart();
+		}
 
-	mChangeSpan.restart();
+		return true;
+	}
 
-	return false;
+	return spanIsFinished;
 }
 
 
