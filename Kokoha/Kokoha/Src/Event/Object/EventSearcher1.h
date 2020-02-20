@@ -9,6 +9,7 @@ namespace Kokoha
 	/*
 	EventSearcher1ƒNƒ‰ƒX
 	EventObject
+	‚Ü‚é
 	*/
 	class EventSearcher1 : public EventObject
 	{

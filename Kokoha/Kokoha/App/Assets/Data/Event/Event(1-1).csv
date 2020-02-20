@@ -1,5 +1,7 @@
 ﻿Background,StoreRoom,"(100, 0)",#,
+Generate,Searcher0,ちび,"(320, 280)",#
 Generate,Searcher1,まる,"(200, 220)",#
+Generate,Searcher2,のっぽ,"(250, 180)",#
 Run,#,,,
 Wait,3.5,#,,
 Act,まる,Walk,#,
