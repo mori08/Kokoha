@@ -17,7 +17,7 @@ namespace
 	// •à‚«ƒ‚[ƒVƒ‡ƒ“
 	const Kokoha::Animation WALK_ANIM
 	(
-		0.5,
+		0.3,
 		Array<Point>{Point(1, 0), Point(0, 0)},
 		true
 	);

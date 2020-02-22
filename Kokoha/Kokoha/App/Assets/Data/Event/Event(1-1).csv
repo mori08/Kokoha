@@ -1,6 +1,52 @@
-﻿Background,StoreRoom,"(100, 0)",#,
-Generate,Searcher0,ちび,"(320, 280)",#
-Generate,Searcher1,まる,"(200, 220)",#
-Generate,Searcher2,のっぽ,"(250, 180)",#
-Run,#,,,
-Scene,Adventure,#,,
+﻿Background,StoreRoom,"(400, 0)",#,,
+Generate,Searcher0,ちび,"(320, 280)",#,
+Generate,Searcher1,まる,"(550, 220)",#,
+Generate,Searcher2,のっぽ,"(250, 180)",#,
+Run,#,,,,
+Act,ちび,Mirror,#,,
+Act,のっぽ,Mirror,#,,
+Run,#,,,,
+Wait,1,#,,,
+Text,ちび,Searcher0Icon,0.05,まるー!\nはやく来いよー!,#
+Camera,3,"(-200, 0)",#,,
+Act,まる,Walk,#,,
+Move,まる,2,"(-50, 0)",TRUE,#
+Act,まる,Wait,#,,
+Wait,0.5,#,,,
+Act,ちび,Walk,#,,
+Move,ちび,1,"(130, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Text,ちび,Searcher0Icon,0.05,遅いよ!,#
+Text,まる,Searcher1Icon,0.15,"ご,ごめん...",#
+Camera,4,"(-200, 0)",#,,
+Text,のっぽ,Searcher2Icon,0.1,"無理言っちゃだめですよ,ちびさん.\nまるさんは速く歩けないんですから.",#
+Act,ちび,Walk,#,,
+Move,ちび,1,"(260, 0)",TRUE,#
+Act,ちび,Mirror,#,,
+Move,ちび,1.5,"(-390, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Wait,0.5,#,,,
+Text,ちび,Searcher0Icon,0.05,ね! 何して遊ぶ?,#
+Text,まる,Searcher1Icon,0.15,"あ,遊んでいるのがばれたら,ママに怒られるよ...",#
+Wait,0.3,#,,,
+Act,ちび,Mirror,#,,
+Text,のっぽ,Searcher2Icon,0.1,そうですよ.,#
+Act,ちび,Mirror,#,,
+Text,のっぽ,Searcher2Icon,0.1,ママに出口を探すように言われたのを\n忘れたんですか?,#
+Act,ちび,Walk,#,,
+Move,ちび,0.5,"(50, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Text,ちび,Searcher0Icon,0.05,そんなのつまんないよ!,#
+Act,ちび,Mirror,#,,
+Act,ちび,Walk,#,,
+Move,ちび,2,"(300, 0)",FALSE,#
+Wait,1,#,,,
+Act,まる,Mirror,#,,
+Text,ちび,Searcher0Icon,0.05,"出口なんかより,僕を探してみてよ!",#
+Text,まる,Searcher1Icon,0.15,"こ,困ったな...",#
+Act,のっぽ,Walk,#,,
+Move,のっぽ,8,"(400,0)",FALSE,#
+Text,のっぽ,Searcher2Icon,0.1,"とりあえず,\n実験室を探しにいってみましょうか.",#
+Wait,1,#,,,
+Text,まる,Searcher1Icon,0.15,（本当に出口なんてあるのかな...）,#
+Scene,Adventure,#,,,

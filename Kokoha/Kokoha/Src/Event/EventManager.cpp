@@ -164,8 +164,6 @@ void Kokoha::EventManager::update()
 
 	// ƒJƒƒ‰‚ÌXV
 	mCameraPos.update();
-
-	ClearPrint();
 }
 
 

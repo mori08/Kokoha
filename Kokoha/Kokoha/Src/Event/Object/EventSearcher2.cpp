@@ -10,15 +10,15 @@ namespace
 	const Kokoha::Animation WAIT_ANIM
 	(
 		0.0,
-		Array<Point>{Point(0,0)},
+		Array<Point>{Point(0, 0)},
 		false
 	);
 
 	// ï‡Ç´ÉÇÅ[ÉVÉáÉì
 	const Kokoha::Animation WALK_ANIM
 	(
-		0.8,
-		Array<Point>{Point(0, 0)},
+		0.6,
+		Array<Point>{Point(1, 0), Point(2, 0)},
 		true
 	);
 }

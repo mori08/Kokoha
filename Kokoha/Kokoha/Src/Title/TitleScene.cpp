@@ -46,7 +46,7 @@ namespace
 
 Kokoha::TitleScene::TitleScene(const InitData& init)
 	: IScene(init)
-	, mCursor(NEWGAME_BUTTON.getRegion())
+	, mCursor(LOADGAME_BUTTON.getRegion())
 {
 	// ボタンのリセット
 	ButtonManager::instance().clearButtonList();
@@ -82,7 +82,7 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 	);
 
 	// 選択中のボタンの設定
-	ButtonManager::instance().setSelectedButton(NEWGAME_BUTTON.getName());
+	ButtonManager::instance().setSelectedButton(LOADGAME_BUTTON.getName());
 }
 
 
