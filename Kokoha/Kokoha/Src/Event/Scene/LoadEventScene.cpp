@@ -11,7 +11,6 @@ Kokoha::LoadEventScene::LoadEventScene(const InitData& init)
 Kokoha::ErrorMessage Kokoha::LoadEventScene::load()
 {
 	EventManager::instance().init();
-	EventManager::instance().setEventFileName(U"1-1");
 	if (mIsScuccess = EventManager::instance().load())
 	{
 		return none;

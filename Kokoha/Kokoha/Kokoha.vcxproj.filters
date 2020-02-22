@@ -771,6 +771,15 @@
     <ClCompile Include="Src\Game\State\Tutorial\AwakeState.cpp">
       <Filter>Src\Game\State\Tutorial</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Object\MainRobot.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Event\ChangeSceneEvent.cpp">
+      <Filter>Src\Event\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\TutorialWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1132,6 +1141,15 @@
     </ClInclude>
     <ClInclude Include="Src\Game\State\Tutorial\AwakeState.h">
       <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\MainRobot.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Event\ChangeSceneEvent.h">
+      <Filter>Src\Event\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\TutorialWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

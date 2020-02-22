@@ -1,12 +1,13 @@
 #include "AdventureScene.h"
 #include "../AdventureManager.h"
+#include "../Window/TutorialWindow.h"
 #include "../../Game/GameManager.h"
+#include "../../Record/RecordManager.h"
 
 
 Kokoha::AdventureScene::AdventureScene(const InitData& init)
 	: IScene(init)
 {
-	AdventureManager::instance().clearWindow();
 	AdventureManager::instance().setSceneName(none);
 }
 

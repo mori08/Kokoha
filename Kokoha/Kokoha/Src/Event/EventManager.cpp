@@ -11,6 +11,7 @@
 #include "Event/TextEvent.h"
 #include "Event/BackgroundEvent.h"
 #include "Event/CameraEvent.h"
+#include "Event/ChangeSceneEvent.h"
 
 
 namespace 
@@ -27,15 +28,17 @@ Kokoha::EventManager::EventManager()
 	: mCameraPos(0, Vec2::Zero())
 {
 	// イベントの登録
-	setEvent<GenerateEvent>  (U"Generate");
-	setEvent<MoveEvent>      (U"Move");
-	setEvent<WaitEvent>      (U"Wait");
-	setEvent<ActEvent>       (U"Act");
-	setEvent<TextEvent>      (U"Text");
-	setEvent<BackgroundEvent>(U"Background");
-	setEvent<CameraEvent>    (U"Camera");
+	setEvent<GenerateEvent>   (U"Generate");
+	setEvent<MoveEvent>       (U"Move");
+	setEvent<WaitEvent>       (U"Wait");
+	setEvent<ActEvent>        (U"Act");
+	setEvent<TextEvent>       (U"Text");
+	setEvent<BackgroundEvent> (U"Background");
+	setEvent<CameraEvent>     (U"Camera");
+	setEvent<ChangeSceneEvent>(U"Scene");
 
 	GenerateEvent::setAllGenerateObjectFunc();
+	ChangeSceneEvent::setSceneNameMap();
 }
 
 
@@ -55,6 +58,9 @@ void Kokoha::EventManager::init()
 
 	// エラーメッセージをリセットします
 	mErrorMessage = U"";
+
+	// シーン遷移先
+	mSceneName = none;
 }
 
 

@@ -32,24 +32,30 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	(
 		[this]()
 		{
-			mError = load();
+			mError     = load();
 			mIsLoading = false;
 		}
 	);
-
-	mLoadThread.detach();
 }
 
 
 Kokoha::LoadScene::~LoadScene()
 {
-	
+	if (mLoadThread.joinable())
+	{
+		mLoadThread.join();
+	}
 }
 
 
 void Kokoha::LoadScene::update()
 {
 	if (mIsLoading) { return; }
+
+	if (mLoadThread.joinable())
+	{
+		mLoadThread.join();
+	}
 
 	if (mError)
 	{

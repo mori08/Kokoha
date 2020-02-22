@@ -15,7 +15,7 @@ namespace
 	};
 
 	// ƒS[ƒ‹‚Æ‚Ì‹——£‚Ì•]‰¿
-	constexpr double MAX_DISTANCE = 300.0;
+	constexpr double MAX_DISTANCE = 400.0;
 }
 
 

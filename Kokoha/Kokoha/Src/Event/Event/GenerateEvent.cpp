@@ -4,6 +4,7 @@
 
 // イベントオブジェクト
 #include "../Object/TestEventObject.h"
+#include "../Object/MainRobot.h"
 #include "../Object/EventSearcher0.h"
 #include "../Object/EventSearcher1.h"
 #include "../Object/EventSearcher2.h"
@@ -61,6 +62,7 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 {
 	setGenerateObjectFunc<TestEventObject>(U"Test");
 
+	setGenerateObjectFunc<MainRobot>     (U"MainRobot");
 	setGenerateObjectFunc<EventSearcher0>(U"Searcher0");
 	setGenerateObjectFunc<EventSearcher1>(U"Searcher1");
 	setGenerateObjectFunc<EventSearcher2>(U"Searcher2");

@@ -4,6 +4,7 @@
 #include "Event/Event.h"
 #include "Object/EventObject.h"
 #include "TextBox/TextBox.h"
+#include "../Scene.h"
 #include <queue>
 
 
@@ -48,6 +49,9 @@ namespace Kokoha
 
 		// ロードのエラーメッセージ
 		String mErrorMessage;
+
+		// 遷移するシーン名 (遷移しないとき none)
+		Optional<SceneName> mSceneName;
 
 	private:
 
@@ -139,6 +143,14 @@ namespace Kokoha
 		/// </summary>
 		void draw() const;
 
+		/// <summary>
+		/// 遷移先のシーン名の取得
+		/// </summary>
+		Optional<SceneName> getSceneName() const
+		{
+			return mSceneName;
+		}
+
 		// ↑
 		// Sceneクラスの派生で使用
 
@@ -208,6 +220,15 @@ namespace Kokoha
 		TextBox& getTextBox()
 		{
 			return mTextBox;
+		}
+
+		/// <summary>
+		/// シーンの遷移先の設定
+		/// </summary>
+		/// <param name="sceneName"> シーン名 </param>
+		void setSceneName(const SceneName& sceneName)
+		{
+			mSceneName = sceneName;
 		}
 
 		// ↑

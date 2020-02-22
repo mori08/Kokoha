@@ -13,12 +13,17 @@ void Kokoha::EventScene::update()
 	EventManager::instance().update();
 
 #ifdef _DEBUG
-	if (KeyT.up())
+	if (Key0.up())
 	{
-		changeScene(SceneName::TITLE);
+		changeScene(SceneName::LOAD_EVENT);
+		return;
 	}
 #endif // _DEBUG
 
+	if (auto sceneName = EventManager::instance().getSceneName())
+	{
+		changeScene(sceneName.value());
+	}
 }
 
 

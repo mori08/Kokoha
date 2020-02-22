@@ -2,6 +2,7 @@
 #include "../../GameManager.h"
 #include "../../../MyColor.h"
 #include "../../../MyLibrary.h"
+#include "../../../Event/EventManager.h"
 
 
 namespace
@@ -58,7 +59,8 @@ Optional<SceneName> Kokoha::AwakeState::isChangeAbleScene() const
 {
 	if (mTimeSecond > CHANGE_SCENE_TIME)
 	{
-		return SceneName::TITLE;
+		EventManager::instance().setEventFileName(U"Tutorial");
+		return SceneName::LOAD_EVENT;
 	}
 
 	return none;

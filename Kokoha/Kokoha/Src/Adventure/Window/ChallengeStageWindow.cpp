@@ -69,6 +69,7 @@ void Kokoha::ChallengeStageWindow::select()
 		[this]() {
 			GameManager::instance().setName(mStageName);
 			AdventureManager::instance().setSceneName(SceneName::LOAD_GAME); 
+			AdventureManager::instance().clearWindow();
 		}
 	);
 	ButtonManager::instance().setOnClickFunc
