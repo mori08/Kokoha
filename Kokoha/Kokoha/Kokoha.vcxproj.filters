@@ -780,6 +780,9 @@
     <ClCompile Include="Src\Adventure\Window\TutorialWindow.cpp">
       <Filter>Src\Adventure\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Adventure\Window\RewardWindow.cpp">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1149,6 +1152,9 @@
       <Filter>Src\Event\Event</Filter>
     </ClInclude>
     <ClInclude Include="Src\Adventure\Window\TutorialWindow.h">
+      <Filter>Src\Adventure\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Adventure\Window\RewardWindow.h">
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
   </ItemGroup>

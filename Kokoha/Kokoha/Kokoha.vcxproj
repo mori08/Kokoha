@@ -239,6 +239,7 @@
     <ClCompile Include="Src\Adventure\Window\ChallengeStageWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\InfoWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\MenuWindow.cpp" />
+    <ClCompile Include="Src\Adventure\Window\RewardWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\SaveWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\SetupWindow.cpp" />
     <ClCompile Include="Src\Adventure\Window\TutorialWindow.cpp" />
@@ -350,6 +351,7 @@
     <ClInclude Include="Src\Adventure\AdventurePlayer.h" />
     <ClInclude Include="Src\Adventure\Scene\AdventureScene.h" />
     <ClInclude Include="Src\Adventure\Scene\LoadAdventureScene.h" />
+    <ClInclude Include="Src\Adventure\Window\RewardWindow.h" />
     <ClInclude Include="Src\Adventure\Window\AdventureWindow.h" />
     <ClInclude Include="Src\Adventure\Window\AreaWindow.h" />
     <ClInclude Include="Src\Adventure\Window\CassetteMoveWindow.h" />

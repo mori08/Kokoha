@@ -3,6 +3,8 @@
 #include "../../../MyColor.h"
 #include "../../../MyLibrary.h"
 #include "../../../Event/EventManager.h"
+#include "../../../Adventure/AdventureManager.h"
+#include "../../../Adventure/Window/TutorialWindow.h"
 
 
 namespace
@@ -60,6 +62,8 @@ Optional<SceneName> Kokoha::AwakeState::isChangeAbleScene() const
 	if (mTimeSecond > CHANGE_SCENE_TIME)
 	{
 		EventManager::instance().setEventFileName(U"Tutorial");
+		AdventureManager::instance().openWindow(std::make_unique<TutorialWindow>());
+
 		return SceneName::LOAD_EVENT;
 	}
 

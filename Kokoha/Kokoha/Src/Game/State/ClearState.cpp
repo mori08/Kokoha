@@ -4,6 +4,9 @@
 #include "../../MyLibrary.h"
 #include "../../MyColor.h"
 #include "../../Record/RecordManager.h"
+#include "../../Adventure/AdventureManager.h"
+#include "../../Adventure/Window/RewardWindow.h"
+#include "../../Event/EventManager.h"
 
 
 namespace
@@ -63,10 +66,6 @@ void Kokoha::ClearState::update()
 
 	// フェードアウト
 	internalDividingPoint(mFadeOutAlpha, 1.0, CHANGE_ALPHA_RATE);
-
-	if (mTimeSecond < CHANGE_STATE_SECOND) { return; }
-
-	GameManager::instance().setState(std::move(std::make_unique<InfoState>()));
 }
 
 
@@ -104,5 +103,11 @@ void Kokoha::ClearState::draw() const
 
 Optional<SceneName> Kokoha::ClearState::isChangeAbleScene() const
 {
-	return none;
+	if (mTimeSecond < CHANGE_STATE_SECOND) { return none; }
+	
+	const String stageName = GameManager::instance().getName();
+	AdventureManager::instance().openWindow(std::make_unique<RewardWindow>(stageName));
+	EventManager::instance().setEventFileName(stageName);
+
+	return SceneName::LOAD_EVENT;
 }

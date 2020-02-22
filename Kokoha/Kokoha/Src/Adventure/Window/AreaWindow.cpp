@@ -69,6 +69,7 @@ Kokoha::AreaWindow::AreaWindow()
 			{
 				AdventureManager::instance().setAreaId(i);
 				AdventureManager::instance().setSceneName(SceneName::LOAD_ADVENTURE);
+				AdventureManager::instance().clearWindow();
 			}
 		);
 

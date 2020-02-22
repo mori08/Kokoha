@@ -2,6 +2,7 @@
 #include "../MyColor.h"
 #include "../Input/InputManager.h"
 #include "Window/MenuWindow.h"
+#include "Window/RewardWindow.h"
 #include "../Record/RecordManager.h"
 
 
@@ -50,6 +51,7 @@ Kokoha::AdventureManager::AdventureManager()
 	, mAreaId(0)
 {
 	AdventureObject::registerWindow();
+	RewardWindow::setRewardMap();
 }
 
 

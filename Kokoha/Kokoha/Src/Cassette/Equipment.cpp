@@ -5,7 +5,7 @@
 namespace
 {
 	// 装備できるカセットの上限
-	constexpr int32 NUM_LIMIT = 6;
+	constexpr int32 NUM_LIMIT = 3;
 }
 
 
@@ -51,8 +51,11 @@ bool Kokoha::Equipment::isAddAbleCassette(const CassettePtr& cassette) const
 	// 所持上限を超えたら false
 	if (mCassetteList.size() + 1 > NUM_LIMIT) { return false; }
 
+	// コスト上限
+	const int32 COST_LIMIT = 1 + RecordManager::instance().getRecord(U"CassetteCount") / 3;
+
 	// コスト上限を超えたら false
-	if (mTotalCost + cassette->COST > RecordManager::instance().getRecord(U"CassetteCapacity")) { return false; }
+	if (mTotalCost + cassette->COST > COST_LIMIT) { return false; }
 
 	return true;
 }
