@@ -288,6 +288,7 @@
     <ClCompile Include="Src\Game\Object\Goal\LockGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RandomGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Goal\RunAwayGoal.cpp" />
+    <ClCompile Include="Src\Game\Object\Goal\TutorialGoal.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\ChaseHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\ClingBeetleHole.cpp" />
     <ClCompile Include="Src\Game\Object\Hole\GameHole.cpp" />
@@ -318,6 +319,12 @@
     <ClCompile Include="Src\Game\State\InfoState.cpp" />
     <ClCompile Include="Src\Game\State\PauseState.cpp" />
     <ClCompile Include="Src\Game\State\PlayingState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\AwakeState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialCassetteState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialGoalState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialInitState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialMoveState.cpp" />
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialState.cpp" />
     <ClCompile Include="Src\Input\Button.cpp" />
     <ClCompile Include="Src\Input\ButtonManager.cpp" />
     <ClCompile Include="Src\Input\InputManager.cpp" />
@@ -326,6 +333,7 @@
     <ClCompile Include="Src\Load\LoadScene.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\MyLibrary.cpp" />
+    <ClCompile Include="Src\Record\LoadNewGameScene.cpp" />
     <ClCompile Include="Src\Record\LoadRecordScene.cpp" />
     <ClCompile Include="Src\Record\Record.cpp" />
     <ClCompile Include="Src\Record\RecordManager.cpp" />
@@ -398,6 +406,7 @@
     <ClInclude Include="Src\Game\Object\Goal\LockGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RandomGoal.h" />
     <ClInclude Include="Src\Game\Object\Goal\RunAwayGoal.h" />
+    <ClInclude Include="Src\Game\Object\Goal\TutorialGoal.h" />
     <ClInclude Include="Src\Game\Object\Hole\ClingBeetleHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\RandomBeetleHole.h" />
     <ClInclude Include="Src\Game\Object\Hole\ChaseHole.h" />
@@ -429,6 +438,12 @@
     <ClInclude Include="Src\Game\State\InfoState.h" />
     <ClInclude Include="Src\Game\State\PauseState.h" />
     <ClInclude Include="Src\Game\State\PlayingState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\AwakeState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialCassetteState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialGoalState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialInitState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialMoveState.h" />
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialState.h" />
     <ClInclude Include="Src\Input\Button.h" />
     <ClInclude Include="Src\Input\ButtonManager.h" />
     <ClInclude Include="Src\Input\InputManager.h" />
@@ -438,6 +453,7 @@
     <ClInclude Include="Src\Load\LoadScene.h" />
     <ClInclude Include="Src\MyColor.h" />
     <ClInclude Include="Src\MyLibrary.h" />
+    <ClInclude Include="Src\Record\LoadNewGameScene.h" />
     <ClInclude Include="Src\Record\LoadRecordScene.h" />
     <ClInclude Include="Src\Record\Record.h" />
     <ClInclude Include="Src\Record\RecordManager.h" />

@@ -170,6 +170,9 @@
     <Filter Include="Src\Game\Object\Goal\Key">
       <UniqueIdentifier>{6965deff-01f3-4a23-9966-e6925617a377}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Game\State\Tutorial">
+      <UniqueIdentifier>{19644b8f-9209-4b1e-ac6a-94bb56a64940}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -744,6 +747,30 @@
     <ClCompile Include="Src\Event\Object\EventSearcher2.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialInitState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Record\LoadNewGameScene.cpp">
+      <Filter>Src\Record</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialMoveState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialCassetteState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\TutorialGoalState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\Object\Goal\TutorialGoal.cpp">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Game\State\Tutorial\AwakeState.cpp">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1081,6 +1108,30 @@
     </ClInclude>
     <ClInclude Include="Src\Event\Object\EventSearcher2.h">
       <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialInitState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Record\LoadNewGameScene.h">
+      <Filter>Src\Record</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialMoveState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialCassetteState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\TutorialGoalState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\Object\Goal\TutorialGoal.h">
+      <Filter>Src\Game\Object\Goal</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Game\State\Tutorial\AwakeState.h">
+      <Filter>Src\Game\State\Tutorial</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

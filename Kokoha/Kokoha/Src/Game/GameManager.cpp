@@ -29,6 +29,7 @@
 // 状態
 #include "State/PlayingState.h"
 #include "State/InfoState.h"
+#include "State/Tutorial/TutorialInitState.h"
 
 #include "../Cassette/CassetteManager.h"
 #include "../Input/InputManager.h"
@@ -156,6 +157,12 @@ Optional<String> Kokoha::GameManager::load()
 	for (; readingRow < csv.rows(); ++readingRow)
 	{
 		const String& OBJ_NAME = csv[readingRow][OBJECT_NAME_COLUMN];
+		if (OBJ_NAME == U"Tutorial")
+		{
+			mState = std::make_unique<TutorialInitState>();
+			return none;
+		}
+
 		if (!mGenerateObjectMap.count(OBJ_NAME))
 		{
 			errorMessage += ToString(readingRow + 1) + U"行目.\n";
@@ -254,30 +261,7 @@ void Kokoha::GameManager::update()
 	// 装備の更新
 	CassetteManager::instance().getEquipment(mEquipmentId).updateEffect();
 
-	// プレイヤーの速度の更新
-	mPlayerSpeed.update();
-
-	// オブジェクトの追加
-	for (auto&& object : mAddObjectList) { mObjectList.emplace_back(std::move(object)); }
-	mAddObjectList.clear();
-
-	// オブジェクトの更新
-	GameEnemy::lightUpdate();
-	for (auto&& object : mObjectList) { object->update(); }
-
-	// 他オブジェクトの確認
-	for (auto&& objA = mObjectList.begin(); objA != mObjectList.end(); ++objA)
-	{
-		auto objB = objA;
-		while (++objB != mObjectList.end())
-		{
-			(*objA)->checkAnother(**objB);
-			(*objB)->checkAnother(**objA);
-		}
-	}
-
-	// オブジェクトの削除
-	Erase_if(mObjectList, [](const GameObjectPtr& obj) {return obj->isEraseAble(); });
+	updateObject();
 }
 
 
@@ -304,6 +288,35 @@ void Kokoha::GameManager::draw() const
 	for (const auto& object : mObjectList) { object->draw(); }
 
 	mStageData.draw();
+}
+
+
+void Kokoha::GameManager::updateObject()
+{
+	// プレイヤーの速度の更新
+	mPlayerSpeed.update();
+
+	// オブジェクトの追加
+	for (auto&& object : mAddObjectList) { mObjectList.emplace_back(std::move(object)); }
+	mAddObjectList.clear();
+
+	// オブジェクトの更新
+	GameEnemy::lightUpdate();
+	for (auto&& object : mObjectList) { object->update(); }
+
+	// 他オブジェクトの確認
+	for (auto&& objA = mObjectList.begin(); objA != mObjectList.end(); ++objA)
+	{
+		auto objB = objA;
+		while (++objB != mObjectList.end())
+		{
+			(*objA)->checkAnother(**objB);
+			(*objB)->checkAnother(**objA);
+		}
+	}
+
+	// オブジェクトの削除
+	Erase_if(mObjectList, [](const GameObjectPtr& obj) {return obj->isEraseAble(); });
 }
 
 

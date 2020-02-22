@@ -29,7 +29,10 @@ namespace Kokoha
 		String mText;
 
 		// ロードするスレッド
-		ConcurrentTask<ErrorMessage> mLoadThread;
+		std::thread mLoadThread;
+
+		// エラーメッセージ
+		ErrorMessage mError;
 
 	public:
 

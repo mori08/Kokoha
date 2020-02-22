@@ -73,12 +73,12 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 	ButtonManager::instance().setOnClickFunc
 	(
 		NEWGAME_BUTTON.getName(), 
-		[this]() { changeScene(SceneName::LOAD_RECORD); }
+		[this]() { changeScene(SceneName::LOAD_NEWGAME); }
 	);
 	ButtonManager::instance().setOnClickFunc
 	(
 		LOADGAME_BUTTON.getName(),
-		[this]() { changeScene(SceneName::LOAD_EVENT); }
+		[this]() { changeScene(SceneName::LOAD_RECORD); }
 	);
 
 	// ëIëíÜÇÃÉ{É^ÉìÇÃê›íË

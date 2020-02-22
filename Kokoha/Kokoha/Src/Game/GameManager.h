@@ -220,6 +220,11 @@ namespace Kokoha
 			mAddObjectList.emplace_back(std::move(objectPtr));
 		}
 
+		/// <summary>
+		/// オブジェクトのみの更新(チュートリアル用)
+		/// </summary>
+		void updateObject();
+
 	private:
 
 		/// <summary>

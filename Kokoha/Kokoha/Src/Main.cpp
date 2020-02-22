@@ -8,6 +8,7 @@
 #include "Title/TitleScene.h"
 #include "Record/SaveRecordScene.h"
 #include "Record/LoadRecordScene.h"
+#include "Record/LoadNewGameScene.h"
 #include "Event/Scene/LoadEventScene.h"
 #include "Event/Scene/EventScene.h"
 #include "Adventure/Scene/LoadAdventureScene.h"
@@ -47,6 +48,7 @@ void Main()
 	sceneManager.add<Kokoha::TitleScene>        (SceneName::TITLE);
 	sceneManager.add<Kokoha::SaveRecordScene>   (SceneName::SAVE_RECORD);
 	sceneManager.add<Kokoha::LoadRecordScene>   (SceneName::LOAD_RECORD);
+	sceneManager.add<Kokoha::LoadNewGameScene>  (SceneName::LOAD_NEWGAME);
 	sceneManager.add<Kokoha::LoadEventScene>    (SceneName::LOAD_EVENT);
 	sceneManager.add<Kokoha::EventScene>        (SceneName::EVENT);
 	sceneManager.add<Kokoha::LoadAdventureScene>(SceneName::LOAD_ADVENTURE);

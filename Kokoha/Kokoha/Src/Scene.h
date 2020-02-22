@@ -11,6 +11,7 @@ enum class SceneName
 	
 	SAVE_RECORD,    // レコードのセーブ
 	LOAD_RECORD,    // レコードのロード
+	LOAD_NEWGAME,   // ゲームの初期化
 
 	LOAD_EVENT,     // イベントのロード
 	EVENT,          // イベントの実行
