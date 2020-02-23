@@ -1,0 +1,44 @@
+﻿Background,Labolatory,"(0,0)",#,,
+Generate,Repair0,くるま,"(110, 220)",#,
+Generate,Repair1,たこ,"(400, 240)",#,
+Generate,Repair2,きりん,"(320, 200)",#,
+Generate,BoxRobot,はこがた,"(200, 260)",#,
+Run,#,,,,
+Act,くるま,Mirror,#,,
+Act,はこがた,Broken,#,,
+Run,#,,,,
+Wait,1,#,,,
+Text,くるま,Repair0Icon,0.08,なあ...\nこれどうする?,#
+Text,きりん,Repair2Icon,0.2,どうするって何が～?,#
+Move,くるま,0.5,"(30, 0)",TRUE,#
+Text,くるま,Repair0Icon,0.08,これの修理だよ. 母ちゃんに言われただろ.,#
+Text,たこ,Repair1Icon,0.08,無理だろ.,#
+Act,たこ,Walk,#,,
+Wait,0.5,#,,,
+Act,たこ,Wait,#,,
+Wait,0.5,#,,,
+Text,たこ,Repair1Icon,0.08,"外はボロボロ, 中はウイルスまみれだぞ.",#
+Act,きりん,Down,#,,
+Wait,0.5,#,,,
+Text,きりん,Repair2Icon,0.2,そ～だよ～.\n僕たちには無理だよ～.,#
+Move,くるま,0.2,"(-10, 0)",TRUE,#
+Wait,1,#,,,
+Text,くるま,Repair0Icon,0.08,誰かに手伝ってもらおうよ.,#
+Text,くるま,Repair0Icon,0.08,ねこぜ さん とか...,#
+Text,たこ,Repair1Icon,0.08,"嫌な奴だし,  相手してくれないよ.",#
+Move,くるま,0.2,"(-10, 0)",TRUE,#
+Text,くるま,Repair0Icon,0.08,がくしゃ さん とか...,#
+Text,たこ,Repair1Icon,0.08,"考えごとに夢中で, 資料室から出てこないだろ.",#
+Text,くるま,Repair0Icon,0.2,...,#
+Wait,1,#,,,
+Act,きりん,Up,#,,
+Act,たこ,Mirror,#,,
+Act,たこ,Walk,#,,
+Move,たこ,10,"(300, 0)",FALSE,#
+Text,きりん,Repair2Icon,0.2,"また, 何か決まったら呼んでね～.",#
+Act,きりん,Mirror,#,,
+Act,きりん,Walk,#,,
+Move,きりん,10,"(350, 0)",FALSE,#
+Text,くるま,Repair0Icon,0.08,あっ... まって...,#
+Text,くるま,Repair0Icon,0.1,（ 一体どうすれば... ）,#
+Scene,Adventure,#,,,

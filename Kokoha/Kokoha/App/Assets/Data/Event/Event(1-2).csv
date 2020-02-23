@@ -1,0 +1,34 @@
+﻿Background,Entrance,"(500, 0)",#,,
+Generate,Searcher0,ちび,"(220, 280)",#,
+Generate,Searcher1,まる,"(770, 220)",#,
+Generate,Searcher2,のっぽ,"(680, 180)",#,
+Run,#,,,,
+Act,ちび,Mirror,#,,
+Run,#,,,,
+Wait,2,#,,,
+Text,のっぽ,Searcher1Icon,0.15,"ね, ねえ, のっぽさん...",#
+Act,のっぽ,Mirror,#,,
+Wait,1,#,,,
+Text,のっぽ,Searcher1Icon,0.15,"ほ, 本当に, \nこのゲート以外の出口なんてあるのかな...",#
+Act,のっぽ,Walk,#,,
+Wait,1.1,#,,,
+Act,のっぽ,Wait,#,,
+Wait,1,#,,,
+Text,のっぽ,Searcher2Icon,0.1,"確かに, これだけ探して見つからないと,\n不安になりますね.",#
+Text,ちび,Searcher0Icon,0.05,"どうせ, 出口なんてないよ!",#
+Act,のっぽ,Mirror,#,,
+Camera,2,"(-150, 0)",#,,
+Act,ちび,Walk,#,,
+Move,ちび,2,"(150,0)",TRUE,#
+Act,ちび,Wait,#,,
+Text,ちび,Searcher0Icon,0.05,見つからない出口なんて探してもつまんないよ!,#
+Text,のっぽ,Searcher2Icon,0.1,"しかし, ママは...",#
+Text,まる,Searcher1Icon,0.15,"ち, ちびの言うとおりだよ...",#
+Act,のっぽ,Mirror,#,,
+Wait,1,#,,,
+Text,まる,Searcher1Icon,0.15,"ぼ, ぼくもう疲れたよ...",#
+Wait,0.5,#,,,
+Text,のっぽ,Searcher2Icon,0.1,...,#
+Text,のっぽ,Searcher2Icon,0.1,分かりました. 私がママに話をしてきます.\n出口を探すのを止めるのを提案してきますね.,#
+Text,のっぽ,Searcher2Icon,0.1,（話せばママも分かってくれるはずです）,#
+Scene,Adventure,#,,,

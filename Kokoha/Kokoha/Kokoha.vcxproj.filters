@@ -786,6 +786,18 @@
     <ClCompile Include="Src\Event\Object\EventDeveloper.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Object\EventRepair0.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\EventRepair1.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\EventRepair2.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\BoxRobot.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1161,6 +1173,18 @@
       <Filter>Src\Adventure\Window</Filter>
     </ClInclude>
     <ClInclude Include="Src\Event\Object\EventDeveloper.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EventRepair0.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EventRepair1.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EventRepair2.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\BoxRobot.h">
       <Filter>Src\Event\Object</Filter>
     </ClInclude>
   </ItemGroup>

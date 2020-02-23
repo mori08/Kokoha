@@ -9,6 +9,10 @@
 #include "../Object/EventSearcher1.h"
 #include "../Object/EventSearcher2.h"
 #include "../Object/EventDeveloper.h"
+#include "../Object/EventRepair0.h"
+#include "../Object/EventRepair1.h"
+#include "../Object/EventRepair2.h"
+#include "../Object/BoxRobot.h"
 
 
 namespace
@@ -68,4 +72,8 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 	setGenerateObjectFunc<EventSearcher1>(U"Searcher1");
 	setGenerateObjectFunc<EventSearcher2>(U"Searcher2");
 	setGenerateObjectFunc<EventDeveloper>(U"Developer");
+	setGenerateObjectFunc<EventRepair0>  (U"Repair0");
+	setGenerateObjectFunc<EventRepair1>  (U"Repair1");
+	setGenerateObjectFunc<EventRepair2>  (U"Repair2");
+	setGenerateObjectFunc<BoxRobot>      (U"BoxRobot");
 }
