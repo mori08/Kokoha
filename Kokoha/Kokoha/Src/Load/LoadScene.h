@@ -22,6 +22,9 @@ namespace Kokoha
 	{
 	private:
 
+		// ミューテックス
+		std::mutex mtx;
+
 		// ロード中のとき true , 終了したとき false
 		bool mIsLoading;
 
