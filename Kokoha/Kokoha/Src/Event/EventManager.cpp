@@ -1,6 +1,7 @@
 #include "EventManager.h"
 #include "../MyLibrary.h"
 #include "../MyColor.h"
+#include "../Input/ButtonManager.h"
 
 // 各イベントhttps://github.com/mori08
 #include "Event/EmptyEvent.h"
@@ -21,6 +22,31 @@ namespace
 	const String EVENT_ARG_END  = U"#";        // CSVファイル中でイベントの詳細の最後に使う文字列
 	const String RUN_EVENT_KEY  = U"Run";      // CSVファイル中で登録済みのイベントを全て実行する命令
 	const String FUNC_EVENT_KEY = U"Function"; // CSVファイル中で別CSVファイルのイベントを読み込む命令
+
+	// ボタンのサイズ
+	constexpr Size BUTTON_SIZE(150, 30);
+
+	// 「つづける」ボタン
+	const Kokoha::Button CONTINUE_BUTTON
+	(
+		U"つづける",
+		Kokoha::getRectFromCenter(Point(320, 300), BUTTON_SIZE)
+	);
+	// 「スキップ」ボタン
+	const Kokoha::Button SKIP_BUTTON
+	(
+		U"スキップ",
+		Kokoha::getRectFromCenter(Point(320, 350), BUTTON_SIZE)
+	);
+	// ボタンのリスト
+	const Array<Kokoha::Button> BUTTON_LIST
+	{
+		CONTINUE_BUTTON,
+		SKIP_BUTTON
+	};
+
+	// ポーズのテキストの表示
+	constexpr Point TEXT_POS(320, 150);
 }
 
 
@@ -61,6 +87,28 @@ void Kokoha::EventManager::init()
 
 	// シーン遷移先
 	mSceneName = none;
+
+	// ポーズの設定
+	mIsPausing = false;
+	ButtonManager::instance().clearButtonList();
+	ButtonManager::instance().registerButton(CONTINUE_BUTTON);
+	ButtonManager::instance().registerButton(SKIP_BUTTON);
+	ButtonManager::instance().setVerticalAdjacentButton
+	(
+		CONTINUE_BUTTON.getName(),
+		SKIP_BUTTON.getName()
+	);
+	ButtonManager::instance().setOnClickFunc
+	(
+		CONTINUE_BUTTON.getName(),
+		[this]() { mIsPausing = false; }
+	);
+	ButtonManager::instance().setOnClickFunc
+	(
+		SKIP_BUTTON.getName(),
+		[this]() { runAllEvent(); }
+	);
+	ButtonManager::instance().setSelectedButton(CONTINUE_BUTTON.getName());
 }
 
 
@@ -146,6 +194,30 @@ bool Kokoha::EventManager::load(const String& eventFileName)
 
 void Kokoha::EventManager::update()
 {
+	// キャンセルキーでポーズ
+	if (InputManager::instance().cancel())
+	{
+		mIsPausing = !mIsPausing;
+		ButtonManager::instance().setSelectedButton(CONTINUE_BUTTON.getName());
+		mCursor = CONTINUE_BUTTON.getRegion();
+		return;
+	}
+
+	// ポーズ
+	if (mIsPausing)
+	{
+		// カーソルの移動
+		internalDividingPoint
+		(
+			mCursor.pos,
+			ButtonManager::instance().getSelectedButton().getRegion().pos,
+			0.005
+		);
+		ButtonManager::instance().update();
+
+		return;
+	}
+
 	// イベントの更新
 	if (mEventQueue.size() > 1 && mEventQueue.front()->isCompleted())
 	{
@@ -170,6 +242,24 @@ void Kokoha::EventManager::update()
 void Kokoha::EventManager::draw() const
 {
 	Scene::Rect().draw(MyBlack);
+
+	if (mIsPausing)
+	{
+		FontAsset(U"30")(U"ポーズ").drawAt(TEXT_POS, MyWhite);
+
+		mCursor.draw(MyWhite);
+
+		for (const auto& button : BUTTON_LIST)
+		{
+			Color color = (button.getName() == ButtonManager::instance().getSelectedButton().getName())
+				? MyBlack
+				: MyWhite;
+
+			FontAsset(U"20")(button.getName()).drawAt(button.getRegion().center(), color);
+		}
+
+		return;
+	}
 
 	TextureAsset(mBackgroundName).draw(-mCameraPos.getValue().asPoint());
 

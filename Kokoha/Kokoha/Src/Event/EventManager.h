@@ -53,6 +53,12 @@ namespace Kokoha
 		// 遷移するシーン名 (遷移しないとき none)
 		Optional<SceneName> mSceneName;
 
+		// ポーズ中のとき true
+		bool mIsPausing;
+
+		// ポーズ時のカーソル
+		RectF mCursor;
+
 	private:
 
 		EventManager();

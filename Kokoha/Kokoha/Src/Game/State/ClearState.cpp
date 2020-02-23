@@ -106,6 +106,7 @@ Optional<SceneName> Kokoha::ClearState::isChangeAbleScene() const
 	if (mTimeSecond < CHANGE_STATE_SECOND) { return none; }
 	
 	const String stageName = GameManager::instance().getName();
+	AdventureManager::instance().clearWindow();
 	AdventureManager::instance().openWindow(std::make_unique<RewardWindow>(stageName));
 	EventManager::instance().setEventFileName(stageName);
 

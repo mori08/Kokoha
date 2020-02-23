@@ -62,6 +62,7 @@ Optional<SceneName> Kokoha::AwakeState::isChangeAbleScene() const
 	if (mTimeSecond > CHANGE_SCENE_TIME)
 	{
 		EventManager::instance().setEventFileName(U"Tutorial");
+		AdventureManager::instance().clearWindow();
 		AdventureManager::instance().openWindow(std::make_unique<TutorialWindow>());
 
 		return SceneName::LOAD_EVENT;
