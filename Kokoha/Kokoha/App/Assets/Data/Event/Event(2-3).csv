@@ -1,0 +1,28 @@
+﻿Background,Labolatory,"(640, 0)",#,,
+Generate,Developer,ねこぜ,"(1100, 80)",#,
+Generate,MainRobot,きおく,"(960, 162)",#,
+Run,#,,,,
+Act,きおく,Sleep,#,,
+Run,#,,,,
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.15,完成した... やっぱり俺は優秀だ...,#
+Act,ねこぜ,Walk,#,,
+Move,ねこぜ,1.9,"(-50, 0)",TRUE,#
+Act,ねこぜ,Wait,#,,
+Text,ねこぜ,DeveloperIcon,0.08,他のロボットの記録を取り込むことで\n強くなるロボット.\n名前は... 「きおく」にしよう.,#
+Text,ねこぜ,DeveloperIcon,0.08,壊れたロボットがいれば何倍にも強化できる.,#
+Act,ねこぜ,Sit,#,,
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.08,"だが, 玄関を開けるには\n壊れたロボットが足りない.",#
+Wait,2,#,,,
+Text,ねこぜ,DeveloperIcon,0.12,そうだ.... 思いついた...,#
+Act,ねこぜ,Stand,#,,
+Act,ねこぜ,Walk,#,,
+Camera,5,"(-250, 0)",#,,
+Move,ねこぜ,5,"(-350,0)",TRUE,#
+Act,ねこぜ,Wait,#,,
+Text,ねこぜ,DeveloperIcon,0.08,母さんに嘘の密告をしよう.\n母さんは裏切り物を許さないはずだ.,#
+Text,ねこぜ,DeveloperIcon,0.08,"「きおく」を強化しながら, 無能なロボットを\n処分できる. 一石二鳥じゃないか.",#
+Act,ねこぜ,Sit,#,,
+Text,ねこぜ,DeveloperIcon,0.12,明日が楽しみだ...,#
+Scene,Adventure,#,,,

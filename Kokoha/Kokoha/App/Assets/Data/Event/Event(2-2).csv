@@ -1,0 +1,33 @@
+﻿Background,Labolatory,"(640, 0)",#,,
+Generate,Developer,ねこぜ,"(1100, 80)",#,
+Generate,Repair0,くるま,"(700, 220)",#,
+Generate,Repair1,たこ,"(640, 240)",#,
+Run,#,,,,
+Act,くるま,Mirror,#,,
+Act,たこ,Mirror,#,,
+Run,#,,,,
+Act,ねこぜ,Sit,#,,
+Wait,2,#,,,
+Act,たこ,Mirror,#,,
+Act,たこ,Walk,#,,
+Move,たこ,5,"(-100, 0)",FALSE,#
+Wait,1,#,,,
+Text,くるま,Repair0Icon,0.08,ねこぜさん. 修理を手伝ってもらえませんか?\nやっぱり僕たちだけじゃ無理なんです.,#
+Text,ねこぜ,DeveloperIcon,0.08,俺は忙しいんだよ. 話しかけるな.,#
+Move,くるま,0.2,"(10, 0)",FALSE,#
+Text,くるま,Repair0Icon,0.08,"で, でも...",#
+Text,ねこぜ,DeveloperIcon,0.08,役立たずは黙ってろ.,#
+Move,くるま,0.2,"(-10, 0)",TRUE,#
+Wait,2,#,,,
+Act,くるま,Mirror,#,,
+Move,くるま,5,"(-200,0)",FALSE,#
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.08,何でこんな馬鹿で無能な奴らと同じ部屋で\n作業しなきゃいけないんだ.,#
+Act,ねこぜ,Stand,#,,
+Text,ねこぜ,DeveloperIcon,0.08,あの出口を探している連中も目障りだ.\n母さんはどうしてゴミロボットを\nこんなにたくさん作ったんだ?,#
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.08,"そういえば, ロボットが一体処分されたらしいな.",#
+Act,ねこぜ,Walk,#,,
+Move,ねこぜ,20,"(-700, 0)",FALSE,#
+Text,ねこぜ,DeveloperIcon,0.08,壊れたロボットを使って何かできないだろうか.,#
+Scene,Adventure,#,,,

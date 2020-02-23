@@ -37,12 +37,14 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 			mIsLoading = false;
 		}
 	);
+
+	mLoadThread.detach();
 }
 
 
 Kokoha::LoadScene::~LoadScene()
 {
-	mLoadThread.join();
+	
 }
 
 
@@ -52,6 +54,7 @@ void Kokoha::LoadScene::update()
 		std::lock_guard<std::mutex> lock(mtx);
 		if (mIsLoading) { return; }
 	}
+
 	if (mError)
 	{
 		printDebug(mError.value());
