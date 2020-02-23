@@ -256,6 +256,7 @@
     <ClCompile Include="Src\Event\Event\MoveEvent.cpp" />
     <ClCompile Include="Src\Event\Event\TextEvent.cpp" />
     <ClCompile Include="Src\Event\Event\WaitEvent.cpp" />
+    <ClCompile Include="Src\Event\Object\EventDeveloper.cpp" />
     <ClCompile Include="Src\Event\Object\EventObject.cpp" />
     <ClCompile Include="Src\Event\Object\EventSearcher0.cpp" />
     <ClCompile Include="Src\Event\Object\EventSearcher1.cpp" />
@@ -377,6 +378,7 @@
     <ClInclude Include="Src\Event\Event\MoveEvent.h" />
     <ClInclude Include="Src\Event\Event\TextEvent.h" />
     <ClInclude Include="Src\Event\Event\WaitEvent.h" />
+    <ClInclude Include="Src\Event\Object\EventDeveloper.h" />
     <ClInclude Include="Src\Event\Object\EventObject.h" />
     <ClInclude Include="Src\Event\Object\EventSearcher0.h" />
     <ClInclude Include="Src\Event\Object\EventSearcher1.h" />

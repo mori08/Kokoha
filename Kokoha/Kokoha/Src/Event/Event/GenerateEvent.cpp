@@ -8,6 +8,7 @@
 #include "../Object/EventSearcher0.h"
 #include "../Object/EventSearcher1.h"
 #include "../Object/EventSearcher2.h"
+#include "../Object/EventDeveloper.h"
 
 
 namespace
@@ -66,4 +67,5 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 	setGenerateObjectFunc<EventSearcher0>(U"Searcher0");
 	setGenerateObjectFunc<EventSearcher1>(U"Searcher1");
 	setGenerateObjectFunc<EventSearcher2>(U"Searcher2");
+	setGenerateObjectFunc<EventDeveloper>(U"Developer");
 }

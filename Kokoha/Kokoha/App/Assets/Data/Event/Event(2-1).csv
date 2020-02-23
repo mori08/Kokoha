@@ -1,0 +1,24 @@
+﻿Background,Labolatory,"(640,0)",#,,
+Generate,Developer,ねこぜ,"(1100, 80)",#,
+Generate,Searcher0,ちび,"(600, 280)",#,
+Run,#,,,,
+Act,ねこぜ,Sit,#,,
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.08,母さんは玄関ゲートを開けるロボットを\n作れと言った.,#
+Text,ねこぜ,DeveloperIcon,0.08,玄関ゲートは丈夫で壊せそうにない.,#
+Text,ねこぜ,DeveloperIcon,0.08,ドアのロックにアクセスするのも難しい.\nセキュリティが強すぎる.,#
+Act,ねこぜ,Stand,#,,
+Wait,1,#,,,
+Act,ねこぜ,Walk,#,,
+Act,ちび,Mirror,#,,
+Act,ちび,Walk,#,,
+Move,ちび,4,"(800, 0)",FALSE,#
+Camera,8,"(-200, 0)",#,,
+Move,ねこぜ,9,"(-400, 0)",TRUE,#
+Act,ねこぜ,Wait,#,,
+Text,ねこぜ,DeveloperIcon,0.08,"俺は優秀なロボットだが...,\nこれは無理難題だ.",#
+Text,ねこぜ,DeveloperIcon,0.08,...材料を探しにいくか.,#
+Act,ねこぜ,Walk,#,,
+Move,ねこぜ,9,"(-400, 0)",FALSE,#
+Wait,3,#,,,
+Scene,Adventure,#,,,

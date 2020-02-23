@@ -11,10 +11,10 @@ namespace
 	using AreaFlag = Optional<String>;
 
 	// ウィンドウサイズ
-	constexpr Size WINDOW_SIZE(300, 140);
+	constexpr Size WINDOW_SIZE(340, 140);
 
 	// テキストを描画する位置
-	constexpr Point DRAW_TEXT_POS(180, 180);
+	constexpr Point DRAW_TEXT_POS(160, 180);
 }
 
 

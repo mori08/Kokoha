@@ -91,7 +91,7 @@ void Kokoha::GameOverState::update()
 	// マスのアルファ値の変更
 	internalDividingPoint(mSquareAlpha, 1.0, CHANGE_ALPHA_RATE);
 
-	if (mTimeSecond < DRAW_TEXT_START) { return; }
+	if (mTimeSecond < SELECT_SECOND) { return; }
 
 	// ボタンの更新
 	ButtonManager::instance().update();
