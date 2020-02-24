@@ -16,6 +16,7 @@
 #include "../Object/BoxRobot.h"
 #include "../Object/HelpRobot.h"
 #include "../Object/DoctorReport.h"
+#include "../Object/EventEffect.h"
 
 
 namespace
@@ -83,4 +84,5 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 	setGenerateObjectFunc<HelpRobot>      (U"HelpRobot");
 
 	setGenerateObjectFunc<DoctorReport>(U"DoctorReport");
+	setGenerateObjectFunc<EventEffect> (U"Effect");
 }

@@ -1,0 +1,30 @@
+﻿Background,WorkSpace,"(0, 0)",#,,
+Generate,Effect,暗転,"(0, 0)",#,
+Generate,HelpRobot,お手伝いロボ,"(250, 120)",#,
+Generate,Searcher2,のっぽ,"(1000, 180)",#,
+Run,#,,,,
+Act,お手伝いロボ,Up,#,,
+Wait,1,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,たくさんの仲間を作った.,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,僕はみんなのお母さんになったんだ.,#
+Act,お手伝いロボ,Mirror,#,,
+Move,お手伝いロボ,2,"(50, 0)",FALSE,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,みんなには僕のココロをコピーして渡した.,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,"与えた仕事や環境によって, みんなは \nいろいろな性格に変わった.",#
+Camera,6,"(280, 0)",#,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,"みんなで協力すれば, きっとここから出られる.",#
+Act,のっぽ,Walk,#,,
+Wait,1,#,,,
+Move,のっぽ,3,"(-200 , 0)",TRUE,#
+Act,のっぽ,Wait,#,,
+Wait,2,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,だから...,#
+Act,のっぽ,Walk,#,,
+Move,お手伝いロボ,0.1,"(10, 0)",FALSE,#
+Move,のっぽ,0.1,"(10, 0)",TRUE,#
+Act,のっぽ,Wait,#,,
+Wait,1,#,,,
+Camera,2,"(-320, 0)",#,,
+Act,暗転,Dark,#,,
+Text,お手伝いロボ,HelpRobotIcon,0.12,協力できないロボットはいらない.,#
+Scene,Adventure,#,,,

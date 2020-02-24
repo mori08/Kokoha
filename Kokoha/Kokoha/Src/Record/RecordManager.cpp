@@ -53,7 +53,7 @@ Kokoha::RecordManager::RecordManager()
 	mRecordMap.try_emplace(U"Last"    , std::move(Record(1, 0)));
 
 	// カセット
-	mRecordMap.try_emplace(U"CassetteCount", std::move(Record(3, 2)));
+	mRecordMap.try_emplace(U"CassetteCount", std::move(Record(3, 1)));
 	for (const auto& cassette : CassetteManager::instance().getCassetteList())
 	{
 		if (cassette->NAME == U"スピードI" || cassette->NAME == U"プレイヤーI")

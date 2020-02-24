@@ -259,6 +259,7 @@
     <ClCompile Include="Src\Event\Object\BoxRobot.cpp" />
     <ClCompile Include="Src\Event\Object\DoctorReport.cpp" />
     <ClCompile Include="Src\Event\Object\EventDeveloper.cpp" />
+    <ClCompile Include="Src\Event\Object\EventEffect.cpp" />
     <ClCompile Include="Src\Event\Object\EventObject.cpp" />
     <ClCompile Include="Src\Event\Object\EventRepair0.cpp" />
     <ClCompile Include="Src\Event\Object\EventRepair1.cpp" />
@@ -398,6 +399,7 @@
     <ClInclude Include="Src\Event\Object\EventSearcher2.h" />
     <ClInclude Include="Src\Event\Object\HelpRobot.h" />
     <ClInclude Include="Src\Event\Object\MainRobot.h" />
+    <ClInclude Include="Src\Event\Object\EventEffect.h" />
     <ClInclude Include="Src\Event\Object\TestEventObject.h" />
     <ClInclude Include="Src\Event\Scene\EventScene.h" />
     <ClInclude Include="Src\Event\Scene\LoadEventScene.h" />

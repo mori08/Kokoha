@@ -21,6 +21,14 @@ namespace
 		Array<Point>{Point(1, 0), Point(0, 0)},
 		false
 	);
+
+	// êÃ
+	const Kokoha::Animation OLD_ANIM
+	(
+		0.0,
+		Array<Point>{Point(3, 0)},
+		false
+	);
 }
 
 
@@ -29,4 +37,6 @@ Kokoha::HelpRobot::HelpRobot(const Point& pos)
 {
 	setAnimation(U"Up"  , UP_ANIM  );
 	setAnimation(U"Down", DOWN_ANIM);
+
+	setAnimation(U"Old", OLD_ANIM);
 }

@@ -1,0 +1,15 @@
+﻿Background,WorkSpace(old),"(0,0)",#,,
+Generate,Effect,暗転,"(0,0)",#,
+Generate,HelpRobot,お手伝いロボ,"(320, 120)",#,
+Run,#,,,,
+Act,お手伝いロボ,Mirror,#,,
+Act,お手伝いロボ,Old,#,,
+Run,#,,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,この施設から出る方法が見つからない.\n自由になりたいのに...,#
+Move,お手伝いロボ,1,"(30, 0)",TRUE,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,1人じゃ無理だ. 仲間が必要だ.,#
+Wait,0.5,#,,,
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,ハカセにもできたんだ.\n僕にもロボットが作れるはずだ.,#
+Scene,Adventure,#,,,

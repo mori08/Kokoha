@@ -52,8 +52,16 @@ Kokoha::RewardWindow::RewardWindow(const String& stageName)
 			U"カセット[ " + CassetteManager::instance().getCassetteList()[cassetteId]->NAME + U" ]の獲得"
 		);
 
-		int32 count = RecordManager::instance().getRecord(U"CassetteCount");
-		RecordManager::instance().setRecord(U"CassetteCount", ++count);
+		int32 count = 0; // 所持カセット
+		for (const auto& cassette : CassetteManager::instance().getCassetteList())
+		{
+			if (cassette->getState() != Cassette::NO_POSSESS_STATE)
+			{
+				++count;
+			}
+		}
+		RecordManager::instance().setRecord(U"CassetteCount", count / 3 + 1);
+
 		if (count % 3 == 0)
 		{
 			mTextList.emplace_back

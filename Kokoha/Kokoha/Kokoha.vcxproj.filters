@@ -801,10 +801,13 @@
     <ClCompile Include="Src\Event\Object\EventResearcher.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Event\Object\HelpRobot.cpp">
-      <Filter>Src\Event\Event</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Event\Object\DoctorReport.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\EventEffect.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Event\Object\HelpRobot.cpp">
       <Filter>Src\Event\Object</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1199,10 +1202,13 @@
     <ClInclude Include="Src\Event\Object\EventResearcher.h">
       <Filter>Src\Event\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Event\Object\HelpRobot.h">
-      <Filter>Src\Event\Event</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Event\Object\DoctorReport.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EventEffect.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\HelpRobot.h">
       <Filter>Src\Event\Object</Filter>
     </ClInclude>
   </ItemGroup>

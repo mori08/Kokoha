@@ -6,7 +6,7 @@
 namespace
 {
 	// ê∂ê¨ä‘äu
-	constexpr double GENERATE_SPAN = 6.0;
+	constexpr double GENERATE_SPAN = 4.0;
 
 	// ÉSÅ[ÉãÇ∆ÇÃãóó£
 	constexpr double DISTANCE = 96;

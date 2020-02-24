@@ -51,11 +51,8 @@ bool Kokoha::Equipment::isAddAbleCassette(const CassettePtr& cassette) const
 	// 所持上限を超えたら false
 	if (mCassetteList.size() + 1 > NUM_LIMIT) { return false; }
 
-	// コスト上限
-	const int32 COST_LIMIT = 1 + RecordManager::instance().getRecord(U"CassetteCount") / 3;
-
 	// コスト上限を超えたら false
-	if (mTotalCost + cassette->COST > COST_LIMIT) { return false; }
+	if (mTotalCost + cassette->COST > RecordManager::instance().getRecord(U"CassetteCount")) { return false; }
 
 	return true;
 }

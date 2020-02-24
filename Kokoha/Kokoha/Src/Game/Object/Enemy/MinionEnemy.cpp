@@ -6,7 +6,7 @@
 namespace
 {
 	// 速さ
-	constexpr double SPEED = 0.3;
+	constexpr double SPEED = 0.4;
 
 	// 回転の半径
 	constexpr double RADIUS = 64;
@@ -15,10 +15,10 @@ namespace
 	constexpr double ANGLE_SPEED = (60 * SPEED) / RADIUS;
 
 	// プレイヤーを追いかける距離
-	constexpr double CHASE_DISTANCE = 128;
+	constexpr double CHASE_DISTANCE = 150;
 
 	// プレイヤーを追いかける速さ
-	constexpr double CHASE_SPEED = 0.6;
+	constexpr double CHASE_SPEED = 0.7;
 }
 
 
