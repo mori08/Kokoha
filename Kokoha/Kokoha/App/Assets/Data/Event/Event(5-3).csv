@@ -1,0 +1,10 @@
+﻿Generate,DoctorReport,ノイズ,"(0,0)",#,
+Run,#,,,,
+Text,ハカセ,DoctorIcon,0.1,"結局, 私は間違っていた.\nココロを持ったロボットはとても危険だった.",#
+Text,ハカセ,DoctorIcon,0.1,"あのロボットが外に出たら, 誰かを\n傷つけてしまうかもしれない.",#
+Wait,1,#,,,
+Text,ハカセ,DoctorIcon,0.1,"しかし, あのロボットはここで\n長い間苦しむことになる.",#
+Text,ハカセ,DoctorIcon,0.1,全て私のせいだ.,#
+Wait,2,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.5,"ハカセ, 見つけました.",#
+Scene,Adventure,#,,,
