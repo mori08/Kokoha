@@ -12,7 +12,10 @@
 #include "../Object/EventRepair0.h"
 #include "../Object/EventRepair1.h"
 #include "../Object/EventRepair2.h"
+#include "../Object/EventResearcher.h"
 #include "../Object/BoxRobot.h"
+#include "../Object/HelpRobot.h"
+#include "../Object/DoctorReport.h"
 
 
 namespace
@@ -67,13 +70,17 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 {
 	setGenerateObjectFunc<TestEventObject>(U"Test");
 
-	setGenerateObjectFunc<MainRobot>     (U"MainRobot");
-	setGenerateObjectFunc<EventSearcher0>(U"Searcher0");
-	setGenerateObjectFunc<EventSearcher1>(U"Searcher1");
-	setGenerateObjectFunc<EventSearcher2>(U"Searcher2");
-	setGenerateObjectFunc<EventDeveloper>(U"Developer");
-	setGenerateObjectFunc<EventRepair0>  (U"Repair0");
-	setGenerateObjectFunc<EventRepair1>  (U"Repair1");
-	setGenerateObjectFunc<EventRepair2>  (U"Repair2");
-	setGenerateObjectFunc<BoxRobot>      (U"BoxRobot");
+	setGenerateObjectFunc<MainRobot>      (U"MainRobot");
+	setGenerateObjectFunc<EventSearcher0> (U"Searcher0");
+	setGenerateObjectFunc<EventSearcher1> (U"Searcher1");
+	setGenerateObjectFunc<EventSearcher2> (U"Searcher2");
+	setGenerateObjectFunc<EventDeveloper> (U"Developer");
+	setGenerateObjectFunc<EventRepair0>   (U"Repair0");
+	setGenerateObjectFunc<EventRepair1>   (U"Repair1");
+	setGenerateObjectFunc<EventRepair2>   (U"Repair2");
+	setGenerateObjectFunc<EventResearcher>(U"Researcher");
+	setGenerateObjectFunc<BoxRobot>       (U"BoxRobot");
+	setGenerateObjectFunc<HelpRobot>      (U"HelpRobot");
+
+	setGenerateObjectFunc<DoctorReport>(U"DoctorReport");
 }

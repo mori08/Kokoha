@@ -101,6 +101,9 @@ void Kokoha::GameManager::init()
 
 	// プレイヤーの速さの初期化
 	mPlayerSpeed.init();
+
+	// 敵のライトを消す
+	GameEnemy::lightOff();
 }
 
 
@@ -205,6 +208,9 @@ Optional<String> Kokoha::GameManager::reload()
 
 	// プレイヤーの速さの初期化
 	mPlayerSpeed.init();
+
+	// 敵のライトを消す
+	GameEnemy::lightOff();
 
 	// エラーメッセージ
 	String errorMessage = U"[AdventureManager::load]\n";

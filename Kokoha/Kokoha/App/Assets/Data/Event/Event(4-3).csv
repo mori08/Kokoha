@@ -1,0 +1,24 @@
+﻿Background,LibraryAndPC,"(220, 0)",#,,
+Generate,Researcher,がくしゃ,"(360, 240)",#,
+Run,#,,,,
+Act,がくしゃ,Left,#,,
+Run,#,,,,
+Wait,0.5,#,,,
+Text,がくしゃ,ResearcherIcon,0.12,"人間の歴史, 文化, そして心について調べた.",#
+Text,がくしゃ,ResearcherIcon,0.12,"完全な心とは酷いものだった.\n不安定で, 非常に危険なものだ.",#
+Act,がくしゃ,LeftWalk,#,,
+Move,がくしゃ,0.5,"(10, 0)",TRUE,#
+Act,がくしゃ,Left,#,,
+Text,がくしゃ,ResearcherIcon,0.12,"母のココロは人間の心に近い.\n不完全だが, 完成に近いもののはずだ.",#
+Act,がくしゃ,RightWalk,#,,
+Move,がくしゃ,1,"(20, 0)",TRUE,#
+Act,がくしゃ,Right,#,,
+Wait,1,#,,,
+Text,がくしゃ,ResearcherIcon,0.12,完成に近いココロ と 従順なロボット\nハカセは後者を選んだ.,#
+Text,がくしゃ,ResearcherIcon,0.12,安心・安全でハリボテのココロを持った\nロボットを選んだのだ.,#
+Act,がくしゃ,Sleep,#,,
+Act,がくしゃ,Think,#,,
+Wait,1.5,#,,,
+Text,がくしゃ,ResearcherIcon,0.12,人間として正しい選択だ.,#
+Text,がくしゃ,ResearcherIcon,0.12,"そして, 完成に近いココロを持ってしまった\n私達の末路は想像に難くない.",#
+Scene,Adventure,#,,,

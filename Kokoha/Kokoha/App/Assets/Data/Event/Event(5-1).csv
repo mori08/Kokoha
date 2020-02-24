@@ -1,0 +1,8 @@
+﻿Generate,DoctorReport,ノイズ,"(0, 0)",#,
+Run,#,,,,
+Wait,2,#,,,
+Text,ハカセ,DoctorIcon,0.1,居場所がばれた.,#
+Text,ハカセ,DoctorIcon,0.1,お手伝いロボットがここに来る.,#
+Text,ハカセ,DoctorIcon,0.1,"おそらく, 私は殺されるだろう.",#
+Text,ハカセ,DoctorIcon,0.1,ここに最後の記録を残す.,#
+Scene,Adventure,#,,,

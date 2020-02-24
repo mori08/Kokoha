@@ -32,8 +32,10 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	(
 		[this]()
 		{
-			mError     = load();
+			auto error = load();
+
 			std::lock_guard<std::mutex> lock(mtx);
+			mError     = error;
 			mIsLoading = false;
 		}
 	);

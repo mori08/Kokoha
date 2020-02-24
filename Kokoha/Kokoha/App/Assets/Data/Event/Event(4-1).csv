@@ -1,0 +1,14 @@
+﻿Background,LibraryAndPC,"(220,0)",#,,
+Generate,Researcher,がくしゃ,"(320, 240)",#,
+Run,#,,,,
+Wait,1,#,,,
+Text,がくしゃ,ResearcherIcon,0.12,私の母は私にココロの研究を依頼した.,#
+Act,がくしゃ,Sleep,#,,
+Act,がくしゃ,Think,#,,
+Text,がくしゃ,ResearcherIcon,0.12,母は事情を詳しく説明はしなかった.,#
+Act,がくしゃ,Awake,#,,
+Wait,2,#,,,
+Act,がくしゃ,RightWalk,#,,
+Move,がくしゃ,10,"(400, 0)",FALSE,#
+Text,がくしゃ,ResearcherIcon,0.12,あの部屋に行ってみよう. \n何か見つかるかもしれない.,#
+Scene,Adventure,#,,,
