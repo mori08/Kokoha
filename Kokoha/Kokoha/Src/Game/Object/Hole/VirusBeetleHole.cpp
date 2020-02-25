@@ -61,7 +61,7 @@ void Kokoha::VirusBeetleHole::update()
 		mNowSquare = StageData::pixelToSquare(mBody.center);
 		mVisitedCount[StageData::squareToInteger(mNowSquare)] += COUNT_INCREASE;
 	}
-	ClearPrint();
+	
 	// 移動先の選択
 	Point toSquare        = mNowSquare; // 目的マス
 	int32 minVisitedCount = (int32)1e9; // 最小評価値

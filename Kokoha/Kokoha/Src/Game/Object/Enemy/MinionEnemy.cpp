@@ -15,7 +15,7 @@ namespace
 	constexpr double ANGLE_SPEED = (60 * SPEED) / RADIUS;
 
 	// プレイヤーを追いかける距離
-	constexpr double CHASE_DISTANCE = 150;
+	constexpr double CHASE_DISTANCE = 128;
 
 	// プレイヤーを追いかける速さ
 	constexpr double CHASE_SPEED = 0.7;

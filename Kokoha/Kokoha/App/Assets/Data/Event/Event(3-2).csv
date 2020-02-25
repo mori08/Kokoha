@@ -1,0 +1,49 @@
+﻿Background,Labolatory,"(100, 0)",#,,
+Generate,Repair0,くるま,"(240, 220)",#,
+Generate,Repair1,たこ,"(640, 240)",#,
+Generate,Repair2,きりん,"(720, 200)",#,
+Generate,BoxRobot,はこがた,"(130, 260)",#,
+Generate,Effect,ノイズ,"(0,0)",#,
+Run,#,,,,
+Act,はこがた,Broken,#,,
+Run,#,,,,
+Wait,1,#,,,
+Camera,3,"(180, 0)",#,,
+Wait,1,#,,,
+Text,きりん,Repair2Icon,0.12,たこ～,#
+Act,たこ,Mirror,#,,
+Text,たこ,Repair1Icon,0.08,どうした?,#
+Text,きりん,Repair2Icon,0.12,あの壊れたロボットってなんなの～?,#
+Act,たこ,Mirror,#,,
+Wait,1,#,,,
+Text,たこ,Repair1Icon,0.08,"俺たちが生まれるずっと前に, この建物の設備を\n管理するために作られたらしい.",#
+Text,たこ,Repair1Icon,0.08,"つまり, あのロボットなら玄関ゲートを\n開けることができるんだ.",#
+Act,きりん,Down,#,,
+Wait,0.5,#,,,
+Text,きりん,Repair2Icon,0.12,"じゃあ, どうして壊れちゃったの～?",#
+Text,たこ,Repair1Icon,0.08,母ちゃんを裏切ったらしい.,#
+Text,たこ,Repair1Icon,0.08,俺らもさぼるときは\nバレないように気を付けようぜ.,#
+Wait,1,#,,,
+Move,くるま,0.2,"(20, 0)",FALSE,#
+Text,くるま,Repair0Icon,0.08,これでよし!,#
+Act,きりん,Up,#,,
+Camera,3,"(-180, 0)",#,,
+Act,はこがた,Repair,#,,
+Act,たこ,Walk,#,,
+Move,たこ,6,"(-260, 0)",TRUE,#
+Act,たこ,Wait,#,,
+Text,たこ,Repair1Icon,0.08,なおったのか?,#
+Text,くるま,Repair0Icon,0.08,"分からない.\nけど, 無理やり起動することにした.",#
+Act,たこ,Walk,#,,
+Move,たこ,0.1,"(10, 0)",TRUE,#
+Act,たこ,Wait,#,,
+Text,たこ,Repair1Icon,0.08,おい... 危ないだろ...,#
+Act,くるま,Mirror,#,,
+Text,くるま,Repair0Icon,0.08,"じゃあ, 他にどうするんだよ.",#
+Act,くるま,Mirror,#,,
+Move,くるま,0.4,"(-20, 0)",TRUE,#
+Wait,1,#,,,
+Text,くるま,Repair0Icon,0.2,スイッチ   オン!,#
+Act,ノイズ,Noise,#,,
+Wait,0.8,#,,,
+Scene,Adventure,#,,,

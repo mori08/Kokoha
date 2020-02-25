@@ -21,8 +21,8 @@ Kokoha::EventEffect::EventEffect(const Point& pos)
 	, mDark(false)
 	, mDarkAlpha(0)
 {
-	mActMap[U"Noise"] = [this]() { mNoise = true; };
-	mActMap[U"Dark" ] = [this]() { mDark  = true; };
+	mActMap[U"Noise"] = [this]() { mNoise = !mNoise; };
+	mActMap[U"Dark" ] = [this]() { mDark  = !mDark;  };
 }
 
 

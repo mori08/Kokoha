@@ -21,7 +21,9 @@ enum class SceneName
 
 	LOAD_GAME,      // ゲームのロード
 	RELOAD_GAME,    // ゲームのリロード
-	GAME            // ゲーム
+	GAME ,          // ゲーム
+
+	TEST_LOAD       // ロードのテスト
 };
 
 

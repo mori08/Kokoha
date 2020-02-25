@@ -344,6 +344,7 @@
     <ClCompile Include="Src\Input\KeyInputState.cpp" />
     <ClCompile Include="Src\Input\MouseInputState.cpp" />
     <ClCompile Include="Src\Load\LoadScene.cpp" />
+    <ClCompile Include="Src\Load\TestLoadScene.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\MyLibrary.cpp" />
     <ClCompile Include="Src\Record\LoadNewGameScene.cpp" />
@@ -477,6 +478,7 @@
     <ClInclude Include="Src\Input\KeyInputState.h" />
     <ClInclude Include="Src\Input\MouseInputState.h" />
     <ClInclude Include="Src\Load\LoadScene.h" />
+    <ClInclude Include="Src\Load\TestLoadScene.h" />
     <ClInclude Include="Src\MyColor.h" />
     <ClInclude Include="Src\MyLibrary.h" />
     <ClInclude Include="Src\Record\LoadNewGameScene.h" />

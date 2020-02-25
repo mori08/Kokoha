@@ -9,7 +9,7 @@ Act,はこがた,Broken,#,,
 Run,#,,,,
 Wait,1,#,,,
 Text,くるま,Repair0Icon,0.08,なあ...\nこれどうする?,#
-Text,きりん,Repair2Icon,0.2,どうするって何が～?,#
+Text,きりん,Repair2Icon,0.12,どうするって何が～?,#
 Move,くるま,0.5,"(30, 0)",TRUE,#
 Text,くるま,Repair0Icon,0.08,これの修理だよ. 母ちゃんに言われただろ.,#
 Text,たこ,Repair1Icon,0.08,無理だろ.,#
@@ -20,7 +20,7 @@ Wait,0.5,#,,,
 Text,たこ,Repair1Icon,0.08,"外はボロボロ, 中はウイルスまみれだぞ.",#
 Act,きりん,Down,#,,
 Wait,0.5,#,,,
-Text,きりん,Repair2Icon,0.2,そ～だよ～.\n僕たちには無理だよ～.,#
+Text,きりん,Repair2Icon,0.12,そ～だよ～.\n僕たちには無理だよ～.,#
 Move,くるま,0.2,"(-10, 0)",TRUE,#
 Wait,1,#,,,
 Text,くるま,Repair0Icon,0.08,誰かに手伝ってもらおうよ.,#
@@ -35,7 +35,7 @@ Act,きりん,Up,#,,
 Act,たこ,Mirror,#,,
 Act,たこ,Walk,#,,
 Move,たこ,10,"(300, 0)",FALSE,#
-Text,きりん,Repair2Icon,0.2,"また, 何か決まったら呼んでね～.",#
+Text,きりん,Repair2Icon,0.12,"また, 何か決まったら呼んでね～.",#
 Act,きりん,Mirror,#,,
 Act,きりん,Walk,#,,
 Move,きりん,10,"(350, 0)",FALSE,#

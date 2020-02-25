@@ -16,6 +16,7 @@
 #include "Game/Scene/LoadGameScene.h"
 #include "Game/Scene/ReloadGameScene.h"
 #include "Game/Scene/GameScene.h"
+#include "Load/TestLoadScene.h"
 
 
 namespace
@@ -56,6 +57,7 @@ void Main()
 	sceneManager.add<Kokoha::LoadGameScene>     (SceneName::LOAD_GAME);
 	sceneManager.add<Kokoha::ReloadGameScene>   (SceneName::RELOAD_GAME);
 	sceneManager.add<Kokoha::GameScene>         (SceneName::GAME);
+	sceneManager.add<Kokoha::TestLoadScene>     (SceneName::TEST_LOAD);
 
 	while (System::Update())
 	{

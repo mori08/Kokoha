@@ -113,6 +113,8 @@ void Kokoha::RecordManager::save()
 
 void Kokoha::RecordManager::printAllRecord()
 {
+#ifdef _DEBUG
+
 	ClearPrint();
 	int32 cnt = 0;
 	String text;
@@ -122,6 +124,8 @@ void Kokoha::RecordManager::printAllRecord()
 		
 		if (++cnt % 3 == 0) { Print << text; text = U""; }
 	}
+
+#endif // _DEBUG
 }
 
 

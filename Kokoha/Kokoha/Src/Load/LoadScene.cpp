@@ -27,6 +27,7 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	, mText(text)
 	, mError(none)
 {
+	/*
 	// ï ÉXÉåÉbÉhÇÃçÏê¨
 	mLoadThread = std::thread
 	(
@@ -41,6 +42,7 @@ Kokoha::LoadScene::LoadScene(const InitData& init, const String& text)
 	);
 
 	mLoadThread.detach();
+	*/
 }
 
 
@@ -52,10 +54,7 @@ Kokoha::LoadScene::~LoadScene()
 
 void Kokoha::LoadScene::update()
 {
-	{
-		std::lock_guard<std::mutex> lock(mtx);
-		if (mIsLoading) { return; }
-	}
+	mError = load();
 
 	if (mError)
 	{
@@ -71,6 +70,7 @@ void Kokoha::LoadScene::update()
 
 void Kokoha::LoadScene::draw() const
 {
+	/*
 	static double angle = 0;
 	angle += Scene::DeltaTime();
 
@@ -90,6 +90,8 @@ void Kokoha::LoadScene::draw() const
 	static double t = 0;
 	t += Scene::DeltaTime();
 	FontAsset(U"20")(mText + String(U"...").substr(0,(int32)t%MAX_DOT_NUM)).draw(TEXT_POS);
+	*/
+	FontAsset(U"20")(mText).draw(TEXT_POS);
 }
 
 
