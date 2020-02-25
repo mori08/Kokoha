@@ -18,7 +18,7 @@ void Kokoha::InputManager::changeInputState()
 		return;
 	}
 
-	if ((KeyW | KeyA | KeyS | KeyD | KeyEnter | KeyBackspace).up())
+	if ((KeyEnter | KeyBackspace).up())
 	{
 		mInputState = std::make_unique<KeyInputState>();
 	}

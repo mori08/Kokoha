@@ -1,0 +1,32 @@
+﻿Background,Labolatory,"(-150, 0)",#,,
+Generate,Repair0,くるま,"(260, 220)",#,
+Generate,Repair1,たこ,"(200, 240)",#,
+Generate,Repair2,きりん,"(120, 200)",#,
+Generate,HelpRobot,お手伝いロボ,"(600, 120)",#,
+Run,#,,,,
+Act,きりん,Mirror,#,,
+Act,たこ,Mirror,#,,
+Run,#,,,,
+Wait,1,#,,,
+Text,くるま,Repair0Icon,0.08,"まさか, 暴走するなんて...",#
+Text,たこ,Repair1Icon,0.08,だから危ないって言ったんだ.\nあいつのウイルスに少し感染しちまっただろ.,#
+Act,たこ,Walk,#,,
+Wait,0.5,#,,,
+Act,たこ,Wait,#,,
+Text,たこ,Repair1Icon,0.08,暴走したロボットも空き部屋に捨てちまったし\nバレたら母ちゃんに怒られるぞ.,#
+Text,くるま,Repair0Icon,0.08,ごめん...,#
+Act,きりん,Walk,#,,
+Wait,1,#,,,
+Act,きりん,Wait,#,,
+Text,きりん,Repair2Icon,0.12,けんかしないでよ～\nはやく母ちゃんに直してもらおうよ～,#
+Act,くるま,Mirror,#,,
+Wait,0.5,#,,,
+Camera,3,"(250, 0)",#,,
+Wait,3,#,,,
+Text,くるま,Repair0Icon,0.08,母ちゃん!,#
+Move,お手伝いロボ,3,"(-250, 0)",FALSE,#
+Text,くるま,Repair0Icon,0.08,実はいろいろあって...,#
+Wait,2,#,,,
+Move,くるま,0.1,"(-10, 0)",TRUE,#
+Text,くるま,Repair0Icon,0.12,母ちゃん...?,#
+Scene,Adventure,#,,,

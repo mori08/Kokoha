@@ -62,7 +62,7 @@ Kokoha::RewardWindow::RewardWindow(const String& stageName)
 		}
 		RecordManager::instance().setRecord(U"CassetteCount", count / 3 + 1);
 
-		if (count % 3 == 0)
+		if (count % 3 == 0 && count < 21)
 		{
 			mTextList.emplace_back
 			(
@@ -111,7 +111,12 @@ void Kokoha::RewardWindow::setRewardMap()
 	sRewardMap.try_emplace
 	(
 		U"2-3",
-		std::move(Reward(19, []() { return AreaFlag(none); }))
+		std::move(Reward(19, []() 
+			{ 
+				if (RecordManager::instance().getRecord(U"3-3")) { return AreaFlag(none); }
+				return AreaFlag(U"‹ó‚«•”‰®"); 
+			}
+		))
 	);
 
 	// 3-
@@ -133,7 +138,12 @@ void Kokoha::RewardWindow::setRewardMap()
 	sRewardMap.try_emplace
 	(
 		U"3-3",
-		std::move(Reward(11, []() { return AreaFlag(U"‹ó‚«•”‰®"); }))
+		std::move(Reward(11, []() 
+			{ 
+				if (RecordManager::instance().getRecord(U"2-3")) { return AreaFlag(none); }
+				return AreaFlag(U"‹ó‚«•”‰®");  
+			}
+		))
 	);
 
 	// 4-

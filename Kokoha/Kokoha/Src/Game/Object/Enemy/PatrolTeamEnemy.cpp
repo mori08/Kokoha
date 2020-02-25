@@ -15,7 +15,7 @@ namespace
 	constexpr double CHASE_DISTANCE = 64;
 
 	// –Ú“I’n‚ğ•ÏX‚·‚éŠÔ‚Ì”ÍˆÍ
-	constexpr std::pair<double, double> CHANGE_GOAL_SECOND_RANGE = { 2.0,5.0 };
+	constexpr std::pair<double, double> CHANGE_GOAL_SECOND_RANGE = { 2.0,4.0 };
 }
 
 
@@ -79,7 +79,7 @@ void Kokoha::PatrolTeamEnemy::checkAnother(const GameObject& another)
 	
 	if (auto pos = another.checkTypeAndGetPos(ObjectType::ENEMY))
 	{
-		if ((pos.value()-mBody.center).length() > StageData::SQUARE_SIZE) { return; }
+		if ((pos.value()-mBody.center).length() > 2*StageData::SQUARE_SIZE) { return; }
 		
 		mGoal =
 			mBody.center

@@ -25,6 +25,9 @@ namespace
 
 	// 評価値の増加量
 	constexpr int32 COUNT_INCREASE = 2;
+
+	// 前にいたマスの補正
+	constexpr int32 PRE_VALUE = 10 * COUNT_INCREASE;
 }
 
 
@@ -34,6 +37,7 @@ Array<int32> Kokoha::VirusBeetleHole::mVisitedCount;
 Kokoha::VirusBeetleHole::VirusBeetleHole(const Vec2& pos)
 	: GameHole(pos, GENERATE_SPAN)
 	, mNowSquare(-1, -1)
+	, mPreSquare(-1, -1)
 {
 	mVisitedCount = Array<int32>(StageData::N, 0);
 
@@ -58,6 +62,7 @@ void Kokoha::VirusBeetleHole::update()
 	// 評価値の更新
 	if (mNowSquare != StageData::pixelToSquare(mBody.center)) 
 	{
+		mPreSquare = mNowSquare;
 		mNowSquare = StageData::pixelToSquare(mBody.center);
 		mVisitedCount[StageData::squareToInteger(mNowSquare)] += COUNT_INCREASE;
 	}
@@ -71,9 +76,15 @@ void Kokoha::VirusBeetleHole::update()
 
 		if (!GameManager::instance().getStageData().isWalkAble(square)) { continue; }
 		
-		if (mVisitedCount[StageData::squareToInteger(square)] < minVisitedCount)
+		int32 visitCount = mVisitedCount[StageData::squareToInteger(square)];
+		if (square == mPreSquare)
 		{
-			minVisitedCount = mVisitedCount[StageData::squareToInteger(square)];
+			visitCount += PRE_VALUE;
+		}
+
+		if (visitCount < minVisitedCount)
+		{
+			minVisitedCount = visitCount;
 			toSquare        = square;
 		}
 	}

@@ -1,0 +1,54 @@
+﻿Background,LastRoom,"(50,0)",#,,
+Generate,BoxRobot,ハコガタ,"(500, 260)",#,
+Generate,MainRobot,きおく,"(430, 262)",#,
+Generate,Effect,暗転,"(0,0)",#,
+Run,#,,,,
+Act,きおく,Side,#,,
+Run,#,,,,
+Wait,2,#,,,
+Act,ハコガタ,Awake,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Repair,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Awake,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Repair,#,,
+Wait,0.8,#,,,
+Act,ハコガタ,Awake,#,,
+Wait,1,#,,,
+Text,箱形ロボ,BoxRobotIcon,0.1,私は... 壊されたはず...\nちょっとだけ起きてられるみたい...,#
+Text,箱形ロボ,BoxRobotIcon,0.1,君が起こしてくれたの?     \n何のために?,#
+Wait,2,#,,,
+Text,きおく,MainRobotIcon,0.1,僕は玄関ゲートを開けるためのロボットです.,#
+Text,きおく,MainRobotIcon,0.1,"だから, みんなの記録を集めているんです.",#
+Wait,1,#,,,
+Text,箱形ロボ,BoxRobotIcon,0.1,"あなたは, ココロを持っていないんですね...\nこの施設にいる他のロボットとは違った\n生まれ方をしているみたい.",#
+Act,きおく,Walk,#,,
+Move,きおく,0.3,"(-10,0)",TRUE,#
+Act,きおく,Side,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.2,僕の... ココロ...,#
+Wait,1,#,,,
+Text,箱形ロボ,BoxRobotIcon,0.1,私のココロをあなたにあげます.,#
+Text,箱形ロボ,BoxRobotIcon,0.1,出口を開けた後どうするか...\nそのココロで考えてみてくださ...,#
+Act,ハコガタ,Repair,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Awake,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Repair,#,,
+Wait,0.1,#,,,
+Act,ハコガタ,Awake,#,,
+Wait,0.8,#,,,
+Act,ハコガタ,Repair,#,,
+Wait,1,#,,,
+Act,きおく,Walk,#,,
+Move,きおく,0.6,"(-20,0)",TRUE,#
+Act,きおく,Side,#,,
+Wait,1,#,,,
+Act,きおく,Mirror,#,,
+Act,きおく,Walk,#,,
+Move,きおく,5,"(-200, 0)",FALSE,#
+Wait,2,#,,,
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Scene,Adventure,#,,,

@@ -1,0 +1,34 @@
+﻿Background,GarbageDump,"(200, 0)",#,,
+Generate,Searcher0,ちび,"(0, 280)",#,
+Generate,HelpRobot,お手伝いロボ,"(0, 120)",#,
+Generate,Effect,暗転,"(0,0)",#,
+Run,#,,,,
+Act,ちび,Walk,#,,
+Act,ちび,Mirror,#,,
+Move,ちび,2,"(460, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Wait,1,#,,,
+Act,ちび,Mirror,#,,
+Text,ちび,Searcher0Icon,0.05,ママは僕たちを許してはくれなかった.,#
+Wait,1,#,,,
+Text,ちび,Searcher0Icon,0.05,まる も のっぽ も ママに壊された.,#
+Act,ちび,Walk,#,,
+Move,ちび,0.1,"(10, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Text,ちび,Searcher0Icon,0.05,次は僕の番だ.,#
+Wait,2,#,,,
+Act,ちび,Walk,#,,
+Move,ちび,0.1,"(-10, 0)",TRUE,#
+Act,ちび,Wait,#,,
+Text,ちび,Searcher0Icon,0.05,みんなと仲良く遊びたかっただけなのに...,#
+Wait,2,#,,,
+Text,ちび,Searcher0Icon,0.05,全部...      \nママのせいだ.,#
+Camera,3,"(-280, 0)",#,,
+Act,お手伝いロボ,Mirror,#,,
+Move,お手伝いロボ,5,"(150, 0)",TRUE,#
+Wait,1,#,,,
+Act,ちび,Walk,#,,
+Move,ちび,1,"(-300, 0)",FALSE,#
+Act,暗転,Dark,#,,
+Wait,3,#,,,
+Scene,Adventure,#,,,

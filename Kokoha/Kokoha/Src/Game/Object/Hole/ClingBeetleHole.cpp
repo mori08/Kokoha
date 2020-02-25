@@ -13,7 +13,7 @@ namespace
 	constexpr double SPEED = 0.8;
 
 	// 目的地設定時のプレイヤーとの距離
-	constexpr double DISTANCE_FROM_PLAYER = 96;
+	constexpr double DISTANCE_FROM_PLAYER = 64;
 }
 
 

@@ -21,6 +21,14 @@ namespace
 		Array<Point>{Point(0, 0)},
 		false
 	);
+
+	// –ÚŠo‚ß
+	const Kokoha::Animation AWAKE_ANIM
+	(
+		0.0,
+		Array<Point>{Point(1, 0)},
+		false
+	);
 }
 
 
@@ -29,4 +37,5 @@ Kokoha::BoxRobot::BoxRobot(const Point& pos)
 {
 	setAnimation(U"Broken", BROKEN_ANIM);
 	setAnimation(U"Repair", REPAIR_ANIM);
+	setAnimation(U"Awake" ,  AWAKE_ANIM);
 }
