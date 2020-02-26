@@ -7,6 +7,7 @@ Act,ちび,Mirror,#,,
 Act,のっぽ,Mirror,#,,
 Run,#,,,,
 Wait,1,#,,,
+Text,???,MainRobotIcon,0.1,"（これが, ロボットの記録...）",#
 Text,ちび,Searcher0Icon,0.05,まるー!\nはやく来いよー!,#
 Camera,3,"(-200, 0)",#,,
 Act,まる,Walk,#,,

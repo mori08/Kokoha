@@ -12,7 +12,7 @@ namespace
 
 
 Kokoha::TutorialCassetteState::TutorialCassetteState()
-	: TutorialState(U"装備の変更", U"決定キー")
+	: TutorialState(U"装備の変更", U"Enterキー")
 	, mEquipmentChangeCount(0)
 {
 }
