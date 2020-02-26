@@ -1,0 +1,27 @@
+﻿Background,WhiteBack,"(0,0)",#,,
+Generate,EntranceGate,玄関口,"(240, 40)",#,
+Generate,MainRobot,きおく,"(180, 262)",#,
+Generate,Effect,暗転,"(0,0)",#,
+Run,#,,,,
+Act,きおく,Side,#,,
+Run,#,,,,
+Wait,1,#,,,
+Act,きおく,Walk,#,,
+Move,きおく,1,"(-80, 0)",TRUE,#
+Act,きおく,Side,#,,
+Wait,1,#,,,
+Act,玄関口,Open,#,,
+Wait,1,#,,,
+Text,???,MainRobotIcon,0.1,玄関ゲートが開いた.,#
+Text,???,MainRobotIcon,0.1,これで...\n僕の仕事は終わりだ.,#
+Act,きおく,Front,#,,
+Wait,1,#,,,
+Act,きおく,Sleep,#,,
+Wait,1,#,,,
+Act,暗転,Dark,#,,
+Text,???,MainRobotIcon,0.1,僕は外に出たいとは思わない.,#
+Text,???,MainRobotIcon,0.1,...,#
+Text,???,MainRobotIcon,0.1,何のためにドアを開けたんだろう.\n僕は何のために頑張ったんだろう.,#
+Wait,1,#,,,
+Text,???,MainRobotIcon,0.1,眠ろう.\nまたドアが閉まるときまで.,#
+Scene,Ending,#,,,

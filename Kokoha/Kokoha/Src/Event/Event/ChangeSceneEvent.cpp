@@ -50,4 +50,5 @@ void Kokoha::ChangeSceneEvent::setSceneNameMap()
 {
 	sSceneNameMap[U"LoadAdventure"] = SceneName::LOAD_ADVENTURE;
 	sSceneNameMap[U"Adventure"]     = SceneName::ADVENTURE;
+	sSceneNameMap[U"Ending"]        = SceneName::ENDING;
 }

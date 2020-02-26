@@ -6,6 +6,7 @@
 
 // シーン
 #include "Title/TitleScene.h"
+#include "Title/EndingScene.h"
 #include "Record/SaveRecordScene.h"
 #include "Record/LoadRecordScene.h"
 #include "Record/LoadNewGameScene.h"
@@ -47,6 +48,7 @@ void Main()
 	// シーンの設定
 	MyApp sceneManager;
 	sceneManager.add<Kokoha::TitleScene>        (SceneName::TITLE);
+	sceneManager.add<Kokoha::EndingScene>       (SceneName::ENDING);
 	sceneManager.add<Kokoha::SaveRecordScene>   (SceneName::SAVE_RECORD);
 	sceneManager.add<Kokoha::LoadRecordScene>   (SceneName::LOAD_RECORD);
 	sceneManager.add<Kokoha::LoadNewGameScene>  (SceneName::LOAD_NEWGAME);

@@ -8,6 +8,7 @@
 enum class SceneName
 {
 	TITLE,          // タイトル
+	ENDING,         // エンディング
 	
 	SAVE_RECORD,    // レコードのセーブ
 	LOAD_RECORD,    // レコードのロード

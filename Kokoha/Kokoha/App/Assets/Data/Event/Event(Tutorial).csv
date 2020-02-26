@@ -11,7 +11,7 @@ Wait,0.5,#,,,
 Act,きおく,Blink,#,,
 Act,きおく,Blink,#,,
 Wait,1,#,,,
-Text,わたし,MainRobotIcon,0.2,"ここは..., どこだろう...?",#
+Text,???,MainRobotIcon,0.2,"ここは..., どこだろう...?",#
 Wait,0.5,#,,,
 Act,きおく,Side,#,,
 Wait,1,#,,,
@@ -19,13 +19,13 @@ Act,きおく,Back,#,,
 Wait,1,#,,,
 Act,きおく,Side,#,,
 Wait,1,#,,,
-Text,わたし,MainRobotIcon,0.1,"あ, あれは...",#
+Text,???,MainRobotIcon,0.1,"あ, あれは...",#
 Camera,3,"(200,0)",#,,
 Wait,1,#,,,
-Text,わたし,MainRobotIcon,0.1,壊れたロボットだ...,#
+Text,???,MainRobotIcon,0.1,壊れたロボットだ...,#
 Act,きおく,Walk,#,,
 Move,きおく,2,"(40,0)",TRUE,#
 Act,きおく,Side,#,,
 Wait,0.5,#,,,
-Text,わたし,MainRobotIcon,0.1,"このロボットの過去の記録を調べれば,\n何か分かるかもしれない.",#
+Text,???,MainRobotIcon,0.1,"このロボットの過去の記録を調べれば,\n何か分かるかもしれない.",#
 Scene,Adventure,#,,,

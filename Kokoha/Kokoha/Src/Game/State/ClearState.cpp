@@ -108,7 +108,22 @@ Optional<SceneName> Kokoha::ClearState::isChangeAbleScene() const
 	const String stageName = GameManager::instance().getName();
 	AdventureManager::instance().clearWindow();
 	AdventureManager::instance().openWindow(std::make_unique<RewardWindow>(stageName));
-	EventManager::instance().setEventFileName(stageName);
+
+	if (stageName == U"Last")
+	{
+		if (RecordManager::instance().getRecord(U"Kokoro"))
+		{
+			EventManager::instance().setEventFileName(U"LastKokoro");
+		}
+		else
+		{
+			EventManager::instance().setEventFileName(U"Last");
+		}
+	}
+	else
+	{
+		EventManager::instance().setEventFileName(stageName);
+	}
 
 	return SceneName::LOAD_EVENT;
 }

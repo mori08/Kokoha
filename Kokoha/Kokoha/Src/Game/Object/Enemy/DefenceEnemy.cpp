@@ -53,4 +53,6 @@ void Kokoha::DefenceEnemy::checkAnother(const GameObject& another)
 	{
 		mGoalPos = pos.value();
 	}
+
+	BlackEnemy::checkAnother(another);
 }

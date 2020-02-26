@@ -15,6 +15,7 @@
 #include "../Object/EventResearcher.h"
 #include "../Object/BoxRobot.h"
 #include "../Object/HelpRobot.h"
+#include "../Object/EntranceGate.h"
 #include "../Object/DoctorReport.h"
 #include "../Object/EventEffect.h"
 
@@ -82,6 +83,8 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 	setGenerateObjectFunc<EventResearcher>(U"Researcher");
 	setGenerateObjectFunc<BoxRobot>       (U"BoxRobot");
 	setGenerateObjectFunc<HelpRobot>      (U"HelpRobot");
+
+	setGenerateObjectFunc<EntranceGate>(U"EntranceGate");
 
 	setGenerateObjectFunc<DoctorReport>(U"DoctorReport");
 	setGenerateObjectFunc<EventEffect> (U"Effect");

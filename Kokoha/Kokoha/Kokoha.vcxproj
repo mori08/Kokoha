@@ -258,6 +258,7 @@
     <ClCompile Include="Src\Event\Event\WaitEvent.cpp" />
     <ClCompile Include="Src\Event\Object\BoxRobot.cpp" />
     <ClCompile Include="Src\Event\Object\DoctorReport.cpp" />
+    <ClCompile Include="Src\Event\Object\EntranceGate.cpp" />
     <ClCompile Include="Src\Event\Object\EventDeveloper.cpp" />
     <ClCompile Include="Src\Event\Object\EventEffect.cpp" />
     <ClCompile Include="Src\Event\Object\EventObject.cpp" />
@@ -353,6 +354,7 @@
     <ClCompile Include="Src\Record\RecordManager.cpp" />
     <ClCompile Include="Src\Record\SaveRecordScene.cpp" />
     <ClCompile Include="Src\Slice\SliceTexture.cpp" />
+    <ClCompile Include="Src\Title\EndingScene.cpp" />
     <ClCompile Include="Src\Title\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -389,6 +391,7 @@
     <ClInclude Include="Src\Event\Event\WaitEvent.h" />
     <ClInclude Include="Src\Event\Object\BoxRobot.h" />
     <ClInclude Include="Src\Event\Object\DoctorReport.h" />
+    <ClInclude Include="Src\Event\Object\EntranceGate.h" />
     <ClInclude Include="Src\Event\Object\EventDeveloper.h" />
     <ClInclude Include="Src\Event\Object\EventObject.h" />
     <ClInclude Include="Src\Event\Object\EventRepair0.h" />
@@ -489,6 +492,7 @@
     <ClInclude Include="Src\Scene.h" />
     <ClInclude Include="Src\Slice\Linearly.h" />
     <ClInclude Include="Src\Slice\SliceTexture.h" />
+    <ClInclude Include="Src\Title\EndingScene.h" />
     <ClInclude Include="Src\Title\TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

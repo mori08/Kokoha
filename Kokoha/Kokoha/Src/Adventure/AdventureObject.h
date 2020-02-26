@@ -113,5 +113,10 @@ namespace Kokoha
 		/// <param name="stageNameList"> ステージ名のリスト </param>
 		static void openStageWindow(const Array<String>& stageNameList);
 
+		/// <summary>
+		/// ココロステージに挑戦用のウィンドウを開く
+		/// </summary>
+		static void openKokoroStageWindow();
+
 	};
 }

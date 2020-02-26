@@ -111,12 +111,7 @@ void Kokoha::RewardWindow::setRewardMap()
 	sRewardMap.try_emplace
 	(
 		U"2-3",
-		std::move(Reward(19, []() 
-			{ 
-				if (RecordManager::instance().getRecord(U"3-3")) { return AreaFlag(none); }
-				return AreaFlag(U"‹ó‚«•”‰®"); 
-			}
-		))
+		std::move(Reward(19, []() { return AreaFlag(none); }))
 	);
 
 	// 3-
@@ -138,12 +133,7 @@ void Kokoha::RewardWindow::setRewardMap()
 	sRewardMap.try_emplace
 	(
 		U"3-3",
-		std::move(Reward(11, []() 
-			{ 
-				if (RecordManager::instance().getRecord(U"2-3")) { return AreaFlag(none); }
-				return AreaFlag(U"‹ó‚«•”‰®");  
-			}
-		))
+		std::move(Reward(11, []() { return AreaFlag(U"‹ó‚«•”‰®"); }))
 	);
 
 	// 4-

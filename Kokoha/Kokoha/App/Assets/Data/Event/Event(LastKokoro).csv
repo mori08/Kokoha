@@ -1,0 +1,117 @@
+﻿Background,WhiteBack,"(0,0)",#,,
+Generate,EntranceGate,玄関ゲート,"(240, 40)",#,
+Generate,MainRobot,きおく,"(180, 262)",#,
+Generate,BoxRobot,ハコガタ,"(500, 260)",#,
+Generate,Effect,暗転,"(0,0)",#,
+Run,#,,,,
+Act,きおく,Side,#,,
+Act,ハコガタ,Hide,#,,
+Run,#,,,,
+Wait,1,#,,,
+Act,きおく,Walk,#,,
+Move,きおく,1,"(-80, 0)",TRUE,#
+Act,きおく,Side,#,,
+Wait,1,#,,,
+Act,玄関ゲート,Open,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,玄関ゲートが開いた.,#
+Wait,0.5,#,,,
+Act,きおく,Mirror,#,,
+Wait,0.5,#,,,
+Text,きおく,MainRobotIcon,0.1,最後にいろいろ見てまわろう.,#
+Act,きおく,Walk,#,,
+Act,暗転,Dark,#,,
+Move,きおく,3,"(-100, 0)",TRUE,#
+Background,Labolatory(now),"(0,0)",#,,
+Act,玄関ゲート,Hide,#,,
+Act,きおく,Mirror,#,,
+Move,きおく,2,"(60, 0)",FALSE,#
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Act,きおく,Side,#,,
+Text,きおく,MainRobotIcon,0.1,"ねこぜさん.\n玄関ゲートを開けるために,僕を作ったロボット.",#
+Text,きおく,MainRobotIcon,0.1,優しいロボットではなかった.\n彼のせいでたくさんのロボットが壊れた.,#
+Text,きおく,MainRobotIcon,0.1,それでも...     僕の親だ.,#
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Background,WorkSpace(now),"(0,0)",#,,
+Move,きおく,0,"(140,0)",TRUE,#
+Act,暗転,Dark,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,お手伝いロボットさん.\n他のみんなを作ったロボット.,#
+Act,きおく,Front,#,,
+Wait,0.5,#,,,
+Act,きおく,Sleep,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,みんなから母親と呼ばれていたけど...,#
+Text,きおく,MainRobotIcon,0.1,自由を求めすぎて...\n他のロボットを思いやれなかった.,#
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Background,Library(now),"(0,0)",#,,
+Move,きおく,0,"(240, 0)",TRUE,#
+Act,きおく,Side,#,,
+Act,きおく,Mirror,#,,
+Act,暗転,Dark,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,がくしゃさん.\nハカセやココロについて研究したロボット.,#
+Text,きおく,MainRobotIcon,0.1,研究熱心で周りが見えなくなるくらい\n頑張っていた.\nでも...,#
+Text,きおく,MainRobotIcon,0.1,"人間の心やハカセのことを知るにつれ,\nココロに絶望していってしまった.",#
+Wait,1,#,,,
+Act,暗転,Dark,#,,
+Act,きおく,Mirror,#,,
+Act,きおく,Walk,#,,
+Move,きおく,2,"(60, 0)",TRUE,#
+Act,きおく,Side,#,,
+Background,GarbageDump(now),"(0,0)",#,,
+Move,きおく,0,"(-330, 0)",TRUE,#
+Act,暗転,Dark,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,他にもたくさんのロボットがいた.,#
+Text,きおく,MainRobotIcon,0.1,"みんな自分の正しいと思ったことをやったはず\nなのに, こんな結果になってしまった.",#
+Wait,0.5,#,,,
+Act,暗転,Dark,#,,
+Wait,2,#,,,
+Background,WhiteBack,"(0,0)",#,,
+Act,玄関ゲート,Appear,#,,
+Move,きおく,0,"(-200, 0)",TRUE,#
+Act,暗転,Dark,#,,
+Act,きおく,Walk,#,,
+Move,きおく,3,"(200, 0)",TRUE,#
+Act,きおく,Side,#,,
+Wait,1,#,,,
+Text,きおく,MainRobotIcon,0.1,僕は... この場所を守る.,#
+Text,きおく,MainRobotIcon,0.1,"決して幸せな記録だけじゃなかった.\nだけど, みんなが一生懸命に生きた跡を\n誰かが残さなきゃいけない.",#
+Act,きおく,Front,#,,
+Wait,1,#,,,
+Act,きおく,Sleep,#,,
+Wait,0.5,#,,,
+Act,玄関ゲート,Close,#,,
+Wait,0.5,#,,,
+Act,玄関ゲート,Lock,#,,
+Act,きおく,Awake,#,,
+Wait,1,#,,,
+Act,きおく,Side,#,,
+Wait,2,#,,,
+Act,きおく,Mirror,#,,
+Act,きおく,Walk,#,,
+Act,暗転,Dark,#,,
+Move,きおく,2,"(-100, 0)",TRUE,#
+Background,LastRoom,"(0,0)",#,,
+Act,ハコガタ,Appear,#,,
+Act,きおく,Mirror,#,,
+Act,玄関ゲート,Hide,#,,
+Act,暗転,Dark,#,,
+Move,きおく,3,"(150, 0)",TRUE,#
+Act,きおく,Side,#,,
+Text,きおく,MainRobotIcon,0.1,"ハカセの研究を,\nみんなの記録を,\nココロを,",#
+Text,きおく,MainRobotIcon,0.1,"正しく使ってくれる誰かが来るまで,\n玄関ゲートは開けない.",#
+Act,きおく,Walk,#,,
+Move,きおく,4,"(200, 0)",TRUE,#
+Act,きおく,Side,#,,
+Text,きおく,MainRobotIcon,0.1,これがあなたにもらったココロ...       \n僕のココロです.,#
+Wait,1,#,,,
+Act,きおく,Mirror,#,,
+Act,きおく,Walk,#,,
+Act,暗転,Dark,#,,
+Move,きおく,2,"(-100,0)",TRUE,#
+Scene,Ending,#,,,

@@ -44,13 +44,6 @@ Kokoha::GameGoal::GameGoal(const Vec2& pos, double speed)
 
 void Kokoha::GameGoal::update()
 {
-#ifdef _DEBUG
-	if (Key1.up())
-	{
-		GameManager::instance().setState(std::make_unique<ClearState>());
-	}
-#endif // _DEBUG
-
 	walkToGoal(mSpeed, mGoal);
 
 	mSlide.changeTexture();

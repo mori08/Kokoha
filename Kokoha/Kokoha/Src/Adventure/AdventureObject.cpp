@@ -109,6 +109,7 @@ void Kokoha::AdventureObject::openStageWindow(const String& stageName)
 	{
 		if (stageName == U"Last")
 		{
+			openWindow(std::make_unique<InfoWindow>(U"開ける気はない"));
 			return;
 		}
 
@@ -140,4 +141,37 @@ void Kokoha::AdventureObject::openStageWindow(const Array<String>& stageNameList
 
 	// 全てクリアしているとき
 	openWindow(std::make_unique<InfoWindow>(U"このロボットには\nもう用はない"));
+}
+
+
+void Kokoha::AdventureObject::openKokoroStageWindow()
+{
+	// クリア済
+	if (RecordManager::instance().getRecord(U"Kokoro"))
+	{
+		openWindow(std::make_unique<InfoWindow>(U"二度と起きることはないだろう"));
+		return;
+	}
+
+	// 条件をみたしているとき
+	if (
+		RecordManager::instance().getRecord(U"1-3")
+		&&
+		RecordManager::instance().getRecord(U"2-3")
+		&&
+		RecordManager::instance().getRecord(U"3-3")
+		&&
+		RecordManager::instance().getRecord(U"4-3")
+		&&
+		RecordManager::instance().getRecord(U"5-3")
+		&&
+		RecordManager::instance().getRecord(U"6-3")
+		)
+	{
+		openWindow(std::make_unique<ChallengeStageWindow>(U"Kokoro"));
+		return;
+	}
+
+	// 条件をみたしてないとき
+	openWindow(std::make_unique<InfoWindow>(U"まだやめておこう"));
 }

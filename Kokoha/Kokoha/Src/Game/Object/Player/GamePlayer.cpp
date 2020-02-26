@@ -1,6 +1,7 @@
 #include "GamePlayer.h"
 #include "../../../MyColor.h"
 #include "../../GameManager.h"
+#include "../../State/ClearState.h"
 
 
 namespace
@@ -44,6 +45,13 @@ void Kokoha::GamePlayer::update()
 
 	// Œõ
 	if (mLightRate.update()) { mLightRate.restart(); }
+
+#ifdef _DEBUG
+	if (Key1.up())
+	{
+		GameManager::instance().setState(std::make_unique<ClearState>());
+	}
+#endif // _DEBUG
 }
 
 
@@ -63,6 +71,7 @@ void Kokoha::GamePlayer::drawLight() const
 
 	Circle(mBody.center, radius).drawFrame(LIGHT_THICKNESS, color);
 }
+
 
 void Kokoha::GamePlayer::checkAnother(const GameObject&)
 {

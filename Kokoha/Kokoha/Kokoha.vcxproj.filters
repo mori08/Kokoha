@@ -813,6 +813,12 @@
     <ClCompile Include="Src\Load\TestLoadScene.cpp">
       <Filter>Src\Load</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Event\Object\EntranceGate.cpp">
+      <Filter>Src\Event\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Title\EndingScene.cpp">
+      <Filter>Src\Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyColor.h">
@@ -1216,6 +1222,12 @@
     </ClInclude>
     <ClInclude Include="Src\Load\TestLoadScene.h">
       <Filter>Src\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Event\Object\EntranceGate.h">
+      <Filter>Src\Event\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Title\EndingScene.h">
+      <Filter>Src\Title</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
