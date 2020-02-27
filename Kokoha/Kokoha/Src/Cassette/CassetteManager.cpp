@@ -190,7 +190,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒ_ƒbƒVƒ…",
 			2,
-			Cassette::makeSpeedEffect(1.6, { 3.0,Inf<double> })
+			Cassette::makeSpeedEffect(1.5, { 3.0,Inf<double> })
 		)
 	);
 

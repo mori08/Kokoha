@@ -1,4 +1,5 @@
 #include "CassetteMoveWindow.h"
+#include "CassetteInfoWindow.h"
 #include "../AdventureManager.h"
 #include "../../MyLibrary.h"
 #include "../../Cassette/CassetteManager.h"
@@ -107,7 +108,16 @@ Kokoha::CassetteMoveWindow::CassetteMoveWindow(const CassettePtr& cassette, cons
 		mButtonList.emplace_back(buttonTsukekaeru);
 	}
 
-	region.y += BUTTON_SIZE.y; mButtonList.emplace_back(U"‚­‚í‚µ‚­", region);
+	region.y += BUTTON_SIZE.y;
+	Button buttonKuwashiku(U"‚­‚í‚µ‚­", region);
+	buttonKuwashiku.setOnClickFunc
+	(
+		[cassette, this]()
+		{
+			AdventureManager::instance().openWindow(std::make_unique<CassetteInfoWindow>(cassette));
+		}
+	);
+	mButtonList.emplace_back(buttonKuwashiku);
 	mAlphaMap[U"‚­‚í‚µ‚­"] = 0xFF;
 
 	mSelectedButton = { region.pos, U"‚­‚í‚µ‚­" };

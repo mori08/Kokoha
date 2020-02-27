@@ -64,13 +64,13 @@ namespace Kokoha
 		// カセットの種類数
 		static int32 sNum;
 
-		// カセット番号(ソート用)
-		const int32 ID;
-
 		// 状態
 		int32 mState;
 
 	public:
+
+		// カセット番号(ソート用)
+		const int32 ID;
 
 		// 名前
 		const String NAME;

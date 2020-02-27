@@ -3,6 +3,8 @@
 #include "../Input/InputManager.h"
 #include "Window/MenuWindow.h"
 #include "Window/RewardWindow.h"
+#include "Window/CassetteInfoWindow.h"
+#include "Window/ChallengeStageWindow.h"
 #include "../Record/RecordManager.h"
 
 
@@ -52,6 +54,8 @@ Kokoha::AdventureManager::AdventureManager()
 {
 	AdventureObject::registerWindow();
 	RewardWindow::setRewardMap();
+	CassetteInfoWindow::readCSVData();
+	ChallengeStageWindow::setLevel();
 }
 
 

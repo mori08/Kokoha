@@ -16,16 +16,13 @@ namespace
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(150, 30);
 	// そうび ボタン
-	const Kokoha::Button SETUP_BUTTON (U"そうび", Kokoha::getRectFromCenter(Point(320, 220), BUTTON_SIZE));
-	// にっき ボタン
-	const Kokoha::Button DIARY_BUTTON (U"にっき", Kokoha::getRectFromCenter(Point(320, 260), BUTTON_SIZE));
+	const Kokoha::Button SETUP_BUTTON (U"そうび", Kokoha::getRectFromCenter(Point(320, 230), BUTTON_SIZE));
 	// セーブ ボタン
-	const Kokoha::Button RECORD_BUTTON(U"セーブ", Kokoha::getRectFromCenter(Point(320, 300), BUTTON_SIZE));
+	const Kokoha::Button RECORD_BUTTON(U"セーブ", Kokoha::getRectFromCenter(Point(320, 290), BUTTON_SIZE));
 	// ボタンのリスト
 	const Array<Kokoha::Button> BUTTON_LIST
 	{
 		SETUP_BUTTON,
-		DIARY_BUTTON,
 		RECORD_BUTTON
 	};
 
@@ -57,11 +54,6 @@ void Kokoha::MenuWindow::select()
 	ButtonManager::instance().setVerticalAdjacentButton
 	(
 		SETUP_BUTTON.getName(),
-		DIARY_BUTTON.getName()
-	);
-	ButtonManager::instance().setVerticalAdjacentButton
-	(
-		DIARY_BUTTON.getName(),
 		RECORD_BUTTON.getName()
 	);
 

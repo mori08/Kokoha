@@ -10,22 +10,22 @@
 namespace
 {
 	// ウィンドウのサイズ
-	constexpr Size WINDOW_SIZE(360, 150);
+	constexpr Size WINDOW_SIZE(360, 180);
 
 	// テキストを表示する座標
-	constexpr Point TEXT_POS(320, 190);
+	constexpr Point TEXT_POS(320, 180);
 
 	// 「アクセス」ボタン
 	const Kokoha::Button ACCESS_BUTTON
 	(
 		U"アクセス",
-		Kokoha::getRectFromCenter(Point(320, 250), Size(100, 30))
+		Kokoha::getRectFromCenter(Point(320, 260), Size(100, 30))
 	);
 	// 「そうび」ボタン
 	const Kokoha::Button EQUIPMENT_BUTTON
 	(
 		U"そうび",
-		Kokoha::getRectFromCenter(Point(320, 290), Size(100, 30))
+		Kokoha::getRectFromCenter(Point(320, 300), Size(100, 30))
 	);
 
 	// ボタンのリスト
@@ -38,6 +38,9 @@ namespace
 	// カーソルの移動の比
 	constexpr double RATE = 0.005;
 }
+
+
+std::unordered_map<String, int32> Kokoha::ChallengeStageWindow::sLevel;
 
 
 Kokoha::ChallengeStageWindow::ChallengeStageWindow(const String& stageName)
@@ -134,4 +137,46 @@ void Kokoha::ChallengeStageWindow::draw() const
 
 		FontAsset(U"20")(button.getName()).drawAt(button.getRegion().center(), color);
 	}
+
+	const int32 LEVEL_Y = 210;
+	FontAsset(U"20")(U"難易度").drawAt(200, LEVEL_Y, MyWhite);
+	if (sLevel.count(mStageName))
+	{
+		const int32 LEVEL_X = 250;
+		for (int32 i = 0; i < sLevel[mStageName]; ++i)
+		{
+			TextureAsset(U"Level").drawAt(LEVEL_X + i * 30, LEVEL_Y);
+		}
+	}
+}
+
+
+void Kokoha::ChallengeStageWindow::setLevel()
+{
+	sLevel[U"1-1"] = 1;
+	sLevel[U"1-2"] = 3;
+	sLevel[U"1-3"] = 6;
+
+	sLevel[U"2-1"] = 1;
+	sLevel[U"2-2"] = 4;
+	sLevel[U"2-3"] = 5;
+
+	sLevel[U"3-1"] = 1;
+	sLevel[U"3-2"] = 3;
+	sLevel[U"3-3"] = 5;
+
+	sLevel[U"4-1"] = 2;
+	sLevel[U"4-2"] = 3;
+	sLevel[U"4-3"] = 6;
+
+	sLevel[U"5-1"] = 2;
+	sLevel[U"5-2"] = 4;
+	sLevel[U"5-3"] = 5;
+
+	sLevel[U"6-1"] = 2;
+	sLevel[U"6-2"] = 4;
+	sLevel[U"6-3"] = 6;
+
+	sLevel[U"Last"]   = 7;
+	sLevel[U"Kokoro"] = 8;
 }

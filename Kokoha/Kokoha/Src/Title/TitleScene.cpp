@@ -80,6 +80,11 @@ Kokoha::TitleScene::TitleScene(const InitData& init)
 		LOADGAME_BUTTON.getName(),
 		[this]() { changeScene(SceneName::LOAD_RECORD); }
 	);
+	ButtonManager::instance().setOnClickFunc
+	(
+		EXIT_BUTTON.getName(),
+		[this]() { System::Exit(); }
+	);
 
 	// ‘I‘ğ’†‚Ìƒ{ƒ^ƒ“‚Ìİ’è
 	ButtonManager::instance().setSelectedButton(LOADGAME_BUTTON.getName());

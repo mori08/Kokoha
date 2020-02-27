@@ -63,7 +63,7 @@ void Kokoha::AdventureObject::registerWindow()
 	sMakeWindowFuncMap[U"PC"]               = []() { openStageWindow(Array<String>{U"5-1", U"5-2", U"5-3"}); };
 	sMakeWindowFuncMap[U"BrokenHelpRobot"]  = []() { openStageWindow(Array<String>{U"6-1", U"6-2", U"6-3"}); };
 	sMakeWindowFuncMap[U"EntranceGate"]     = []() { openStageWindow(U"Last"); };
-	sMakeWindowFuncMap[U"BrokenBoxRobot"]   = []() { openStageWindow(U"Kokoro"); };
+	sMakeWindowFuncMap[U"BrokenBoxRobot"]   = []() { openKokoroStageWindow(); };
 
 	// •ÊƒGƒŠƒA‚ÉˆÚ“®
 	sMakeWindowFuncMap[U"Door[StoreRoom]"]   = []() { openWindow(std::make_unique<AreaWindow>()); };
