@@ -93,6 +93,6 @@ void Kokoha::SetupWindow::draw() const
 	
 	// ê‡ñæÉeÉLÉXÉg
 	FontAsset(U"20")(U"Ç‡ÇøÇ‡ÇÃ").draw(Point(340, 40)).drawFrame(1, MyWhite);
-	FontAsset(U"20")(U"ÇªÇ§Ç—Ç`").draw(Point(30, 110)).drawFrame(1, MyWhite);
-	FontAsset(U"20")(U"ÇªÇ§Ç—Ça").draw(Point(30, 230)).drawFrame(1, MyWhite);
+	FontAsset(U"20")(U"ÇªÇ§Ç—Ç`").draw(Point(100, 110)).drawFrame(1, MyWhite);
+	FontAsset(U"20")(U"ÇªÇ§Ç—Ça").draw(Point(100, 230)).drawFrame(1, MyWhite);
 }

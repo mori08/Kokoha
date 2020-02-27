@@ -29,5 +29,14 @@ namespace Kokoha
 		/// </summary>
 		void draw() const;
 
+	private:
+
+		/// <summary>
+		/// コストの描画
+		/// </summary>
+		/// <param name="pos"> 座標   </param>
+		/// <param name="pos"> 装備ID </param>
+		void drawCost(const Point& pos, const int32 id) const;
+
 	};
 }

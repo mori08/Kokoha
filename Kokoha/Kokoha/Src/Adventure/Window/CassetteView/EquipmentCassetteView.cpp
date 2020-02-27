@@ -4,6 +4,7 @@
 #include "../../../Cassette/CassetteManager.h"
 #include "../../../Input/ButtonManager.h"
 #include "../../../Adventure/AdventureManager.h"
+#include "../../../Record/RecordManager.h"
 
 
 namespace
@@ -11,8 +12,8 @@ namespace
 	// ボタンの描画位置の基準となる点
 	constexpr std::array<Point, Kokoha::CassetteManager::EQUIPMENT_NUM> BUTTON_POINT
 	{
-		Point(30,150),
-		Point(30,270)
+		Point(120,150),
+		Point(120,270)
 	};
 
 	// ボタンの名前
@@ -23,7 +24,7 @@ namespace
 	};
 
 	// ボタンの数
-	constexpr int32 BUTTON_NUM = 6;
+	constexpr int32 BUTTON_NUM = 3;
 
 	// ボタンのサイズ
 	constexpr Size BUTTON_SIZE(60, 60);
@@ -35,6 +36,9 @@ namespace
 
 	// ウィンドウを表示する座標の補正
 	constexpr Point WINDOW_OFFSET(60, -20);
+
+	// コスト表示の座標
+	constexpr Point COST_POS(100, -35);
 }
 
 
@@ -145,6 +149,7 @@ void Kokoha::EquipmentCassetteView::draw() const
 		Rect(BUTTON_POINT[ID_B] + BUTTON_SIZE * Point(i, 0), BUTTON_SIZE).drawFrame(1, MyWhite);
 	}
 
+	drawCost(drawPoint, ID_A);
 	for (const auto& cassettePtr : CassetteManager::instance().getEquipment(ID_A).getCassetteList())
 	{
 		cassettePtr->getIconTexture().draw(drawPoint);
@@ -153,11 +158,42 @@ void Kokoha::EquipmentCassetteView::draw() const
 	}
 
 	drawPoint = BUTTON_POINT[ID_B];
-
+	drawCost(drawPoint, ID_B);
 	for (const auto& cassettePtr : CassetteManager::instance().getEquipment(ID_B).getCassetteList())
 	{
 		cassettePtr->getIconTexture().draw(drawPoint);
 
 		drawPoint.x += BUTTON_SIZE.x;
 	}
+}
+
+
+void Kokoha::EquipmentCassetteView::drawCost(const Point& pos,const int32 id) const
+{
+	Point drawPos = pos + COST_POS;
+
+	const int32 COST_LIMIT = RecordManager::instance().getRecord(U"CassetteCount");
+	const int32 COST_USED  = CassetteManager::instance().getEquipment(id).getTotalCost();
+
+	FontAsset(U"15")(U"コスト").draw(drawPos + Point(-2, -1));
+	drawPos.x += FontAsset(U"15")(U"コスト").region().w;
+
+	TextureAsset(U"Cost")(0, 0, 10, 20).draw(drawPos);
+	drawPos.x += 10;
+
+	for (int32 i = 0; i < COST_LIMIT; ++i)
+	{
+		if (i < COST_USED)
+		{
+			TextureAsset(U"Cost")(10, 0, 10, 20).draw(drawPos);
+		}
+		else
+		{
+			TextureAsset(U"Cost")(20, 0, 10, 20).draw(drawPos);
+		}
+
+		drawPos.x += 10;
+	}
+
+	TextureAsset(U"Cost")(30, 0, 10, 20).draw(drawPos);
 }

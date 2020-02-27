@@ -84,6 +84,14 @@ namespace Kokoha
 		/// <param name="cassette"> 追加したいカセット </param>
 		bool isAddAbleCassette(const CassettePtr& cassette) const;
 
+		/// <summary>
+		/// 使用しているコストを取得
+		/// </summary>
+		const int32& getTotalCost() const
+		{
+			return mTotalCost;
+		}
+
 		// ↑
 		// AdventureSceneで使用
 
