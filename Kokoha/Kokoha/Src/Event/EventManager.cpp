@@ -114,7 +114,8 @@ void Kokoha::EventManager::init()
 
 bool Kokoha::EventManager::load(const String& eventFileName)
 {	
-	CSVData csv(eventFileName);
+	CSVData csv;
+	readCSV(csv, eventFileName);
 	if (!csv)
 	{
 		addErrorMessage(U"[EventManger::load]");

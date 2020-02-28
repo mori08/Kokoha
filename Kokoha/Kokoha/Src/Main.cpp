@@ -38,6 +38,7 @@ void Main()
 	Scene::Resize(WINDOW_SIZE);
 
 	// アセット管理
+	Kokoha::outputResource(U"Assets/");
 	Kokoha::registerAsset(U"Assets/");
 	FontAsset::Register(U"10", 10, Typeface::Medium);
 	FontAsset::Register(U"15", 15, Typeface::Medium);
@@ -60,13 +61,13 @@ void Main()
 	sceneManager.add<Kokoha::ReloadGameScene>   (SceneName::RELOAD_GAME);
 	sceneManager.add<Kokoha::GameScene>         (SceneName::GAME);
 	sceneManager.add<Kokoha::TestLoadScene>     (SceneName::TEST_LOAD);
-
+	
 	while (System::Update())
 	{
 		sceneManager.update();
 
 		Kokoha::InputManager::instance().changeInputState();
-
+		
 		Kokoha::showFps();
 	}
 }

@@ -1,5 +1,6 @@
 #include "AdventureManager.h"
 #include "../MyColor.h"
+#include "../MyLibrary.h"
 #include "../Input/InputManager.h"
 #include "Window/MenuWindow.h"
 #include "Window/RewardWindow.h"
@@ -76,7 +77,8 @@ Optional<String> Kokoha::AdventureManager::load()
 	RecordManager::instance().setRecord(U"AreaId", mAreaId);
 
 	// CSVファイルの確認
-	CSVData csv(fileName);
+	CSVData csv;
+	readCSV(csv, fileName);
 	if (!csv)
 	{
 		errorMessage += U"CSVファイルを読み込めません.\n";

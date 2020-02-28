@@ -32,7 +32,7 @@ SceneName Kokoha::LoadRecordScene::complete()
 	switch (mLoadResult)
 	{
 	case RecordManager::LoadResult::NEW_GAME:
-		return SceneName::TITLE;
+		return SceneName::LOAD_NEWGAME;
 
 	case RecordManager::LoadResult::CONTINUE:
 		return SceneName::ADVENTURE;

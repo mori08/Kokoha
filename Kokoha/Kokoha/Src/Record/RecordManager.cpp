@@ -6,7 +6,7 @@
 namespace
 {
 	// レコードを保存するファイル名
-	const String RECORD_TEXT_NAME = U"Assets/Data/RECORD.txt";
+	const String RECORD_TEXT_NAME = U"SAVE_DATA.txt";
 
 	constexpr int32 BASE    = 0x10;      // 暗号化の基準になる値(何進数で暗号化するか)
 	constexpr int32 MUL     = BASE - 1;  // 掛け算のときのかける数

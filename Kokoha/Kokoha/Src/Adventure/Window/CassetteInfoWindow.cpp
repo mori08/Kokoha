@@ -73,5 +73,5 @@ void Kokoha::CassetteInfoWindow::draw() const
 
 void Kokoha::CassetteInfoWindow::readCSVData()
 {
-	sCSV.load(U"Assets/Data/CassetteInfo.csv");
+	readCSV(sCSV, U"Assets/Data/CassetteInfo.csv");
 }

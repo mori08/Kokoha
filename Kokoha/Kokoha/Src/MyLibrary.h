@@ -23,10 +23,27 @@ namespace Kokoha
 #endif // _DEBUG
 
 	/// <summary>
+	/// Resource.rcに書き込むリソースの一覧をテキストファイルとして出力
+	/// </summary>
+	/// <param name="direName"> ディレクトリの名前 </param>
+	void outputResource(const FilePath& dirName);
+
+	/// <summary>
 	/// アセット管理
 	/// </summary>
 	/// <param name="direName"> ディレクトリの名前 </param>
 	void registerAsset(const String& dirName);
+
+	/// <summary>
+	/// CSVファイルの読み込み
+	/// </summary>
+	/// <param name="csv"     > CSVデータ      </param>
+	/// <param name="fileName"> ファイルの名前 </param>
+	/// <remarks>
+	/// DEBUGモードの場合直接読み込み
+	/// Releaseモードの場合埋め込んだリソースの読み込み
+	/// </remarks>
+	void readCSV(CSVData& csv, const String& fileName);
 
 	/// <summary>
 	/// 指定された頻度でランダムに 1 を出力

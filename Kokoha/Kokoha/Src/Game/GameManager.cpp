@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "../MyColor.h"
+#include "../MyLibrary.h"
 
 // オブジェクト
 #include "Object/Player/GamePlayer.h"
@@ -120,7 +121,8 @@ Optional<String> Kokoha::GameManager::load()
 	String errorMessage = U"[AdventureManager::load]\n";
 
 	// CSVファイルの確認
-	CSVData csv(filePath);
+	CSVData csv;
+	readCSV(csv, filePath);
 	if (!csv)
 	{
 		errorMessage += U"CSVファイルを読み込めません.\n";
@@ -218,7 +220,8 @@ Optional<String> Kokoha::GameManager::reload()
 	String errorMessage = U"[AdventureManager::load]\n";
 
 	// CSVファイルの確認
-	CSVData csv(filePath);
+	CSVData csv;
+	readCSV(csv, filePath);
 	if (!csv)
 	{
 		errorMessage += U"CSVファイルを読み込めません.\n";
