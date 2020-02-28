@@ -27,6 +27,7 @@
 #include "Object/Hole/VirusBeetleHole.h"
 
 // 状態
+#include "State/AccessState.h"
 #include "State/PlayingState.h"
 #include "State/InfoState.h"
 #include "State/Tutorial/TutorialInitState.h"
@@ -45,7 +46,7 @@ namespace
 
 
 Kokoha::GameManager::GameManager()
-	: mState(std::make_unique<PlayingState>())
+	: mState(std::make_unique<AccessState>())
 {
 	// プレイヤー
 	setGenerateObjectFunc<GamePlayer>(U"Player");
@@ -80,6 +81,7 @@ Kokoha::GameManager::GameManager()
 	setGenerateObjectFunc<ClingBeetleHole> (U"ClingBeetleHole");
 	setGenerateObjectFunc<VirusBeetleHole> (U"VirusBeetleHole");
 
+	AccessState::setRobotIcon();
 	InfoState::setInfoMap();
 }
 
@@ -87,7 +89,7 @@ Kokoha::GameManager::GameManager()
 void Kokoha::GameManager::init()
 {
 	// 状態の初期化
-	setState(std::make_unique<PlayingState>());
+	setState(std::make_unique<AccessState>());
 
 	// ステージの初期化
 	mStageData.init();
@@ -197,7 +199,7 @@ Optional<String> Kokoha::GameManager::reload()
 	const FilePath filePath = U"Assets/Data/Game/" + mName + U".csv";
 
 	// 状態の初期化
-	setState(std::make_unique<PlayingState>());
+	setState(std::make_unique<AccessState>());
 
 	// オブジェクトの全削除
 	mObjectList.clear();

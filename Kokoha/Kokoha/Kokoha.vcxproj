@@ -329,6 +329,7 @@
     <ClCompile Include="Src\Game\Scene\ReloadGameScene.cpp" />
     <ClCompile Include="Src\Game\StageData\RunAwayData.cpp" />
     <ClCompile Include="Src\Game\StageData\StageData.cpp" />
+    <ClCompile Include="Src\Game\State\AccessState.cpp" />
     <ClCompile Include="Src\Game\State\ClearState.cpp" />
     <ClCompile Include="Src\Game\State\GameOverState.cpp" />
     <ClCompile Include="Src\Game\State\InfoState.cpp" />
@@ -464,6 +465,7 @@
     <ClInclude Include="Src\Game\Scene\ReloadGameScene.h" />
     <ClInclude Include="Src\Game\StageData\RunAwayData.h" />
     <ClInclude Include="Src\Game\StageData\StageData.h" />
+    <ClInclude Include="Src\Game\State\AccessState.h" />
     <ClInclude Include="Src\Game\State\ClearState.h" />
     <ClInclude Include="Src\Game\State\GameOverState.h" />
     <ClInclude Include="Src\Game\State\GameState.h" />
