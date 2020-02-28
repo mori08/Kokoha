@@ -25,5 +25,7 @@ namespace Kokoha
 
 		void update() override;
 
+		void draw() const override;
+
 	};
 }

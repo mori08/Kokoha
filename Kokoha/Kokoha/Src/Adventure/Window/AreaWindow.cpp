@@ -55,13 +55,22 @@ Kokoha::AreaWindow::AreaWindow()
 	for (int32 i = 0; i < BUTTON_NUM; ++i)
 	{
 		if (!AREA_FLAG[i]()) { continue; }
-		if (i == AdventureManager::instance().getAreaId()) { continue; }
+
+		mAlphaMap[BUTTON_NAME[i]] = 0x80;
 
 		Button button
 		(
 			BUTTON_NAME[i],
 			getRectFromCenter(BUTTON_BASE_POS + Point(0, i * BUTTON_SIZE.y), BUTTON_SIZE)
 		);
+
+		if (i == AdventureManager::instance().getAreaId()) 
+		{
+			mButtonList.emplace_back(button);
+			continue; 
+		}
+
+		mAlphaMap[BUTTON_NAME[i]] = 0xFF;
 
 		button.setOnClickFunc
 		(
@@ -164,6 +173,8 @@ void Kokoha::AreaWindow::draw() const
 		Color color = (button.getName() == ButtonManager::instance().getSelectedButton().getName())
 			? MyBlack
 			: MyWhite;
+
+		color.setA(mAlphaMap.find(button.getName())->second);
 
 		FontAsset(U"20")(button.getName()).drawAt(button.getRegion().center(), color);
 	}

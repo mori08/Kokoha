@@ -9,7 +9,7 @@ namespace
 	constexpr double SPEED = 0.5;
 
 	// ìGÇÃê∂ê¨ä‘äu
-	constexpr double GENERATE_SPAN = 3.0;
+	constexpr double GENERATE_SPAN = 5.0;
 }
 
 

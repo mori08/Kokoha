@@ -5,6 +5,7 @@ Run,#,,,,
 Act,きおく,Sleep,#,,
 Run,#,,,,
 Wait,1,#,,,
+Text,???,MainRobotIcon,0.1,（あれは... 僕だ...）,#
 Text,ねこぜ,DeveloperIcon,0.15,完成した... やっぱり俺は優秀だ...,#
 Act,ねこぜ,Walk,#,,
 Move,ねこぜ,1.9,"(-50, 0)",TRUE,#

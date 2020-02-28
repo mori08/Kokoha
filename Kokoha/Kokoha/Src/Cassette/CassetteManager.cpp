@@ -180,7 +180,7 @@ Kokoha::CassetteManager::CassetteManager()
 		(
 			U"ƒS[ƒ‹III",
 			3,
-			CassetteEffect(2.1, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(3.0, 10.0, true)); })
+			CassetteEffect(0.1, []() { GameManager::instance().addObject(std::make_unique<GoalLight>(3.0, Inf<double>, true)); })
 		)
 	);
 

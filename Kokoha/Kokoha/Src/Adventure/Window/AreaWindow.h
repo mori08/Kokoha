@@ -21,6 +21,9 @@ namespace Kokoha
 		// カーソル
 		RectF mCursor;
 
+		// 各ボタンのアルファ値
+		std::unordered_map<String, int32> mAlphaMap;
+
 	public:
 
 		AreaWindow();
