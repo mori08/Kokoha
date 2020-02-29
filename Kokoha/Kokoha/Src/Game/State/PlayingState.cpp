@@ -5,7 +5,7 @@
 
 void Kokoha::PlayingState::update()
 {
-	if (InputManager::instance().cancel())
+	if (MouseR.up() || KeyBackspace.up())
 	{
 		GameManager::instance().setPauseState();
 		return;

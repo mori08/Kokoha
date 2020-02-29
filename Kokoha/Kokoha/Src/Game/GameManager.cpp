@@ -265,7 +265,7 @@ Optional<String> Kokoha::GameManager::reload()
 void Kokoha::GameManager::update()
 {
 	// ‘•”õ‚ÌØ‚è‘Ö‚¦
-	if (InputManager::instance().decision())
+	if (MouseL.up() || KeyEnter.up())
 	{
 		changeEquipment();
 	}

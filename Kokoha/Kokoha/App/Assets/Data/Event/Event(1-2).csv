@@ -6,10 +6,10 @@ Run,#,,,,
 Act,ちび,Mirror,#,,
 Run,#,,,,
 Wait,2,#,,,
-Text,のっぽ,Searcher1Icon,0.15,"ね, ねえ, のっぽさん...",#
+Text,まる,Searcher1Icon,0.15,"ね, ねえ, のっぽさん...",#
 Act,のっぽ,Mirror,#,,
 Wait,1,#,,,
-Text,のっぽ,Searcher1Icon,0.15,"ほ, 本当に, \nこのゲート以外の出口なんてあるのかな...",#
+Text,まる,Searcher1Icon,0.15,"ほ, 本当に, \nこのゲート以外の出口なんてあるのかな...",#
 Act,のっぽ,Walk,#,,
 Wait,1.1,#,,,
 Act,のっぽ,Wait,#,,

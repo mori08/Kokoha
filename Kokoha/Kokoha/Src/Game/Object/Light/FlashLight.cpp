@@ -6,10 +6,10 @@
 namespace
 {
 	// ”¼Œa
-	constexpr double RADIUS = 10.0;
+	constexpr double RADIUS = 15.0;
 
 	// íœ‚É‚©‚©‚éŠÔ
-	constexpr double ERASE_SECOND = 2.3;
+	constexpr double ERASE_SECOND = 3.3;
 
 	// ”¼Œa‚ğ•ÏX‚·‚é”ä
 	constexpr double RATE = 0.01;

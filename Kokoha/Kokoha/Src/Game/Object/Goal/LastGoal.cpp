@@ -53,6 +53,7 @@ void Kokoha::LastGoal::update()
 		if (i < mKeyList.size() + mKeyList.rbegin()->isChecked() - 1)
 		{
 			mDefenceEnemyList[i]->offDefenceMode();
+			mDefenceEnemyList[i]->setToPos(StageData::integerToPixel(Random(0, StageData::N - 1)));
 		}
 		else
 		{

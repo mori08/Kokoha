@@ -36,12 +36,6 @@ Kokoha::TutorialState::TutorialState(const String& mission, const String& contro
 void Kokoha::TutorialState::update()
 {
 	mTimeSecond += Scene::DeltaTime();
-
-	if (InputManager::instance().cancel())
-	{
-		GameManager::instance().setPauseState();
-		return;
-	}
 }
 
 

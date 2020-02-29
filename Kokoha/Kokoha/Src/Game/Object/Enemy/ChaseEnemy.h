@@ -61,6 +61,8 @@ namespace Kokoha
 	template<typename BaseType>
 	inline void ChaseEnemy<BaseType>::checkAnother(const GameObject& another)
 	{
+		GameEnemy::checkAnother(another);
+
 		if (auto goal = another.checkTypeAndGetPos(ObjectType::PLAYER))
 		{
 			mGoal = goal.value();

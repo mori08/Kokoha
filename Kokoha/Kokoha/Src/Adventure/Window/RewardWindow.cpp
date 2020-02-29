@@ -125,7 +125,7 @@ void Kokoha::RewardWindow::setRewardMap()
 		U"3-2",
 		std::move(Reward(10, []()
 			{
-				if (RecordManager::instance().getRecord(U"1-2")) { return AreaFlag(none); }
+				if (!RecordManager::instance().getRecord(U"1-2")) { return AreaFlag(none); }
 				return AreaFlag(U"ƒSƒ~Ì‚Äê");
 			}
 		))
