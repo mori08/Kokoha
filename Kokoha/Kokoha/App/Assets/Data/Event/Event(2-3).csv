@@ -18,12 +18,24 @@ Text,ねこぜ,DeveloperIcon,0.08,"だが, 玄関を開けるには\n壊れた�
 Wait,2,#,,,
 Text,ねこぜ,DeveloperIcon,0.12,そうだ.... 思いついた...,#
 Act,ねこぜ,Stand,#,,
-Act,ねこぜ,Walk,#,,
-Camera,5,"(-250, 0)",#,,
-Move,ねこぜ,5,"(-350,0)",TRUE,#
-Act,ねこぜ,Wait,#,,
+Wait,1,#,,,
 Text,ねこぜ,DeveloperIcon,0.08,「裏切り物のロボットがいる」\n母さんにそう言おう.\n母さんは裏切り物を許さないはずだ.,#
 Text,ねこぜ,DeveloperIcon,0.08,"「きおく」を強化しながら, 無能なロボットを\n処分できる. 一石二鳥じゃないか.",#
-Act,ねこぜ,Sit,#,,
-Text,ねこぜ,DeveloperIcon,0.12,明日が楽しみだ...,#
+Text,ねこぜ,DeveloperIcon,0.08,"とりあえず, こいつは倉庫に隠しておこう.\n玄関ゲートが開いたら母さん驚くぞ...",#
+Wait,1,#,,,
+Effect,Dark,#,,,
+Wait,2,#,,,
+Background,StoreRoom(now),"(0,0)",#,,
+Move,ねこぜ,0,"(-700 , 0)",TRUE,#
+Effect,Dark,#,,,
+Act,ねこぜ,Walk,#,,
+Move,ねこぜ,1.9,"(50,0)",TRUE,#
+Act,ねこぜ,Wait,#,,
+Wait,1,#,,,
+Text,ねこぜ,DeveloperIcon,0.08,これでよし.,#
+Act,ねこぜ,Mirror,#,,
+Text,ねこぜ,DeveloperIcon,0.08,"待ってろ, きおく.\nお前を強くしてやる.",#
+Effect,Dark,#,,,
+Act,ねこぜ,Walk,#,,
+Move,ねこぜ,2,"(100, 0)",TRUE,#
 Scene,Adventure,#,,,

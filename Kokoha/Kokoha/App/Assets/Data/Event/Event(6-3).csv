@@ -1,41 +1,82 @@
 ﻿Background,WorkSpace,"(280, 0)",#,,
 Generate,HelpRobot,お手伝いロボ,"(320, 120)",#,
 Generate,Developer,ねこぜ,"(780, 80)",#,
+Generate,Repair1,たこ,"(500, 240)",#,
+Generate,Repair2,きりん,"(560, 200)",#,
 Run,#,,,,
+Act,たこ,Hide,#,,
+Act,きりん,Hide,#,,
 Act,お手伝いロボ,Mirror,#,,
 Run,#,,,,
-Text,お手伝いロボ,HelpRobotIcon,0.08,「裏切り物が他にもいる. 」,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,「くるまは裏切り物だ. 」\n「母さんを邪魔しようとしている.」,#
 Text,お手伝いロボ,HelpRobotIcon,0.08,そう言われた.,#
 Effect,Dark,#,,,
-Wait,1,#,,,
-Text,お手伝いロボ,HelpRobotIcon,0.08,裏切り物は必要ない.\nだから壊した.,#
-Text,お手伝いロボ,HelpRobotIcon,0.08,"壊せば壊すほど, みんながみんなを疑った.",#
-Text,お手伝いロボ,HelpRobotIcon,0.08,あいつが嘘つきだ. あいつが裏切り物だ.\nそんな言葉を毎日聞いた.,#
-Text,お手伝いロボ,HelpRobotIcon,0.08,"協力できないなら,          \nみんな必要ない.\nみんな壊してしまおう.",#
 Wait,2,#,,,
+Move,お手伝いロボ,0,"(-100,0)",TRUE,#
+Background,Repair0Photo,"(0,0)",#,,
 Act,お手伝いロボ,Mirror,#,,
-Act,ねこぜ,Hide,#,,
-Move,お手伝いロボ,0,"(-30, 0)",TRUE,#
-Camera,0,"(-280, 0)",#,,
+Act,たこ,Appear,#,,
+Act,きりん,Appear,#,,
+Effect,Dark,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,裏切り物は必要ない.\nだから壊した.,#
+Wait,1,#,,,
+Act,お手伝いロボ,Mirror,#,,
+Wait,0.5,#,,,
+Act,たこ,Mirror,#,,
+Act,たこ,Walk,#,,
+Move,たこ,1,"(200,0)",FALSE,#
+Act,きりん,Mirror,#,,
+Move,きりん,1,"(200,0)",FALSE,#
+Wait,1,#,,,
+Effect,Dark,#,,,
+Wait,0.5,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,それからみんなが疑心暗鬼になった.,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,あいつが嘘をついた. あいつが裏切り物だ.\nそんな言葉を何度も聞いた.,#
+Background,BlackBack,"(0,0)",#,,
+Act,お手伝いロボ,Hide,#,,
 Effect,Dark,#,,,
 Wait,1,#,,,
-Text,お手伝いロボ,HelpRobotIcon,0.08,そしてまた1人になった.,#
+Text,お手伝いロボ,HelpRobotIcon,0.08,協力できないロボットなんて...,#
+Background,DeveloperPhoto,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,Searcher1Photo,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,Searcher0Photo,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,Repair1Photo,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,Repair2Photo,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,DoctorPhoto,"(0,0)",#,,
+Wait,0.5,#,,,
+Background,BlackBack,"(0,0)",#,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,必要ない.,#
+Effect,Dark,#,,,
+Wait,2,#,,,
+Background,WorkSpace,"(0,0)",#,,
+Act,お手伝いロボ,Appear,#,,
+Effect,Dark,#,,,
+Wait,1,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.08,"そして, また１人になった.",#
+Text,お手伝いロボ,HelpRobotIcon,0.08,いったい何が間違っていたんだろう.,#
+Move,お手伝いロボ,2,"(50,0)",FALSE,#
 Act,お手伝いロボ,Up,#,,
 Wait,2,#,,,
-Effect,Noise,#,,,
-Wait,0.5,#,,,
-Effect,Noise,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,何かおかしい.,#
-Text,お手伝いロボ,HelpRobotIcon,0.08,これはハカセのやろうとしたことと同じだ.\n言うこと聞かない僕を停止させようとした\nハカセと同じだ.,#
+Effect,Noise,#,,,
+Move,お手伝いロボ,2,"(50,0)",TRUE,#
+Effect,Noise,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.1,これはハカセのやろうとしたことと同じだ.\n言うこと聞かない僕を停止させようとした\nハカセと同じだ.,#
 Effect,Noise,#,,,
 Wait,0.5,#,,,
 Effect,Noise,#,,,
-Text,お手伝いロボ,HelpRobotIcon,0.08,ハカセは正しかった?\n僕は間違っていた?,#
-Move,お手伝いロボ,0.1,"(-10, 0)",FALSE,#
-Text,お手伝いロボ,HelpRobotIcon,0.08,僕のココロは本当は...,#
+Text,お手伝いロボ,HelpRobotIcon,0.1,ハカセは正しかった?\n僕は間違っていた?,#
+Text,お手伝いロボ,HelpRobotIcon,0.1,僕のココロは本当は...,#
+Wait,0.5,#,,,
+Effect,Noise,#,,,
+Wait,0.5,#,,,
 Effect,Noise,#,,,
 Wait,1,#,,,
-Text,お手伝いロボ,HelpRobotIcon,0.12,もう耐えられない.,#
-Effect,Dark,#,,,
-Wait,1,#,,,
+Effect,Noise,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.15,あれ...?\n体がうまく動かない...,#
 Scene,Adventure,#,,,

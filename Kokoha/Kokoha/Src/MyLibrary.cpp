@@ -6,7 +6,7 @@ void Kokoha::outputResource(const FilePath& dirName)
 #ifdef _DEBUG
 	
 	static TextWriter writer(U"ResourceList.txt");
-	static TextWriter assetNameWriter(U"AssetName.txt");
+	// static TextWriter assetNameWriter(U"AssetName.txt");
 
 	// 指定されたディレクトリのファイルパスを配列に
 	Array<FilePath> contents = FileSystem::DirectoryContents(dirName, false);
@@ -28,7 +28,7 @@ void Kokoha::outputResource(const FilePath& dirName)
 
 			if (FileSystem::Extension(content) == U"png")
 			{
-				assetNameWriter.writeln(U"TextureAsset::Register(U\"" + FileSystem::BaseName(content) + U"\", Resource(U\"" + dirName + fileName + U"\"));");
+				//assetNameWriter.writeln(U"TextureAsset::Register(U\"" + FileSystem::BaseName(content) + U"\", Resource(U\"" + dirName + fileName + U"\"));");
 			}
 		}
 	}
@@ -69,6 +69,14 @@ void Kokoha::registerAsset(const String& dirName)
 
 #else
 
+	TextureAsset::Register(U"BlackBack", Resource(U"Assets/Texture/Event_Adventure/BackGround/BlackBack.png"));
+	TextureAsset::Register(U"DeveloperPhoto", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/DeveloperPhoto.png"));
+	TextureAsset::Register(U"DoctorPhoto", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/DoctorPhoto.png"));
+	TextureAsset::Register(U"Repair0Photo", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/Repair0Photo.png"));
+	TextureAsset::Register(U"Repair1Photo", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/Repair1Photo.png"));
+	TextureAsset::Register(U"Repair2Photo", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/Repair2Photo.png"));
+	TextureAsset::Register(U"Searcher0Photo", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/Searcher0Photo.png"));
+	TextureAsset::Register(U"Searcher1Photo", Resource(U"Assets/Texture/Event_Adventure/BackGround/BrokenPhoto/Searcher1Photo.png"));
 	TextureAsset::Register(U"Entrance", Resource(U"Assets/Texture/Event_Adventure/BackGround/Entrance.png"));
 	TextureAsset::Register(U"GarbageDump(now)", Resource(U"Assets/Texture/Event_Adventure/BackGround/GarbageDump(now).png"));
 	TextureAsset::Register(U"GarbageDump", Resource(U"Assets/Texture/Event_Adventure/BackGround/GarbageDump.png"));
@@ -191,7 +199,8 @@ void Kokoha::registerAsset(const String& dirName)
 	TextureAsset::Register(U"Logo", Resource(U"Assets/Texture/Title/Logo.png"));
 
 
-#endif // _DEBUG
+
+#endif
 }
 
 
