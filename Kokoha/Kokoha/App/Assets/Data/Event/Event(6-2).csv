@@ -1,5 +1,4 @@
 ﻿Background,WorkSpace,"(0, 0)",#,,
-Generate,Effect,暗転,"(0, 0)",#,
 Generate,HelpRobot,お手伝いロボ,"(250, 120)",#,
 Generate,Searcher2,のっぽ,"(1000, 180)",#,
 Run,#,,,,
@@ -25,6 +24,6 @@ Move,のっぽ,0.1,"(10, 0)",TRUE,#
 Act,のっぽ,Wait,#,,
 Wait,1,#,,,
 Camera,2,"(-320, 0)",#,,
-Act,暗転,Dark,#,,
-Text,お手伝いロボ,HelpRobotIcon,0.12,協力できないロボットはいらない.,#
+Effect,Dark,#,,,
+Text,お手伝いロボ,HelpRobotIcon,0.12,協力できないロボットは壊してしまおう.,#
 Scene,Adventure,#,,,

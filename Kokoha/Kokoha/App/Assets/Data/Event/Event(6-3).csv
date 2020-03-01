@@ -1,13 +1,12 @@
 ﻿Background,WorkSpace,"(280, 0)",#,,
 Generate,HelpRobot,お手伝いロボ,"(320, 120)",#,
 Generate,Developer,ねこぜ,"(780, 80)",#,
-Generate,Effect,暗転,"(0, 0)",#,
 Run,#,,,,
 Act,お手伝いロボ,Mirror,#,,
 Run,#,,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,「裏切り物が他にもいる. 」,#
 Text,お手伝いロボ,HelpRobotIcon,0.08,そう言われた.,#
-Act,暗転,Dark,#,,
+Effect,Dark,#,,,
 Wait,1,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,裏切り物は必要ない.\nだから壊した.,#
 Text,お手伝いロボ,HelpRobotIcon,0.08,"壊せば壊すほど, みんながみんなを疑った.",#
@@ -18,25 +17,25 @@ Act,お手伝いロボ,Mirror,#,,
 Act,ねこぜ,Hide,#,,
 Move,お手伝いロボ,0,"(-30, 0)",TRUE,#
 Camera,0,"(-280, 0)",#,,
-Act,暗転,Dark,#,,
+Effect,Dark,#,,,
 Wait,1,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,そしてまた1人になった.,#
 Act,お手伝いロボ,Up,#,,
 Wait,2,#,,,
-Act,暗転,Noise,#,,
+Effect,Noise,#,,,
 Wait,0.5,#,,,
-Act,暗転,Noise,#,,
+Effect,Noise,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,何かおかしい.,#
 Text,お手伝いロボ,HelpRobotIcon,0.08,これはハカセのやろうとしたことと同じだ.\n言うこと聞かない僕を停止させようとした\nハカセと同じだ.,#
-Act,暗転,Noise,#,,
+Effect,Noise,#,,,
 Wait,0.5,#,,,
-Act,暗転,Noise,#,,
+Effect,Noise,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.08,ハカセは正しかった?\n僕は間違っていた?,#
 Move,お手伝いロボ,0.1,"(-10, 0)",FALSE,#
 Text,お手伝いロボ,HelpRobotIcon,0.08,僕のココロは本当は...,#
-Act,暗転,Noise,#,,
+Effect,Noise,#,,,
 Wait,1,#,,,
 Text,お手伝いロボ,HelpRobotIcon,0.12,もう耐えられない.,#
-Act,暗転,Dark,#,,
+Effect,Dark,#,,,
 Wait,1,#,,,
 Scene,Adventure,#,,,

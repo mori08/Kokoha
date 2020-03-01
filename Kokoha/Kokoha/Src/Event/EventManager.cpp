@@ -2,8 +2,9 @@
 #include "../MyLibrary.h"
 #include "../MyColor.h"
 #include "../Input/ButtonManager.h"
+#include "Object/EventEffect.h"
 
-// 各イベントhttps://github.com/mori08
+// 各イベント
 #include "Event/EmptyEvent.h"
 #include "Event/GenerateEvent.h"
 #include "Event/MoveEvent.h"
@@ -13,6 +14,7 @@
 #include "Event/BackgroundEvent.h"
 #include "Event/CameraEvent.h"
 #include "Event/ChangeSceneEvent.h"
+#include "Event/EffectEvent.h"
 
 
 namespace 
@@ -62,6 +64,7 @@ Kokoha::EventManager::EventManager()
 	setEvent<BackgroundEvent> (U"Background");
 	setEvent<CameraEvent>     (U"Camera");
 	setEvent<ChangeSceneEvent>(U"Scene");
+	setEvent<EffectEvent>     (U"Effect");
 
 	GenerateEvent::setAllGenerateObjectFunc();
 	ChangeSceneEvent::setSceneNameMap();
@@ -84,6 +87,8 @@ void Kokoha::EventManager::init()
 
 	// エラーメッセージをリセットします
 	mErrorMessage = U"";
+
+	mEffect = std::make_unique<EventEffect>(Point::Zero());
 
 	// シーン遷移先
 	mSceneName = none;
@@ -234,6 +239,7 @@ void Kokoha::EventManager::update()
 	{
 		object.second->update();
 	}
+	mEffect->update();
 
 	// カメラの更新
 	mCameraPos.update();
@@ -268,6 +274,7 @@ void Kokoha::EventManager::draw() const
 	{
 		object.second->draw(-mCameraPos.getValue().asPoint());
 	}
+	mEffect->draw(Point::Zero());
 
 	mTextBox.draw();
 }

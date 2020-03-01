@@ -1,7 +1,6 @@
 ﻿Background,WhiteBack,"(0,0)",#,,
 Generate,EntranceGate,玄関口,"(240, 40)",#,
 Generate,MainRobot,きおく,"(180, 262)",#,
-Generate,Effect,暗転,"(0,0)",#,
 Run,#,,,,
 Act,きおく,Side,#,,
 Run,#,,,,
@@ -18,7 +17,7 @@ Act,きおく,Front,#,,
 Wait,1,#,,,
 Act,きおく,Sleep,#,,
 Wait,1,#,,,
-Act,暗転,Dark,#,,
+Effect,Dark,#,,,
 Text,???,MainRobotIcon,0.1,僕は外に出たいとは思わない.,#
 Text,???,MainRobotIcon,0.1,...,#
 Text,???,MainRobotIcon,0.1,何のためにドアを開けたんだろう.\n僕は何のために頑張ったんだろう.,#

@@ -27,11 +27,21 @@ namespace Kokoha
 
 		EventEffect(const Point& pos);
 
-	private:
+	public:
 
 		void update() override;
 
 		void draw(const Point& cameraPos) const override;
+
+		void changeNoise()
+		{
+			mNoise = !mNoise;
+		}
+
+		void changeDark()
+		{
+			mDark = !mDark;
+		}
 
 	};
 }

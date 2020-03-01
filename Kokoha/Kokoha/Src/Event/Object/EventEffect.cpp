@@ -21,8 +21,8 @@ Kokoha::EventEffect::EventEffect(const Point& pos)
 	, mDark(false)
 	, mDarkAlpha(0)
 {
-	mActMap[U"Noise"] = [this]() { mNoise = !mNoise; };
-	mActMap[U"Dark" ] = [this]() { mDark  = !mDark;  };
+	mActMap[U"Noise"] = [this]() { changeNoise(); };
+	mActMap[U"Dark" ] = [this]() { changeDark();  };
 }
 
 
@@ -39,10 +39,8 @@ void Kokoha::EventEffect::update()
 
 void Kokoha::EventEffect::draw(const Point&) const
 {
-	
 	Scene::Rect().draw(ColorF(MyBlack).setA(mDarkAlpha));
 	
-
 	if (mNoise)
 	{
 		for (auto pos : getGridPoint(Rect(Point::Zero(), Scene::Size() / SQUARE_SIZE)))

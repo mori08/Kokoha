@@ -47,6 +47,9 @@ namespace Kokoha
 		// カメラ座標
 		Linearly<Vec2> mCameraPos;
 
+		// イベント効果
+		EventObjectPtr mEffect;
+
 		// ロードのエラーメッセージ
 		String mErrorMessage;
 
@@ -226,6 +229,15 @@ namespace Kokoha
 		TextBox& getTextBox()
 		{
 			return mTextBox;
+		}
+
+		/// <summary>
+		/// エフェクトを設定
+		/// </summary>
+		/// <param name="effectName"> エフェクト名 </param>
+		void setEffect(const String& effectName)
+		{
+			mEffect->act(effectName);
 		}
 
 		/// <summary>

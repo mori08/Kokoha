@@ -87,5 +87,4 @@ void Kokoha::GenerateEvent::setAllGenerateObjectFunc()
 	setGenerateObjectFunc<EntranceGate>(U"EntranceGate");
 
 	setGenerateObjectFunc<DoctorReport>(U"DoctorReport");
-	setGenerateObjectFunc<EventEffect> (U"Effect");
 }

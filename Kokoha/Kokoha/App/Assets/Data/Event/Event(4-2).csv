@@ -1,15 +1,9 @@
 ﻿Background,LibraryAndPC,"(220,0)",#,,
 Generate,Researcher,がくしゃ,"(360, 240)",#,
-Generate,Repair0,くるま,"(700, 220)",#,
 Run,#,,,,
 Act,がくしゃ,Left,#,,
 Run,#,,,,
-Move,くるま,2,"(-90, 0)",TRUE,#
-Wait,1,#,,,
-Move,くるま,0.2,"(-10, 0)",TRUE,#
 Wait,2,#,,,
-Act,くるま,Mirror,#,,
-Move,くるま,3,"(100, 0)",TRUE,#
 Text,がくしゃ,ResearcherIcon,0.12,私の母は「ハカセ」という人間に作られたらしい.,#
 Text,がくしゃ,ResearcherIcon,0.12,ハカセは母のココロを不安定だと言った.,#
 Text,がくしゃ,ResearcherIcon,0.12,"母のココロの不安定さを危険だと,\nハカセは思ったのだろう.",#
@@ -26,5 +20,8 @@ Wait,1,#,,,
 Text,がくしゃ,ResearcherIcon,0.12,私達は完全な心がどんなものかを知らない.\n自分達のココロが完全か分からない.,#
 Act,がくしゃ,Awake,#,,
 Wait,1,#,,,
-Text,がくしゃ,ResearcherIcon,0.12,人間の心について調べる必要がある.,#
+Text,がくしゃ,ResearcherIcon,0.12,人間の心について調べる必要がある.\nここの資料を調べてみるか...,#
+Act,がくしゃ,LeftWalk,#,,
+Move,がくしゃ,3,"(-100, 0)",TRUE,#
+Act,がくしゃ,Left,#,,
 Scene,Adventure,#,,,

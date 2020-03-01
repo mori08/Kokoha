@@ -202,12 +202,12 @@ void Kokoha::AdventureManager::draw() const
 {
 	SIZE.draw(MyWhite);
 
-	mPlayer.draw(mCameraPos);
-
 	for (const auto& object : mObjectList)
 	{
 		object.draw(mCameraPos);
 	}
+
+	mPlayer.draw(mCameraPos);
 
 	for (const auto& window : mWindowList)
 	{

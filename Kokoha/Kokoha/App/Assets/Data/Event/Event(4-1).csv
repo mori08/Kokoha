@@ -9,6 +9,7 @@ Text,がくしゃ,ResearcherIcon,0.12,母は事情を詳しく説明はしなか
 Act,がくしゃ,Awake,#,,
 Wait,2,#,,,
 Act,がくしゃ,RightWalk,#,,
-Move,がくしゃ,10,"(400, 0)",FALSE,#
+Move,がくしゃ,8,"(320, 0)",TRUE,#
+Act,がくしゃ,Right,#,,
 Text,がくしゃ,ResearcherIcon,0.12,あの部屋に行ってみよう. \n何か見つかるかもしれない.,#
 Scene,Adventure,#,,,

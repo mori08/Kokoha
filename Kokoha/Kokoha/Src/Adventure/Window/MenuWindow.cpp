@@ -110,6 +110,8 @@ void Kokoha::MenuWindow::draw() const
 	mCursor.draw(MyWhite);
 	
 	FontAsset(U"20")(U"メニュー").drawAt(Scene::Center().x, 170);
+	// メニューの文字の下に引かれる線
+	getRectFromCenter(Point(320, 190), Size(160, 2)).draw(MyWhite);
 
 	for (const auto& button : BUTTON_LIST)
 	{

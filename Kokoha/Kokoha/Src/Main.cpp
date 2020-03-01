@@ -64,8 +64,6 @@ void Main()
 	
 	while (System::Update())
 	{
-		ClearPrint();
-
 		sceneManager.update();
 
 		Kokoha::InputManager::instance().changeInputState();
