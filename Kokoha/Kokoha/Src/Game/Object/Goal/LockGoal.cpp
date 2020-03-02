@@ -38,7 +38,6 @@ void Kokoha::LockGoal::update()
 		mIsOpened = true;
 		mSlide.start(U"unlock");
 	}
-	
 
 	GameGoal::update();
 }
