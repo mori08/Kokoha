@@ -1,4 +1,4 @@
-# KokoHatena
+# Kokoha
 
 Robotの続き  
 freemで「558」として公開  
